@@ -6,12 +6,70 @@
     "strategy": "中线稳健成长"
   },
   "account": {
-    "cash": 100000,
-    "total_value": 100000,
-    "invested": 0
+    "cash": 50000.03,
+    "total_value": 100000.0,
+    "invested": 49999.97
   },
-  "positions": {},
+  "positions": {
+    "QQQ": {
+      "shares": 25.9884,
+      "cost_price": 577.18,
+      "cost_basis": 14999.98,
+      "cur_price": 577.18,
+      "market_value": 14999.98,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    },
+    "NVDA": {
+      "shares": 86.0092,
+      "cost_price": 174.4,
+      "cost_basis": 15000.0,
+      "cur_price": 174.4,
+      "market_value": 15000.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    },
+    "MSFT": {
+      "shares": 54.0292,
+      "cost_price": 370.17,
+      "cost_basis": 19999.99,
+      "cur_price": 370.17,
+      "market_value": 19999.99,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    }
+  },
   "trades": [
+    {
+      "id": 4,
+      "date": "2026-04-01",
+      "type": "buy",
+      "ticker": "MSFT",
+      "shares": 54.0292,
+      "price": 370.17,
+      "amount": 19999.99,
+      "note": "首批建仓 @ 3月31日收盘价"
+    },
+    {
+      "id": 3,
+      "date": "2026-04-01",
+      "type": "buy",
+      "ticker": "NVDA",
+      "shares": 86.0092,
+      "price": 174.4,
+      "amount": 15000.0,
+      "note": "首批建仓 @ 3月31日收盘价"
+    },
+    {
+      "id": 2,
+      "date": "2026-04-01",
+      "type": "buy",
+      "ticker": "QQQ",
+      "shares": 25.9884,
+      "price": 577.18,
+      "amount": 14999.98,
+      "note": "首批建仓 @ 3月31日收盘价"
+    },
     {
       "id": 1,
       "date": "2026-04-01",
@@ -31,13 +89,17 @@
       "invested": 0,
       "return_pct": 0.0,
       "note": "账户初始化"
+    },
+    {
+      "date": "2026-04-01",
+      "total_value": 100000.0,
+      "cash": 50000.03,
+      "invested": 49999.97,
+      "return_pct": 0.0,
+      "note": "首批建仓：QQQ / NVDA / MSFT"
     }
   ],
-  "pending_plan": [
-    {"ticker": "QQQ",  "amount": 15000, "reason": "纳斯达克100底仓，AI主线分散"},
-    {"ticker": "NVDA", "amount": 15000, "reason": "AI算力核心，盈利确定性高"},
-    {"ticker": "MSFT", "amount": 20000, "reason": "AI+云稳健成长，防御属性强"}
-  ],
+  "pending_plan": [],
   "market_context": {
     "sp500": 6528,
     "sp500_change_pct": 2.91,
