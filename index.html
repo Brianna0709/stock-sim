@@ -112,7 +112,7 @@ window.__PORTFOLIO_DATA__ = {
     "sp500_change_pct": 2.91,
     "note": "2026-04-01 市场背景：S&P500 6528，近4周+5.13%，华尔街目标7500"
   },
-  "refreshed_at": "2026-04-01 11:38:18"
+  "refreshed_at": "2026-04-01 14:53:57"
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -226,6 +226,12 @@ tr:hover td{background:rgba(88,166,255,.025)}
 .tip-box{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1a1f2e;border:1px solid #30363d;border-radius:8px;padding:9px 12px;width:210px;font-size:11px;line-height:1.7;color:#c9d1d9;z-index:200;pointer-events:none;transition:opacity .15s,visibility .15s;box-shadow:0 4px 16px rgba(0,0,0,.5)}
 .tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#30363d}
 .tip:hover .tip-box{visibility:visible;opacity:1}
+/* 右对齐（用于左侧容易被截断的 tip） */
+.tip-box.right{left:0;transform:none}
+.tip-box.right::after{left:14px;transform:none}
+/* 左对齐（用于右侧容易被截断的 tip） */
+.tip-box.left{left:auto;right:0;transform:none}
+.tip-box.left::after{left:auto;right:14px;transform:none}
 /* 市场 item with tooltip */
 .mitem{position:relative}
 /* loading */
@@ -319,25 +325,25 @@ tr:hover td{background:rgba(88,166,255,.025)}
         <div class="mkt-grid">
           <div class="mitem">
             <div class="ml">
-              <span class="tip">S&amp;P 500<span class="tip-icon">?</span><div class="tip-box">标普500指数，追踪美国500家最大上市公司，是衡量美股整体健康度的最重要指标。指数涨 = 大盘好。</div></span>
+              <span class="tip">S&amp;P 500<span class="tip-icon">?</span><div class="tip-box right">标普500指数，追踪美国500家最大上市公司，是衡量美股整体健康度的最重要指标。指数涨 = 大盘好。</div></span>
             </div>
             <div class="mv" style="color:#3fb950" id="m-sp">—</div><div class="ms" style="color:#3fb950" id="m-spc">—</div>
           </div>
           <div class="mitem">
             <div class="ml">
-              <span class="tip">近4周涨幅<span class="tip-icon">?</span><div class="tip-box">S&amp;P 500 近四周累计涨幅，反映短期市场动能。持续上涨说明资金情绪乐观，是做多的顺风局。</div></span>
+              <span class="tip">近4周涨幅<span class="tip-icon">?</span><div class="tip-box right">S&amp;P 500 近四周累计涨幅，反映短期市场动能。持续上涨说明资金情绪乐观，是做多的顺风局。</div></span>
             </div>
             <div class="mv" style="color:#3fb950">+5.13%</div><div class="ms" style="color:#8b949e">趋势向上</div>
           </div>
           <div class="mitem">
             <div class="ml">
-              <span class="tip">华尔街目标<span class="tip-icon">?</span><div class="tip-box">高盛、摩根士丹利、德银等大行预测的 S&amp;P 500 年末目标价，当前约 6,528，目标 7,500 意味着还有约 15% 上涨空间。</div></span>
+              <span class="tip">华尔街目标<span class="tip-icon">?</span><div class="tip-box left">高盛、摩根士丹利、德银等大行预测的 S&amp;P 500 年末目标价，当前约 6,528，目标 7,500 意味着还有约 15% 上涨空间。</div></span>
             </div>
             <div class="mv" style="color:#58a6ff">7,500</div><div class="ms" style="color:#8b949e">大摩/高盛/德银</div>
           </div>
           <div class="mitem">
             <div class="ml">
-              <span class="tip">美联储预期<span class="tip-icon">?</span><div class="tip-box">市场预期美联储年内降息2次（各25BP）。降息 = 借钱变便宜 = 企业估值提升 = 利好股市，科技股尤其受益。</div></span>
+              <span class="tip">美联储预期<span class="tip-icon">?</span><div class="tip-box left">市场预期美联储年内降息2次（各25BP）。降息 = 借钱变便宜 = 企业估值提升 = 利好股市，科技股尤其受益。</div></span>
             </div>
             <div class="mv" style="color:#e3b341">↓ 2次</div><div class="ms" style="color:#8b949e">年内各降25BP</div>
           </div>
@@ -348,13 +354,13 @@ tr:hover td{background:rgba(88,166,255,.025)}
       <div class="ph"><div class="pt">📌 策略规则</div></div>
       <div class="pb">
         <div class="rules">
-          · <span class="tip" style="display:inline">单票最大仓位<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">一只股票最多买入 $20,000。避免单票暴雷拖垮整个组合，哪怕看再准也要控制集中度。</div></span>：<span>20%</span>
-          &nbsp;· <span class="tip" style="display:inline">同时持仓<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">同时持有 5-8 只标的。太少风险集中，太多精力分散管不过来，5-8 是平衡点。</div></span>：<span>5-8 只</span><br>
-          · <span class="tip" style="display:inline">现金储备<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">账户始终保留至少 20% 现金（≥$20,000）。大跌时有弹药加仓，不会被迫在低点卖股换钱。</div></span>：<span>≥20%</span>
-          &nbsp;· <span class="tip" style="display:inline">止损线<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">单只股票亏损达到 -8% 时强制卖出清仓。铁纪律，不赌反弹，保留本金是最重要的事。</div></span>：<span style="color:#f85149">单票 -8%</span><br>
-          · <span class="tip" style="display:inline">持仓周期<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">中线策略，持有 2-8 周等趋势充分发展。不追涨杀跌，也不长期死守，跟着基本面和技术面走。</div></span>：<span>2-8 周（中线）</span><br>
-          · <span class="tip" style="display:inline">盘前推送<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">北京时间 21:00 = 美股开盘前1小时。此时推送操作计划，你确认后记录为当日交易。</div></span>：<span style="color:#e3b341">北京 21:00</span>
-          &nbsp;· <span class="tip" style="display:inline">复盘<span class="tip-icon">?</span><div class="tip-box" style="left:0;transform:none">北京时间次日 06:00 = 美股收盘后约1小时。此时更新实际收盘盈亏，推送页面最新数据。</div></span>：<span style="color:#e3b341">次日 06:00</span><br>
+          · <span class="tip" style="display:inline">单票最大仓位<span class="tip-icon">?</span><div class="tip-box right">一只股票最多买入 $20,000。避免单票暴雷拖垮整个组合，哪怕看再准也要控制集中度。</div></span>：<span>20%</span>
+          &nbsp;· <span class="tip" style="display:inline">同时持仓<span class="tip-icon">?</span><div class="tip-box right">同时持有 5-8 只标的。太少风险集中，太多精力分散管不过来，5-8 是平衡点。</div></span>：<span>5-8 只</span><br>
+          · <span class="tip" style="display:inline">现金储备<span class="tip-icon">?</span><div class="tip-box right">账户始终保留至少 20% 现金（≥$20,000）。大跌时有弹药加仓，不会被迫在低点卖股换钱。</div></span>：<span>≥20%</span>
+          &nbsp;· <span class="tip" style="display:inline">止损线<span class="tip-icon">?</span><div class="tip-box right">单只股票亏损达到 -8% 时强制卖出清仓。铁纪律，不赌反弹，保留本金是最重要的事。</div></span>：<span style="color:#f85149">单票 -8%</span><br>
+          · <span class="tip" style="display:inline">持仓周期<span class="tip-icon">?</span><div class="tip-box right">中线策略，持有 2-8 周等趋势充分发展。不追涨杀跌，也不长期死守，跟着基本面和技术面走。</div></span>：<span>2-8 周（中线）</span><br>
+          · <span class="tip" style="display:inline">盘前推送<span class="tip-icon">?</span><div class="tip-box right">北京时间 21:00 = 美股开盘前1小时。此时推送操作计划，你确认后记录为当日交易。</div></span>：<span style="color:#e3b341">北京 21:00</span>
+          &nbsp;· <span class="tip" style="display:inline">复盘<span class="tip-icon">?</span><div class="tip-box right">北京时间次日 06:00 = 美股收盘后约1小时。此时更新实际收盘盈亏，推送页面最新数据。</div></span>：<span style="color:#e3b341">次日 06:00</span><br>
           <br>
           <span style="color:#8b949e;font-size:11px">⚠ 本模拟盘为虚拟交易，不构成任何真实投资建议。</span>
         </div>
