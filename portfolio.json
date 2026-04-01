@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "market": "US",
+    "start_date": "2026-04-01",
+    "initial_capital": 100000,
+    "strategy": "中线稳健成长"
+  },
+  "account": {
+    "cash": 100000,
+    "total_value": 100000,
+    "invested": 0
+  },
+  "positions": {},
+  "trades": [
+    {
+      "id": 1,
+      "date": "2026-04-01",
+      "type": "init",
+      "ticker": null,
+      "shares": null,
+      "price": null,
+      "amount": 100000,
+      "note": "账户初始化"
+    }
+  ],
+  "snapshots": [
+    {
+      "date": "2026-04-01",
+      "total_value": 100000,
+      "cash": 100000,
+      "invested": 0,
+      "return_pct": 0.0,
+      "note": "账户初始化"
+    }
+  ],
+  "pending_plan": [
+    {"ticker": "QQQ",  "amount": 15000, "reason": "纳斯达克100底仓，AI主线分散"},
+    {"ticker": "NVDA", "amount": 15000, "reason": "AI算力核心，盈利确定性高"},
+    {"ticker": "MSFT", "amount": 20000, "reason": "AI+云稳健成长，防御属性强"}
+  ],
+  "market_context": {
+    "sp500": 6528,
+    "sp500_change_pct": 2.91,
+    "note": "2026-04-01 市场背景：S&P500 6528，近4周+5.13%，华尔街目标7500"
+  }
+}
