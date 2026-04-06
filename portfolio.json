@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 100639.8,
-    "invested": 50639.77
+    "total_value": 100546.99,
+    "invested": 50546.96
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 584.98,
-      "market_value": 15202.69,
-      "pnl": 202.71,
-      "pnl_pct": 1.35,
-      "today_chg_pct": 0.12
+      "cur_price": 587.0,
+      "market_value": 15255.19,
+      "pnl": 255.21,
+      "pnl_pct": 1.7,
+      "today_chg_pct": 0.35
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 177.39,
-      "market_value": 15257.17,
-      "pnl": 257.17,
-      "pnl_pct": 1.71,
-      "today_chg_pct": 0.53
+      "cur_price": 176.09,
+      "market_value": 15145.36,
+      "pnl": 145.36,
+      "pnl_pct": 0.97,
+      "today_chg_pct": -0.73
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 373.5,
-      "market_value": 20179.91,
-      "pnl": 179.92,
-      "pnl_pct": 0.9,
-      "today_chg_pct": 1.12
+      "cur_price": 372.88,
+      "market_value": 20146.41,
+      "pnl": 146.42,
+      "pnl_pct": 0.73,
+      "today_chg_pct": -0.17
     }
   },
   "trades": [
@@ -124,16 +124,24 @@
       "invested": 50639.77,
       "return_pct": 0.6398,
       "note": "周末复盘（4月3日耶稣受难日休市）：NVDA $177.39 | MSFT $373.5 | QQQ $584.98"
+    },
+    {
+      "date": "2026-04-06",
+      "total_value": 100546.99,
+      "cash": 50000.03,
+      "invested": 50546.96,
+      "return_pct": 0.547,
+      "note": "收盘复盘：NVDA $176.09 | MSFT $372.88 | QQQ $587.0"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 6582.69,
-    "sp500_change_pct": 0.11,
-    "nasdaq": 21879.18,
-    "nasdaq_change_pct": 0.18,
-    "dow": 46504.67,
-    "dow_change_pct": -0.13,
-    "note": "2026-04-02收盘（最后交易日，4月3日耶稣受难日休市）：S&P500 6582.69(+0.11%)，纳指21879.18(+0.18%)，道指46504.67(-0.13%)。特朗普停火讲话提振情绪，大型科技股小幅走高。"
+    "sp500": 6619.0,
+    "sp500_change_pct": 0.4,
+    "nasdaq": 21989.0,
+    "nasdaq_change_pct": 0.5,
+    "dow": 46690.0,
+    "dow_change_pct": 0.4,
+    "note": "2026-04-06收盘：S&P500 6619(+0.40%)，纳指(+0.50%)，道指(+0.40%)。市场在特朗普设定的伊朗轰炸期限前夕谨慎走高，存储芯片集体大涨，三大指数连续第四周收涨。"
   }
 }
