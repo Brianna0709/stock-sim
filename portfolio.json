@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 100546.99,
-    "invested": 50546.96
+    "total_value": 100729.31,
+    "invested": 50729.28
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 587.0,
-      "market_value": 15255.19,
-      "pnl": 255.21,
-      "pnl_pct": 1.7,
-      "today_chg_pct": 0.35
+      "cur_price": 588.59,
+      "market_value": 15296.51,
+      "pnl": 296.53,
+      "pnl_pct": 1.98,
+      "today_chg_pct": 0.27
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 176.09,
-      "market_value": 15145.36,
-      "pnl": 145.36,
-      "pnl_pct": 0.97,
-      "today_chg_pct": -0.73
+      "cur_price": 178.1,
+      "market_value": 15318.24,
+      "pnl": 318.24,
+      "pnl_pct": 2.12,
+      "today_chg_pct": 1.14
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 372.88,
-      "market_value": 20146.41,
-      "pnl": 146.42,
-      "pnl_pct": 0.73,
-      "today_chg_pct": -0.17
+      "cur_price": 372.29,
+      "market_value": 20114.53,
+      "pnl": 114.54,
+      "pnl_pct": 0.57,
+      "today_chg_pct": -0.16
     }
   },
   "trades": [
@@ -132,16 +132,24 @@
       "invested": 50546.96,
       "return_pct": 0.547,
       "note": "收盘复盘：NVDA $176.09 | MSFT $372.88 | QQQ $587.0"
+    },
+    {
+      "date": "2026-04-07",
+      "total_value": 100729.31,
+      "cash": 50000.03,
+      "invested": 50729.28,
+      "return_pct": 0.7293,
+      "note": "收盘复盘：NVDA $178.1 | MSFT $372.29 | QQQ $588.59"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 6619.0,
-    "sp500_change_pct": 0.4,
-    "nasdaq": 21989.0,
-    "nasdaq_change_pct": 0.5,
-    "dow": 46690.0,
-    "dow_change_pct": 0.4,
-    "note": "2026-04-06收盘：S&P500 6619(+0.40%)，纳指(+0.50%)，道指(+0.40%)。市场在特朗普设定的伊朗轰炸期限前夕谨慎走高，存储芯片集体大涨，三大指数连续第四周收涨。"
+    "sp500": 6632,
+    "sp500_change_pct": 0.3,
+    "nasdaq": 22155,
+    "nasdaq_change_pct": 0.3,
+    "dow": 46857,
+    "dow_change_pct": 0.36,
+    "note": "2026-04-07收盘：S&P500 6632(+0.30%)。市场温和上涨，NVDA领涨+1.14%，MSFT小幅收跌-0.16%，QQQ微涨+0.27%。存储芯片板块依然强势。"
   }
 }
