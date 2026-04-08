@@ -1,0 +1,208 @@
+:::title{nodeId="7900bcb5f65e4333b7bca21ae07db584"}
+【草稿】3.2.1 退款退订-工作流PRD
+:::
+
+### 一、前置条件
+
+用户意图命中关键词（退款、退订、取消、取消订单、如何取消订单），且当前咨询订单状态为"未取消"。
+
+### 二、功能概述
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "功能概述"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景一：极速退-免费时间内**\n\n订单退款规则为极速退，且当前仍在免费退时间内"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示退款规则说明卡片，包含：取消规则说明、退款金额（全额退）、退款到账时间\n2. 提供「立即免费取消」操作按钮，房客点击后展示二次确认弹窗\n3. 确认后调用取消订单API完成取消，全程无需跳出IM\n4. 取消成功后IM内展示取消成功提示，退款将原路返回\n5. **异常处理**：API调用失败时，提示房客跳转订单详情页自行操作，并提供跳转入口\n\n**工作流**：流程a（取消订单API）/ 流程b（查询规则）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景二：阶梯退-可免费取消**\n\n退款规则为阶梯退，当前仍在免费取消时间窗口内"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示退款规则说明卡片，包含：阶梯规则详情、当前可免费取消状态提示\n2. 提供「立即免费取消」操作按钮，房客点击后展示二次确认弹窗\n3. 确认后调用取消订单API完成取消，全程无需跳出IM\n4. 取消成功后IM内展示取消成功提示，退款将原路返回\n5. **异常处理**：API调用失败时，提示房客跳转订单详情页自行操作，并提供跳转入口\n\n**工作流**：流程a（取消订单API）/ 流程b（查询规则）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景三：阶梯退-无法免费取消**\n\n退款规则为阶梯退，当前已超出免费取消时间窗口"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示当前退款规则说明卡片，包含：当前扣款比例、预计扣款金额、预计退款金额\n2. 提供三个操作选项：\n   - **扣费取消**：当前扣款规则允许取消时展示，房客点击后二次确认，确认后调用取消订单API\n   - **与房东协商**：展示协商引导话术，引导房客邀请房东下发协商退款。提供「邀请房东协商」入口，系统向房东发送邀请消息（注：阶梯退协商退需由房东主动下发）\n   - **暂不取消**：点击后关闭卡片，不执行任何操作\n\n**工作流**：流程a（取消订单API）/ 新增：引导房客邀请房东下发协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景四：非阶梯退-可免费取消**\n\n退款规则为非阶梯退，当前仍在免费取消时间窗口内"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示退款规则说明卡片，包含：非阶梯规则详情、当前可免费取消状态提示\n2. 提供「立即免费取消」操作按钮，房客点击后展示二次确认弹窗\n3. 确认后调用取消订单API完成取消，全程无需跳出IM\n4. 取消成功后IM内展示取消成功提示，退款将原路返回\n5. **异常处理**：API调用失败时，提示房客跳转订单详情页自行操作，并提供跳转入口\n\n**工作流**：流程a（取消订单API）/ 流程b（查询规则）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景五：非阶梯退-无法免费取消**\n\n退款规则为非阶梯退，当前已超出免费取消时间窗口"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示当前退款规则说明卡片，包含：扣款比例、预计扣款金额、预计退款金额\n2. 提供三个操作选项：\n   - **扣费取消**：当前扣款规则允许取消时展示，房客点击后二次确认，确认后调用取消订单API\n   - **房客发起协商退**：提供「发起协商退款」入口，引导房客进入协商退款流程。路径：我的订单 → 订单详情页 → 取消订单 → 与房东协商退款 → 填写退款金额 → 填写退款原因 → 确认提交 → 等待房东确认（共7步）。系统在房东确认/拒绝后向房客发送消息通知\n   - **暂不取消**：点击后关闭卡片，不执行任何操作\n\n**工作流**：流程a（取消订单API）/ 新增：引导房客发起协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [139], "bgColor": null, "verticalAlign": null},
+      "content": "**场景六：订单已取消**\n\n当前咨询订单状态为「已取消」"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "1. IM中展示退款详情卡片，包含：退款金额、退款原因、退款状态、预计到账时间\n2. 提供「查看退款详情」跳转链接，可跳转至订单详情页查看更多信息\n3. 不展示取消操作入口\n\n**工作流**：新增：查看退款详情信息"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ]
+]
+:::
+
+### 三、协商退补充说明
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": ""
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "操作路径"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "说明"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "房客侧"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "房客发起协商退款共需7个操作步骤：\n\n我的订单 → 订单详情页 → 取消订单 → 与房东协商退款 → 填写退款金额 → 填写退款原因 → 确认提交 → 等待房东确认"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "适用于非阶梯退订单。房客填写退款金额与原因后提交，等待房东响应。"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "房东侧"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "房东收到协商退款诉求后共需4个操作步骤：\n\n打开消息 → 去处理 → 同意/拒绝退款 → 确认退款金额或填写拒绝原因"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "房东在IM页面协商退款卡片内选择同意/拒绝，同意后跳转订单详情页确认金额。"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [120], "bgColor": null, "verticalAlign": null},
+      "content": "消息通知"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "房东同意/拒绝退款后，平台向房客发送站内信和短信通知。"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [300], "bgColor": null, "verticalAlign": null},
+      "content": "**已知问题**：协商退款申请记录未根据协商结果进行同步，显示房东仍在确认中——需后续跟进修复。"
+    }
+  ]
+]
+:::

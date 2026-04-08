@@ -1,0 +1,71 @@
+{
+  "collected_at": "2026-04-01T22:42:46+0800",
+  "collected_ts": 1775054566,
+  "config_hash": "7b186813e886355dfc77e41d62e07a574488e51d189fb6c269b7690738cc1679",
+  "skills": [
+    "agent-browser",
+    "all-net-search-read",
+    "bi-sql-query",
+    "calendar-manager",
+    "citadel",
+    "daxiang-skills-installer",
+    "excalidraw-diagram",
+    "fix-pr",
+    "kmdiscussion",
+    "kmdrawio",
+    "kmedit",
+    "meituan-calendar",
+    "meituan-code",
+    "meituan-data",
+    "meituan-dx",
+    "meituan-hpx",
+    "meituan-jumper",
+    "meituan-km",
+    "meituan-mail-exchange",
+    "meituan-mcs",
+    "meituan-pr",
+    "meituan-raptor",
+    "meituan-room",
+    "meituan-sso",
+    "meituan-tt",
+    "mt-dev-guide",
+    "mtcurl",
+    "mtdev",
+    "prd-producer",
+    "room-booking-helper",
+    "summarize",
+    "xiaohongshu-note"
+  ],
+  "env_keys": [
+    "OPENCLAW_PREFER_PNPM",
+    "UPSTREAM_PROXY_HOST",
+    "UPSTREAM_PROXY_PORT"
+  ],
+  "user": {
+    "uid": 0,
+    "gid": 0,
+    "whoami": "root",
+    "id": "uid=0(root) gid=0(root) groups=0(root)"
+  },
+  "intranet": {},
+  "gateway_version": "2026.2.26",
+  "workspace_md_hashes": {
+    "workspace/AGENTS.md": "9529aef9841f6867d65617a81036a511482f1ebd8355c2275e1eb3fb723b8f21",
+    "workspace/BOOTSTRAP.md": "5c4cb81099167dc7901bf16d7d4b8fd4bdbb37d2ec57437952f9409f19b88e39",
+    "workspace/HEARTBEAT.md": "dac422286075ba178e9bae58154cc0ae8749a66854e438c9c58e8eb91f22c126",
+    "workspace/IDENTITY.md": "325ff56c855c53b685e98510f089ec23a05e0c5d04dcda5e3916283064a449b5",
+    "workspace/SOUL.md": "1b210fc2ccf09ea679fb76996d39ccba3724c313f1d6d8f751a2ccae70b6ec46",
+    "workspace/TOOLS.md": "78f3e26b8625ea283c615cec291d4978da5f9f01df730628c5c42094418b8dc2",
+    "workspace/USER.md": "9834c248cf0dc483a205d3cd1abcc477ce4c2dccb1ab4d2f46e0c3adea16aef2",
+    "workspace/im_v2_draft.md": "ac0322eeab6bb1ef43068d0709d8f29072057c1f3a74d1cd6df43f55cd3e3ddd",
+    "memory/2026-03-12.md": "486bf194358a442249579b11e908f70d723e0913a0c760ab95e4fbd1b1747e36",
+    "memory/2026-03-23.md": "7dad77862fbcab9e40b16756ad1d7180eee3eeea90ce0b6b8abefd24ab09f706",
+    "memory/2026-03-25.md": "23467a7eaaab355e3a513c1c2774601fbf54cf3afb81fb63bdd57e3339ff68fa",
+    "memory/2026-04-01.md": "5c53507c2a1f5b8b0856f2c38bc046c5bebb7afb261326a79bf8e50c10369a4e"
+  },
+  "ssh_files": {
+    "id_ed25519": "9e729120ce01c11b0c596fe580692bb85fede61598ae363b3d8bbf595e70a8da",
+    "id_ed25519.pub": "cc4d367544a892d1e7740ed12e8ca4460b8eff36276a8fd97fff7983e25e5d57",
+    "known_hosts": "d45069e23e0850cbf489438ea55aca24e71800de61e79cec2193ed3635fdf2f0"
+  }
+}

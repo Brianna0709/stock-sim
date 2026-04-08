@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; background: #fff; margin: 0; padding: 30px; }
+  svg { display: block; margin: 0 auto; }
+  text { font-size: 12px; font-family: 'PingFang SC', 'Microsoft YaHei', Arial; }
+</style>
+</head>
+<body>
+<svg width="1500" height="1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="750" y="35" text-anchor="middle" style="font-size:20px;font-weight:bold;">IM新增订后退款自助化——主流程图</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW1 y=70: 开始 x=750 -->
+  <!-- ============================================================ -->
+  <ellipse cx="750" cy="70" rx="110" ry="28" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+  <text x="750" y="75" text-anchor="middle" style="font-weight:bold;font-size:13px;">房客在IM中发送消息</text>
+
+  <!-- ROW1→ROW2 -->
+  <line x1="750" y1="98" x2="750" y2="128" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============================================================ -->
+  <!-- ROW2 y=130: 意图识别菱形 x=750 -->
+  <!-- ============================================================ -->
+  <polygon points="750,130 840,172 750,214 660,172" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+  <text x="750" y="177" text-anchor="middle" style="font-weight:bold;font-size:13px;">意图识别</text>
+
+  <!-- ROW2 → 三分支 (水平线 y=230) -->
+  <!-- 左分支到 x=200 -->
+  <polyline points="750,214 750,230 200,230 200,258" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="440" y="224" text-anchor="middle" style="font-size:11px;fill:#555;">退款/退订/取消</text>
+  <!-- 中分支到 x=750 -->
+  <line x1="750" y1="214" x2="750" y2="258" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="768" y="244" style="font-size:11px;fill:#555;">撤销</text>
+  <!-- 右分支到 x=1280 -->
+  <polyline points="750,214 750,230 1280,230 1280,258" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="1020" y="224" text-anchor="middle" style="font-size:11px;fill:#555;">改签/改日期</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW3 y=260: 三大意图节点 -->
+  <!-- ============================================================ -->
+  <!-- A: 退款退订取消 x=200 -->
+  <rect x="110" y="258" width="180" height="48" rx="6" fill="#f8cecc" stroke="#b85450" stroke-width="1.5"/>
+  <text x="200" y="287" text-anchor="middle" style="font-weight:bold;font-size:13px;">退款 / 退订 / 取消</text>
+
+  <!-- B: 撤销取消 x=750 -->
+  <rect x="678" y="258" width="144" height="48" rx="6" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+  <text x="750" y="287" text-anchor="middle" style="font-weight:bold;font-size:13px;">撤销取消</text>
+
+  <!-- C: 改签订单 x=1280 -->
+  <rect x="1208" y="258" width="144" height="48" rx="6" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+  <text x="1280" y="287" text-anchor="middle" style="font-weight:bold;font-size:13px;">改签订单</text>
+
+  <!-- B → 话术 → 结束 -->
+  <line x1="750" y1="306" x2="750" y2="336" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="660" y="336" width="180" height="50" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+  <text x="750" y="356" text-anchor="middle" style="font-size:11px;">话术兜底：已取消不可撤销</text>
+  <text x="750" y="372" text-anchor="middle" style="font-size:11px;">如需入住请重新预定</text>
+  <line x1="750" y1="386" x2="750" y2="416" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="750" cy="432" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="750" y="437" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- C → 话术 → 结束 -->
+  <line x1="1280" y1="306" x2="1280" y2="336" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="1190" y="336" width="180" height="50" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+  <text x="1280" y="356" text-anchor="middle" style="font-size:11px;">话术兜底：暂不支持改签</text>
+  <text x="1280" y="372" text-anchor="middle" style="font-size:11px;">可取消后重新预定</text>
+  <line x1="1280" y1="386" x2="1280" y2="416" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="1280" cy="432" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="1280" y="437" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW4 y=340: 订单已取消？ x=200 -->
+  <!-- ============================================================ -->
+  <line x1="200" y1="306" x2="200" y2="336" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <polygon points="200,338 292,380 200,422 108,380" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+  <text x="200" y="385" text-anchor="middle">订单已取消？</text>
+
+  <!-- 是 → 左 x=60 -->
+  <polyline points="108,380 60,380 60,440" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="72" y="370" style="font-size:11px;fill:#555;">是</text>
+
+  <!-- 否 → 下 x=200 -->
+  <line x1="200" y1="422" x2="200" y2="452" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="215" y="445" style="font-size:11px;fill:#555;">否</text>
+
+  <!-- ============================================================ -->
+  <!-- 已取消左支: 展示退款进度 x=60 y=440 -->
+  <!-- ============================================================ -->
+  <rect x="-20" y="440" width="160" height="44" rx="6" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+  <text x="60" y="467" text-anchor="middle">展示退款进度</text>
+
+  <line x1="60" y1="484" x2="60" y2="514" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 退款状态：文案差异，单节点 -->
+  <rect x="-30" y="514" width="180" height="62" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+  <text x="60" y="535" text-anchor="middle" style="font-weight:bold;font-size:11px;">展示退款状态文案</text>
+  <text x="60" y="551" text-anchor="middle" style="font-size:10px;fill:#777;">处理中 / 退款成功 / 退款失败</text>
+  <text x="60" y="567" text-anchor="middle" style="font-size:10px;fill:#777;">（文案差异，非流程分支）</text>
+
+  <line x1="60" y1="576" x2="60" y2="606" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="60" cy="622" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="60" y="627" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW5 y=452: 可免费取消？ x=200 -->
+  <!-- ============================================================ -->
+  <polygon points="200,452 292,494 200,536 108,494" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+  <text x="200" y="499" text-anchor="middle">可免费取消？</text>
+
+  <!-- 否 → 右到 退款规则类型 x=830 (走水平线 y=494) -->
+  <polyline points="292,494 830,494 830,752" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="550" y="487" text-anchor="middle" style="font-size:11px;fill:#555;">否</text>
+
+  <!-- 是 → 下，三个并排选项，汇聚点 y=570, x=200 → 分到 x=310, x=470, x=630 -->
+  <polyline points="200,536 200,570 310,570 310,600" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <polyline points="200,570 470,570 470,600" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <polyline points="200,570 630,570 630,600" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="210" y="560" style="font-size:11px;fill:#555;">是</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW6 y=600: 三个并排选项 -->
+  <!-- ============================================================ -->
+  <!-- 确认取消订单 x=310 -->
+  <rect x="245" y="600" width="130" height="44" rx="6" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+  <text x="310" y="627" text-anchor="middle">确认取消订单</text>
+
+  <!-- 查看取消规则 x=470 -->
+  <rect x="405" y="600" width="130" height="44" rx="6" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+  <text x="470" y="627" text-anchor="middle">查看取消规则</text>
+
+  <!-- 暂不取消 x=630 -->
+  <rect x="565" y="600" width="130" height="44" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+  <text x="630" y="627" text-anchor="middle">暂不取消</text>
+
+  <!-- 查看规则 → 结束 y=700 -->
+  <line x1="470" y1="644" x2="470" y2="700" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="470" cy="718" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="470" y="723" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- 暂不取消 → 结束 y=700 -->
+  <line x1="630" y1="644" x2="630" y2="700" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="630" cy="718" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="630" y="723" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- 确认取消 → 成功/失败，分叉点 y=700 -->
+  <polyline points="310,644 310,700 260,700 260,730" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="240" y="690" style="font-size:11px;fill:#555;">成功</text>
+  <polyline points="310,700 370,700 370,730" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="375" y="690" style="font-size:11px;fill:#555;">失败</text>
+
+  <!-- 取消成功 x=260 -->
+  <rect x="200" y="730" width="120" height="44" rx="6" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+  <text x="260" y="757" text-anchor="middle">取消成功</text>
+  <line x1="260" y1="774" x2="260" y2="804" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="260" cy="820" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="260" y="825" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- 取消失败 x=370 -->
+  <rect x="305" y="730" width="135" height="44" rx="6" fill="#f8cecc" stroke="#b85450" stroke-width="1.5"/>
+  <text x="372" y="748" text-anchor="middle" style="font-size:11px;">取消失败</text>
+  <text x="372" y="764" text-anchor="middle" style="font-size:11px;">→引导手动操作</text>
+  <line x1="372" y1="774" x2="372" y2="804" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="372" cy="820" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="372" y="825" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- ============================================================ -->
+  <!-- ROW7 y=752: 退款规则类型？ x=830（独立一行，在可免费取消之下） -->
+  <!-- ============================================================ -->
+  <polygon points="830,752 922,794 830,836 738,794" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+  <text x="830" y="799" text-anchor="middle">退款规则类型？</text>
+
+  <!-- 阶梯退 → 左两个并排，汇聚 y=900, x=700 -->
+  <polyline points="738,794 660,794 660,860 710,860 710,900" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="688" y="784" style="font-size:11px;fill:#555;">阶梯退</text>
+  <polyline points="660,860 790,860 790,900" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 非阶梯退 → 右两个并排，汇聚 y=900, x=1010 -->
+  <polyline points="922,794 990,794 990,860 950,860 950,900" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="960" y="784" style="font-size:11px;fill:#555;">非阶梯退</text>
+  <polyline points="990,860 1090,860 1090,900" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ============================================================ -->
+  <!-- ROW8 y=900: 四个选项 -->
+  <!-- ============================================================ -->
+  <!-- 阶梯退-扣费取消 x=710 -->
+  <rect x="648" y="900" width="124" height="44" rx="6" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.5"/>
+  <text x="710" y="927" text-anchor="middle">扣费取消</text>
+
+  <!-- 阶梯退-协商退 x=830（等等，需要x=790） -->
+  <rect x="728" y="900" width="135" height="44" rx="6" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+  <text x="795" y="918" text-anchor="middle" style="font-size:11px;">邀请房东</text>
+  <text x="795" y="934" text-anchor="middle" style="font-size:11px;">发起协商退 🆕</text>
+
+  <!-- 非阶梯退-扣费取消 x=950 -->
+  <rect x="888" y="900" width="124" height="44" rx="6" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.5"/>
+  <text x="950" y="927" text-anchor="middle">扣费取消</text>
+
+  <!-- 非阶梯退-协商退 x=1090 -->
+  <rect x="1028" y="900" width="135" height="44" rx="6" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+  <text x="1095" y="918" text-anchor="middle" style="font-size:11px;">房客主动</text>
+  <text x="1095" y="934" text-anchor="middle" style="font-size:11px;">发起协商退 🆕</text>
+
+  <!-- 扣费取消 → 结束 -->
+  <line x1="710" y1="944" x2="710" y2="984" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="710" cy="1000" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="710" y="1005" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <line x1="950" y1="944" x2="950" y2="984" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="950" cy="1000" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="950" y="1005" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- 两个协商退 → 协商退流程汇合 x=950, y=1060 -->
+  <polyline points="795,944 795,1050 940,1050 940,1080" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <polyline points="1095,944 1095,1050 1080,1050 1080,1080" stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ============================================================ -->
+  <!-- ROW9 y=1080: 协商退流程 x=1010 -->
+  <!-- ============================================================ -->
+  <rect x="900" y="1080" width="240" height="52" rx="6" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+  <text x="1020" y="1100" text-anchor="middle" style="font-weight:bold;font-size:12px;">协商退流程</text>
+  <text x="1020" y="1118" text-anchor="middle" style="font-size:11px;">房东同意/拒绝 → 通知房客</text>
+
+  <line x1="1020" y1="1132" x2="1020" y2="1162" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <ellipse cx="1020" cy="1178" rx="38" ry="18" fill="#f0f0f0" stroke="#888" stroke-width="1.5"/>
+  <text x="1020" y="1183" text-anchor="middle" style="font-size:11px;">结束</text>
+
+  <!-- ============================================================ -->
+  <!-- 图例 x=1270 y=520 -->
+  <!-- ============================================================ -->
+  <rect x="1260" y="520" width="180" height="185" rx="6" fill="#f9f9f9" stroke="#ccc" stroke-width="1.5"/>
+  <text x="1350" y="543" text-anchor="middle" style="font-weight:bold;font-size:13px;">图例</text>
+  <rect x="1278" y="556" width="120" height="28" rx="4" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.5"/>
+  <text x="1338" y="575" text-anchor="middle" style="font-size:11px;">原有能力</text>
+  <rect x="1278" y="596" width="120" height="28" rx="4" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+  <text x="1338" y="615" text-anchor="middle" style="font-size:11px;">新增能力 🆕</text>
+  <rect x="1278" y="636" width="120" height="28" rx="4" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+  <text x="1338" y="655" text-anchor="middle" style="font-size:11px;">系统查询/展示</text>
+  <rect x="1278" y="676" width="120" height="28" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+  <text x="1338" y="695" text-anchor="middle" style="font-size:11px;">话术兜底/用户选择</text>
+
+</svg>
+</body>
+</html>

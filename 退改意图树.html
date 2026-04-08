@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f7fa; padding: 32px; }
+  h1 { text-align: center; color: #1e40af; font-size: 20px; margin-bottom: 28px; letter-spacing: 1px; }
+
+  .tree { display: flex; flex-direction: column; gap: 16px; }
+
+  .intent-block { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; }
+
+  .intent-header { display: flex; align-items: center; padding: 12px 18px; gap: 12px; }
+  .intent-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; color: white; flex-shrink: 0; }
+  .intent-title { font-size: 15px; font-weight: 600; }
+  .intent-keywords { margin-left: auto; font-size: 11px; color: #6b7280; background: #f3f4f6; padding: 3px 8px; border-radius: 20px; }
+
+  .branches { padding: 0 18px 14px 58px; display: flex; flex-direction: column; gap: 6px; }
+  .branch { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .branch-condition { color: #6b7280; white-space: nowrap; flex-shrink: 0; }
+  .branch-arrow { color: #9ca3af; flex-shrink: 0; }
+  .branch-action { color: #374151; }
+  .branch-action .tag { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 11px; font-weight: 500; margin-left: 6px; }
+  .tag-action { background: #dbeafe; color: #1d4ed8; }
+  .tag-talk { background: #fef3c7; color: #92400e; }
+  .tag-jump { background: #d1fae5; color: #065f46; }
+  .tag-info { background: #ede9fe; color: #5b21b6; }
+
+  .divider { height: 1px; background: #f3f4f6; margin: 0 18px 10px 58px; }
+
+  /* 颜色主题 */
+  .c1 .intent-header { background: #eff6ff; } .c1 .intent-num { background: #3b82f6; } .c1 .intent-title { color: #1e40af; }
+  .c2 .intent-header { background: #f0fdf4; } .c2 .intent-num { background: #22c55e; } .c2 .intent-title { color: #15803d; }
+  .c3 .intent-header { background: #fef3c7; } .c3 .intent-num { background: #f59e0b; } .c3 .intent-title { color: #92400e; }
+  .c4 .intent-header { background: #f5f3ff; } .c4 .intent-num { background: #8b5cf6; } .c4 .intent-title { color: #5b21b6; }
+  .c5 .intent-header { background: #fff1f2; } .c5 .intent-num { background: #f43f5e; } .c5 .intent-title { color: #9f1239; }
+  .c6 .intent-header { background: #fff7ed; } .c6 .intent-num { background: #f97316; } .c6 .intent-title { color: #7c2d12; }
+
+  .note { margin-top: 24px; background: #fefce8; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 12px 16px; font-size: 13px; color: #713f12; line-height: 1.7; }
+  .note strong { display: block; margin-bottom: 4px; color: #92400e; }
+</style>
+</head>
+<body>
+
+<h1>🏠 退改场景 · 意图树 + 承接策略</h1>
+
+<div class="tree">
+
+  <!-- 意图1 -->
+  <div class="intent-block c1">
+    <div class="intent-header">
+      <div class="intent-num">1</div>
+      <div class="intent-title">取消订单</div>
+      <div class="intent-keywords">「退」「取消」「不去了」「退款」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">📗 免费期内</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">自助取消流程，直接执行<span class="tag tag-action">操作</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">📙 付费期（非阶梯退）</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">展示扣款金额卡片 → [直接取消（扣¥XX）] / [尝试协商]<span class="tag tag-jump">跳意图3</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">📙 付费期（阶梯退）</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">展示扣款金额卡片 → [直接取消] / [尝试协商]<span class="tag tag-jump">跳意图3</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">📕 不可取消（18点后）</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">提示不可取消 → 引导协商退<span class="tag tag-jump">跳意图3</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 意图2 -->
+  <div class="intent-block c2">
+    <div class="intent-header">
+      <div class="intent-num">2</div>
+      <div class="intent-title">查退订政策</div>
+      <div class="intent-keywords">「能退吗」「扣多少」「退订规则」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">任意订单状态</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">拉该订单退订规则，直接文字回答<span class="tag tag-info">纯信息</span></span>
+      </div>
+      <div class="branch" style="color:#6b7280; font-size:12px; padding-top:2px;">
+        <span>⚠️ 优先级最高 — 用户可能只是在问，不一定要操作，先回答问题再说</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 意图3 -->
+  <div class="intent-block c3">
+    <div class="intent-header">
+      <div class="intent-num">3</div>
+      <div class="intent-title">协商退</div>
+      <div class="intent-keywords">「协商退」「和房东商量」「少扣点」「让房东发」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">非阶梯退</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">引导房客去订详页自行发起（7步流程）<span class="tag tag-action">操作</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">阶梯退</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">卡片：需由房东发起 → [联系房东] 虚拟号<span class="tag tag-action">操作</span></span>
+      </div>
+      <div class="branch" style="padding-left:70px; color:#6b7280; font-size:12px;">
+        <span>↳ 同时房东IM下发notice：「房客希望协商退，点击发起协商退」</span>
+      </div>
+      <div class="branch" style="padding-left:70px; color:#6b7280; font-size:12px;">
+        <span>↳ 协商退失败/超时未响应 → 回落到意图1让房客决定是否直接取消</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 意图4 -->
+  <div class="intent-block c4">
+    <div class="intent-header">
+      <div class="intent-num">4</div>
+      <div class="intent-title">查退款进度</div>
+      <div class="intent-keywords">「退款到了吗」「什么时候到账」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">退款处理中</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">展示预计到账时间<span class="tag tag-info">纯信息</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">退款已完成</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">告知已到账 + 金额<span class="tag tag-info">纯信息</span></span>
+      </div>
+      <div class="branch">
+        <span class="branch-condition">订单未取消</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">「您的订单尚未取消」 → 引导<span class="tag tag-jump">跳意图1</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 意图5 -->
+  <div class="intent-block c5">
+    <div class="intent-header">
+      <div class="intent-num">5</div>
+      <div class="intent-title">撤销取消 <span style="font-size:12px; font-weight:400; color:#9f1239;">（无功能，话术承接）</span></div>
+      <div class="intent-keywords">「刚取消了想反悔」「能恢复吗」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">任意状态</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">「取消已生效，暂不支持撤销。如需重新预订，可查看该房源」+ 房源跳转链接<span class="tag tag-talk">话术</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 意图6 -->
+  <div class="intent-block c6">
+    <div class="intent-header">
+      <div class="intent-num">6</div>
+      <div class="intent-title">改签 <span style="font-size:12px; font-weight:400; color:#7c2d12;">（无功能，话术承接）</span></div>
+      <div class="intent-keywords">「换日期」「推迟入住」「改时间」</div>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <span class="branch-condition">任意状态</span>
+        <span class="branch-arrow">→</span>
+        <span class="branch-action">「暂不支持自助改签，可先取消再重新预订心仪日期」[查退订政策] [联系房东]<span class="tag tag-talk">话术</span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  <strong>🔁 意图间跳转规则</strong>
+  意图1 → 意图3（用户选择协商）&nbsp;&nbsp;|&nbsp;&nbsp;
+  意图3 → 意图1（协商失败/房东不响应，回落让用户决定是否直接取消）&nbsp;&nbsp;|&nbsp;&nbsp;
+  意图4 → 意图1（订单未取消时引导操作）<br><br>
+  <strong>⚠️ 意图识别优先级</strong>
+  话术含「协商」「和房东商量」→ 优先识别为意图3，不走意图1取消流程，防止误触系统取消
+</div>
+
+</body>
+</html>

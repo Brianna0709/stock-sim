@@ -1,0 +1,126 @@
+:::title{nodeId="prd32title"}
+【PRD草稿】3.2 意图识别后承接工作流
+:::
+
+## 3.2.1 退款退订
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "功能概述"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "房客在IM中发送的消息命中退款退订意图关键词（退款、退订、取消、取消订单、如何取消订单），且当前咨询订单状态为**未取消**"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "系统识别到退款退订意图后，自动查询该订单的退款规则与当前时间，判断是否可免费取消，分场景承接：\n\n**场景一：当前可免费取消**\n\n适用范围：极速退且在免费退时间内；阶梯退/非阶梯退/灵活退且当前处于免费取消时间窗口内。\n\n处理方式：在IM对话中展示退款规则说明卡片，提供"立即取消订单"操作入口，房客确认后直接调用取消订单接口完成退款，全程无需跳出IM。\n\n**场景二：当前无法免费取消**\n\n适用范围：当前已超出免费取消时间，取消需承担违约金。\n\n处理方式：展示当前退款规则及预计扣款金额，提供"扣费取消"入口（如有）；同时引导房客与房东协商：\n- 阶梯退订单：引导房客向房东发起协商邀请，由房东下发协商退款\n- 非阶梯退订单：引导房客主动发起协商退款流程\n- 提供"暂不取消"选项，由房客自行决策"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ]
+]
+:::
+
+## 3.2.2 撤销取消
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "功能概述"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "房客在IM中发送的消息命中撤销取消意图关键词（撤销）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "系统识别到撤销意图后，直接回复标准话术，告知房客已取消订单无法撤销，若需入住可重新预订。\n\n回复话术：「尊敬的房客您好，已取消订单无法进行撤销哦，如您需要入住可重新预订~」"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ]
+]
+:::
+
+## 3.2.3 改签
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "功能概述"
+    },
+    {
+      "type": "table_header",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "房客在IM中发送的消息命中改签意图关键词（能改签吗、怎么改签、修改、改名字、改日期）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [400], "bgColor": null, "verticalAlign": null},
+      "content": "系统识别到改签意图后，直接回复标准话术，告知平台暂不支持改签，引导房客取消后重新预订。\n\n回复话术：「尊敬的房客您好，抱歉平台暂不支持改签，若您有改签诉求，可以取消订单后重新预订~」"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {"colspan": 1, "rowspan": 1, "colwidth": [200], "bgColor": null, "verticalAlign": null},
+      "content": "（待补充）"
+    }
+  ]
+]
+:::

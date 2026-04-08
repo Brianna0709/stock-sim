@@ -1,0 +1,264 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- START -->
+    <mxCell id="2" value="房客在IM中发送消息" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+      <mxGeometry x="570" y="40" width="220" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- INTENT -->
+    <mxCell id="3" value="意图识别" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
+      <mxGeometry x="595" y="150" width="170" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- 撤销取消 -->
+    <mxCell id="4" value="撤销取消" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="60" y="290" width="160" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- 退款/退订/取消 -->
+    <mxCell id="5" value="退款 / 退订 / 取消" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="570" y="290" width="220" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- 改签订单 -->
+    <mxCell id="6" value="改签订单" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1140" y="290" width="160" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- 话术兜底B -->
+    <mxCell id="7" value="话术兜底：已取消不可撤销&#xa;如需入住请重新预定" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="20" y="400" width="240" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- END_B -->
+    <mxCell id="8" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="80" y="510" width="80" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- 话术兜底C -->
+    <mxCell id="9" value="话术兜底：暂不支持改签&#xa;可取消后重新预定" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1100" y="400" width="240" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- END_C -->
+    <mxCell id="10" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1180" y="510" width="80" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Q1 订单已取消？ -->
+    <mxCell id="11" value="订单已取消？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
+      <mxGeometry x="595" y="400" width="220" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- 展示退款进度 -->
+    <mxCell id="12" value="展示退款进度" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="330" y="415" width="160" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- 退款状态文案 -->
+    <mxCell id="13" value="展示退款状态文案&#xa;处理中/退款成功/退款失败&#xa;（文案差异，非流程分支）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" parent="1" vertex="1">
+      <mxGeometry x="290" y="530" width="240" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- END_R -->
+    <mxCell id="14" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="370" y="650" width="80" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Q2 可免费取消？ -->
+    <mxCell id="15" value="可免费取消？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
+      <mxGeometry x="595" y="540" width="220" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- OPT1 确认取消 -->
+    <mxCell id="16" value="确认取消订单" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="490" y="700" width="140" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- OPT2 查看规则 -->
+    <mxCell id="17" value="查看取消规则" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="660" y="700" width="140" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- OPT3 暂不取消 -->
+    <mxCell id="18" value="暂不取消" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="830" y="700" width="120" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- 取消成功 -->
+    <mxCell id="19" value="取消成功" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="460" y="820" width="120" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- 取消失败 -->
+    <mxCell id="20" value="取消失败&#xa;→ 引导手动操作" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="610" y="820" width="160" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_OPT2 -->
+    <mxCell id="21" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="690" y="820" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_OPT3 -->
+    <mxCell id="22" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="860" y="820" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_OK -->
+    <mxCell id="23" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="480" y="920" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_FAIL -->
+    <mxCell id="24" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="640" y="920" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Q3 退款规则类型？ -->
+    <mxCell id="25" value="退款规则类型？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
+      <mxGeometry x="595" y="680" width="220" height="90" as="geometry" />
+    </mxCell>
+
+    <!-- L1 扣费取消（阶梯退） -->
+    <mxCell id="26" value="扣费取消" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1000" y="770" width="120" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- L2 协商退（阶梯退） -->
+    <mxCell id="27" value="邀请房东发起协商退 🆕" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1160" y="770" width="210" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- NL1 扣费取消（非阶梯退） -->
+    <mxCell id="28" value="扣费取消" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1000" y="870" width="120" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- NL2 协商退（非阶梯退） -->
+    <mxCell id="29" value="房客主动发起协商退 🆕" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1160" y="870" width="210" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_L1 -->
+    <mxCell id="30" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1025" y="870" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- NEG 协商退流程 -->
+    <mxCell id="31" value="协商退流程&#xa;房东同意/拒绝 → 通知房客" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1140" y="970" width="250" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- END_NL1 -->
+    <mxCell id="32" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1025" y="970" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- END_NEG -->
+    <mxCell id="33" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888888;fontSize=12;" parent="1" vertex="1">
+      <mxGeometry x="1215" y="1080" width="70" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ===== 连接线 ===== -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="2" target="3" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" value="撤销" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3" target="4" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e3" value="退款/退订/取消" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="3" target="5" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e4" value="改签/改日期" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3" target="6" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="7" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="8" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="6" target="9" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9" target="10" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5" target="11" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e10" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="11" target="12" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="12" target="13" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="13" target="14" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e13" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="11" target="15" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e14" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="15" target="16" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e15" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="15" target="17" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e16" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="15" target="18" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e17" value="成功" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="16" target="19" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e18" value="失败" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="16" target="20" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="17" target="21" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="18" target="22" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="19" target="23" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="20" target="24" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e23" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="15" target="25" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e24" value="阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="25" target="26" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e25" value="阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="25" target="27" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e26" value="非阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="25" target="28" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e27" value="非阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="25" target="29" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="26" target="30" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="27" target="31" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="28" target="32" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29" target="31" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="31" target="33" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>

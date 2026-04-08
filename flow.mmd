@@ -1,0 +1,77 @@
+flowchart TD
+    START([房客在IM中发送消息])
+    INTENT{意图识别}
+    START --> INTENT
+
+    INTENT -->|退款/退订/取消| A[退款 / 退订 / 取消]
+    INTENT -->|撤销| B[撤销取消]
+    INTENT -->|改签/改日期| C[改签订单]
+
+    B --> RB[话术兜底：已取消不可撤销\n如需入住请重新预定]
+    RB --> END_B([结束])
+
+    C --> RC[话术兜底：暂不支持改签\n可取消后重新预定]
+    RC --> END_C([结束])
+
+    A --> Q1{订单已取消？}
+
+    Q1 -->|是| REFUND[展示退款进度]
+    REFUND --> REFUND_STATUS[展示退款状态文案\n处理中 / 退款成功 / 退款失败\n文案差异，非流程分支]
+    REFUND_STATUS --> END_R([结束])
+
+    Q1 -->|否| Q2{可免费取消？}
+
+    Q2 -->|是| OPT1[确认取消订单]
+    Q2 -->|是| OPT2[查看取消规则]
+    Q2 -->|是| OPT3[暂不取消]
+
+    OPT2 --> END_OPT2([结束])
+    OPT3 --> END_OPT3([结束])
+
+    OPT1 -->|成功| OK[取消成功]
+    OPT1 -->|失败| FAIL[取消失败\n→ 引导手动操作]
+    OK --> END_OK([结束])
+    FAIL --> END_FAIL([结束])
+
+    Q2 -->|否| Q3{退款规则类型？}
+
+    Q3 -->|阶梯退| L1[扣费取消]
+    Q3 -->|阶梯退| L2[邀请房东发起协商退 🆕]
+    Q3 -->|非阶梯退| NL1[扣费取消]
+    Q3 -->|非阶梯退| NL2[房客主动发起协商退 🆕]
+
+    L1 --> END_L1([结束])
+    NL1 --> END_NL1([结束])
+
+    L2 --> NEG[协商退流程\n房东同意/拒绝 → 通知房客]
+    NL2 --> NEG
+    NEG --> END_NEG([结束])
+
+    style START fill:#dae8fc,stroke:#6c8ebf
+    style END_B fill:#f0f0f0,stroke:#888
+    style END_C fill:#f0f0f0,stroke:#888
+    style END_R fill:#f0f0f0,stroke:#888
+    style END_OPT2 fill:#f0f0f0,stroke:#888
+    style END_OPT3 fill:#f0f0f0,stroke:#888
+    style END_OK fill:#f0f0f0,stroke:#888
+    style END_FAIL fill:#f0f0f0,stroke:#888
+    style END_L1 fill:#f0f0f0,stroke:#888
+    style END_NL1 fill:#f0f0f0,stroke:#888
+    style END_NEG fill:#f0f0f0,stroke:#888
+    style A fill:#f8cecc,stroke:#b85450
+    style B fill:#e1d5e7,stroke:#9673a6
+    style C fill:#e1d5e7,stroke:#9673a6
+    style REFUND fill:#dae8fc,stroke:#6c8ebf
+    style REFUND_STATUS fill:#f5f5f5,stroke:#999
+    style RB fill:#f5f5f5,stroke:#999
+    style RC fill:#f5f5f5,stroke:#999
+    style OPT1 fill:#d5e8d4,stroke:#82b366
+    style OPT2 fill:#dae8fc,stroke:#6c8ebf
+    style OPT3 fill:#f5f5f5,stroke:#999
+    style OK fill:#d5e8d4,stroke:#82b366
+    style FAIL fill:#f8cecc,stroke:#b85450
+    style L1 fill:#ffe6cc,stroke:#d79b00
+    style NL1 fill:#ffe6cc,stroke:#d79b00
+    style L2 fill:#d5e8d4,stroke:#82b366
+    style NL2 fill:#d5e8d4,stroke:#82b366
+    style NEG fill:#e1d5e7,stroke:#9673a6
