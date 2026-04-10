@@ -1,0 +1,330 @@
+<mxfile host="app.diagrams.net" modified="2026-04-02" version="21.0.0">
+  <diagram name="IM退款自助化主流程" id="refund-flow-v3">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="IM新增订后退款自助化——主流程图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="20" width="700" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- ROW1: 开始 -->
+        <mxCell id="start" value="房客在IM中发送消息" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="90" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ROW2: 意图识别 -->
+        <mxCell id="intent" value="意图识别" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="975" y="200" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="e01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="start" target="intent" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ROW3: 三大意图 -->
+        <mxCell id="intentA" value="退款 / 退订 / 取消" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="350" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e02" value="退款/退订/取消" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;" edge="1" source="intent" target="intentA" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="intentB" value="撤销取消" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="975" y="350" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e03" value="撤销" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;" edge="1" source="intent" target="intentB" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="intentC" value="改签订单" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="350" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e04" value="改签/改日期" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;" edge="1" source="intent" target="intentC" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 撤销/改签 话术兜底 + 结束 -->
+        <mxCell id="reply_B" value="话术兜底：已取消不可撤销&#xa;如需入住请重新预定" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="950" y="470" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e05" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="intentB" target="reply_B" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end_B" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e_endB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="reply_B" target="end_B" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="reply_C" value="话术兜底：暂不支持改签&#xa;可取消后重新预定" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="470" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e06" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="intentC" target="reply_C" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end_C" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1515" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e_endC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="reply_C" target="end_C" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 退款退订主流程 ===== -->
+
+        <!-- ROW4: 订单已取消？ -->
+        <mxCell id="check_cancelled" value="订单已取消？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="470" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e07" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="intentA" target="check_cancelled" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 已取消→左：展示退款进度 -->
+        <mxCell id="refund_query" value="展示退款进度" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="600" width="160" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e08" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;fontStyle=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="check_cancelled" target="refund_query" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ROW5左: 退款状态？ -->
+        <mxCell id="check_status" value="退款状态？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="730" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e09" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="refund_query" target="check_status" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ROW6左: 三种退款状态横排 -->
+        <mxCell id="s_processing" value="处理中" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="10" y="880" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_success" value="退款成功" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="135" y="880" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_fail" value="退款失败&#xa;→引导联系客服" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="880" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="check_status" target="s_processing" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="check_status" target="s_success" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="check_status" target="s_fail" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 三种状态→结束 -->
+        <mxCell id="end_sp" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="20" y="990" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_ss" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="145" y="990" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_sf" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="275" y="990" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e_esp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="s_processing" target="end_sp" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ess" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="s_success" target="end_ss" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_esf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="s_fail" target="end_sf" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 未取消→下：可免费取消？ ROW5中 -->
+        <mxCell id="check_free" value="可免费取消？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="620" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;fontStyle=1;" edge="1" source="check_cancelled" target="check_free" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 可免费取消→三个并排 ROW6中 -->
+        <mxCell id="opt_confirm" value="确认取消订单" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="430" y="790" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_rules" value="查看取消规则" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="790" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="opt_notcancel" value="暂不取消" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="750" y="790" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="check_free" target="opt_confirm" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="435" y="760" />
+              <mxPoint x="500" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="check_free" target="opt_rules" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="435" y="760" />
+              <mxPoint x="660" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="check_free" target="opt_notcancel" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="435" y="760" />
+              <mxPoint x="820" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ROW7: 确认取消→成功/失败 -->
+        <mxCell id="cancel_ok" value="取消成功" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="920" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel_fail2" value="取消失败&#xa;→引导手动操作" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="920" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="成功" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="opt_confirm" target="cancel_ok" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="失败" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="opt_confirm" target="cancel_fail2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 查看规则/暂不取消→结束 -->
+        <mxCell id="end_rules" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="625" y="910" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_nc" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="785" y="910" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e_er" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="opt_rules" target="end_rules" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_enc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="opt_notcancel" target="end_nc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end_cok" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="405" y="1030" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_cfail" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="545" y="1030" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ecok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="cancel_ok" target="end_cok" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ecfail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="cancel_fail2" target="end_cfail" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 不可免费→退款规则类型？ ROW6右（独立一行，右移） -->
+        <mxCell id="check_type" value="退款规则类型？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="790" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="check_free" target="check_type" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ROW7右: 阶梯退两个并排 -->
+        <mxCell id="ladder_opt1" value="扣费取消" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="960" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ladder_opt2" value="邀请房东&#xa;发起协商退 🆕" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="960" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" source="check_type" target="ladder_opt1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="920" />
+              <mxPoint x="1035" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" source="check_type" target="ladder_opt2" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="920" />
+              <mxPoint x="1195" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ROW7右: 非阶梯退两个并排 -->
+        <mxCell id="nl_opt1" value="扣费取消" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="960" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nl_opt2" value="房客主动&#xa;发起协商退 🆕" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="960" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="非阶梯退" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=11;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" source="check_type" target="nl_opt1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="920" />
+              <mxPoint x="1375" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" source="check_type" target="nl_opt2" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="920" />
+              <mxPoint x="1535" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ROW8: 协商退汇合 -->
+        <mxCell id="negotiate" value="协商退流程&#xa;房东同意 / 拒绝 → 通知房客" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1100" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="ladder_opt2" target="negotiate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="nl_opt2" target="negotiate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 扣费取消/协商退→结束 -->
+        <mxCell id="end_l1" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="985" y="1080" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_nl1" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="1080" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end_neg" value="结束" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1230" width="90" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e_el1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="ladder_opt1" target="end_l1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_enl1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="nl_opt1" target="end_nl1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_eneg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" source="negotiate" target="end_neg" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 图例 -->
+        <mxCell id="leg_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f9f9;strokeColor=#ccc;" vertex="1" parent="1">
+          <mxGeometry x="1780" y="300" width="250" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_title" value="图例" style="text;html=1;fontStyle=1;fontSize=13;align=center;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1860" y="310" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="原有能力" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="350" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="新增能力 🆕" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="400" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="系统查询/展示" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="450" width="120" height="35" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

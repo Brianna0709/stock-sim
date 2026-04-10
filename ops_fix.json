@@ -1,0 +1,26 @@
+{
+  "operations": [
+    {
+      "op": "replace",
+      "target": { "nodeId": "3770091991af4357a8c551a83b8d05b8" },
+      "content": {
+        "type": "paragraph",
+        "attrs": {
+          "indent": 0,
+          "align": "left"
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "strong" }],
+            "text": "准确率提升"
+          },
+          {
+            "type": "text",
+            "text": "是基础底座，目标将端到端可用率从75-80%提升至90%，满意率从70%提升至80%，为其他方向的转化效果提供保障。"
+          }
+        ]
+      }
+    }
+  ]
+}
