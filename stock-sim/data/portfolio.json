@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 101327.78,
-    "invested": 51327.75
+    "total_value": 103040.21,
+    "invested": 53040.18
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 592.5,
-      "market_value": 15398.13,
-      "pnl": 398.15,
-      "pnl_pct": 2.65,
-      "today_chg_pct": 0.66
+      "cur_price": 628.6,
+      "market_value": 16336.31,
+      "pnl": 1336.33,
+      "pnl_pct": 8.91,
+      "today_chg_pct": 2.87
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 182.3,
-      "market_value": 15679.48,
-      "pnl": 679.48,
-      "pnl_pct": 4.53,
-      "today_chg_pct": 2.36
+      "cur_price": 192.15,
+      "market_value": 16526.67,
+      "pnl": 1526.67,
+      "pnl_pct": 10.18,
+      "today_chg_pct": 1.87
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 374.8,
-      "market_value": 20250.14,
-      "pnl": 250.15,
-      "pnl_pct": 1.25,
-      "today_chg_pct": 0.67
+      "cur_price": 373.45,
+      "market_value": 20177.2,
+      "pnl": 177.21,
+      "pnl_pct": 0.89,
+      "today_chg_pct": 0.7
     }
   },
   "trades": [
@@ -148,16 +148,48 @@
       "invested": 51327.75,
       "return_pct": 1.3278,
       "note": "\u6536\u76d8\u590d\u76d8\uff1aNVDA $182.3 | MSFT $374.8 | QQQ $592.5"
+    },
+    {
+      "date": "2026-04-09",
+      "total_value": 101602.89,
+      "cash": 50000.03,
+      "invested": 51602.86,
+      "return_pct": 1.6029,
+      "note": "\u6536\u76d8\u590d\u76d8\uff1aNVDA $185.45 | MSFT $376.2 | QQQ $589.75"
+    },
+    {
+      "date": "2026-04-10",
+      "total_value": 102142.49,
+      "cash": 50000.03,
+      "invested": 52142.46,
+      "return_pct": 2.14,
+      "note": "\u6536\u76d8\u590d\u76d8\uff1aNVDA $188.63 | MSFT $370.87 | QQQ $611.07"
+    },
+    {
+      "date": "2026-04-13",
+      "total_value": 102142.49,
+      "cash": 50000.03,
+      "invested": 52142.46,
+      "return_pct": 2.1425,
+      "note": "\u6536\u76d8\u590d\u76d8\uff1aNVDA $188.63 | MSFT $370.87 | QQQ $611.07"
+    },
+    {
+      "date": "2026-04-14",
+      "total_value": 103040.21,
+      "cash": 50000.03,
+      "invested": 53040.18,
+      "return_pct": 3.0402,
+      "note": "\u6536\u76d8\u590d\u76d8\uff1aNVDA $192.15 | MSFT $373.45 | QQQ $628.6"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 6655,
-    "sp500_change_pct": 0.35,
-    "nasdaq": 22250,
-    "nasdaq_change_pct": 0.43,
-    "dow": 47020,
-    "dow_change_pct": 0.35,
-    "note": "2026-04-08\u6536\u76d8\uff1aS&P500 6655(+0.35%)\u3002\u79d1\u6280\u80a1\u666e\u6da8\uff0cNVDA\u9886\u6da8+2.36%\uff0cMSFT\u6da8+0.67%\uff0cQQQ\u6da8+0.67%\u3002\u5b58\u50a8\u82af\u7247\u4e0eAI\u7b97\u529b\u9700\u6c42\u6301\u7eed\u5f3a\u52b2\u3002"
+    "sp500": 6886.24,
+    "sp500_change_pct": 1.02,
+    "nasdaq": 22267.5,
+    "nasdaq_change_pct": 1.23,
+    "dow": 47972.0,
+    "dow_change_pct": 0.63,
+    "note": "2026-04-14\u6536\u76d8\uff1a\u4e09\u5927\u6307\u6570\u5168\u7ebf\u4e0a\u6da8\uff0c\u6807\u666e500\u6536\u4e8e6886.24\u70b9(+1.02%)\uff0c\u7eb3\u6307+1.23%\u3002"
   }
 }
