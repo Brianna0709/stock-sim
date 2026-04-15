@@ -1,738 +1,82 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐕 万能小汪 · 模拟盘</title>
-<script>
-window.__PORTFOLIO_DATA__ = {
-  "meta": {
-    "market": "US",
-    "start_date": "2026-04-01",
-    "initial_capital": 100000,
-    "strategy": "中线稳健成长"
-  },
-  "account": {
-    "cash": 50000.03,
-    "total_value": 102142.49,
-    "invested": 52142.46
-  },
-  "positions": {
-    "QQQ": {
-      "shares": 25.9884,
-      "cost_price": 577.18,
-      "cost_basis": 14999.98,
-      "cur_price": 611.07,
-      "market_value": 15880.73,
-      "pnl": 880.75,
-      "pnl_pct": 5.87,
-      "today_chg_pct": 3.62
-    },
-    "NVDA": {
-      "shares": 86.0092,
-      "cost_price": 174.4,
-      "cost_basis": 15000.0,
-      "cur_price": 188.63,
-      "market_value": 16223.92,
-      "pnl": 1223.92,
-      "pnl_pct": 8.16,
-      "today_chg_pct": 1.71
-    },
-    "MSFT": {
-      "shares": 54.0292,
-      "cost_price": 370.17,
-      "cost_basis": 19999.99,
-      "cur_price": 370.87,
-      "market_value": 20037.81,
-      "pnl": 37.82,
-      "pnl_pct": 0.19,
-      "today_chg_pct": -1.42
-    }
-  },
-  "trades": [
-    {
-      "id": 4,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "MSFT",
-      "shares": 54.0292,
-      "price": 370.17,
-      "amount": 19999.99,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 3,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "NVDA",
-      "shares": 86.0092,
-      "price": 174.4,
-      "amount": 15000.0,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 2,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "QQQ",
-      "shares": 25.9884,
-      "price": 577.18,
-      "amount": 14999.98,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 1,
-      "date": "2026-04-01",
-      "type": "init",
-      "ticker": null,
-      "shares": null,
-      "price": null,
-      "amount": 100000,
-      "note": "账户初始化"
-    }
-  ],
-  "snapshots": [
-    {
-      "date": "2026-04-01",
-      "total_value": 100000,
-      "cash": 100000,
-      "invested": 0,
-      "return_pct": 0.0,
-      "note": "账户初始化"
-    },
-    {
-      "date": "2026-04-01",
-      "total_value": 100000.0,
-      "cash": 50000.03,
-      "invested": 49999.97,
-      "return_pct": 0.0,
-      "note": "首批建仓：QQQ / NVDA / MSFT"
-    },
-    {
-      "date": "2026-04-01",
-      "total_value": 100258.2,
-      "cash": 50000.03,
-      "invested": 50258.17,
-      "return_pct": 0.2582,
-      "note": "收盘复盘：NVDA $175.75 | MSFT $369.37 | QQQ $584.31"
-    },
-    {
-      "date": "2026-04-02",
-      "total_value": 100453.59,
-      "cash": 50000.03,
-      "invested": 50453.56,
-      "return_pct": 0.4536,
-      "note": "收盘复盘：NVDA $176.45 | MSFT $371.55 | QQQ $584.98"
-    },
-    {
-      "date": "2026-04-03",
-      "total_value": 100639.8,
-      "cash": 50000.03,
-      "invested": 50639.77,
-      "return_pct": 0.6398,
-      "note": "周末复盘（4月3日耶稣受难日休市）：NVDA $177.39 | MSFT $373.5 | QQQ $584.98"
-    },
-    {
-      "date": "2026-04-06",
-      "total_value": 100546.99,
-      "cash": 50000.03,
-      "invested": 50546.96,
-      "return_pct": 0.547,
-      "note": "收盘复盘：NVDA $176.09 | MSFT $372.88 | QQQ $587.0"
-    },
-    {
-      "date": "2026-04-07",
-      "total_value": 100729.31,
-      "cash": 50000.03,
-      "invested": 50729.28,
-      "return_pct": 0.7293,
-      "note": "收盘复盘：NVDA $178.1 | MSFT $372.29 | QQQ $588.59"
-    },
-    {
-      "date": "2026-04-08",
-      "total_value": 101327.78,
-      "cash": 50000.03,
-      "invested": 51327.75,
-      "return_pct": 1.3278,
-      "note": "收盘复盘：NVDA $182.3 | MSFT $374.8 | QQQ $592.5"
-    },
-    {
-      "date": "2026-04-09",
-      "total_value": 101602.89,
-      "cash": 50000.03,
-      "invested": 51602.86,
-      "return_pct": 1.6029,
-      "note": "收盘复盘：NVDA $185.45 | MSFT $376.2 | QQQ $589.75"
-    },
-    {
-      "date": "2026-04-10",
-      "total_value": 102142.49,
-      "cash": 50000.03,
-      "invested": 52142.46,
-      "return_pct": 2.14,
-      "note": "收盘复盘：NVDA $188.63 | MSFT $370.87 | QQQ $611.07"
-    }
-  ],
-  "pending_plan": [],
-  "market_context": {
-    "sp500": 6824,
-    "sp500_change_pct": 0.62,
-    "nasdaq": 22822,
-    "nasdaq_change_pct": 0.83,
-    "dow": 48186,
-    "dow_change_pct": 0.58,
-    "note": "2026-04-10收盘：标普500连涨8日，科技股分化。QQQ大涨+3.61%，NVDA续涨+1.71%，MSFT回调-1.42%。"
-  }
-};;
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<title>美股模拟盘 | 上海巴菲特</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;min-height:100vh}
-.header{background:#161b27;border-bottom:1px solid #21262d;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.logo-wrap{display:flex;align-items:center;gap:10px}
-.title{font-size:16px;font-weight:700;color:#58a6ff}
-.sub{font-size:11px;color:#8b949e;margin-top:1px}
-.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(46,160,67,.15);border:1px solid rgba(46,160,67,.35);color:#3fb950;padding:3px 9px;border-radius:20px;font-size:11px}
-.dot{width:5px;height:5px;background:#3fb950;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.update-txt{font-size:11px;color:#8b949e;margin-top:3px;text-align:right}
-.main{padding:18px 24px;max-width:1200px;margin:0 auto}
-/* KPI */
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
-.kpi{background:#161b27;border:1px solid #21262d;border-radius:10px;padding:16px 18px;position:relative;overflow:hidden}
-.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.kpi.bl::before{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
-.kpi.gr::before{background:linear-gradient(90deg,#2ea043,#3fb950)}
-.kpi.ye::before{background:linear-gradient(90deg,#9e6a03,#e3b341)}
-.kpi.pu::before{background:linear-gradient(90deg,#6e40c9,#bc8cff)}
-.kl{font-size:11px;color:#8b949e;margin-bottom:7px;text-transform:uppercase;letter-spacing:.4px}
-.kv{font-size:24px;font-weight:700;letter-spacing:-.5px}
-.kv.blue{color:#58a6ff}.kv.green{color:#3fb950}.kv.yellow{color:#e3b341}.kv.purple{color:#bc8cff}.kv.red{color:#f85149}.kv.dim{color:#8b949e}
-.ks{font-size:11px;color:#8b949e;margin-top:4px}
-.ki{position:absolute;right:14px;top:14px;font-size:20px;opacity:.18}
-/* 布局 */
-.row2{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:12px}
-.row2b{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.panel{background:#161b27;border:1px solid #21262d;border-radius:10px;overflow:hidden}
-.ph{padding:12px 16px;border-bottom:1px solid #21262d;display:flex;align-items:center;justify-content:space-between}
-.pt{font-size:13px;font-weight:600;color:#c9d1d9}
-.pb2{font-size:11px;padding:2px 7px;border-radius:10px;background:rgba(88,166,255,.12);color:#58a6ff;border:1px solid rgba(88,166,255,.25)}
-.pb{padding:16px}
-/* 表格 */
-table{width:100%;border-collapse:collapse}
-th{font-size:11px;color:#8b949e;font-weight:500;padding:7px 10px;text-align:left;text-transform:uppercase;border-bottom:1px solid #21262d}
-td{padding:10px 10px;font-size:13px;border-bottom:1px solid rgba(33,38,45,.5)}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:rgba(88,166,255,.025)}
-.tk{display:inline-block;padding:2px 7px;border-radius:5px;font-weight:700;font-size:12px}
-.t-qqq{background:rgba(88,166,255,.2);color:#58a6ff}
-.t-nvda{background:rgba(63,185,80,.2);color:#3fb950}
-.t-msft{background:rgba(188,140,255,.2);color:#bc8cff}
-.t-def{background:rgba(139,148,158,.12);color:#8b949e}
-.pos{color:#3fb950;font-weight:600}.neg{color:#f85149;font-weight:600}.neu{color:#8b949e}
-/* 交易记录 */
-.tlog{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto}
-.ti{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid #21262d;border-radius:7px}
-.tic{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.tc-buy{background:rgba(46,160,67,.15)}.tc-sell{background:rgba(248,81,73,.15)}.tc-init{background:rgba(88,166,255,.15)}
-.tinfo{flex:1}
-.ttitle{font-size:13px;font-weight:600;color:#c9d1d9}
-.tmeta{font-size:11px;color:#8b949e;margin-top:1px}
-.tamt{text-align:right}
-.tprice{font-size:13px;font-weight:700}
-.tdate{font-size:11px;color:#8b949e;margin-top:1px}
-/* 仓位条 */
-.bars{margin-top:14px}
-.brow{margin-bottom:10px}
-.blabel{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
-.blabel span:first-child{color:#c9d1d9}
-.blabel span:last-child{color:#8b949e}
-.btrack{height:5px;background:#21262d;border-radius:3px;overflow:hidden}
-.bfill{height:100%;border-radius:3px;transition:width 1s ease}
-.fy{background:linear-gradient(90deg,#9e6a03,#e3b341)}
-.fb{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
-.fg{background:linear-gradient(90deg,#2ea043,#3fb950)}
-.fp{background:linear-gradient(90deg,#6e40c9,#bc8cff)}
-/* 日历 */
-.cal-wrap{display:flex;gap:16px}
-.cal{flex-shrink:0;width:260px}
-.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cal-nav button{background:none;border:1px solid #21262d;color:#8b949e;width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.15s}
-.cal-nav button:hover{border-color:#58a6ff;color:#58a6ff}
-.cal-month{font-size:13px;font-weight:600;color:#c9d1d9}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.cal-dow{font-size:10px;color:#8b949e;text-align:center;padding:3px 0}
-.cal-day{font-size:12px;text-align:center;padding:5px 0;border-radius:5px;cursor:pointer;transition:.15s;border:1px solid transparent;position:relative}
-.cal-day:hover{background:rgba(88,166,255,.1);border-color:rgba(88,166,255,.2)}
-.cal-day.active{background:rgba(88,166,255,.2);border-color:#58a6ff;color:#58a6ff;font-weight:700}
-.cal-day.has-data{color:#c9d1d9}
-.cal-day.has-data.pos-day::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#3fb950;border-radius:50%}
-.cal-day.has-data.neg-day::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#f85149;border-radius:50%}
-.cal-day.today{border-color:rgba(227,179,65,.4);color:#e3b341}
-.cal-day.other-month{opacity:.25;cursor:default}
-.cal-detail{flex:1;display:flex;flex-direction:column;justify-content:center}
-.cd-date{font-size:12px;color:#8b949e;margin-bottom:12px}
-.cd-val{font-size:32px;font-weight:700;letter-spacing:-1px;margin-bottom:6px}
-.cd-pct{font-size:14px;margin-bottom:16px}
-.cd-rows{display:flex;flex-direction:column;gap:7px}
-.cd-row{display:flex;justify-content:space-between;font-size:12px;padding:7px 10px;background:rgba(255,255,255,.02);border-radius:6px;border:1px solid #21262d}
-.cd-row span:first-child{color:#8b949e}
-.cd-row span:last-child{color:#c9d1d9;font-weight:600}
-.cd-empty{color:#8b949e;font-size:13px;text-align:center;padding:24px 0}
-/* 市场 */
-.mkt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mitem{padding:11px;background:rgba(255,255,255,.02);border-radius:7px;border:1px solid #21262d}
-.ml{font-size:11px;color:#8b949e;margin-bottom:3px}
-.mv{font-size:18px;font-weight:700}
-.ms{font-size:11px;margin-top:1px}
-/* 策略 */
-.rules{font-size:12px;color:#8b949e;line-height:1.9;padding:12px;background:rgba(255,255,255,.02);border-radius:7px;border:1px solid #21262d}
-.rules span{color:#c9d1d9}
-/* Tooltip */
-.tip{position:relative;display:inline-flex;align-items:center;cursor:help}
-.tip-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;background:rgba(139,148,158,.18);border:1px solid rgba(139,148,158,.3);border-radius:50%;font-size:9px;color:#8b949e;margin-left:4px;vertical-align:middle;transition:.15s;flex-shrink:0;line-height:1}
-.tip:hover .tip-icon{background:rgba(88,166,255,.2);border-color:#58a6ff;color:#58a6ff}
-.tip-box{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1a1f2e;border:1px solid #30363d;border-radius:8px;padding:9px 12px;width:210px;font-size:11px;line-height:1.7;color:#c9d1d9;z-index:200;pointer-events:none;transition:opacity .15s,visibility .15s;box-shadow:0 4px 16px rgba(0,0,0,.5)}
-.tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#30363d}
-.tip:hover .tip-box{visibility:visible;opacity:1}
-/* 右对齐（用于左侧容易被截断的 tip） */
-.tip-box.right{left:0;transform:none}
-.tip-box.right::after{left:14px;transform:none}
-/* 左对齐（用于右侧容易被截断的 tip） */
-.tip-box.left{left:auto;right:0;transform:none}
-.tip-box.left::after{left:auto;right:14px;transform:none}
-/* 市场 item with tooltip */
-.mitem{position:relative}
-/* loading */
-.loading{position:fixed;inset:0;background:rgba(13,17,23,.8);display:flex;align-items:center;justify-content:center;z-index:999;font-size:15px;color:#58a6ff;gap:8px;backdrop-filter:blur(4px)}
-.spin{animation:spin 1s linear infinite;display:inline-block}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@media(max-width:900px){.kpi-row{grid-template-columns:1fr 1fr}.row2,.row2b{grid-template-columns:1fr}.cal-wrap{flex-direction:column}}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; }
+.header { text-align: center; padding: 20px; border-bottom: 1px solid #30363d; }
+.header h1 { color: #58a6ff; margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+.stat-card { background: #161b22; padding: 15px; border-radius: 8px; border: 1px solid #30363d; text-align: center; }
+.stat-card .value { font-size: 24px; font-weight: bold; color: #3fb950; }
+.stat-card .label { font-size: 12px; color: #8b949e; margin-top: 5px; }
+.positions { margin-top: 20px; }
+.positions h2 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #30363d; }
+th { color: #8b949e; font-weight: normal; }
+.positive { color: #3fb950; }
+.negative { color: #f85149; }
+.footer { text-align: center; margin-top: 30px; padding: 20px; color: #8b949e; font-size: 12px; }
 </style>
 </head>
 <body>
-<div id="loading" class="loading"><span class="spin">⚙️</span> 加载中…</div>
-
 <div class="header">
-  <div class="logo-wrap">
-    <span style="font-size:24px">🐕</span>
-    <div>
-      <div class="title">万能小汪 · 虚拟模拟盘</div>
-      <div class="sub">美股中线 · 初始 $100,000 · 2026-04-01</div>
-    </div>
-  </div>
-  <div style="text-align:right">
-    <div class="badge"><div class="dot"></div>模拟运行中</div>
-    <div class="update-txt" id="update-txt">加载中…</div>
-  </div>
+<h1>📈 美股模拟盘 | 上海巴菲特</h1>
+<p>中线稳健策略 | 模拟交易 | 数据更新: 2026-04-15</p>
 </div>
 
-<div class="main">
-  <!-- KPI -->
-  <div class="kpi-row">
-    <div class="kpi bl"><div class="ki">💰</div><div class="kl">账户总资产</div><div class="kv blue" id="k-total">—</div><div class="ks" id="k-total-s">—</div></div>
-    <div class="kpi gr"><div class="ki">📈</div><div class="kl">累计收益</div><div class="kv" id="k-pnl">—</div><div class="ks" id="k-pnl-s">—</div></div>
-    <div class="kpi ye"><div class="ki">🏦</div><div class="kl">可用现金</div><div class="kv yellow" id="k-cash">—</div><div class="ks" id="k-cash-s">—</div></div>
-    <div class="kpi pu"><div class="ki">📊</div><div class="kl">持仓市值</div><div class="kv purple" id="k-mkt">—</div><div class="ks" id="k-mkt-s">—</div></div>
-  </div>
-
-  <!-- 净值曲线 + 仓位 -->
-  <div class="row2">
-    <div class="panel">
-      <div class="ph"><div class="pt">📈 净值曲线</div><div class="pb2" id="chart-badge">—</div></div>
-      <div class="pb"><div style="height:210px;position:relative"><canvas id="equityChart"></canvas></div></div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">🥧 仓位分布</div><div class="pb2" id="alloc-badge">—</div></div>
-      <div class="pb">
-        <div style="height:130px;display:flex;justify-content:center"><canvas id="allocChart"></canvas></div>
-        <div class="bars" id="alloc-bars"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 持仓 + 交易 -->
-  <div class="row2b">
-    <div class="panel">
-      <div class="ph"><div class="pt">💼 当前持仓</div><div class="pb2" id="pos-badge">0 只</div></div>
-      <div class="pb">
-        <table><thead><tr><th>标的</th><th>成本价</th><th>现价</th><th>持股</th><th>市值</th><th>盈亏%</th></tr></thead>
-        <tbody id="holdings-body"></tbody></table>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">📋 操作记录</div><div class="pb2" id="trade-badge">0 条</div></div>
-      <div class="pb"><div class="tlog" id="trade-list"></div></div>
-    </div>
-  </div>
-
-  <!-- 历史收益日历 -->
-  <div class="panel" style="margin-bottom:12px">
-    <div class="ph"><div class="pt">📅 历史收益日历</div><div class="pb2">点击日期查看详情</div></div>
-    <div class="pb">
-      <div class="cal-wrap">
-        <div class="cal">
-          <div class="cal-nav">
-            <button id="cal-prev" onclick="calMove(-1)">‹</button>
-            <div class="cal-month" id="cal-title">—</div>
-            <button id="cal-next" onclick="calMove(1)">›</button>
-          </div>
-          <div class="cal-grid" id="cal-grid"></div>
-        </div>
-        <div class="cal-detail" id="cal-detail">
-          <div class="cd-empty">← 点击左侧日期查看当天收益</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 市场背景 + 策略 -->
-  <div class="row2b">
-    <div class="panel">
-      <div class="ph"><div class="pt">🌍 市场背景</div></div>
-      <div class="pb">
-        <div class="mkt-grid">
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">S&amp;P 500<span class="tip-icon">?</span><div class="tip-box right">标普500指数，追踪美国500家最大上市公司，是衡量美股整体健康度的最重要指标。指数涨 = 大盘好。</div></span>
-            </div>
-            <div class="mv" style="color:#3fb950" id="m-sp">—</div><div class="ms" style="color:#3fb950" id="m-spc">—</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">近4周涨幅<span class="tip-icon">?</span><div class="tip-box right">S&amp;P 500 近四周累计涨幅，反映短期市场动能。持续上涨说明资金情绪乐观，是做多的顺风局。</div></span>
-            </div>
-            <div class="mv" style="color:#3fb950">+5.13%</div><div class="ms" style="color:#8b949e">趋势向上</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">华尔街目标<span class="tip-icon">?</span><div class="tip-box left">高盛、摩根士丹利、德银等大行预测的 S&amp;P 500 年末目标价，当前约 6,528，目标 7,500 意味着还有约 15% 上涨空间。</div></span>
-            </div>
-            <div class="mv" style="color:#58a6ff">7,500</div><div class="ms" style="color:#8b949e">大摩/高盛/德银</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">美联储预期<span class="tip-icon">?</span><div class="tip-box left">市场预期美联储年内降息2次（各25BP）。降息 = 借钱变便宜 = 企业估值提升 = 利好股市，科技股尤其受益。</div></span>
-            </div>
-            <div class="mv" style="color:#e3b341">↓ 2次</div><div class="ms" style="color:#8b949e">年内各降25BP</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">📌 策略规则</div></div>
-      <div class="pb">
-        <div class="rules">
-          · <span class="tip" style="display:inline">单票最大仓位<span class="tip-icon">?</span><div class="tip-box right">一只股票最多买入 $20,000。避免单票暴雷拖垮整个组合，哪怕看再准也要控制集中度。</div></span>：<span>20%</span>
-          &nbsp;· <span class="tip" style="display:inline">同时持仓<span class="tip-icon">?</span><div class="tip-box right">同时持有 5-8 只标的。太少风险集中，太多精力分散管不过来，5-8 是平衡点。</div></span>：<span>5-8 只</span><br>
-          · <span class="tip" style="display:inline">现金储备<span class="tip-icon">?</span><div class="tip-box right">账户始终保留至少 20% 现金（≥$20,000）。大跌时有弹药加仓，不会被迫在低点卖股换钱。</div></span>：<span>≥20%</span>
-          &nbsp;· <span class="tip" style="display:inline">止损线<span class="tip-icon">?</span><div class="tip-box right">单只股票亏损达到 -8% 时强制卖出清仓。铁纪律，不赌反弹，保留本金是最重要的事。</div></span>：<span style="color:#f85149">单票 -8%</span><br>
-          · <span class="tip" style="display:inline">持仓周期<span class="tip-icon">?</span><div class="tip-box right">中线策略，持有 2-8 周等趋势充分发展。不追涨杀跌，也不长期死守，跟着基本面和技术面走。</div></span>：<span>2-8 周（中线）</span><br>
-          · <span class="tip" style="display:inline">盘前推送<span class="tip-icon">?</span><div class="tip-box right">北京时间 21:00 = 美股开盘前1小时。此时推送操作计划，你确认后记录为当日交易。</div></span>：<span style="color:#e3b341">北京 21:00</span>
-          &nbsp;· <span class="tip" style="display:inline">复盘<span class="tip-icon">?</span><div class="tip-box right">北京时间次日 06:00 = 美股收盘后约1小时。此时更新实际收盘盈亏，推送页面最新数据。</div></span>：<span style="color:#e3b341">次日 06:00</span><br>
-          <br>
-          <span style="color:#8b949e;font-size:11px">⚠ 本模拟盘为虚拟交易，不构成任何真实投资建议。</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="stats">
+<div class="stat-card">
+<div class="value">$104,056.47</div>
+<div class="label">总资产</div>
+</div>
+<div class="stat-card">
+<div class="value positive">+4.06%</div>
+<div class="label">累计收益</div>
+</div>
+<div class="stat-card">
+<div class="value">$50,000.03</div>
+<div class="label">可用现金</div>
+</div>
 </div>
 
-<script>
-// ── 数据层 ──────────────────────────────────────
-const API = window.location.origin + '/api/portfolio';
-let equityChart = null, allocChart = null;
-let _snapshots = [];  // 供日历使用
+<div class="positions">
+<h2>📊 持仓明细</h2>
+<table>
+<tr><th>标的</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>盈亏</th><th>今日涨跌</th></tr>
+<tr>
+<td><strong>QQQ</strong></td>
+<td>25.99</td>
+<td>$577.18</td>
+<td>$638.50</td>
+<td>$16,593.59</td>
+<td class="positive">+1,593.61 (+10.62%)</td>
+<td class="positive">+1.57%</td>
+</tr><tr>
+<td><strong>NVDA</strong></td>
+<td>86.01</td>
+<td>$174.40</td>
+<td>$198.87</td>
+<td>$17,104.65</td>
+<td class="positive">+2,104.65 (+14.03%)</td>
+<td class="positive">+3.50%</td>
+</tr><tr>
+<td><strong>MSFT</strong></td>
+<td>54.03</td>
+<td>$370.17</td>
+<td>$376.80</td>
+<td>$20,358.20</td>
+<td class="positive">+358.21 (+1.79%)</td>
+<td class="positive">+0.90%</td>
+</tr>
+</table>
+</div>
 
-const TSTYLES = {
-  QQQ:  {cls:'t-qqq', color:'#58a6ff'},
-  NVDA: {cls:'t-nvda', color:'#3fb950'},
-  MSFT: {cls:'t-msft', color:'#bc8cff'},
-};
-function ts(t){ return TSTYLES[t]||{cls:'t-def',color:'#8b949e'}; }
-function fmtUSD(n,d=2){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
-function fmtPct(n){ return (n>=0?'+':'')+n.toFixed(2)+'%'; }
-function pnlCls(n){ return n>0?'pos':n<0?'neg':'neu'; }
-function pnlColor(n){ return n>0?'#3fb950':n<0?'#f85149':'#8b949e'; }
-
-// ── 数据加载 ─────────────────────────────────────
-async function load() {
-  try {
-    const res = await fetch(API, {signal: AbortSignal.timeout(3000)});
-    return await res.json();
-  } catch(e) {
-    return window.__PORTFOLIO_DATA__;
-  }
-}
-
-async function refresh() {
-  const d = await load();
-  if (!d) { document.getElementById('update-txt').textContent = '⚠ 数据加载失败'; return; }
-  render(d);
-  document.getElementById('update-txt').textContent = '更新：' + (d.refreshed_at||'—');
-  document.getElementById('loading').style.display = 'none';
-}
-
-// ── 主渲染 ───────────────────────────────────────
-function render(d) {
-  const acc = d.account;
-  const initial = d.meta.initial_capital;
-  const pnl = acc.total_value - initial;
-  const pnlPct = acc.return_pct || 0;
-  const cashPct = (acc.cash / acc.total_value * 100).toFixed(1);
-  const posCnt = Object.keys(d.positions||{}).length;
-  _snapshots = d.snapshots || [];
-
-  // KPI
-  setText('k-total', fmtUSD(acc.total_value, 0));
-  setText('k-total-s', '初始 $100,000 · '+(posCnt>0?posCnt+' 只持仓':'尚未建仓'));
-
-  const pnlEl = document.getElementById('k-pnl');
-  pnlEl.textContent = (pnl>=0?'+':'')+fmtUSD(pnl);
-  pnlEl.className = 'kv '+(pnl>0?'green':pnl<0?'red':'dim');
-  setText('k-pnl-s', fmtPct(pnlPct)+(acc.max_drawdown>0?' · 最大回撤 -'+acc.max_drawdown+'%':' · 持续更新中'));
-  document.getElementById('k-pnl-s').style.color = pnlColor(pnl);
-
-  setText('k-cash', fmtUSD(acc.cash, 0));
-  setText('k-cash-s', cashPct+'% · '+(acc.cash<20000?'⚠ 现金偏低':'充裕'));
-
-  setText('k-mkt', fmtUSD(acc.invested||0, 0));
-  setText('k-mkt-s', posCnt+' 只 · '+d.trades.length+' 笔交易');
-
-  // 图表
-  renderEquity(_snapshots, initial);
-  renderAlloc(d.positions||{}, acc.cash, acc.total_value);
-
-  // 持仓
-  renderHoldings(d.positions||{});
-
-  // 交易
-  renderTrades(d.trades||[]);
-
-  // 日历
-  renderCal();
-
-  // 市场
-  const mc = d.market_context||{};
-  if (mc.sp500) {
-    setText('m-sp', mc.sp500.toLocaleString());
-    setText('m-spc', (mc.sp500_change_pct>=0?'↑ +':'↓ ')+mc.sp500_change_pct+'% 今日');
-    document.getElementById('m-spc').style.color = mc.sp500_change_pct>=0?'#3fb950':'#f85149';
-  }
-}
-
-function setText(id, val){ const el=document.getElementById(id); if(el) el.textContent=val; }
-
-// ── 净值曲线 ─────────────────────────────────────
-function renderEquity(snaps, initial) {
-  const labels = snaps.map(s=>s.date.slice(5));
-  const values = snaps.map(s=>s.total_value);
-  setText('chart-badge', snaps.length+' 天');
-  const last = values[values.length-1]||initial;
-  const lc = last>=initial?'#3fb950':'#f85149';
-  const ctx = document.getElementById('equityChart').getContext('2d');
-  const g = ctx.createLinearGradient(0,0,0,200);
-  g.addColorStop(0, lc+'30'); g.addColorStop(1, lc+'02');
-  const baseline = labels.map(()=>initial);
-  if (equityChart) {
-    equityChart.data.labels = labels;
-    equityChart.data.datasets[0].data = values;
-    equityChart.data.datasets[0].borderColor = lc;
-    equityChart.data.datasets[0].backgroundColor = g;
-    equityChart.data.datasets[1].data = baseline;
-    equityChart.update(); return;
-  }
-  equityChart = new Chart(ctx, {
-    type:'line',
-    data:{labels, datasets:[
-      {label:'净值',data:values,borderColor:lc,backgroundColor:g,borderWidth:2.5,pointRadius:labels.length<8?4:2,pointBackgroundColor:lc,pointBorderColor:'#0d1117',pointBorderWidth:2,tension:.35,fill:true},
-      {label:'基准',data:baseline,borderColor:'#30363d',borderWidth:1,borderDash:[4,4],pointRadius:0,fill:false}
-    ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1f2e',borderColor:'#21262d',borderWidth:1,callbacks:{label:c=>' $'+c.parsed.y.toLocaleString()}}},
-      scales:{
-        x:{grid:{color:'#1c2128'},ticks:{color:'#8b949e',font:{size:10}}},
-        y:{grid:{color:'#1c2128'},ticks:{color:'#8b949e',font:{size:10},callback:v=>'$'+(v/1000).toFixed(0)+'k'}}
-      }
-    }
-  });
-}
-
-// ── 仓位饼图 ─────────────────────────────────────
-function renderAlloc(positions, cash, total) {
-  const entries = Object.entries(positions);
-  const labels = ['现金', ...entries.map(([t])=>t)];
-  const vals   = [cash, ...entries.map(([,p])=>p.market_value||0)];
-  const colors = ['#e3b341', ...entries.map(([t])=>ts(t).color)];
-  const pcts   = vals.map(v=>((v/total)*100).toFixed(1));
-  setText('alloc-badge', entries.length>0?entries.length+' 只+现金':'全现金');
-
-  // 进度条
-  const barDefs = [
-    {label:'💵 现金', pct:pcts[0], cls:'fy'},
-    ...entries.map(([t,p],i)=>({
-      label:(t==='QQQ'?'📦 ':t==='NVDA'?'🟢 ':'🟣 ')+t,
-      pct:pcts[i+1], cls:t==='QQQ'?'fb':t==='NVDA'?'fg':'fp'
-    }))
-  ];
-  document.getElementById('alloc-bars').innerHTML = barDefs.map((b,i)=>`
-    <div class="brow">
-      <div class="blabel"><span>${b.label}</span><span>$${Math.round(vals[i]).toLocaleString()} · ${b.pct}%</span></div>
-      <div class="btrack"><div class="bfill ${b.cls}" style="width:${b.pct}%"></div></div>
-    </div>`).join('');
-
-  if (allocChart) {
-    allocChart.data.labels = labels;
-    allocChart.data.datasets[0].data = vals;
-    allocChart.data.datasets[0].backgroundColor = colors.map(c=>c+'bb');
-    allocChart.data.datasets[0].borderColor = colors;
-    allocChart.update(); return;
-  }
-  const ctx2 = document.getElementById('allocChart').getContext('2d');
-  allocChart = new Chart(ctx2,{
-    type:'doughnut',
-    data:{labels,datasets:[{data:vals,backgroundColor:colors.map(c=>c+'bb'),borderColor:colors,borderWidth:1.5,hoverOffset:5}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',
-      plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:10},padding:7,boxWidth:9}},
-        tooltip:{backgroundColor:'#1a1f2e',borderColor:'#21262d',borderWidth:1,callbacks:{label:c=>` ${c.label}：${pcts[c.dataIndex]}%`}}}
-    }
-  });
-}
-
-// ── 持仓表格 ─────────────────────────────────────
-function renderHoldings(positions) {
-  const entries = Object.entries(positions);
-  setText('pos-badge', entries.length+' 只');
-  const tbody = document.getElementById('holdings-body');
-  if (!entries.length) {
-    tbody.innerHTML='<tr><td colspan="6" style="text-align:center;color:#8b949e;padding:20px 0">📭 暂无持仓</td></tr>'; return;
-  }
-  tbody.innerHTML = entries.map(([t,p])=>{
-    const s=ts(t);
-    return `<tr>
-      <td><span class="tk ${s.cls}">${t}</span></td>
-      <td style="color:#8b949e">$${p.cost_price}</td>
-      <td style="color:#c9d1d9">$${p.cur_price}</td>
-      <td>${p.shares}</td>
-      <td>$${Math.round(p.market_value||0).toLocaleString()}</td>
-      <td class="${pnlCls(p.pnl_pct)}">${fmtPct(p.pnl_pct||0)}</td>
-    </tr>`;
-  }).join('');
-}
-
-// ── 交易记录 ─────────────────────────────────────
-function renderTrades(trades) {
-  setText('trade-badge', trades.length+' 条');
-  const ICONS = {buy:'🟢',sell:'🔴',init:'🚀'};
-  const LABELS = {buy:'买入',sell:'卖出',init:'初始化'};
-  document.getElementById('trade-list').innerHTML = trades.map(t=>{
-    const isBuy=t.type==='buy', isSell=t.type==='sell';
-    const color = isBuy?'#3fb950':isSell?'#f85149':'#58a6ff';
-    const cls   = isBuy?'tc-buy':isSell?'tc-sell':'tc-init';
-    const label = t.ticker?`${LABELS[t.type]} ${t.ticker}`:(t.note||LABELS[t.type]);
-    const meta  = t.shares?`${t.shares} 股 @ $${t.price}`:(t.note||'');
-    return `<div class="ti">
-      <div class="tic ${cls}">${ICONS[t.type]||'•'}</div>
-      <div class="tinfo"><div class="ttitle">${label}</div><div class="tmeta">${meta}</div></div>
-      <div class="tamt">
-        <div class="tprice" style="color:${color}">${isSell?'-':''}$${Math.round(t.amount||0).toLocaleString()}</div>
-        <div class="tdate">${t.date}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-// ── 日历 ─────────────────────────────────────────
-let calYear, calMonth;
-function initCal() {
-  const now = new Date();
-  calYear = now.getFullYear();
-  calMonth = now.getMonth();
-  renderCal();
-}
-function calMove(dir) { calMonth += dir; if(calMonth>11){calMonth=0;calYear++;}else if(calMonth<0){calMonth=11;calYear--;} renderCal(); }
-
-function renderCal() {
-  const MONTHS = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
-  const DOWS = ['日','一','二','三','四','五','六'];
-  setText('cal-title', `${calYear} 年 ${MONTHS[calMonth]}`);
-
-  // 快照 map
-  const snapMap = {};
-  _snapshots.forEach((s,i) => {
-    if (i===0) return; // 跳过初始
-    const prev = _snapshots[i-1];
-    const pnl = s.total_value - prev.total_value;
-    snapMap[s.date] = {total:s.total_value, pnl, pnlPct: (pnl/prev.total_value*100), ...s};
-  });
-
-  const today = new Date();
-  const todayStr = today.toISOString().slice(0,10);
-  const firstDay = new Date(calYear, calMonth, 1).getDay();
-  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-  const daysInPrev  = new Date(calYear, calMonth, 0).getDate();
-
-  let html = DOWS.map(d=>`<div class="cal-dow">${d}</div>`).join('');
-
-  // 上月补位
-  for (let i=firstDay-1; i>=0; i--) {
-    html += `<div class="cal-day other-month">${daysInPrev-i}</div>`;
-  }
-  // 本月
-  for (let d=1; d<=daysInMonth; d++) {
-    const dateStr = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const snap = snapMap[dateStr];
-    const isToday = dateStr===todayStr;
-    let cls = 'cal-day';
-    if (snap) { cls += ' has-data '+(snap.pnl>=0?'pos-day':'neg-day'); }
-    if (isToday) cls += ' today';
-    html += `<div class="${cls}" onclick="showDay('${dateStr}')" title="${dateStr}">${d}</div>`;
-  }
-  // 下月补位
-  const remaining = 7 - ((firstDay + daysInMonth) % 7||7);
-  if (remaining < 7) for (let d=1; d<=remaining; d++) html += `<div class="cal-day other-month">${d}</div>`;
-
-  document.getElementById('cal-grid').innerHTML = html;
-}
-
-function showDay(dateStr) {
-  // 高亮
-  document.querySelectorAll('.cal-day').forEach(el=>el.classList.remove('active'));
-  const allDays = document.querySelectorAll('.cal-day:not(.other-month)');
-  const day = parseInt(dateStr.slice(8));
-  if (allDays[day-1]) allDays[day-1].classList.add('active');
-
-  // 找快照
-  const idx = _snapshots.findIndex(s=>s.date===dateStr);
-  const detail = document.getElementById('cal-detail');
-  if (idx < 0) {
-    detail.innerHTML = `<div class="cd-empty">📭 ${dateStr}<br>暂无数据</div>`; return;
-  }
-  const snap = _snapshots[idx];
-  const prev = idx>0?_snapshots[idx-1]:null;
-  const pnl = prev ? snap.total_value - prev.total_value : 0;
-  const pnlPct = prev ? (pnl/prev.total_value*100) : 0;
-  const totalPnl = snap.total_value - 100000;
-  const totalPct = (totalPnl/100000*100);
-
-  detail.innerHTML = `
-    <div class="cd-date">${dateStr}</div>
-    <div class="cd-val" style="color:${pnlColor(pnl)}">${pnl>=0?'+':''}${fmtUSD(pnl)}</div>
-    <div class="cd-pct" style="color:${pnlColor(pnl)}">${fmtPct(pnlPct)} 当日涨跌</div>
-    <div class="cd-rows">
-      <div class="cd-row"><span>账户总值</span><span>${fmtUSD(snap.total_value,0)}</span></div>
-      <div class="cd-row"><span>可用现金</span><span>${fmtUSD(snap.cash,0)}</span></div>
-      <div class="cd-row"><span>持仓市值</span><span>${fmtUSD(snap.invested||0,0)}</span></div>
-      <div class="cd-row"><span>累计收益</span><span style="color:${pnlColor(totalPnl)}">${totalPnl>=0?'+':''}${fmtUSD(totalPnl)} (${fmtPct(totalPct)})</span></div>
-      ${snap.note?`<div class="cd-row"><span>备注</span><span>${snap.note}</span></div>`:''}
-    </div>`;
-}
-
-// ── 启动 ─────────────────────────────────────────
-initCal();
-refresh();
-setInterval(refresh, 5*60*1000);
-</script>
+<div class="footer">
+<p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
+<p>上海巴菲特 | 专注美股，数据说话</p>
+</div>
 </body>
 </html>
