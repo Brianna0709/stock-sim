@@ -1,82 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>美股模拟盘 | 上海巴菲特</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; }
-.header { text-align: center; padding: 20px; border-bottom: 1px solid #30363d; }
-.header h1 { color: #58a6ff; margin: 0; }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
-.stat-card { background: #161b22; padding: 15px; border-radius: 8px; border: 1px solid #30363d; text-align: center; }
-.stat-card .value { font-size: 24px; font-weight: bold; color: #3fb950; }
-.stat-card .label { font-size: 12px; color: #8b949e; margin-top: 5px; }
-.positions { margin-top: 20px; }
-.positions h2 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #30363d; }
-th { color: #8b949e; font-weight: normal; }
-.positive { color: #3fb950; }
-.negative { color: #f85149; }
-.footer { text-align: center; margin-top: 30px; padding: 20px; color: #8b949e; font-size: 12px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股模拟盘 - 上海巴菲特</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #58a6ff; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: #161b22; border-radius: 10px; padding: 20px; border: 1px solid #30363d; }
+        .stat-label { color: #8b949e; font-size: 14px; margin-bottom: 5px; }
+        .stat-value { font-size: 24px; font-weight: bold; }
+        .positive { color: #3fb950; }
+        .negative { color: #f85149; }
+        .positions-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .positions-table th, .positions-table td { padding: 12px; text-align: left; border-bottom: 1px solid #30363d; }
+        .positions-table th { color: #8b949e; font-weight: normal; }
+        .chart-container { background: #161b22; border-radius: 10px; padding: 20px; margin-bottom: 30px; height: 400px; }
+        .footer { text-align: center; color: #6e7681; font-size: 12px; }
+    </style>
 </head>
 <body>
-<div class="header">
-<h1>📈 美股模拟盘 | 上海巴菲特</h1>
-<p>中线稳健策略 | 模拟交易 | 数据更新: 2026-04-15</p>
-</div>
-
-<div class="stats">
-<div class="stat-card">
-<div class="value">$104,056.47</div>
-<div class="label">总资产</div>
-</div>
-<div class="stat-card">
-<div class="value positive">+4.06%</div>
-<div class="label">累计收益</div>
-</div>
-<div class="stat-card">
-<div class="value">$50,000.03</div>
-<div class="label">可用现金</div>
-</div>
-</div>
-
-<div class="positions">
-<h2>📊 持仓明细</h2>
-<table>
-<tr><th>标的</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>盈亏</th><th>今日涨跌</th></tr>
-<tr>
-<td><strong>QQQ</strong></td>
-<td>25.99</td>
-<td>$577.18</td>
-<td>$638.50</td>
-<td>$16,593.59</td>
-<td class="positive">+1,593.61 (+10.62%)</td>
-<td class="positive">+1.57%</td>
-</tr><tr>
-<td><strong>NVDA</strong></td>
-<td>86.01</td>
-<td>$174.40</td>
-<td>$198.87</td>
-<td>$17,104.65</td>
-<td class="positive">+2,104.65 (+14.03%)</td>
-<td class="positive">+3.50%</td>
-</tr><tr>
-<td><strong>MSFT</strong></td>
-<td>54.03</td>
-<td>$370.17</td>
-<td>$376.80</td>
-<td>$20,358.20</td>
-<td class="positive">+358.21 (+1.79%)</td>
-<td class="positive">+0.90%</td>
-</tr>
-</table>
-</div>
-
-<div class="footer">
-<p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
-<p>上海巴菲特 | 专注美股，数据说话</p>
-</div>
+    <div class="container">
+        <h1>📈 美股模拟盘 | 上海巴菲特</h1>
+        <p class="subtitle">最后更新: 2026-04-17 06:04</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">总资产</div>
+                <div class="stat-value">$106,404.03</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">累计收益</div>
+                <div class="stat-value positive">+6.40%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">可用现金</div>
+                <div class="stat-value">$50,000.03</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">持仓市值</div>
+                <div class="stat-value">$56,404.00</div>
+            </div>
+        </div>
+        <h2 style="margin-bottom: 15px;">📊 持仓明细</h2>
+        <table class="positions-table">
+            <thead>
+                <tr>
+                    <th>标的</th>
+                    <th>持仓数量</th>
+                    <th>成本价</th>
+                    <th>当前价</th>
+                    <th>市值</th>
+                    <th>盈亏</th>
+                    <th>今日涨跌</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>QQQ</strong></td><td>25.99</td><td>$577.18</td><td>$640.47</td><td>$16,644.79</td><td class="positive">$1,644.81 (+10.97%)</td><td class="positive">+0.48%</td></tr>
+<tr><td><strong>NVDA</strong></td><td>86.01</td><td>$174.40</td><td>$198.35</td><td>$17,059.92</td><td class="positive">$2,059.92 (+13.73%)</td><td class="negative">-0.26%</td></tr>
+<tr><td><strong>MSFT</strong></td><td>54.03</td><td>$370.17</td><td>$420.13</td><td>$22,699.29</td><td class="positive">$2,699.30 (+13.50%)</td><td class="positive">+2.17%</td></tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: 15px;">📈 收益曲线</h2>
+        <div class="chart-container">
+            <canvas id="equityChart"></canvas>
+        </div>
+        <p class="footer">⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
+    </div>
+    <script>
+        const ctx = document.getElementById('equityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["2026-04-01", "2026-04-01", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16"],
+                datasets: [{
+                    label: '总资产',
+                    data: [100000, 100000.0, 100258.2, 100453.59, 100639.8, 100546.99, 100729.31, 101327.78, 101602.89, 102142.49, 102142.49, 103040.21, 104056.47, 106404.03],
+                    borderColor: '#58a6ff',
+                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: false, ticks: { callback: function(value) { return '$' + value.toLocaleString(); } } } }
+            }
+        });
+    </script>
 </body>
 </html>
