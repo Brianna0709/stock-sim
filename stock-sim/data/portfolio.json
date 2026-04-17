@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 102142.49,
-    "invested": 52142.46
+    "total_value": 106864.8,
+    "invested": 56864.77
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 611.07,
-      "market_value": 15880.73,
-      "pnl": 880.75,
-      "pnl_pct": 5.87,
-      "today_chg_pct": 3.53
+      "cur_price": 643.52,
+      "market_value": 16724.06,
+      "pnl": 1724.08,
+      "pnl_pct": 11.49,
+      "today_chg_pct": 0.48
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 188.63,
-      "market_value": 16223.92,
-      "pnl": 1223.92,
-      "pnl_pct": 8.16,
-      "today_chg_pct": 1.71
+      "cur_price": 200.7,
+      "market_value": 17262.05,
+      "pnl": 2262.05,
+      "pnl_pct": 15.08,
+      "today_chg_pct": 1.19
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 370.87,
-      "market_value": 20037.81,
-      "pnl": 37.82,
-      "pnl_pct": 0.19,
-      "today_chg_pct": -1.42
+      "cur_price": 423.45,
+      "market_value": 22878.66,
+      "pnl": 2878.67,
+      "pnl_pct": 14.39,
+      "today_chg_pct": 0.76
     }
   },
   "trades": [
@@ -172,16 +172,48 @@
       "invested": 52142.46,
       "return_pct": 2.1425,
       "note": "收盘复盘：NVDA $188.63 | MSFT $370.87 | QQQ $611.07"
+    },
+    {
+      "date": "2026-04-14",
+      "total_value": 103040.21,
+      "cash": 50000.03,
+      "invested": 53040.18,
+      "return_pct": 3.0402,
+      "note": "收盘复盘：NVDA $192.15 | MSFT $373.45 | QQQ $628.6"
+    },
+    {
+      "date": "2026-04-15",
+      "total_value": 104056.47,
+      "cash": 50000.03,
+      "invested": 54056.44,
+      "return_pct": 4.0565,
+      "note": "收盘复盘：NVDA $198.87 | MSFT $376.8 | QQQ $638.5"
+    },
+    {
+      "date": "2026-04-16",
+      "total_value": 106404.03,
+      "cash": 50000.03,
+      "invested": 56404.0,
+      "return_pct": 6.404,
+      "note": "收盘复盘：NVDA $198.35 (-0.26%) | MSFT $420.13 (+2.17%) | QQQ $640.47 (+0.48%)"
+    },
+    {
+      "date": "2026-04-17",
+      "total_value": 106864.8,
+      "cash": 50000.03,
+      "invested": 56864.77,
+      "return_pct": 6.8648,
+      "note": "收盘复盘：NVDA $200.7 (+1.19%) | MSFT $423.45 (+0.76%) | QQQ $643.52 (+0.48%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 6611.83,
-    "sp500_change_pct": 0.44,
-    "nasdaq": 21996.34,
-    "nasdaq_change_pct": 0.54,
-    "dow": 46669.88,
-    "dow_change_pct": 0.36,
-    "note": "2026-04-13收盘：三大指数全线上涨，标普500收于6611.83点(+0.44%)，纳指收于21996.34点(+0.54%)。"
+    "sp500": 7090.89,
+    "sp500_change_pct": 0.7,
+    "nasdaq": 24468.48,
+    "nasdaq_change_pct": 1.52,
+    "dow": 48700.25,
+    "dow_change_pct": 0.5,
+    "note": "2026-04-17收盘：标普500涨至7090.89(+0.7%)，纳指大涨1.52%创历史新高，道指温和上涨。科技股分化，MSFT延续强势，NVDA反弹。"
   }
 }
