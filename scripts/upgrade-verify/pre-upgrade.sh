@@ -25,14 +25,21 @@ echo ""
 # ── 1. 下载并解压 ─────────────────────────────
 echo "[1/3] 下载并解压 upgrade-verify 工程..."
 mkdir -p "${INSTALL_DIR}"
-curl -fsSL --noproxy "*" "${TARBALL_URL}" | tar -xz -C "${INSTALL_DIR}"
+# 尝试清理旧目录，避免解压时文件冲突（无权限则跳过）
+if [ -d "${VERIFY_DIR}" ]; then
+    rm -rf "${VERIFY_DIR}" 2>/dev/null || true
+fi
+# 解压时使用 --overwrite 强制覆盖已存在的文件
+curl -fsSL --noproxy "*" "${TARBALL_URL}" | tar -xz --overwrite -C "${INSTALL_DIR}"
 echo "      解压到：${VERIFY_DIR}"
 
 # ── 2. 安装 Python 依赖 ───────────────────────
-echo "[2/3] 检查并安装 Python 依赖..."
+echo "[2/3] 使用美团内部源检查并安装 Python 依赖..."
 python3 -m pip install --quiet --break-system-packages \
+    -i https://pypi.sankuai.com/simple/ \
     requests websocket-client cryptography pytest pytest-html 2>/dev/null || \
 python3 -m pip install --quiet \
+    -i https://pypi.sankuai.com/simple/ \
     requests websocket-client cryptography pytest pytest-html
 echo "      依赖就绪"
 

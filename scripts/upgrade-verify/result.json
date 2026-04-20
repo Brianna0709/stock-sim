@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-01 22:46:00",
+  "generated_at": "2026-04-17 20:40:19",
   "total": 26,
-  "passed": 23,
-  "failed": 2,
+  "passed": 24,
+  "failed": 1,
   "skipped": 1,
   "cases": [
     {
@@ -67,8 +67,7 @@
     },
     {
       "name": "test_env.py::TestEnvironment::test_05_moa_running",
-      "result": "failed",
-      "detail": "moa 进程未运行（pgrep 无结果）\nE       assert ''\nE        +  where '' = <built-in method strip of str object at 0xb3b3f0>()\nE        +    where <built-in method strip of str object at 0xb3b3f0> = ''.strip\n\ntest_env.py:102: AssertionError"
+      "result": "passed"
     },
     {
       "name": "test_env.py::TestEnvironment::test_06_env_keys_complete",
@@ -80,8 +79,7 @@
     },
     {
       "name": "test_env.py::TestEnvironment::test_08_skills_complete",
-      "result": "failed",
-      "detail": "以下 skill 升级后丢失：['agent-browser', 'citadel', 'room-booking-helper', 'summarize']\nE       assert not {'agent-browser', 'citadel', 'room-booking-helper', 'summarize'}\n\ntest_env.py:139: AssertionError"
+      "result": "passed"
     },
     {
       "name": "test_env.py::TestEnvironment::test_09_ssh_files_intact",
@@ -89,7 +87,8 @@
     },
     {
       "name": "test_env.py::TestEnvironment::test_10_workspace_md_unchanged",
-      "result": "passed"
+      "result": "failed",
+      "detail": "workspace md 文件升级后异常：\nE         内容变更: ['workspace/AGENTS.md']\nE       assert not [\"内容变更: ['workspace/AGENTS.md']\"]\n\ntest_env.py:206: AssertionError"
     },
     {
       "name": "test_smoke.py::TestSmoke::test_01_message_roundtrip",

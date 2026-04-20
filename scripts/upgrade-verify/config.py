@@ -3,6 +3,7 @@
 """
 import json
 import os
+import subprocess
 
 # ── 路径 ──────────────────────────────────────────────
 OPENCLAW_CONFIG_PATH = os.path.expanduser("~/.openclaw/openclaw.json")
@@ -57,6 +58,32 @@ INTRANET_SUFFIXES = (
 ENV_KEY_PATTERNS = ["catclaw", "openclaw", "http_proxy", "https_proxy",
                     "upstream_proxy", "supervisor"]
 
+# ── Default Agent ────────────────────────────────────
+def get_default_agent_name() -> str:
+    """
+    通过 openclaw agents list 命令获取 default agent 名称。
+    如果命令失败或无法解析，降级返回 "main"。
+    """
+    try:
+        result = subprocess.run(
+            ["openclaw", "agents", "list"],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        # 输出格式如：
+        # - main (default)
+        # - other-agent
+        for line in result.stdout.splitlines():
+            if "(default)" in line:
+                # 提取 agent 名称，格式："- main (default)" 或 "  - main (default)"
+                name = line.strip().lstrip("- ").split()[0]
+                return name
+    except Exception:
+        pass
+    # 降级：返回默认值 "main"
+    return "main"
+
 # 冒烟测试用的 session key
-# 使用 agent:main:main（webchat session），避免 daxiang session 因当前对话繁忙导致排队超时
-SMOKE_SESSION_KEY = "agent:main:main"
+# 动态获取 default agent 名称，格式为 agent:{agent_name}:main
+SMOKE_SESSION_KEY = f"agent:{get_default_agent_name()}:main"

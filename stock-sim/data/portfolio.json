@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 106864.8,
-    "invested": 56864.77
+    "total_value": 106767.76,
+    "invested": 56767.73
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 643.52,
-      "market_value": 16724.06,
-      "pnl": 1724.08,
-      "pnl_pct": 11.49,
-      "today_chg_pct": 0.48
+      "cur_price": 646.47,
+      "market_value": 16800.72,
+      "pnl": 1800.74,
+      "pnl_pct": 12.0,
+      "today_chg_pct": 0.46
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 200.7,
-      "market_value": 17262.05,
-      "pnl": 2262.05,
-      "pnl_pct": 15.08,
-      "today_chg_pct": 1.19
+      "cur_price": 202.06,
+      "market_value": 17379.02,
+      "pnl": 2379.02,
+      "pnl_pct": 15.86,
+      "today_chg_pct": 0.68
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 423.45,
-      "market_value": 22878.66,
-      "pnl": 2878.67,
-      "pnl_pct": 14.39,
-      "today_chg_pct": 0.76
+      "cur_price": 418.07,
+      "market_value": 22587.99,
+      "pnl": 2588.0,
+      "pnl_pct": 12.94,
+      "today_chg_pct": -1.27
     }
   },
   "trades": [
@@ -204,16 +204,24 @@
       "invested": 56864.77,
       "return_pct": 6.8648,
       "note": "收盘复盘：NVDA $200.7 (+1.19%) | MSFT $423.45 (+0.76%) | QQQ $643.52 (+0.48%)"
+    },
+    {
+      "date": "2026-04-21",
+      "total_value": 106767.76,
+      "cash": 50000.03,
+      "invested": 56767.73,
+      "return_pct": 6.7678,
+      "note": "收盘复盘：NVDA $202.06 (+0.67%) | MSFT $418.07 (-1.27%) | QQQ $646.47 (+0.46%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7090.89,
-    "sp500_change_pct": 0.7,
-    "nasdaq": 24468.48,
-    "nasdaq_change_pct": 1.52,
-    "dow": 48700.25,
-    "dow_change_pct": 0.5,
-    "note": "2026-04-17收盘：标普500涨至7090.89(+0.7%)，纳指大涨1.52%创历史新高，道指温和上涨。科技股分化，MSFT延续强势，NVDA反弹。"
+    "sp500": 7109.14,
+    "sp500_change_pct": -0.24,
+    "nasdaq": 24404.39,
+    "nasdaq_change_pct": -0.26,
+    "dow": 49442.56,
+    "dow_change_pct": -0.01,
+    "note": "2026-04-21收盘：三大指数小幅调整，标普-0.24%至7109，纳指-0.26%至24404，道指几乎平收。MSFT回调-1.27%，NVDA微涨+0.67%，QQQ小涨+0.46%。"
   }
 }

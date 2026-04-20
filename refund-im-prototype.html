@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM 退款流程原型 · 民宿平台</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  background: #F0F2F5; display: flex; height: 100vh; overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 230px; min-width: 230px; background: #1A1A2E; color: #fff;
+  display: flex; flex-direction: column; overflow-y: auto; flex-shrink: 0;
+}
+.sidebar-header { padding: 24px 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.sidebar-title  { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 0.3px; }
+.sidebar-sub    { font-size: 12px; color: #888; margin-top: 4px; }
+.sidebar-group  { padding: 16px 0 8px; }
+.sidebar-group-label {
+  font-size: 11px; color: #666; padding: 0 20px 8px;
+  text-transform: uppercase; letter-spacing: 0.8px;
+}
+.sidebar-item {
+  display: flex; align-items: center; padding: 10px 20px; cursor: pointer;
+  color: #BBB; font-size: 14px; position: relative; transition: all 0.18s; gap: 8px;
+}
+.sidebar-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.sidebar-item.active { background: #FFCC00; color: #000; font-weight: 600; }
+.badge-new {
+  background: #FFCC00; color: #000; font-size: 9px; font-weight: 700;
+  padding: 1px 5px; border-radius: 8px; letter-spacing: 0.3px; margin-left: auto; flex-shrink: 0;
+}
+.sidebar-item.active .badge-new { background: #000; color: #FFCC00; }
+.item-code { font-size: 12px; opacity: 0.7; font-weight: 500; flex-shrink: 0; }
+
+/* ── Main area ── */
+.main {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  overflow: auto; padding: 32px 40px;
+}
+.scene-panel { display: none; flex-direction: column; align-items: center; gap: 16px; }
+.scene-panel.active { display: flex; }
+.scene-label {
+  font-size: 13px; color: #666; background: #fff;
+  padding: 6px 16px; border-radius: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ── Phone shell ── */
+.phone {
+  width: 375px; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+  display: flex; flex-direction: column; background: #fff; height: 720px;
+}
+
+/* ── Status bar ── */
+.status-bar {
+  height: 28px; background: #fff; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 16px;
+  font-size: 11px; color: #333; flex-shrink: 0;
+}
+.status-bar .time { font-weight: 600; }
+.status-bar .icons { display: flex; gap: 4px; align-items: center; }
+
+/* ── IM header ── */
+.im-header {
+  height: 52px; background: #fff; border-bottom: 1px solid #F0F0F0;
+  display: flex; align-items: center; padding: 0 16px; flex-shrink: 0; position: relative;
+}
+.im-header .back { font-size: 20px; color: #333; cursor: pointer; width: 28px; }
+.im-header .title {
+  font-size: 16px; font-weight: 600; color: #222;
+  position: absolute; left: 50%; transform: translateX(-50%);
+}
+.im-header .more { font-size: 20px; color: #333; width: 28px; text-align: right; margin-left: auto; }
+
+/* ── Chat area ── */
+.chat-area {
+  flex: 1; overflow-y: auto; background: #E7E7E7;
+  padding: 12px; display: flex; flex-direction: column; gap: 8px;
+}
+.chat-area::-webkit-scrollbar { width: 3px; }
+.chat-area::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+
+/* ── Order info card ── */
+.order-info-card {
+  background: #fff; border-radius: 8px; padding: 10px 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.order-thumb {
+  width: 48px; height: 48px; border-radius: 8px; flex-shrink: 0;
+  background: linear-gradient(135deg, #4CAF50, #81C784);
+}
+.order-info-text .name  { font-size: 14px; font-weight: 600; color: #222; line-height: 1.4; }
+.order-info-text .date  { font-size: 12px; color: #888; margin-top: 2px; }
+
+/* ── Time divider ── */
+.time-divider { text-align: center; font-size: 11px; color: #999; padding: 4px 0; }
+
+/* ── Bubbles ── */
+.msg-row { display: flex; align-items: flex-end; gap: 8px; }
+.msg-row.right { flex-direction: row-reverse; }
+.bubble {
+  max-width: 70%; padding: 10px 14px; border-radius: 16px;
+  font-size: 14px; line-height: 1.6; word-break: break-all;
+}
+.bubble.right { background: #FFCC00; color: #000; border-bottom-right-radius: 4px; }
+.bubble.left  { background: #fff;    color: #333; border-bottom-left-radius: 4px;  box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+/* ── System card ── */
+.sys-card {
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10); padding: 16px;
+  display: flex; flex-direction: column; width: 100%;
+}
+.sys-card .card-title  { font-size: 15px; font-weight: 700; color: #222; }
+.sys-card .divider     { height: 1px; background: #F0F0F0; margin: 10px 0; }
+.sys-card .info-rows   { display: flex; flex-direction: column; gap: 5px; }
+.sys-card .info-row    { font-size: 14px; color: #444; line-height: 1.8; }
+.amount-highlight      { color: #FF6200; font-weight: 600; }
+
+/* ── Retention area ── */
+.retention-area { background: #FFFBE6; border-radius: 8px; padding: 12px; margin-top: 12px; }
+.retention-area p { font-size: 13px; color: #666; line-height: 1.7; }
+
+/* ── Buttons ── */
+.btn-row { display: flex; gap: 8px; margin-top: 14px; }
+.btn {
+  height: 42px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer; transition: opacity 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+}
+.btn:disabled, .btn.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.btn-primary   { background: #FFCC00; color: #000; }
+.btn-secondary { background: #fff;    color: #333; border: 1px solid #E0E0E0; }
+.btn-full      { width: 100%; }
+.btn-flex      { flex: 1; }
+
+/* ── Assistant bubble (yellow left border) ── */
+.assistant-bubble {
+  background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  border-left: 4px solid #FFCC00; padding: 14px; width: 100%;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.asst-title { font-size: 13px; font-weight: 700; color: #222; }
+.asst-body  { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* ── Tag chips ── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.tag-chip {
+  border: 1px solid #FFCC00; border-radius: 20px; padding: 6px 12px;
+  font-size: 13px; color: #333; cursor: pointer; transition: all 0.15s; background: #fff;
+  user-select: none;
+}
+.tag-chip:hover  { background: #FFF9E0; }
+.tag-chip.selected { background: #FFCC00; color: #000; font-weight: 600; }
+
+/* ── System capsule ── */
+.sys-capsule {
+  font-size: 12px; color: #888; background: #E0E0E0;
+  border-radius: 16px; padding: 4px 12px; align-self: center;
+}
+
+/* ── Bottom input bar ── */
+.input-bar {
+  height: 60px; background: #fff; border-top: 1px solid #EEE;
+  padding: 8px 12px; display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+}
+.input-bar input {
+  flex: 1; height: 36px; border: 1px solid #E0E0E0; border-radius: 18px;
+  padding: 0 14px; font-size: 14px; outline: none; background: #F7F7F7; color: #333;
+}
+.send-btn {
+  width: 36px; height: 36px; border-radius: 50%; background: #FFCC00;
+  border: none; cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ SIDEBAR ══════════════════ -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">IM 退款流程原型</div>
+    <div class="sidebar-sub">民宿平台 · 交互设计</div>
+  </div>
+  <div class="sidebar-group">
+    <div class="sidebar-group-label">房客端场景</div>
+    <div class="sidebar-item active" onclick="switchScene('a1',this)">
+      <span class="item-code">A1</span> 免费取消
+    </div>
+    <div class="sidebar-item" onclick="switchScene('a2',this)">
+      <span class="item-code">A2</span> 不可取消
+    </div>
+    <div class="sidebar-item" onclick="switchScene('a3',this)">
+      <span class="item-code">A3</span> 房客可发起协商退
+      <span class="badge-new">NEW</span>
+    </div>
+    <div class="sidebar-item" onclick="switchScene('a4',this)">
+      <span class="item-code">A4</span> 房客不可发起协商退
+      <span class="badge-new">NEW</span>
+    </div>
+  </div>
+  <div class="sidebar-group">
+    <div class="sidebar-group-label">房东端场景</div>
+    <div class="sidebar-item" onclick="switchScene('b1',this)">
+      <span class="item-code">B1</span> 免费取消通知
+    </div>
+    <div class="sidebar-item" onclick="switchScene('b2',this)">
+      <span class="item-code">B2</span> 不可取消·协商请求
+      <span class="badge-new">NEW</span>
+    </div>
+    <div class="sidebar-item" onclick="switchScene('b3',this)">
+      <span class="item-code">B3</span> 协商退款申请
+      <span class="badge-new">NEW</span>
+    </div>
+    <div class="sidebar-item" onclick="switchScene('b4',this)">
+      <span class="item-code">B4</span> 房客请求协助
+      <span class="badge-new">NEW</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<div class="main">
+
+  <!-- ━━━━━━ A1 免费取消 ━━━━━━ -->
+  <div class="scene-panel active" id="scene-a1">
+    <div class="scene-label">A1 · 免费取消 — 全额退款场景</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-a1">
+        <!-- Order info -->
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 16:28</div>
+        <!-- User -->
+        <div class="msg-row right">
+          <div class="bubble right">我想取消订单</div>
+        </div>
+        <!-- System card -->
+        <div class="sys-card">
+          <div class="card-title">✅ 该订单可免费取消</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">🏠 青山小筑 · 大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 已支付 <span class="amount-highlight">¥528</span> · 免费取消 <span class="amount-highlight">全额退款</span></div>
+            <div class="info-row">⏰ 免费取消截止：04/13 12:00 前</div>
+          </div>
+          <div class="retention-area">
+            <p>💛 好房不容错过！确认要取消吗？</p>
+            <p>这是一套评分 4.9 的好房，期待您的入住 🏡</p>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary btn-full" id="a1-cancel-btn" onclick="a1Cancel()">确认取消</button>
+          </div>
+        </div>
+        <!-- Confirm result (hidden) -->
+        <div class="sys-card" id="a1-result" style="display:none;">
+          <div class="card-title">✅ 取消成功，退款处理中</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">退款金额：<span class="amount-highlight">¥528</span></div>
+            <div class="info-row">退款将在 3-5 个工作日内到账</div>
+          </div>
+        </div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ A2 不可取消 ━━━━━━ -->
+  <div class="scene-panel" id="scene-a2">
+    <div class="scene-label">A2 · 不可取消 — 超出免费取消期</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-a2">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 13:05</div>
+        <div class="msg-row right">
+          <div class="bubble right">我想取消订单</div>
+        </div>
+        <!-- Card 1 -->
+        <div class="sys-card">
+          <div class="card-title">⚠️ 已超出免费取消期</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">🏠 青山小筑 · 大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 已支付 ¥528 · 当前可退 <span class="amount-highlight">¥0</span>（距入住不足24小时）</div>
+            <div class="info-row">📋 退改规则：入住前24小时内取消，不退款</div>
+          </div>
+          <div class="retention-area">
+            <p>💛 好房不容错过！期待您的入住</p>
+            <p>如有特殊情况，可向房东申请协商退款</p>
+          </div>
+        </div>
+        <!-- Assistant bubble -->
+        <div class="assistant-bubble">
+          <div class="asst-title">💬 遇到特殊情况？</div>
+          <div class="asst-body">如有特殊原因（如紧急事故、航班取消等），可向房东申请协商退款</div>
+          <button class="btn btn-primary btn-full" id="a2-apply-btn" onclick="a2Apply()" style="margin-top:6px;">申请协商退款 →</button>
+        </div>
+        <!-- Applied card (hidden) -->
+        <div class="sys-card" id="a2-applied" style="display:none;">
+          <div class="card-title">✅ 协商申请已发起</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">请前往订单详情页填写申请原因，房东收到后将在24小时内响应</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary btn-full">前往订单页申请 →</button>
+          </div>
+        </div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ A3 房客可发起协商退 ━━━━━━ -->
+  <div class="scene-panel" id="scene-a3">
+    <div class="scene-label">A3 · 房客可发起协商退 ✨</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-a3">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 10:14</div>
+        <div class="msg-row right">
+          <div class="bubble right">我想取消订单</div>
+        </div>
+        <!-- Card 1 -->
+        <div class="sys-card">
+          <div class="card-title">💰 当前取消将按规则扣款</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">🏠 青山小筑 · 大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 已支付 ¥528 · 当前可退 <span class="amount-highlight">¥264</span>（退50%）</div>
+            <div class="info-row">📋 退改规则：入住前48小时取消，退款50%</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary btn-flex" id="a3-rule-btn" onclick="a3RuleCancel()">按规则取消</button>
+            <button class="btn btn-primary btn-flex"   id="a3-nego-btn" onclick="a3OpenNegotiate()">申请协商退款 ✨</button>
+          </div>
+        </div>
+        <!-- Assistant with tags (hidden) -->
+        <div class="assistant-bubble" id="a3-tags-card" style="display:none;">
+          <div class="asst-title">💬 告诉房东您的情况，更容易获得理解</div>
+          <div class="asst-body">房东通常对有特殊情况的旅客更愿意配合</div>
+          <div class="tag-row" id="a3-tags">
+            <span class="tag-chip" data-label="✈️ 航班取消"  onclick="a3Tag(this)">✈️ 航班取消</span>
+            <span class="tag-chip" data-label="🚑 突发疾病"  onclick="a3Tag(this)">🚑 突发疾病</span>
+            <span class="tag-chip" data-label="🌩️ 自然灾害" onclick="a3Tag(this)">🌩️ 自然灾害</span>
+            <span class="tag-chip" data-label="📝 其他原因"  onclick="a3Tag(this)">📝 其他原因</span>
+          </div>
+        </div>
+        <!-- Card 2 apply (hidden) -->
+        <div class="sys-card" id="a3-apply-card" style="display:none;">
+          <div class="card-title">🤝 发起协商退款申请</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">申请原因：<span id="a3-reason-text" class="amount-highlight"></span></div>
+            <div class="info-row">房东将在24小时内响应您的申请</div>
+            <div class="info-row">如房东未响应，平台将自动介入处理</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary btn-full" id="a3-submit-btn" onclick="a3Submit()">前往订单页申请 →</button>
+          </div>
+        </div>
+        <!-- User msg (hidden) -->
+        <div class="msg-row right" id="a3-user-msg" style="display:none;">
+          <div class="bubble right">您好，我因为航班取消无法按时入住，希望能协商退款，感谢理解！</div>
+        </div>
+        <!-- Card 3 result (hidden) -->
+        <div class="sys-card" id="a3-result-card" style="display:none;">
+          <div class="card-title">📋 协商退款申请已提交</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">申请类型：协商退款</div>
+            <div class="info-row">申请原因：<span id="a3-result-reason" class="amount-highlight"></span></div>
+            <div class="info-row">当前状态：⏳ 等待房东响应（24小时内）</div>
+            <div class="info-row">如房东未响应，平台将自动介入</div>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:#999;">如有疑问可在订单页查看详情</div>
+        </div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ A4 房客不可发起协商退 ━━━━━━ -->
+  <div class="scene-panel" id="scene-a4">
+    <div class="scene-label">A4 · 房客不可发起协商退 ✨</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-a4">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 09:52</div>
+        <div class="msg-row right">
+          <div class="bubble right">我想取消订单</div>
+        </div>
+        <!-- Card 1 -->
+        <div class="sys-card">
+          <div class="card-title">💰 当前取消将按规则扣款</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">🏠 青山小筑 · 大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 已支付 ¥528 · 当前可退 <span class="amount-highlight">¥0</span></div>
+            <div class="info-row">📋 退改规则：入住前24小时内取消，不退款</div>
+          </div>
+          <div class="retention-area">
+            <p>💛 好房不容错过！期待您的入住 🏡</p>
+          </div>
+        </div>
+        <!-- Card 2 special -->
+        <div class="sys-card" style="border-left:4px solid #FFCC00;">
+          <div class="card-title">💬 如有特殊情况，可申请房东协助</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row" style="color:#555;font-size:13px;line-height:1.7;">
+              本房源的退改政策较严格，协商退款需由房东发起。您可以向房东说明情况，请求其协助处理。
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary btn-full" id="a4-send-btn" onclick="a4Send()">向房东发送请求</button>
+          </div>
+        </div>
+        <!-- User msg (hidden) -->
+        <div class="msg-row right" id="a4-user-msg" style="display:none;">
+          <div class="bubble right">您好，我遇到了特殊情况，希望协商退款，能否帮我发起申请？谢谢！</div>
+        </div>
+        <!-- Capsule (hidden) -->
+        <div class="sys-capsule" id="a4-capsule" style="display:none;">
+          协商请求已发送给房东，等待房东操作 🔔
+        </div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ━━━━━━ B1 免费取消通知 ━━━━━━ -->
+  <div class="scene-panel" id="scene-b1">
+    <div class="scene-label">B1 · 房东端 — 免费取消通知（无需操作）</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">10:22</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-b1">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 10:22</div>
+        <!-- System notification card, no buttons -->
+        <div class="sys-card">
+          <div class="card-title">📢 旅客取消了订单</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">🏠 青山小筑·大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 订单金额 <span class="amount-highlight">¥528</span> · 已全额退款给旅客</div>
+            <div class="info-row">⏰ 取消时间：04/13 10:22</div>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:#888;line-height:1.6;">
+            该订单在免费取消期内取消，已自动处理，无需您操作
+          </div>
+        </div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ B2 不可取消·收到协商请求 ━━━━━━ -->
+  <div class="scene-panel" id="scene-b2">
+    <div class="scene-label">B2 · 房东端 — 不可取消·收到协商请求 ✨</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">13:05</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-b2">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 13:05</div>
+        <!-- Guest message bubble (left) -->
+        <div class="msg-row">
+          <div class="bubble left">您好，我遇到了航班取消，无法按时到达，希望能协商退款，谢谢理解🙏</div>
+        </div>
+        <!-- System action card with yellow left border -->
+        <div class="sys-card" style="border-left:4px solid #FFCC00;">
+          <div class="card-title">🤝 旅客申请协商退款</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">👤 旅客：小美同学</div>
+            <div class="info-row">🏠 青山小筑·大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 订单金额 ¥528 · 当前规则可退 <span class="amount-highlight">¥0</span></div>
+            <div class="info-row">📋 申请原因：✈️ 航班取消</div>
+          </div>
+          <div class="retention-area">
+            <p>💛 建议您及时响应，超24小时未处理平台将介入</p>
+            <p>友善处理有助于提升您的房东评分和回头率</p>
+            <p>💬 如有疑问，可先电话联系旅客沟通，再做决定</p>
+            <div style="text-align:center;margin-top:8px;">
+              <span id="b2-contact-link" onclick="bShowContact('b2')" style="font-size:12px;color:#888;cursor:pointer;text-decoration:underline;text-underline-offset:2px;">📞 查看旅客联系方式</span>
+            </div>
+            <!-- Contact card (hidden) -->
+            <div id="b2-contact-card" style="display:none;background:#fff;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.10);padding:12px;margin-top:10px;">
+              <div style="font-size:14px;color:#333;">旅客手机：138****8888（已脱敏）</div>
+              <div style="font-size:12px;color:#888;margin-top:4px;">通话记录将作为纠纷处理依据</div>
+            </div>
+          </div>
+          <div class="btn-row" id="b2-btn-row">
+            <button class="btn btn-primary btn-flex" id="b2-agree-btn" onclick="b2Agree()">同意协商退款</button>
+            <button class="btn btn-secondary btn-flex" id="b2-reject-btn" onclick="b2Reject()">维持原退改规则</button>
+          </div>
+        </div>
+        <!-- Result capsule (hidden) -->
+        <div id="b2-result" style="display:none;align-self:center;"></div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ B3 协商退款申请 ━━━━━━ -->
+  <div class="scene-panel" id="scene-b3">
+    <div class="scene-label">B3 · 房东端 — 协商退款申请 ✨</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">10:14</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-b3">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 10:14</div>
+        <!-- Guest message bubble (left) -->
+        <div class="msg-row">
+          <div class="bubble left">您好，我因为航班取消无法按时入住，希望能协商全额退款，感谢理解！</div>
+        </div>
+        <!-- System action card with yellow left border -->
+        <div class="sys-card" style="border-left:4px solid #FFCC00;">
+          <div class="card-title">🤝 旅客发起协商退款申请</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">👤 旅客：小美同学</div>
+            <div class="info-row">🏠 青山小筑·大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 订单金额 ¥528 · 规则可退 ¥264（退50%）· 旅客申请退 <span class="amount-highlight">¥528</span></div>
+            <div class="info-row">📋 申请原因：✈️ 航班取消</div>
+          </div>
+          <div class="retention-area">
+            <p>💛 建议您及时响应，超24小时未处理平台将介入</p>
+            <p>旅客已有 ¥264 的规则退款权利，协商全额退有助于提升评分</p>
+            <p>💬 如有疑问，可先电话联系旅客沟通，再做决定</p>
+            <div style="text-align:center;margin-top:8px;">
+              <span id="b3-contact-link" onclick="bShowContact('b3')" style="font-size:12px;color:#888;cursor:pointer;text-decoration:underline;text-underline-offset:2px;">📞 查看旅客联系方式</span>
+            </div>
+            <!-- Contact card (hidden) -->
+            <div id="b3-contact-card" style="display:none;background:#fff;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.10);padding:12px;margin-top:10px;">
+              <div style="font-size:14px;color:#333;">旅客手机：138****8888（已脱敏）</div>
+              <div style="font-size:12px;color:#888;margin-top:4px;">通话记录将作为纠纷处理依据</div>
+            </div>
+          </div>
+          <div class="btn-row" id="b3-btn-row">
+            <button class="btn btn-primary btn-flex" id="b3-agree-btn" onclick="b3Agree()">同意协商退款</button>
+            <button class="btn btn-secondary btn-flex" id="b3-reject-btn" onclick="b3Reject()">维持原退改规则</button>
+          </div>
+        </div>
+        <!-- Result capsule (hidden) -->
+        <div id="b3-result" style="display:none;align-self:center;"></div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━ B4 房客请求房东协助 ━━━━━━ -->
+  <div class="scene-panel" id="scene-b4">
+    <div class="scene-label">B4 · 房东端 — 房客请求协助发起协商退款 ✨</div>
+    <div class="phone">
+      <div class="status-bar">
+        <span class="time">09:52</span>
+        <div class="icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+      </div>
+      <div class="im-header">
+        <span class="back">←</span>
+        <span class="title">美团民宿</span>
+        <span class="more">···</span>
+      </div>
+      <div class="chat-area" id="chat-b4">
+        <div class="order-info-card">
+          <div class="order-thumb"></div>
+          <div class="order-info-text">
+            <div class="name">青山小筑 · 大床房</div>
+            <div class="date">04/15 入住 — 04/17 离店 · 2晚</div>
+          </div>
+        </div>
+        <div class="time-divider">今天 09:52</div>
+        <!-- Guest message bubble (left) -->
+        <div class="msg-row">
+          <div class="bubble left">您好，我遇到了特殊情况，希望协商退款，能否帮我发起申请？谢谢！</div>
+        </div>
+        <!-- System action card with yellow left border -->
+        <div class="sys-card" style="border-left:4px solid #FFCC00;">
+          <div class="card-title">💬 旅客请求您协助发起协商退款</div>
+          <div class="divider"></div>
+          <div class="info-rows">
+            <div class="info-row">👤 旅客：小美同学</div>
+            <div class="info-row">🏠 青山小筑·大床房</div>
+            <div class="info-row">📅 04/15 - 04/17（2晚）</div>
+            <div class="info-row">💰 订单金额 ¥528 · 当前规则可退 <span class="amount-highlight">¥0</span></div>
+          </div>
+          <div class="retention-area">
+            <p>💛 如情况属实，建议协助旅客，超24小时未处理平台将介入</p>
+            <p>💬 如有疑问，可先电话联系旅客沟通，再做决定</p>
+            <div style="text-align:center;margin-top:8px;">
+              <span id="b4-contact-link" onclick="bShowContact('b4')" style="font-size:12px;color:#888;cursor:pointer;text-decoration:underline;text-underline-offset:2px;">📞 查看旅客联系方式</span>
+            </div>
+            <!-- Contact card (hidden) -->
+            <div id="b4-contact-card" style="display:none;background:#fff;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.10);padding:12px;margin-top:10px;">
+              <div style="font-size:14px;color:#333;">旅客手机：138****8888（已脱敏）</div>
+              <div style="font-size:12px;color:#888;margin-top:4px;">通话记录将作为纠纷处理依据</div>
+            </div>
+          </div>
+          <div class="btn-row" id="b4-btn-row">
+            <button class="btn btn-primary btn-flex" id="b4-help-btn" onclick="b4Help()">帮旅客发起协商</button>
+            <button class="btn btn-secondary btn-flex" id="b4-refuse-btn" onclick="b4Refuse()">拒绝请求</button>
+          </div>
+        </div>
+        <!-- Result capsule (hidden) -->
+        <div id="b4-result" style="display:none;align-self:center;"></div>
+      </div>
+      <div class="input-bar">
+        <input type="text" placeholder="发送消息…" />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+/* ── Scene switching ── */
+function switchScene(id, el) {
+  document.querySelectorAll('.scene-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  document.getElementById('scene-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+/* ── Scroll to bottom helper ── */
+function scrollBottom(chatId) {
+  const el = document.getElementById(chatId);
+  if (el) setTimeout(() => el.scrollTop = el.scrollHeight, 50);
+}
+
+/* ── Show element helper ── */
+function show(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = '';
+}
+
+/* ── Disable button ── */
+function disableBtn(id) {
+  const el = document.getElementById(id);
+  if (el) { el.disabled = true; el.classList.add('disabled'); }
+}
+
+/* ════════ A1 ════════ */
+function a1Cancel() {
+  disableBtn('a1-cancel-btn');
+  show('a1-result');
+  scrollBottom('chat-a1');
+}
+
+/* ════════ A2 ════════ */
+function a2Apply() {
+  disableBtn('a2-apply-btn');
+  show('a2-applied');
+  scrollBottom('chat-a2');
+}
+
+/* ════════ A3 ════════ */
+var a3SelectedTag = '';
+
+function a3RuleCancel() {
+  disableBtn('a3-rule-btn');
+  disableBtn('a3-nego-btn');
+  // Show rule-cancel confirmation inline
+  var chat = document.getElementById('chat-a3');
+  var capsule = document.createElement('div');
+  capsule.className = 'sys-capsule';
+  capsule.textContent = '已按规则发起取消，退款 ¥264 处理中';
+  chat.appendChild(capsule);
+  scrollBottom('chat-a3');
+}
+
+function a3OpenNegotiate() {
+  disableBtn('a3-rule-btn');
+  disableBtn('a3-nego-btn');
+  show('a3-tags-card');
+  scrollBottom('chat-a3');
+}
+
+function a3Tag(el) {
+  // Toggle selection
+  document.querySelectorAll('#a3-tags .tag-chip').forEach(t => t.classList.remove('selected'));
+  el.classList.add('selected');
+  a3SelectedTag = el.getAttribute('data-label');
+  // Show apply card
+  document.getElementById('a3-reason-text').textContent = a3SelectedTag;
+  show('a3-apply-card');
+  scrollBottom('chat-a3');
+}
+
+function a3Submit() {
+  disableBtn('a3-submit-btn');
+  // Disable tags
+  document.querySelectorAll('#a3-tags .tag-chip').forEach(t => {
+    t.style.pointerEvents = 'none'; t.style.opacity = '0.6';
+  });
+  // Show user message
+  show('a3-user-msg');
+  // Show result card
+  var reason = a3SelectedTag || '✈️ 航班取消';
+  document.getElementById('a3-result-reason').textContent = reason;
+  show('a3-result-card');
+  scrollBottom('chat-a3');
+}
+
+/* ════════ A4 ════════ */
+function a4Send() {
+  disableBtn('a4-send-btn');
+  show('a4-user-msg');
+  show('a4-capsule');
+  scrollBottom('chat-a4');
+}
+
+/* ════════ B helpers ════════ */
+function bShowContact(scene) {
+  var link = document.getElementById(scene + '-contact-link');
+  var card = document.getElementById(scene + '-contact-card');
+  if (!card) return;
+  card.style.display = 'block';
+  if (link) { link.style.pointerEvents = 'none'; link.style.opacity = '0.4'; }
+  scrollBottom('chat-' + scene);
+}
+
+function showResultCapsule(containerId, chatId, bgColor, textColor, text) {
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  container.style.display = 'flex';
+  container.style.justifyContent = 'center';
+  var capsule = document.createElement('div');
+  capsule.style.cssText = [
+    'background:' + bgColor,
+    'color:' + textColor,
+    'border-radius:16px',
+    'padding:6px 16px',
+    'font-size:13px',
+    'line-height:1.6',
+    'text-align:center'
+  ].join(';');
+  capsule.textContent = text;
+  container.appendChild(capsule);
+}
+
+function disableBtnRow(rowId) {
+  var row = document.getElementById(rowId);
+  if (!row) return;
+  row.querySelectorAll('button').forEach(function(btn) {
+    btn.disabled = true;
+    btn.classList.add('disabled');
+  });
+}
+
+/* ════════ B2 ════════ */
+function b2Agree() {
+  disableBtnRow('b2-btn-row');
+  showResultCapsule('b2-result', 'chat-b2', '#E8F5E9', '#4CAF50', '✅ 已同意，平台将为旅客退款，感谢您的理解');
+  scrollBottom('chat-b2');
+}
+
+function b2Reject() {
+  disableBtnRow('b2-btn-row');
+  showResultCapsule('b2-result', 'chat-b2', '#F5F5F5', '#888', '已拒绝协商，旅客可申请平台介入');
+  scrollBottom('chat-b2');
+}
+
+/* ════════ B3 ════════ */
+function b3Agree() {
+  disableBtnRow('b3-btn-row');
+  showResultCapsule('b3-result', 'chat-b3', '#E8F5E9', '#4CAF50', '✅ 已同意，平台将为旅客退款 ¥528，感谢您的理解');
+  scrollBottom('chat-b3');
+}
+
+function b3Reject() {
+  disableBtnRow('b3-btn-row');
+  showResultCapsule('b3-result', 'chat-b3', '#F5F5F5', '#888', '已选择按规则处理，旅客将退款 ¥264');
+  scrollBottom('chat-b3');
+}
+
+/* ════════ B4 ════════ */
+function b4Help() {
+  disableBtnRow('b4-btn-row');
+  showResultCapsule('b4-result', 'chat-b4', '#E8F5E9', '#4CAF50', '✅ 已帮旅客发起协商申请，等待平台审核');
+  scrollBottom('chat-b4');
+}
+
+function b4Refuse() {
+  disableBtnRow('b4-btn-row');
+  showResultCapsule('b4-result', 'chat-b4', '#F5F5F5', '#888', '已拒绝，旅客可申请平台介入处理');
+  scrollBottom('chat-b4');
+}
+</script>
+</body>
+</html>

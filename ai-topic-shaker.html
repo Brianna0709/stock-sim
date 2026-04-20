@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 话题签筒 · 周会开场神器</title>
+  <style>
+    /* =====================================================
+       全局 & 背景
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0d1f2d;
+      /* 淡淡纹理：细点阵 */
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: #e8dcc8;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* 顶部光晕装饰 */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(52,168,100,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* =====================================================
+       标题区
+    ===================================================== */
+    .page-header {
+      text-align: center;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 10;
+    }
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #c8e6c9;
+      text-shadow: 0 0 30px rgba(80,200,120,0.4);
+    }
+    .page-title span { color: #81c784; }
+    .page-subtitle {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: rgba(200,230,210,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    /* =====================================================
+       签筒容器
+    ===================================================== */
+    .shaker-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* 摇签动画 */
+    @keyframes shake {
+      0%   { transform: rotate(0deg) translateX(0); }
+      10%  { transform: rotate(-6deg) translateX(-8px); }
+      20%  { transform: rotate(7deg)  translateX(10px); }
+      30%  { transform: rotate(-8deg) translateX(-12px); }
+      40%  { transform: rotate(8deg)  translateX(12px); }
+      50%  { transform: rotate(-6deg) translateX(-8px); }
+      60%  { transform: rotate(5deg)  translateX(6px); }
+      70%  { transform: rotate(-3deg) translateX(-4px); }
+      80%  { transform: rotate(2deg)  translateX(2px); }
+      90%  { transform: rotate(-1deg) translateX(-1px); }
+      100% { transform: rotate(0deg)  translateX(0); }
+    }
+    .shaker-wrapper.shaking { animation: shake 0.8s ease-in-out; }
+
+    /* =====================================================
+       竹签条（筒口露出的签）
+    ===================================================== */
+    .sticks-area {
+      position: relative;
+      width: 120px;
+      height: 72px;
+      margin-bottom: -4px; /* 和筒口无缝连接 */
+      z-index: 5;
+    }
+
+    .stick {
+      position: absolute;
+      bottom: 0;
+      width: 10px;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(180deg, #f5e6c8 0%, #d4b483 60%, #a0784a 100%);
+      box-shadow: inset -2px 0 4px rgba(0,0,0,0.2);
+      transform-origin: bottom center;
+      transition: transform 0.1s;
+    }
+
+    /* 7根签，各自位置和高度略有差异 */
+    .stick:nth-child(1) { left: 8px;  height: 52px; transform: rotate(-8deg); }
+    .stick:nth-child(2) { left: 22px; height: 64px; transform: rotate(-4deg); }
+    .stick:nth-child(3) { left: 36px; height: 70px; transform: rotate(-1deg); }
+    .stick:nth-child(4) { left: 55px; height: 72px; transform: rotate(0deg);  }
+    .stick:nth-child(5) { left: 72px; height: 68px; transform: rotate(2deg);  }
+    .stick:nth-child(6) { left: 88px; height: 58px; transform: rotate(5deg);  }
+    .stick:nth-child(7) { left: 100px; height: 46px; transform: rotate(9deg); }
+
+    /* 摇动时签条抖动 */
+    /* 各签条摇动动画（展开 CSS 变量以兼容 Safari file:// 环境） */
+    @keyframes stickWiggle1 {
+      0%, 100% { transform: rotate(-8deg); }
+      25%  { transform: rotate(-20deg); }
+      75%  { transform: rotate(4deg); }
+    }
+    @keyframes stickWiggle2 {
+      0%, 100% { transform: rotate(-4deg); }
+      25%  { transform: rotate(-16deg); }
+      75%  { transform: rotate(8deg); }
+    }
+    @keyframes stickWiggle3 {
+      0%, 100% { transform: rotate(-1deg); }
+      25%  { transform: rotate(-13deg); }
+      75%  { transform: rotate(11deg); }
+    }
+    @keyframes stickWiggle4 {
+      0%, 100% { transform: rotate(0deg); }
+      25%  { transform: rotate(-12deg); }
+      75%  { transform: rotate(12deg); }
+    }
+    @keyframes stickWiggle5 {
+      0%, 100% { transform: rotate(2deg); }
+      25%  { transform: rotate(-10deg); }
+      75%  { transform: rotate(14deg); }
+    }
+    @keyframes stickWiggle6 {
+      0%, 100% { transform: rotate(5deg); }
+      25%  { transform: rotate(-7deg); }
+      75%  { transform: rotate(17deg); }
+    }
+    @keyframes stickWiggle7 {
+      0%, 100% { transform: rotate(9deg); }
+      25%  { transform: rotate(-3deg); }
+      75%  { transform: rotate(21deg); }
+    }
+    .shaking .stick:nth-child(1) { animation: stickWiggle1 0.15s ease-in-out 4; }
+    .shaking .stick:nth-child(2) { animation: stickWiggle2 0.15s ease-in-out 4 0.03s; }
+    .shaking .stick:nth-child(3) { animation: stickWiggle3 0.15s ease-in-out 4 0.06s; }
+    .shaking .stick:nth-child(4) { animation: stickWiggle4 0.15s ease-in-out 4 0.02s; }
+    .shaking .stick:nth-child(5) { animation: stickWiggle5 0.15s ease-in-out 4 0.05s; }
+    .shaking .stick:nth-child(6) { animation: stickWiggle6 0.15s ease-in-out 4 0.04s; }
+    .shaking .stick:nth-child(7) { animation: stickWiggle7 0.15s ease-in-out 4 0.01s; }
+
+    /* =====================================================
+       签筒主体（SVG 画竹筒）
+    ===================================================== */
+    .bamboo-tube {
+      position: relative;
+      width: 160px;
+      height: 220px;
+      z-index: 10;
+    }
+
+    /* 用 CSS 模拟竹筒，不用图片 */
+    .tube-body {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 210px;
+      background: linear-gradient(160deg,
+        #4a7c59 0%,
+        #2d5a3d 25%,
+        #1e3d28 50%,
+        #2d5a3d 75%,
+        #3a6647 100%
+      );
+      border-radius: 18px 18px 22px 22px;
+      box-shadow:
+        inset -8px 0 20px rgba(0,0,0,0.4),
+        inset 8px 0 16px rgba(255,255,255,0.06),
+        0 8px 40px rgba(0,0,0,0.6),
+        0 2px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    /* 竹节纹 */
+    .tube-body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          180deg,
+          transparent 0px,
+          transparent 60px,
+          rgba(0,0,0,0.25) 60px,
+          rgba(0,0,0,0.25) 65px,
+          rgba(255,255,255,0.05) 65px,
+          rgba(255,255,255,0.05) 68px,
+          transparent 68px
+        );
+    }
+
+    /* 竹纹高光 */
+    .tube-body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 12px;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.08) 50%,
+        transparent 100%
+      );
+      border-radius: 50%;
+    }
+
+    /* 筒口椭圆 */
+    .tube-top {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 32px;
+      background: linear-gradient(180deg, #3a6647 0%, #2d5a3d 100%);
+      border-radius: 50%;
+      border: 3px solid #1e3d28;
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 -4px 12px rgba(0,0,0,0.3);
+      z-index: 11;
+    }
+
+    /* 筒口内阴影（营造深度） */
+    .tube-top::after {
+      content: "";
+      position: absolute;
+      inset: 5px 10px;
+      background: radial-gradient(ellipse, #0d1a12 60%, transparent 100%);
+      border-radius: 50%;
+    }
+
+    /* 筒底弧形 */
+    .tube-bottom {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 28px;
+      background: linear-gradient(0deg, #1a3323 0%, #2d5a3d 100%);
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    /* 竹节横环装饰 */
+    .tube-ring {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 148px;
+      height: 12px;
+      background: linear-gradient(180deg,
+        rgba(255,255,255,0.06) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(255,255,255,0.04) 100%
+      );
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.4);
+      z-index: 12;
+    }
+    .tube-ring.r1 { top: 63px; }
+    .tube-ring.r2 { top: 126px; }
+    .tube-ring.r3 { top: 189px; }
+
+    /* 竹筒上的 AI 印章 */
+    .tube-label {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) translateY(10px);
+      z-index: 13;
+      width: 52px;
+      height: 52px;
+      background: rgba(255,220,100,0.12);
+      border: 1.5px solid rgba(255,220,100,0.35);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: rgba(255,220,100,0.8);
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      text-shadow: 0 0 12px rgba(255,200,50,0.4);
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+
+    /* =====================================================
+       摇一摇 按钮
+    ===================================================== */
+    .shake-btn {
+      margin-top: 32px;
+      padding: 14px 42px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #0d1f2d;
+      background: linear-gradient(135deg, #81c784 0%, #4caf50 50%, #388e3c 100%);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      box-shadow:
+        0 4px 20px rgba(76,175,80,0.45),
+        0 1px 4px rgba(0,0,0,0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .shake-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(76,175,80,0.55), 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .shake-btn:active { transform: translateY(0); }
+    .shake-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* 进度提示 */
+    .progress-hint {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: rgba(200,230,210,0.4);
+      letter-spacing: 0.05em;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* =====================================================
+       签条弹出覆盖层
+    ===================================================== */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 12, 18, 0.85);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .overlay.visible { display: flex; }
+
+    /* 签条弹出动画 */
+    @keyframes signDrop {
+      0%   { opacity: 0; transform: translateY(-80px) scaleY(0.3) rotate(-3deg); }
+      60%  { opacity: 1; transform: translateY(8px) scaleY(1.02) rotate(0.5deg); }
+      80%  { transform: translateY(-4px) scaleY(0.98) rotate(-0.3deg); }
+      100% { opacity: 1; transform: translateY(0) scaleY(1) rotate(0deg); }
+    }
+
+    .fortune-slip {
+      position: relative;
+      width: 240px;
+      min-height: 520px;
+      background: linear-gradient(180deg,
+        #f5ead5 0%,
+        #f0e0c0 40%,
+        #ecdbb5 70%,
+        #e5d09e 100%
+      );
+      border-radius: 8px 8px 14px 14px;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 4px 16px rgba(0,0,0,0.4),
+        inset 0 0 40px rgba(160,120,60,0.12);
+      padding: 36px 22px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: signDrop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+      /* 纸张纹理模拟 */
+      background-image:
+        linear-gradient(180deg,
+          #f5ead5 0%,
+          #f0e0c0 40%,
+          #ecdbb5 70%,
+          #e5d09e 100%
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 4px,
+          rgba(160,120,60,0.04) 4px,
+          rgba(160,120,60,0.04) 5px
+        );
+    }
+
+    /* 签条顶部小孔装饰 */
+    .fortune-slip::before {
+      content: "";
+      position: absolute;
+      top: 14px; left: 50%;
+      transform: translateX(-50%);
+      width: 12px; height: 12px;
+      background: #0d1f2d;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      opacity: 0.7;
+    }
+
+    /* 签条顶部绳子 */
+    .fortune-slip::after {
+      content: "";
+      position: absolute;
+      top: -30px; left: 50%;
+      transform: translateX(-50%);
+      width: 2px; height: 32px;
+      background: linear-gradient(180deg, transparent, #c8a87a);
+    }
+
+    /* 签号 */
+    .slip-number {
+      font-size: 0.72rem;
+      color: rgba(120, 80, 40, 0.55);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    /* 签题分割线（红色细线，古典感） */
+    .slip-divider {
+      width: 2px;
+      height: 32px;
+      background: linear-gradient(180deg, transparent, #c0392b, transparent);
+      margin-bottom: 16px;
+    }
+
+    /* 话题标题（竖排，毛笔感） */
+    .slip-title {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #3a1f08;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      text-align: center;
+      max-height: 260px;
+      /* 模拟毛笔字粗细 */
+      text-shadow:
+        1px 1px 0 rgba(160, 100, 40, 0.3),
+        -1px -1px 0 rgba(0,0,0,0.1);
+      margin-bottom: 18px;
+    }
+
+    /* 引导语区域 */
+    .slip-guide-wrap {
+      width: 100%;
+      border-top: 1px solid rgba(160, 100, 40, 0.25);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+    .slip-guide-label {
+      font-size: 0.68rem;
+      color: rgba(120,80,40,0.6);
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .slip-guide {
+      font-size: 0.85rem;
+      color: #5a3a18;
+      line-height: 1.8;
+      text-align: justify;
+      letter-spacing: 0.02em;
+    }
+
+    /* =====================================================
+       弹出层按钮区
+    ===================================================== */
+    .overlay-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      z-index: 101;
+    }
+
+    .btn-again {
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #0d1f2d;
+      background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(76,175,80,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-again:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(76,175,80,0.5);
+    }
+
+    .btn-close {
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(200,230,210,0.7);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,230,210,0.2);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-close:hover {
+      background: rgba(255,255,255,0.12);
+      color: rgba(200,230,210,0.95);
+    }
+
+    /* =====================================================
+       底部装饰文字
+    ===================================================== */
+    .footer-hint {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: rgba(200,230,210,0.22);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    /* =====================================================
+       响应式小屏适配
+    ===================================================== */
+    @media (max-height: 700px) {
+      .page-title { font-size: 1.5rem; }
+      .page-header { margin-bottom: 16px; }
+      .bamboo-tube { width: 130px; height: 180px; }
+      .tube-body { width: 115px; height: 172px; }
+      .tube-top, .tube-bottom { width: 115px; }
+      .tube-ring { width: 122px; }
+      .sticks-area { width: 100px; height: 60px; }
+      .shake-btn { margin-top: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .fortune-slip { width: 200px; min-height: 460px; padding: 30px 16px 22px; }
+      .slip-title { font-size: 1.1rem; max-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 标题 -->
+  <header class="page-header">
+    <h1 class="page-title">🎋 <span>AI</span> 话题签筒</h1>
+    <p class="page-subtitle">摇一摇，开启今天的周会讨论</p>
+  </header>
+
+  <!-- 签筒主体（可点击触发摇签） -->
+  <div class="shaker-wrapper" id="shakerWrapper" title="点击摇签">
+
+    <!-- 筒口露出的签条 -->
+    <div class="sticks-area">
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+    </div>
+
+    <!-- 竹筒 -->
+    <div class="bamboo-tube">
+      <div class="tube-top"></div>
+      <div class="tube-body">
+        <div class="tube-ring r1"></div>
+        <div class="tube-ring r2"></div>
+        <div class="tube-ring r3"></div>
+        <div class="tube-label">话题签</div>
+      </div>
+      <div class="tube-bottom"></div>
+    </div>
+  </div>
+
+  <!-- 摇一摇按钮 -->
+  <button class="shake-btn" id="shakeBtn">🎋 摇一摇</button>
+
+  <!-- 已抽数量提示 -->
+  <p class="progress-hint" id="progressHint">共 25 支签 · 随机不重复</p>
+
+  <!-- 签条弹出覆盖层 -->
+  <div class="overlay" id="overlay">
+    <div class="fortune-slip" id="fortuneSlip">
+      <div class="slip-number" id="slipNumber">第 · 号签</div>
+      <div class="slip-divider"></div>
+      <div class="slip-title" id="slipTitle">话题标题</div>
+      <div class="slip-guide-wrap">
+        <div class="slip-guide-label">✦ 主持人引导语 ✦</div>
+        <div class="slip-guide" id="slipGuide">引导语内容</div>
+      </div>
+    </div>
+
+    <div class="overlay-actions">
+      <button class="btn-again" id="btnAgain">再摇一签</button>
+      <button class="btn-close" id="btnClose">收好啦</button>
+    </div>
+  </div>
+
+  <!-- 底部提示 -->
+  <p class="footer-hint">点击签筒 或 「摇一摇」按钮开始 · 25 个话题全部用完后自动洗牌</p>
+
+  <script>
+    /* =====================================================
+       话题数据（25 个）
+    ===================================================== */
+    const TOPICS = [
+      {
+        title: "最近用 AI 做了啥让你觉得「哇这也行」的事？",
+        guide:  "先热身，不用说大事，就是最近哪个用法让你愣了一下，意外好用或意外搞笑都算。"
+      },
+      {
+        title: "你现在平均每天用 AI 多长时间？晒一下",
+        guide:  "习惯不一样，有人全天开着，有人想起来才用。聊聊各自频率，为啥——没习惯，用腻了，还是停不下来？"
+      },
+      {
+        title: "你在用哪个模型？为啥不换？",
+        guide:  "GPT、Claude、Gemini、国内一堆，你实际在用哪个？付费还是免费？有没有换模型换出感情的？"
+      },
+      {
+        title: "你每个月在 AI 上花多少钱？值不值？",
+        guide:  "有人一分不花白嫖，有人订了好几个会员一个月几百块。来晒账单，聊聊觉不觉得值。"
+      },
+      {
+        title: "有没有哪个 AI 功能让你觉得「这是什么垃圾」？",
+        guide:  "AI 不是什么都好，有没有哪个功能上线时吹得猛，你试了完全没用或比预期差很多？"
+      },
+      {
+        title: "你用过最隐藏、最冷门的 AI 用法是什么？",
+        guide:  "大家都知道写文章翻译写代码，但有没有你自己摸索出来的、不主流的用法，效果还特别好？"
+      },
+      {
+        title: "你有没有调过一个特别好用的 Prompt？拿来晒",
+        guide:  "好 prompt 就像好的搜索词，差别很大。有没有花时间调过一个固定 prompt，每次用都特别顺手？"
+      },
+      {
+        title: "最近有没有刷到什么 AI 新闻让你觉得「这行业要变了」？",
+        guide:  "AI 行业一周能出好几件大事，最近有没有谁刷到让你觉得值得关注，或者「我去这也太猛了」的消息？"
+      },
+      {
+        title: "你怎么看「AI 会替代产品经理」这个说法？",
+        guide:  "老话题，但想听咱们自己人的看法。AI 现在能干 PM 哪些活？干不了哪些？你担心被替代吗？"
+      },
+      {
+        title: "你觉得 AI 最适合帮设计做哪件事？",
+        guide:  "特别想听设计同学说，产品运营也可以说说观察。AI 进入设计流程，哪个环节最有价值？哪个替代不了人？"
+      },
+      {
+        title: "如果 AI 能帮你干掉工作里最烦的一件事，你希望是什么？",
+        guide:  "不用想大的，就说你每天/每周最重复、最烂但不得不做的那件事，你想让 AI 替你搞定它吗？"
+      },
+      {
+        title: "你有没有用 AI 生成过图或视频？质量怎么样？",
+        guide:  "Sora、即梦、Midjourney、可灵……有没有人真的用过？生出来能不能用？"
+      },
+      {
+        title: "你有没有在用 AI 但没告诉别人？为啥不说？",
+        guide:  "有点八卦——你有没有用 AI 做了某件事，交付时没说是 AI 帮的？为什么？"
+      },
+      {
+        title: "你有没有用 AI 来「理清思路」而不是直接干活？",
+        guide:  "很多人把 AI 当执行工具，但其实有人用它来思考——把乱麻的问题抛给它让它拆解逻辑。你试过吗？"
+      },
+      {
+        title: "最近哪个大厂的 AI 新动作让你印象深刻？",
+        guide:  "Google、Meta、苹果、字节、百度……最近谁的动作让你觉得「这方向有点意思」或「又走偏了」？"
+      },
+      {
+        title: "如果可以定制一个专门帮你工作的 AI，它要有什么能力？",
+        guide:  "不考虑技术可行性，你的「专属工作 AI」最核心的一两个能力是什么？"
+      },
+      {
+        title: "你有没有让 AI 帮你写过「怎么跟某人说话」？",
+        guide:  "跟领导申请、跟同事谈、跟用户沟通……知道说什么但不知道怎么措辞，或者想预演对方反应。"
+      },
+      {
+        title: "「AI 会替代设计师」，现实吗？",
+        guide:  "设计和非设计同学都说说——AI 图生图已经很厉害了，但体验设计是另一回事。你怎么看？"
+      },
+      {
+        title: "有没有试过 vibe coding？或者让 AI 帮你做一个小工具？",
+        guide:  "不会写代码也能让 AI 做出小产品，有没有人试过？哪怕只是个小脚本、小页面。"
+      },
+      {
+        title: "你相信 AI 说的话吗？有没有被它坑过？",
+        guide:  "AI 有时候一本正经说错话，还说得特别自信。你被 AI 的「幻觉」坑过吗？有什么方法不容易被坑？"
+      },
+      {
+        title: "你觉得咱们团队用 AI 最大的障碍是什么？",
+        guide:  "工具有了，大家也用，但总感觉没用到最深。你觉得最大的拦路虎是什么？"
+      },
+      {
+        title: "你有没有分享过 AI 生成的内容，对方知道是 AI 做的吗？",
+        guide:  "发过 AI 生的图，或者用 AI 写的文案？对方知道吗？有没有纠结过「要不要说是 AI 做的」？"
+      },
+      {
+        title: "如果 AI 完全懂咱们的业务，你最想它帮你做哪件事？",
+        guide:  "假设有个 AI 完全了解咱们的用户、业务场景——你最想让它干什么？可以大胆说。"
+      },
+      {
+        title: "有没有哪件事 AI 做得比你好？心情是什么样的？",
+        guide:  "有没有你本来觉得自己挺擅长的事，让 AI 做了之后发现它做得比你还好？"
+      },
+      {
+        title: "一年后，咱们团队用 AI 的方式会跟现在差多少？",
+        guide:  "展望一下，不用讲大道理。一年以后咱们用 AI 这件事，哪里会变，哪里不变？"
+      }
+    ];
+
+    /* =====================================================
+       状态管理
+    ===================================================== */
+    let deck = [];       // 当前洗牌后的顺序（存索引）
+    let drawCount = 0;   // 总共已抽数
+    let isAnimating = false;
+
+    /** Fisher-Yates 洗牌 */
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    /** 重置/初始化牌堆 */
+    function resetDeck() {
+      deck = shuffle([...Array(TOPICS.length).keys()]);
+    }
+
+    /** 抽一签 */
+    function drawTopic() {
+      if (deck.length === 0) resetDeck();
+      return TOPICS[deck.pop()];
+    }
+
+    /* =====================================================
+       DOM 引用
+    ===================================================== */
+    const shakerWrapper = document.getElementById("shakerWrapper");
+    const shakeBtn      = document.getElementById("shakeBtn");
+    const overlay       = document.getElementById("overlay");
+    const fortuneSlip   = document.getElementById("fortuneSlip");
+    const slipNumber    = document.getElementById("slipNumber");
+    const slipTitle     = document.getElementById("slipTitle");
+    const slipGuide     = document.getElementById("slipGuide");
+    const progressHint  = document.getElementById("progressHint");
+    const btnAgain      = document.getElementById("btnAgain");
+    const btnClose      = document.getElementById("btnClose");
+
+    /* =====================================================
+       核心交互：摇签
+    ===================================================== */
+    function doShake() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      // 禁用按钮
+      shakeBtn.disabled = true;
+
+      // 触发摇动 CSS 动画
+      shakerWrapper.classList.add("shaking");
+
+      // 动画结束后展示签条
+      setTimeout(() => {
+        shakerWrapper.classList.remove("shaking");
+
+        // 抽签
+        const topic = drawTopic();
+        drawCount++;
+
+        // 更新进度提示
+        const remaining = deck.length;
+        progressHint.textContent = `已抽 ${drawCount} 签 · 还剩 ${remaining} 支（抽完自动洗牌）`;
+
+        // 填充签条内容
+        slipNumber.textContent = `第 ${drawCount} 签`;
+        slipTitle.textContent  = topic.title;
+        slipGuide.textContent  = topic.guide;
+
+        // 重置动画：移除再添加
+        fortuneSlip.style.animation = "none";
+        // 强制重绘
+        void fortuneSlip.offsetHeight;
+        fortuneSlip.style.animation = "";
+
+        // 展示覆盖层
+        overlay.classList.add("visible");
+        isAnimating = false;
+        shakeBtn.disabled = false;
+      }, 850); // 与 shake 动画时长对齐
+    }
+
+    /* =====================================================
+       事件绑定
+    ===================================================== */
+    shakerWrapper.addEventListener("click", doShake);
+    shakeBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // 防止冒泡到 shakerWrapper
+      doShake();
+    });
+
+    // 再摇一签：关掉遮罩后重新摇
+    btnAgain.addEventListener("click", () => {
+      overlay.classList.remove("visible");
+      setTimeout(doShake, 300);
+    });
+
+    // 收好了：直接关遮罩
+    btnClose.addEventListener("click", () => {
+      overlay.classList.remove("visible");
+    });
+
+    // 点击遮罩背景关闭（点到 slip 内部不关）
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove("visible");
+      }
+    });
+
+    /* =====================================================
+       初始化
+    ===================================================== */
+    resetDeck();
+  </script>
+</body>
+</html>

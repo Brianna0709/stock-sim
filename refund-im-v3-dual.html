@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客商IM退款场景原型 v3 双栏</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+}
+
+/* 顶部导航 */
+.top-nav {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 16px 20px 14px;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+.top-nav h1 {
+  font-size: 15px; color: #333; font-weight: 600;
+  margin-bottom: 12px; text-align: center; letter-spacing: 0.5px;
+}
+.tab-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.tab-btn {
+  padding: 7px 16px; border-radius: 20px;
+  border: 1px solid #e0e0e0; background: #fff; color: #999;
+  font-size: 13px; cursor: pointer; transition: all .2s;
+  font-weight: 500; white-space: nowrap;
+}
+.tab-btn:hover { border-color: #FFCC00; color: #333; }
+.tab-btn.active { background: #FFCC00; border-color: #FFCC00; color: #000; font-weight: 600; }
+
+/* 主内容 */
+.main-content { max-width: 760px; margin: 0 auto; }
+.scene { display: none; }
+.scene.active { display: block; }
+.dual-frame { display: flex; gap: 40px; justify-content: center; align-items: flex-start; }
+.frame-col { display: flex; flex-direction: column; align-items: center; }
+.frame-label {
+  font-size: 13px; font-weight: 600; margin-bottom: 10px;
+  padding: 4px 14px; border-radius: 12px;
+}
+.frame-label.guest { color: #1677FF; background: #E6F4FF; }
+.frame-label.host  { color: #FF6200; background: #FFF3EB; }
+
+/* 手机框 */
+.phone {
+  width: 320px; background: #fff;
+  border-radius: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+
+/* 状态栏 */
+.status-bar {
+  background: #fff; padding: 8px 20px 4px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; font-weight: 600; color: #333;
+}
+.status-bar .time { font-size: 13px; font-weight: 700; }
+.status-bar .icons { display: flex; gap: 4px; align-items: center; font-size: 11px; }
+
+/* 导航栏 */
+.nav-bar {
+  background: #fff; padding: 6px 16px 8px;
+  display: flex; align-items: center; border-bottom: 1px solid #f0f0f0; gap: 8px;
+}
+.nav-back { font-size: 18px; color: #333; cursor: pointer; line-height: 1; }
+.nav-title { flex: 1; font-size: 15px; font-weight: 600; color: #1a1a1a; }
+.nav-online { font-size: 11px; color: #52c41a; font-weight: 500; }
+
+/* 聊天区 */
+.chat-area {
+  background: #E7E7E7; padding: 12px 12px 8px;
+  flex: 1; max-height: 460px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+/* 底部输入框 */
+.input-bar {
+  background: #fff; padding: 8px 12px 12px;
+  display: flex; align-items: center; gap: 8px; border-top: 1px solid #f0f0f0;
+}
+.input-box {
+  flex: 1; background: #F0F0F0; border: none;
+  border-radius: 18px; padding: 7px 14px;
+  font-size: 13px; color: #999; outline: none;
+}
+.input-add {
+  width: 32px; height: 32px; background: #FFCC00;
+  border: none; border-radius: 50%; font-size: 20px;
+  font-weight: 700; color: #000; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* 气泡 */
+.msg-row { display: flex; align-items: flex-end; gap: 6px; }
+.msg-row.right { justify-content: flex-end; }
+.msg-row.left  { justify-content: flex-start; }
+.bubble {
+  max-width: 200px; padding: 8px 12px;
+  border-radius: 14px; font-size: 13px; line-height: 1.5; word-break: break-all;
+}
+.bubble.self { background: #FFCC00; color: #000; border-bottom-right-radius: 4px; }
+.bubble.other { background: #fff; color: #333; border-bottom-left-radius: 4px; }
+
+/* 系统卡片居中 (A1) */
+.sys-card-center {
+  margin: 4px auto; width: 260px; background: #fff;
+  border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 14px 16px 12px; text-align: center;
+}
+.sys-card-center .sys-icon { font-size: 22px; margin-bottom: 6px; }
+.sys-card-center .sys-title { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+.sys-card-center .sys-amount { font-size: 16px; font-weight: 700; color: #FF6200; margin-bottom: 4px; }
+.sys-card-center .sys-desc { font-size: 12px; color: #666; margin-bottom: 4px; line-height: 1.5; }
+.sys-card-center .sys-note { font-size: 11px; color: #aaa; margin-top: 6px; }
+.sys-card-center .sys-detail { font-size: 12px; color: #555; line-height: 1.7; margin-top: 4px; }
+
+/* 侧边线卡片 */
+.side-card {
+  background: #fff; border-left: 4px solid #FFCC00;
+  border-radius: 8px; padding: 10px 12px;
+  font-size: 12px; color: #333; line-height: 1.6; width: 100%;
+}
+.side-card .card-title {
+  font-size: 12px; font-weight: 700; color: #1a1a1a;
+  margin-bottom: 5px; display: flex; align-items: center; gap: 4px;
+}
+.side-card .card-row { display: flex; gap: 4px; margin-bottom: 1px; }
+.side-card .card-label { color: #888; white-space: nowrap; }
+.side-card .card-val { color: #333; }
+.red { color: #FF4D4F; font-weight: 600; }
+.orange { color: #FF6200; font-weight: 600; }
+
+/* 建议区 */
+.suggest-box {
+  background: #FFFBE6; border-radius: 6px; padding: 7px 10px;
+  font-size: 11px; color: #7a6200; margin-top: 7px; line-height: 1.5;
+}
+
+/* 新增标签 */
+.new-badge {
+  display: inline-block; background: #FF6200; color: #fff;
+  font-size: 10px; font-weight: 600; padding: 1px 6px;
+  border-radius: 10px; margin-bottom: 5px;
+}
+
+/* 金额对比 */
+.amount-row {
+  display: flex; gap: 10px; align-items: center; margin: 5px 0; font-size: 12px;
+}
+.amount-item { display: flex; flex-direction: column; align-items: center; }
+.amount-label { font-size: 10px; color: #888; }
+.amount-val { font-size: 14px; font-weight: 700; color: #FF6200; }
+.amount-vs { color: #bbb; font-size: 12px; }
+
+/* 查看联系方式 */
+.contact-toggle {
+  color: #FF6200; font-size: 12px; cursor: pointer;
+  margin-top: 6px; display: inline-block; font-weight: 500;
+}
+.contact-detail {
+  display: none; background: #fff8f0;
+  border-radius: 6px; padding: 6px 10px;
+  font-size: 11px; color: #555; margin-top: 4px;
+}
+.contact-detail.open { display: block; }
+
+/* 操作按钮行 */
+.action-row { display: flex; gap: 8px; margin-top: 10px; }
+.btn-outline {
+  flex: 1; padding: 7px 0; border: 1px solid #d9d9d9;
+  border-radius: 8px; background: #fff; color: #555;
+  font-size: 12px; cursor: pointer; text-align: center;
+  font-weight: 500; transition: all .2s;
+}
+.btn-outline:hover { border-color: #bbb; }
+.btn-yellow {
+  flex: 1; padding: 7px 0; border: none;
+  border-radius: 8px; background: #FFCC00; color: #000;
+  font-size: 12px; cursor: pointer; text-align: center;
+  font-weight: 600; transition: all .2s;
+}
+.btn-yellow:hover { background: #f0c000; }
+.btn-yellow.disabled,
+.btn-outline.disabled {
+  background: #f0f0f0 !important; border-color: #e0e0e0 !important;
+  color: #aaa !important; cursor: not-allowed;
+}
+
+/* 全宽按钮 */
+.btn-full {
+  width: 100%; padding: 10px 0; background: #FFCC00;
+  border: none; border-radius: 8px; color: #000;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  text-align: center; margin-top: 2px; transition: all .2s;
+}
+.btn-full:hover { background: #f0c000; }
+.btn-full.disabled { background: #f0f0f0 !important; color: #aaa !important; cursor: not-allowed; }
+
+/* 底部说明 */
+.page-footer { text-align: center; font-size: 12px; color: #bbb; margin-top: 20px; }
+
+/* 滚动条 */
+.chat-area::-webkit-scrollbar { width: 3px; }
+.chat-area::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+@media (max-width: 720px) {
+  .dual-frame { flex-direction: column; align-items: center; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<div class="top-nav">
+  <h1>🏠 客商IM退款场景原型 v3</h1>
+  <div class="tab-row">
+    <button class="tab-btn active" onclick="switchTab('a1',this)">A1 免费取消</button>
+    <button class="tab-btn" onclick="switchTab('a2',this)">A2 不可取消</button>
+    <button class="tab-btn" onclick="switchTab('a3',this)">A3 房客可发起协商</button>
+    <button class="tab-btn" onclick="switchTab('a4',this)">A4 房客不可发起协商</button>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <!-- ===== A1 免费取消 ===== -->
+  <div class="scene active" id="scene-a1">
+    <div class="dual-frame">
+      <!-- 左：房客 -->
+      <div class="frame-col">
+        <div class="frame-label guest">👤 房客视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">青山小筑</span>
+            <span class="nav-online">房东在线</span>
+          </div>
+          <div class="chat-area">
+            <div class="sys-card-center">
+              <div class="sys-icon">✅</div>
+              <div class="sys-title">取消成功</div>
+              <div class="sys-amount">¥528 已退至原支付方式</div>
+              <div class="sys-desc">预计 1-3 个工作日到账</div>
+              <div class="sys-note">免费取消期内无损退订</div>
+            </div>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+      <!-- 右：房东 -->
+      <div class="frame-col">
+        <div class="frame-label host">🏠 房东视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">小李同学</span>
+          </div>
+          <div class="chat-area">
+            <div class="sys-card-center">
+              <div class="sys-icon">📢</div>
+              <div class="sys-title">旅客取消了订单</div>
+              <div class="sys-detail">青山小筑·大床房<br>04/15 - 04/17（2晚）</div>
+              <div class="sys-amount" style="margin-top:6px;">¥528 已全额退款给旅客</div>
+              <div class="sys-desc">取消时间：04/13 10:22</div>
+              <div class="sys-note">已自动处理，无需操作</div>
+            </div>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== A2 不可取消 ===== -->
+  <div class="scene" id="scene-a2">
+    <div class="dual-frame">
+      <!-- 左：房客 -->
+      <div class="frame-col">
+        <div class="frame-label guest">👤 房客视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">青山小筑</span>
+            <span class="nav-online">房东在线</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row right">
+              <div class="bubble self">我想取消订单</div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">📋 退订政策</div>
+              <div class="card-row"><span class="card-label">房源：</span><span class="card-val">青山小筑·大床房</span></div>
+              <div class="card-row"><span class="card-label">入住：</span><span class="card-val">04/15-04/17（2晚）</span></div>
+              <div class="card-row"><span class="card-label">已支付：</span><span class="card-val">¥528</span></div>
+              <div class="card-row" style="margin-top:5px;"><span class="red">不可退订，¥0 可退</span></div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">🤖 平台助手</div>
+              遇到特殊情况？可向房东申请协商退款
+            </div>
+            <button class="btn-full" id="a2-guest-btn" onclick="handleDisable('a2-guest-btn')">申请协商退款</button>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+      <!-- 右：房东 -->
+      <div class="frame-col">
+        <div class="frame-label host">🏠 房东视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">小李同学</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row left">
+              <div class="bubble other">您好，我遇到了航班取消，希望能协商退款🙏</div>
+            </div>
+            <div class="side-card">
+              <span class="new-badge">✨ 新增</span>
+              <div class="card-title">🤝 平台协商请求</div>
+              <div class="card-row"><span class="card-label">旅客：</span><span class="card-val">小李同学</span></div>
+              <div class="card-row"><span class="card-label">原因：</span><span class="card-val">航班取消，无法按时到达</span></div>
+              <div class="card-row"><span class="card-label">申请：</span><span class="card-val">协商退款</span></div>
+              <div class="suggest-box">建议：该订单当前不可退订，您可选择同意协商或与旅客沟通其他方案</div>
+              <span class="contact-toggle" id="a2-ct-toggle" onclick="toggleContact('a2-contact','a2-ct-toggle')">查看联系方式 ▼</span>
+              <div class="contact-detail" id="a2-contact">旅客手机：138****8888<br><span style="color:#aaa;font-size:10px;">（通话记录将作为纠纷处理依据）</span></div>
+              <div class="action-row">
+                <button class="btn-outline" id="a2-keep-btn" onclick="handlePair('a2-keep-btn','a2-agree-btn')">维持原规则</button>
+                <button class="btn-yellow" id="a2-agree-btn" onclick="handlePair('a2-agree-btn','a2-keep-btn')">同意协商</button>
+              </div>
+            </div>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== A3 房客可发起协商退款 ===== -->
+  <div class="scene" id="scene-a3">
+    <div class="dual-frame">
+      <!-- 左：房客 -->
+      <div class="frame-col">
+        <div class="frame-label guest">👤 房客视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">青山小筑</span>
+            <span class="nav-online">房东在线</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row right">
+              <div class="bubble self">希望协商全额退款</div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">📋 退订政策</div>
+              <div class="card-row"><span class="card-label">房源：</span><span class="card-val">青山小筑·大床房</span></div>
+              <div class="card-row"><span class="card-label">入住：</span><span class="card-val">04/15-04/17（2晚）</span></div>
+              <div class="card-row"><span class="card-label">已支付：</span><span class="card-val">¥528</span></div>
+              <div class="card-row" style="margin-top:5px;"><span class="orange">规则可退：¥264（退50%）</span></div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">🤖 平台助手</div>
+              您可申请协商全额退款，需房东同意
+            </div>
+            <button class="btn-full" id="a3-guest-btn" onclick="handleDisable('a3-guest-btn')">前往订单页申请 →</button>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+      <!-- 右：房东 -->
+      <div class="frame-col">
+        <div class="frame-label host">🏠 房东视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">小李同学</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row left">
+              <div class="bubble other">您好，我因行程有变，希望协商全额退款</div>
+            </div>
+            <div class="side-card">
+              <span class="new-badge">✨ 新增</span>
+              <div class="card-title">🤝 平台协商请求</div>
+              <div class="amount-row">
+                <div class="amount-item">
+                  <span class="amount-label">规则可退</span>
+                  <span class="amount-val">¥264</span>
+                </div>
+                <span class="amount-vs">vs</span>
+                <div class="amount-item">
+                  <span class="amount-label">申请退</span>
+                  <span class="amount-val">¥528</span>
+                </div>
+              </div>
+              <div class="card-row"><span class="card-label">旅客：</span><span class="card-val">小李同学</span></div>
+              <div class="card-row"><span class="card-label">原因：</span><span class="card-val">行程有变</span></div>
+              <div class="suggest-box">建议：旅客申请退 ¥528，您当前规则可退 ¥264，差额 ¥264 需您确认</div>
+              <span class="contact-toggle" id="a3-ct-toggle" onclick="toggleContact('a3-contact','a3-ct-toggle')">查看联系方式 ▼</span>
+              <div class="contact-detail" id="a3-contact">旅客手机：138****8888<br><span style="color:#aaa;font-size:10px;">（通话记录将作为纠纷处理依据）</span></div>
+              <div class="action-row">
+                <button class="btn-outline" id="a3-keep-btn" onclick="handlePair('a3-keep-btn','a3-agree-btn')">维持原规则</button>
+                <button class="btn-yellow" id="a3-agree-btn" onclick="handlePair('a3-agree-btn','a3-keep-btn')">同意协商</button>
+              </div>
+            </div>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== A4 房客不可发起协商退款 ===== -->
+  <div class="scene" id="scene-a4">
+    <div class="dual-frame">
+      <!-- 左：房客 -->
+      <div class="frame-col">
+        <div class="frame-label guest">👤 房客视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">青山小筑</span>
+            <span class="nav-online">房东在线</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row right">
+              <div class="bubble self">能否帮我发起协商申请？</div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">📋 退订政策</div>
+              <div class="card-row"><span class="card-label">房源：</span><span class="card-val">青山小筑·大床房</span></div>
+              <div class="card-row"><span class="card-label">入住：</span><span class="card-val">04/15-04/17（2晚）</span></div>
+              <div class="card-row"><span class="card-label">已支付：</span><span class="card-val">¥528</span></div>
+              <div class="card-row" style="margin-top:5px;"><span class="red">¥0 可退，不支持自助申请</span></div>
+            </div>
+            <div class="side-card">
+              <div class="card-title">🤖 平台助手</div>
+              如遇特殊情况，可联系房东请求协助
+            </div>
+            <button class="btn-full" id="a4-guest-btn" onclick="handleDisable('a4-guest-btn')">联系房东</button>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+      <!-- 右：房东 -->
+      <div class="frame-col">
+        <div class="frame-label host">🏠 房东视角</div>
+        <div class="phone">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="icons"><span>▲▲▲</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="nav-bar">
+            <span class="nav-back">‹</span>
+            <span class="nav-title">小李同学</span>
+          </div>
+          <div class="chat-area">
+            <div class="msg-row left">
+              <div class="bubble other">能否帮我发起协商申请？</div>
+            </div>
+            <div class="side-card">
+              <span class="new-badge">✨ 新增</span>
+              <div class="card-title">🧡 旅客请求协助</div>
+              <div class="card-row"><span class="card-label">旅客：</span><span class="card-val">小李同学</span></div>
+              <div class="card-row"><span class="card-label">请求：</span><span class="card-val">希望房东帮忙发起协商退款</span></div>
+              <div class="card-row"><span class="card-label">当前规则可退：</span><span class="red">¥0</span></div>
+              <div class="suggest-box">建议：该订单当前不可退订，您可选择帮旅客发起协商或拒绝请求</div>
+              <span class="contact-toggle" id="a4-ct-toggle" onclick="toggleContact('a4-contact','a4-ct-toggle')">查看联系方式 ▼</span>
+              <div class="contact-detail" id="a4-contact">旅客手机：138****8888<br><span style="color:#aaa;font-size:10px;">（通话记录将作为纠纷处理依据）</span></div>
+              <div class="action-row">
+                <button class="btn-outline" id="a4-reject-btn" onclick="handlePair('a4-reject-btn','a4-help-btn')">拒绝</button>
+                <button class="btn-yellow" id="a4-help-btn" onclick="handlePair('a4-help-btn','a4-reject-btn')">帮旅客发起协商</button>
+              </div>
+            </div>
+          </div>
+          <div class="input-bar">
+            <input class="input-box" type="text" placeholder="发送消息…" readonly>
+            <button class="input-add">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-content -->
+
+<div class="page-footer">双栏并排展示：左侧为房客视角，右侧为房东视角</div>
+
+<script>
+// Tab 切换
+function switchTab(sceneId, btn) {
+  document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('scene-' + sceneId).classList.add('active');
+  btn.classList.add('active');
+}
+
+// 单个按钮 disabled
+function handleDisable(btnId) {
+  var btn = document.getElementById(btnId);
+  if (btn && !btn.classList.contains('disabled')) {
+    btn.classList.add('disabled');
+    btn.textContent = '已处理 ✓';
+    btn.disabled = true;
+  }
+}
+
+// 双按钮组：点击一个后两个都变灰
+function handlePair(clickedId, otherId) {
+  var clicked = document.getElementById(clickedId);
+  var other   = document.getElementById(otherId);
+  if (clicked && !clicked.classList.contains('disabled')) {
+    [clicked, other].forEach(function(b) {
+      if (b) {
+        b.classList.add('disabled');
+        b.disabled = true;
+      }
+    });
+    clicked.textContent = '已处理 ✓';
+  }
+}
+
+// 展开/收起联系方式
+function toggleContact(detailId, toggleId) {
+  var detail = document.getElementById(detailId);
+  var toggle = document.getElementById(toggleId);
+  if (!detail || !toggle) return;
+  var isOpen = detail.classList.contains('open');
+  detail.classList.toggle('open', !isOpen);
+  toggle.textContent = isOpen ? '查看联系方式 ▼' : '收起联系方式 ▲';
+}
+</script>
+</body>
+</html>

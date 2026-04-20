@@ -1,0 +1,2903 @@
+:::title{nodeId="3059d22579164f1db6c41d2a5e026eb3"}
+20260413 客商IM退改自助+润滑流程
+:::
+
+:::paragraph{nodeId="77d660da3fbe4522918052ff5acb6cb0"}
+策略宽表：
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false nodeId="c9ab8b5574884f10aadbf30cd56b2e19"}
+:::table_row{nodeId="ea9553ddddc740c3a6ebc8d9c9d2ef76"}
+:::table_header{colwidth="96" nodeId="eb6af7297ee5473781f39cfbd3348b70"}
+:::paragraph{nodeId="e9ec6ac6793e4a11a14c9e5eabadb115"}
+场景
+:::
+:::
+:::table_header{colwidth="200" nodeId="17b42e53de484c75abd0b902cc822e29"}
+:::paragraph{nodeId="a0cdef90045b4aa3a9a58187443c2199"}
+挽单话术
+:::
+:::
+:::table_header{colwidth="80" nodeId="2c7ab1bf1534429c8da570054d8021f9"}
+:::paragraph{nodeId="97f7867b2cda4344be66dbd4f9e94d22"}
+按钮优先级
+:::
+:::
+:::table_header{colwidth="100" nodeId="0878a4a99dd14e399f6469cc7295b5b2"}
+:::paragraph{nodeId="3e4541e520a24b94973bec536252a22a"}
+按钮文案
+:::
+:::
+:::table_header{colwidth="180" nodeId="846919b63e1a4ab397e79a5a3068a0fe"}
+:::paragraph{nodeId="addc69b4c61941249ee528d70727516f"}
+点击行为
+:::
+:::
+:::table_header{colwidth="300" nodeId="new_header_branch"}
+:::paragraph{nodeId="new_para_branch"}
+分支条件
+:::
+:::
+:::
+
+:::table_row{nodeId="7190fde3467d42c59d6439868011ca4f"}
+:::table_cell{colwidth="96" nodeId="6ce47b19f29a45c9bf27ed77ddb05038"}
+:::paragraph{nodeId="6f69a883e94449d39b316b8ecb7fdaf6"}
+无损取消
+:::
+:::
+:::table_cell{colwidth="200" nodeId="8c513e81e1e847e083d7b0f37e976906"}
+:::paragraph{nodeId="b11f84d55a174c26a6d19d475a1f3ea0"}
+温馨提示：好房机不可失，当前价格已锁定，取消后可能无法享有哦
+:::
+:::
+:::table_cell{colwidth="80" nodeId="42a6b926e1144cf7b750d8e1b8909f03"}
+:::paragraph{nodeId="dafd34f2725b44279df882ffa1f6dff1"}
+主
+:::
+:::
+:::table_cell{colwidth="100" nodeId="new_cell_wusun_btn1"}
+:::paragraph{nodeId="new_para_wusun_btn1"}
+继续入住
+:::
+:::
+:::table_cell{colwidth="180" nodeId="1c8a251ad23041b892247a7b70218056"}
+:::paragraph{nodeId="b8d44a90b1244550af04881b08933e02"}
+toast「期待您的光临，祝您旅途愉快」，订单保留
+:::
+:::
+:::table_cell{colwidth="300" nodeId="dcbc6003e49b4685a6e99f98cd687c6e"}
+:::paragraph{nodeId="f7fba5c85b484ad5af01f2a228c2257c"}
+—
+:::
+:::
+:::
+
+:::table_row{nodeId="wusun_row2"}
+:::table_cell{colwidth="96" numCell=false nodeId="wusun2_scene"}
+:::paragraph{nodeId="wusun2_scene_p"}:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="wusun2_copy"}
+:::paragraph{nodeId="wusun2_copy_p"}:::
+:::
+:::table_cell{colwidth="80" nodeId="wusun2_priority"}
+:::paragraph{nodeId="wusun2_priority_p"}
+次（降权）
+:::
+:::
+:::table_cell{colwidth="100" nodeId="wusun2_btn"}
+:::paragraph{nodeId="wusun2_btn_p"}
+免费取消
+:::
+:::
+:::table_cell{colwidth="180" nodeId="wusun2_action"}
+:::paragraph{nodeId="wusun2_action_p"}
+调接口取消订单，成功后按钮置灰
+:::
+:::
+:::table_cell{colwidth="300" nodeId="wusun2_branch"}
+:::paragraph{nodeId="wusun2_branch_p"}
+—
+:::
+:::
+:::
+
+:::table_row{nodeId="e0eb0b7c5c0248008bd23335d4b1beb2"}
+:::table_cell{colwidth="96" nodeId="f036bb6f14464a529aef3b53730b8d5d"}
+:::paragraph{nodeId="584dd4269e4c42d98063bfb6b077db75"}
+有损取消
+:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="ed8573cfeddf461c830d6dcf24c27ce5"}
+:::paragraph{nodeId="6220a2a52df54f478afab7200024632f"}
+💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+:::
+:::
+:::table_cell{colwidth="80" nodeId="ca49e7b8cc4540d480e6c882cf28f3f8"}
+:::paragraph{nodeId="bbfd789c1ce74314aba689831e3c0429"}
+主
+:::
+:::
+:::table_cell{colwidth="100" nodeId="yousun_btn1_cell"}
+:::paragraph{nodeId="yousun_btn1_p"}
+继续入住
+:::
+:::
+:::table_cell{colwidth="180" nodeId="bd3e644fb24447e5b75b8b6da3c84721"}
+:::paragraph{nodeId="708ac1fba2954ecc97bc91232ff94c0e"}
+toast「期待您的光临，祝您旅途愉快」，订单保留
+:::
+:::
+:::table_cell{colwidth="300" nodeId="1c0728118e624af4905da3f3ee2c255e"}
+:::paragraph{nodeId="9c43d062e06145a68b5c7c102f528b34"}
+—
+:::
+:::
+:::
+
+:::table_row{nodeId="ececfedc88254ddb816f4bf17ea5fd36"}
+:::table_cell{colwidth="96" numCell=false nodeId="8ea668a66a5f4ef1b7a6f5b8bcfd3bcb"}
+:::paragraph{nodeId="e4d1d883739f4e84b4b312903e183f36"}:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="142f9a3b5ec6444c8a9da731a64c34c4"}
+:::paragraph{nodeId="09de391509d1451cbe15c1decd3cb469"}:::
+:::
+:::table_cell{colwidth="80" nodeId="f04ba73d23484ba1a194094d5d61b01b"}
+:::paragraph{nodeId="9f72a72eea414deaa135106008b04331"}
+次（降权）
+:::
+:::
+:::table_cell{colwidth="100" nodeId="yousun_btn2_cell"}
+:::paragraph{nodeId="yousun_btn2_p"}
+坚持取消
+:::
+:::
+:::table_cell{colwidth="180" nodeId="3bca005be5db46caad7779353112f4ed"}
+:::paragraph{nodeId="ff5ff92ea7844b288a963188db93062e"}
+展示预计扣费金额卡片，嵌套低优【协商退款】按钮
+:::
+:::
+:::table_cell{colwidth="300" nodeId="81768bc3d7024e0c8b8673cdd22d700b"}
+:::paragraph{nodeId="4bbeec92e3d64b3da454a5a0fd2462f2"}
+非阶梯（房客可发起协商）→ 引导填写原因+期望金额，跳转订单页申请
+:::
+:::
+:::
+
+:::table_row{nodeId="c9834852571b4322bdb5379f5d6caab3"}
+:::table_cell{colwidth="96" numCell=false nodeId="40da453849c14651bb791f4a8c0df1f0"}
+:::paragraph{nodeId="3e29188ab0a446bb93110018e865ba2e"}:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="3a3407d83cf640c4a246cbe92dede27a"}
+:::paragraph{nodeId="f84a59c62b2c4d07bcd336186b4bebcc"}:::
+:::
+:::table_cell{colwidth="80" numCell=false nodeId="1e4956bfece845028c1f3142c1c80d2e"}
+:::paragraph{nodeId="11db7f7520d74e24824e70b722ba016b"}:::
+:::
+:::table_cell{colwidth="100" numCell=false nodeId="yousun_btn3_cell"}
+:::paragraph{nodeId="yousun_btn3_p"}:::
+:::
+:::table_cell{colwidth="180" numCell=false nodeId="ff266a0fbbcc4775af6fb752fdfa2c7b"}
+:::paragraph{nodeId="9934bf367adf4cc6920c40bb280136c4"}:::
+:::
+:::table_cell{colwidth="300" numCell=false nodeId="470a25292b2f4d2ea3c4da1598ea1dfc"}
+:::paragraph{nodeId="2f57b1973f15450d8ff59b2cbf9bf7b6"}
+阶梯（房客不可发起协商）→ 不展示协商入口，发固定话术通知房东主动下发退款单
+:::
+:::
+:::
+
+:::table_row{nodeId="d5245768216845668421d55573f35849"}
+:::table_cell{colwidth="96" nodeId="a080bd0f16554954804739af9329d8ef"}
+:::paragraph{nodeId="66678bfe95924746a4f39198cff3eaf5"}
+不可取消
+:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="90cd581a1fdf492c8f9bf6015da4794a"}
+:::paragraph{nodeId="73cb9c7578a74f97ab604420ebae2a4f"}
+💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+:::
+:::
+:::table_cell{colwidth="80" nodeId="dc2569bc5fd04db3802fcff018456627"}
+:::paragraph{nodeId="a93ca745d8464bab879bfd24d6c069ec"}
+主
+:::
+:::
+:::table_cell{colwidth="100" nodeId="buke_btn1_cell"}
+:::paragraph{nodeId="buke_btn1_p"}
+继续入住
+:::
+:::
+:::table_cell{colwidth="180" nodeId="cfc40ce74aa64ecf9e89d8e626081952"}
+:::paragraph{nodeId="5cfbcabd1eff4b95af7ca82b6e395932"}
+toast「期待您的光临，祝您旅途愉快」，订单保留
+:::
+:::
+:::table_cell{colwidth="300" nodeId="7fc655bdd8294a5bb44384e52889632e"}
+:::paragraph{nodeId="9cd211cb3fd149e1b3c2c3ab1237dac5"}
+—
+:::
+:::
+:::
+
+:::table_row{nodeId="b8c172bb9c354f8fb8ce5ac06cf0371e"}
+:::table_cell{colwidth="96" numCell=false nodeId="8f2cc0cf0c71479d8c18d77f7599cb0e"}
+:::paragraph{nodeId="32eae2bf41bf43089f5ecac305490a04"}:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="e3b47a1ad1d4431fa3ca39e446b585e7"}
+:::paragraph{nodeId="ae2a5b19f34a4ba5b04871f4347b77f9"}:::
+:::
+:::table_cell{colwidth="80" nodeId="9401ee7f75f844fa9457324f93599a66"}
+:::paragraph{nodeId="620dda633f274963a701714dc19e5cb7"}
+次（降权）
+:::
+:::
+:::table_cell{colwidth="100" nodeId="buke_btn2_cell"}
+:::paragraph{nodeId="buke_btn2_p"}
+协商退款
+:::
+:::
+:::table_cell{colwidth="180" nodeId="182171e7a8ad4fbfa622a66c66cecd85"}
+:::paragraph{nodeId="5be1c0fcfba64deebbf8727bd0fbd4d5"}
+触发平台协商退小助手
+:::
+:::
+:::table_cell{colwidth="300" nodeId="1450ff483b5d4e5abd39038fcb45e231"}
+:::paragraph{nodeId="17708285b1eb4ff9b45747ad4f577ed8"}
+非阶梯（房客可发起协商）→ 引导跳转订单页申请
+:::
+:::
+:::
+
+:::table_row{nodeId="buke_row3"}
+:::table_cell{colwidth="96" numCell=false nodeId="buke3_scene"}
+:::paragraph{nodeId="buke3_scene_p"}:::
+:::
+:::table_cell{colwidth="200" numCell=false nodeId="buke3_copy"}
+:::paragraph{nodeId="buke3_copy_p"}:::
+:::
+:::table_cell{colwidth="80" numCell=false nodeId="buke3_priority"}
+:::paragraph{nodeId="buke3_priority_p"}:::
+:::
+:::table_cell{colwidth="100" numCell=false nodeId="buke3_btn"}
+:::paragraph{nodeId="buke3_btn_p"}:::
+:::
+:::table_cell{colwidth="180" numCell=false nodeId="buke3_action"}
+:::paragraph{nodeId="buke3_action_p"}:::
+:::
+:::table_cell{colwidth="300" nodeId="buke3_branch"}
+:::paragraph{nodeId="buke3_branch_p"}
+阶梯（房客不可发起协商）→ 不展示协商入口，发固定话术通知房东主动下发退款单
+:::
+:::
+:::
+
+:::
+
+:::paragraph{nodeId="6b9e3224c830483bafe036532c1c074f"}:::
+
+:::paragraph{nodeId="73f1088c475d46ecb667c2fdf96c15a9"}
+1、无损退场景
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false nodeId="af09821102924dd199be7a858b9c4aa7"}
+:::table_row{nodeId="7a9a3bc7c66e4ba58f02e317c916f0d3"}
+:::table_header{colwidth="915" numCell=false nodeId="21febe43bc034509bb13e4cc033c4290"}
+:::paragraph{nodeId="9bf2d0a1af7e4657a8248de0dbd66a72"}
+交互图
+:::
+:::
+:::table_header{colwidth="395" numCell=false nodeId="f427a3aac451401583fbce4db8fa7e54"}
+:::paragraph{nodeId="2085fe3a7ae04c33bf3179779e2e5915"}
+功能概述
+:::
+:::
+:::
+:::table_row{nodeId="c0e2f1eedfa0492b867be5dced29b6d8"}
+:::table_cell{colwidth="915" numCell=false nodeId="b707babc0f264a34a2d47522ebf15aaa"}
+:::paragraph{nodeId="70f2f8c174a549308f9f04df1317e6f4"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232488771696?contentType=1&isNewContent=false){width=631 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232488771696?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232488771696?contentType=1&isNewContent=false" nodeId="9d0a1b2eb94842c698fb27b18514602c"}
+:::
+
+``` nodeId="611b760f-4380-4e4d-94f1-b548e08def8e"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-免费取消场景</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 720px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span> 房客端 (免费取消)
+            </h2>
+            <div class="phone-mockup relative text-left">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area">
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">去不了了，能取消订单吗</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[300px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden text-left">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1">
+                                    <div class="font-bold text-[13px] text-gray-800 mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-green-600 font-bold text-[14px]">免费取消</span>
+                                    <span class="text-blue-500 text-[10px]">查看政策 ></span>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mb-3">取消将原路退还 ¥139.00</p>
+                                <div class="mt-2 bg-blue-50/50 p-2.5 rounded-lg border border-blue-100/30 italic text-blue-800 text-[10px] leading-relaxed">
+                                    💡 温馨提示：好房机不可失，当前价格已锁定，取消后可能无法享有哦
+                                </div>
+                                <div class="mt-4 flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2.5 rounded-lg text-[12px] font-bold btn-active">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[11px] btn-active">免费取消订单</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端 (镜像视图)
+            </h2>
+            <div class="phone-mockup relative">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs text-left leading-tight">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col">
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] shadow-sm italic text-left">能退吗？临时去不了了</div>
+                    </div>
+
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-white rounded-2xl w-[300px] overflow-hidden card-shadow border border-gray-100 mr-2 text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden text-left">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1">
+                                    <div class="font-bold text-[13px] text-gray-800 mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-green-600 font-bold text-[14px]">免费取消</span>
+                                    <span class="text-blue-500 text-[10px]">查看政策 ></span>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mb-3">取消将原路退还 ¥139.00</p>
+                                <div class="mt-2 bg-blue-50/30 p-2.5 rounded-lg border border-blue-100/20 italic text-blue-800 text-[9px] leading-relaxed">
+                                    💡 温馨提示：好房机不可失，当前价格已锁定，取消后可能无法享有哦
+                                  <div class="mt-4 flex flex-col gap-2">
+                                    <button class="w-full bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[11px] btn-active">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[11px] btn-active">免费取消订单</button>
+                                </div>
+                                </div>
+                                <div class="h-2"></div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start">美</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+:::
+:::table_cell{colwidth="395" numCell=false nodeId="671c816770774c9f91903eae8930448e"}
+:::paragraph{nodeId="b9828c379ffd4eccafe10b2b4cddf9d2"}
+房客端：
+:::
+
+:::ordered_list{indent=0 nodeId="2912bcf9cc184733b64425a054f15117"}
+:::list_item{level=0 hidden=false nodeId="f01cd6923a1849e3836a3d0abe111835"}
+:::paragraph{nodeId="df95148831fb440a899883c12fd4acc6"}
+退款订单卡片
+:::
+
+:::ordered_list{indent=0 nodeId="c1ba0d05215146698a61ff6a0ae3e2b5"}
+:::list_item{level=0 hidden=false nodeId="f1efe994d2564dfab573753105bc009a"}
+:::paragraph{nodeId="dfe32b014fde42878f5ccee3cb00967e"}
+高优先级【继续入住】
+:::
+
+:::ordered_list{indent=0 nodeId="3e0030fe983f45a6846027c919226547"}
+:::list_item{level=0 hidden=false nodeId="51208685956344ef8fa5597c5e3c5cd9"}
+:::paragraph{nodeId="f14462013b3b4e64ba2328871621e89c"}
+点击继续入住则toast“期待您的光临，祝您旅途愉快”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="25172e7491ef4c85864749e79eb24fc5"}
+:::paragraph{nodeId="1c75f7b43516499e9e9de97dbf5b41b4"}
+低优先级【免费取消】
+:::
+
+:::ordered_list{indent=0 nodeId="9caa9d51046b443482687abe78613e8e"}
+:::list_item{level=0 hidden=false nodeId="18688e880ec6473b9016e8dd5cc6e87c"}
+:::paragraph{nodeId="a585603d59d0416e853ae6e7ffc4a81d"}
+点击后调交易接口取消此订单
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="258c27a4309948d091ed64fac4541d46"}
+:::paragraph{nodeId="a66ca2db58d24ff9885e1ac796810322"}
+取消成功后将按钮置为灰色
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+
+:::paragraph{nodeId="600fa49b123843b7a3d4eedf4869baaa"}
+房东端：
+:::
+
+:::ordered_list{indent=0 nodeId="f41e66ecc7b64274a1d13e634f31c198"}
+:::list_item{level=0 hidden=false nodeId="81b75d1c84e64fa6b8c1257cff12f8df"}
+:::paragraph{nodeId="4475af8bb92b4139b36f1d9df8d8ae57"}
+房东端镜像对称看到所有智能助手发出的卡片但不可操作
+:::
+:::
+:::
+
+:::paragraph{nodeId="4b2e6ede822348b184b468ff25209342"}:::
+:::
+:::
+:::
+
+:::paragraph{nodeId="354a1969bc844f388a0a0f9ab03741ac"}:::
+
+:::paragraph{nodeId="8878dc330d824b8c8e91ec2f5af141ff"}
+2、不可取消
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false nodeId="2f2d2b68f1db4e3fb2e99b53ee887341"}
+:::table_row{nodeId="3b94d001d9e943b78da684c4b1854d04"}
+:::table_header{colwidth="75" nodeId="13d59f64b3944d41a2591ab5c26368cd"}
+:::paragraph{nodeId="302e5bf2bf2140a986893b9b32e07703"}
+子场景
+:::
+:::
+:::table_header{colwidth="739" numCell=false nodeId="aad426da6f754558a64d66a9b5856cf7"}
+:::paragraph{nodeId="5107cb675b7941c9a0cdab96394ecf94"}
+交互图
+:::
+:::
+:::table_header{colwidth="569" numCell=false nodeId="8c39ef2faf914436a581653bab65139a"}
+:::paragraph{nodeId="269e2d4f5d9b4b048832d562f83be070"}
+功能概述
+:::
+:::
+:::
+:::table_row{nodeId="c5f85d0db4964a72abb7441524c92529"}
+:::table_cell{colwidth="75" nodeId="8b904315fa6644208c031ff03d564627"}
+:::paragraph{nodeId="f7a82cc7a492409e933fcdf5a0c3de5f"}
+房客侧可发起协商退的流程
+:::
+:::
+:::table_cell{colwidth="739" numCell=false nodeId="65bc2d0ea8b1496c9529f7a94f21a0d0"}
+:::paragraph{nodeId="5df6eb9205f9445e99b2f6d74868da3b"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232473843179?contentType=1&isNewContent=false){width=619.98 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232473843179?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232473843179?contentType=1&isNewContent=false" nodeId="91f53d826531429da28900d74066d87c"}
+:::
+
+``` nodeId="dc82893f-0f65-43e4-a064-69a271c40c7b"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-受限场景完全镜像版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 740px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+
+        /* 气泡动画 */
+        .animate-pop { animation: pop 0.3s ease-out; }
+        @keyframes pop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <!-- ================= 房客端 (Guest) ================= -->
+        <div class="flex flex-col items-center">
+            <div class="flex items-center mb-4 space-x-2 font-bold text-gray-700 text-sm">
+                <span class="w-2.5 h-2.5 bg-blue-500 rounded-full"></span>
+                <span>房客端 (Guest View)</span>
+            </div>
+            <div class="phone-mockup relative text-left">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area">
+                    <!-- 房客咨询 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px] shadow-sm">临时去不成了，能全退吗</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 1. 退改政策卡片 (靠左) -->
+                    <div class="flex justify-start mb-4 text-left animate-pop">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate mb-0.5">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="text-left leading-tight">
+                                        <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5 font-medium">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                    </div>
+                                    <div class="text-red-500 font-bold text-[14px]">¥139.00</div>
+                                </div>
+                                <div class="bg-blue-50/60 p-2.5 rounded-xl border border-blue-100/50 text-blue-800 text-[10px] leading-relaxed mb-4">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光。
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2 rounded-xl text-[12px] font-bold btn-active">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-300 text-gray-500 py-2 rounded-xl text-[12px] font-medium btn-active">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 平台协商退小助手卡片 (房客端最新样式) -->
+                    <div class="flex justify-start mb-4 text-left animate-pop">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-blue-50">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-gray-700">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-3 leading-relaxed">
+                                您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供：
+                                <span class="text-gray-900 font-bold">取消原因、期望金额。</span>
+                            </p>
+                            <button class="w-full border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-lg text-[12px] font-bold btn-active">前往订单页申请 →</button>
+                            <div class="mt-3 flex items-center text-[10px] text-gray-400">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm">请输入...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) ================= -->
+        <div class="flex flex-col items-center">
+            <div class="flex items-center mb-4 space-x-2 font-bold text-gray-700 text-sm">
+                <span class="w-2.5 h-2.5 bg-orange-500 rounded-full"></span>
+                <span>房东端 (Host View)</span>
+            </div>
+            <div class="phone-mockup relative text-left">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold text-center leading-none flex-shrink-0">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col">
+                    <!-- 房客咨询 -->
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none max-w-[75%] text-[13px] shadow-sm italic text-left leading-relaxed">临时去不成了，能全退吗</div>
+                    </div>
+
+                    <!-- 1. 镜像政策卡片 (靠右) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-100 overflow-hidden pointer-events-none">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate mb-0.5">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="text-left leading-tight">
+                                        <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5 font-medium">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                    </div>
+                                    <div class="text-red-500 font-bold text-[14px]">¥139.00</div>
+                                </div>
+                                <div class="bg-blue-50/60 p-2.5 rounded-xl border border-blue-100/50 text-blue-800 text-[10px] leading-relaxed mb-4">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光。
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2 rounded-xl text-[12px] font-bold opacity-60">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-300 text-gray-500 py-2 rounded-xl text-[12px] font-medium opacity-60">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                    </div>
+
+                    <!-- 2. 镜像协商助手 (房东端镜像样式，内容完全一致) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-blue-50 pointer-events-none">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-gray-700">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-3 leading-relaxed">
+                                您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供：
+                                <span class="text-gray-900 font-bold">取消原因、期望金额。</span>
+                            </p>
+                            <button class="w-full border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-lg text-[12px] font-bold opacity-60">前往订单页申请 →</button>
+                            <div class="mt-3 flex items-center text-[10px] text-gray-400">
+                                
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                    </div>
+
+                    
+                </div>
+                
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200 flex items-center">
+                    <div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mr-2 font-bold">+</div>
+                    <div class="flex-1 bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-xs italic text-left">回复房客...</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
+
+:::collapse{nodeId="63668a00ca694b099ffdbb57f3a6a953" titleNodeId="c509500352f948039fb4e7973355edbb" contentNodeId="1a64c8372f2f4b79b9d4b024a5f68bd2"}
+历史版本存档
+---
+:::paragraph{nodeId="9c2f6798bb5e4afb9a1f8c9c83375944"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232467267671?contentType=1){width=612 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232467267671?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/232467267671?contentType=1" nodeId="20058e41829248e1970d98d04ed1fed6"}
+:::
+
+``` nodeId="d215359b-06d5-4a5a-af81-a6fad1d70507"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-受限场景完全镜像版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 740px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+
+        /* 气泡动画 */
+        .animate-pop { animation: pop 0.3s ease-out; }
+        @keyframes pop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <!-- ================= 房客端 (Guest) ================= -->
+        <div class="flex flex-col items-center">
+            <div class="flex items-center mb-4 space-x-2 font-bold text-gray-700 text-sm">
+                <span class="w-2.5 h-2.5 bg-blue-500 rounded-full"></span>
+                <span>房客端 (Guest View)</span>
+            </div>
+            <div class="phone-mockup relative text-left">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area">
+                    <!-- 房客咨询 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px] shadow-sm">临时去不成了，能全退吗</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 1. 退改政策卡片 (房客侧：助手发，靠左) -->
+                    <div class="flex justify-start mb-4 text-left animate-pop">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate mb-0.5">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="text-left leading-tight">
+                                        <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5 font-medium">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                    </div>
+                                    <div class="text-red-500 font-bold text-[14px]">¥139.00</div>
+                                </div>
+                                <div class="bg-blue-50/60 p-2.5 rounded-xl border border-blue-100/50 text-blue-800 text-[10px] leading-relaxed mb-4">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光。
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2 rounded-xl text-[12px] font-bold btn-active">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-300 text-gray-500 py-2 rounded-xl text-[12px] font-medium btn-active">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 平台协商退小助手卡片 (房客侧：助手发，靠左) -->
+                    <div class="flex justify-start mb-4 text-left animate-pop">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-blue-50">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-gray-800 tracking-tight">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-4 leading-relaxed">
+                                您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供原因。
+                            </p>
+                            <div class="flex gap-2">
+                                <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-xl text-[11px] font-bold btn-active">电话联系</button>
+                                <button class="flex-1 bg-blue-500 text-white py-2 rounded-xl text-[11px] font-bold btn-active">发送意向</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm">请输入...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) ================= -->
+        <div class="flex flex-col items-center">
+            <div class="flex items-center mb-4 space-x-2 font-bold text-gray-700 text-sm">
+                <span class="w-2.5 h-2.5 bg-orange-500 rounded-full"></span>
+                <span>房东端 (Host View)</span>
+            </div>
+            <div class="phone-mockup relative text-left">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold text-center leading-none flex-shrink-0">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col">
+                    <!-- 房客咨询 (在房东端：靠左) -->
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none max-w-[75%] text-[13px] shadow-sm italic text-left leading-relaxed">临时去不成了，能全退吗</div>
+                    </div>
+
+                    <!-- 1. 镜像政策卡片 (房东端：助手发，靠右，样式完全同步房客侧) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-100 overflow-hidden pointer-events-none">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate mb-0.5">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="text-left leading-tight">
+                                        <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5 font-medium">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                    </div>
+                                    <div class="text-red-500 font-bold text-[14px]">¥139.00</div>
+                                </div>
+                                <div class="bg-blue-50/60 p-2.5 rounded-xl border border-blue-100/50 text-blue-800 text-[10px] leading-relaxed mb-4">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光。
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2 rounded-xl text-[12px] font-bold opacity-60">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-300 text-gray-500 py-2 rounded-xl text-[12px] font-medium opacity-60">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 美团助手头像在右侧 -->
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                    </div>
+
+                    <!-- 2. 镜像小助手引导 (房东端：助手发，靠右，样式完全同步房客侧) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-blue-50 pointer-events-none">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a11 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-gray-800 tracking-tight">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-4 leading-relaxed">
+                                您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供原因。
+                            </p>
+                            <div class="flex gap-2">
+                                <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-xl text-[11px] font-bold opacity-60">电话联系</button>
+                                <button class="flex-1 bg-blue-500 text-white py-2 rounded-xl text-[11px] font-bold opacity-60">发送意向</button>
+                            </div>
+                        </div>
+                        <!-- 美团助手头像在右侧 -->
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-extrabold flex-shrink-0">美</div>
+                    </div>
+
+                    
+                </div>
+                
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200 flex items-center">
+                    <div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mr-2 font-bold">+</div>
+                    <div class="flex-1 bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-xs italic">回复房客...</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
+
+:::collapse{nodeId="918ce8dbb3634bf39233bfe1fc5d37ba" titleNodeId="e4607eac7fd249c9938bfbcdb86ac643" contentNodeId="d5c437c94bc74dab952ae7c0b9ddabec"}
+历史版本
+---
+:::paragraph{nodeId="575fa86941034f118dade61741b0f383"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/231953040294?contentType=1){width=637 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/231953040294?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/231953040294?contentType=1" nodeId="b6977a8e0e3646a2b5108025e4e51163"}
+:::
+
+:::paragraph{nodeId="ff05b927d7d64ed4b43b765a8dc8d9ae"}
+:[link]{href="https://gemini.google.com/share/0e4be0ce268d" nodeId="3bb21e6d08db48769649c046e40e225f"}https://gemini.google.com/share/0e4be0ce268d[/link]
+:::
+
+``` nodeId="c15ec237-d8d2-48a3-9780-5a38cc59cecc"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-受限场景(扣费)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 720px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <!-- ================= 房客端 (Guest) - 受限场景 ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span> 房客端 (需扣费)
+            </h2>
+            <div class="phone-mockup relative text-left">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs text-left">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area">
+                    <!-- 房客发消息 + 头像 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">去不了了，能全退吗</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 1. 退改政策卡片 -->
+                    <div class="flex justify-start mb-3 text-left">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[300px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center text-left">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="text-left">
+                                        <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                        <p class="text-[10px] text-gray-400 mt-0.5">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-[10px] text-gray-400">预计扣费</div>
+                                        <div class="text-red-500 font-bold text-[14px]">¥139.00</div>
+                                    </div>
+                                </div>
+                                <!-- 温馨提示 -->
+                                <div class="mt-2 bg-blue-50/50 p-2.5 rounded-lg border border-blue-100/30 italic text-blue-800 text-[10px] leading-relaxed text-left">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+                                </div>
+                                <div class="mt-4 flex flex-col gap-2">
+                                    <button class="w-full bg-[#ffda00] py-2.5 rounded-lg text-[12px] font-bold btn-active">继续入住</button>
+                                    <button class="w-full bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[11px] btn-active">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 平台协商退小助手卡片 (新增) -->
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0"></div> <!-- 对齐占位 -->
+                        <div class="bg-white rounded-2xl w-[300px] p-4 card-shadow border border-blue-50">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-gray-700">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-3 leading-relaxed">
+                                您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供：
+                                <span class="text-gray-900 font-bold">取消原因、期望金额。</span>
+                            </p>
+                            <button class="w-full border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-lg text-[12px] font-bold btn-active">前往订单页申请 →</button>
+                            <div class="mt-3 flex items-center text-[10px] text-gray-400">
+                                <svg class="w-3 h-3 mr-1 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                先电话联系房东协商，成功率更高
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) - 受限场景 (全白镜像) ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端 (全镜像视图)
+            </h2>
+            <div class="phone-mockup relative">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col">
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] shadow-sm italic text-left">能退吗？去不了了</div>
+                    </div>
+
+                    <!-- 镜像卡片 (右侧，白色背景，无黄边) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[300px] overflow-hidden card-shadow border border-gray-100 mr-2">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 text-left">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="text-left">
+                                        <div class="text-red-500 font-bold text-[13px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5">系统已同步扣费政策</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-red-500 font-bold text-[13px]">¥139.00</div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 bg-blue-50/30 p-2 rounded-lg border border-blue-100/20 italic text-blue-800 text-[9px] leading-relaxed text-left">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+                                </div>
+                                <div class="h-2"></div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start">美</div>
+                    </div>
+
+                    <!-- 协商工具卡片 (右侧，白色背景) -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-white rounded-xl p-3 border border-blue-100 w-[240px] mr-2 text-left shadow-sm">
+                            <p class="text-[11px] text-gray-800 mb-2 font-bold">房客寻求协商</p>
+                            <p class="text-[10px] text-gray-500 mb-3">您可以点击下方按钮，向房客下发协商退款单：</p>
+                            <button class="w-full bg-blue-500 text-white py-2 rounded-lg text-[12px] font-bold shadow-md shadow-blue-50 active:opacity-90">
+                                发送“协商退款单”
+                            </button>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start">美</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+:::
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false nodeId="91cab1596faf4a53a80702c8e23538e1"}
+:::table_row{nodeId="8b6617bd0bb84f28a8d918725c680326"}
+:::table_header{colwidth="286" numCell=false nodeId="dc48a11260b94e8994d4e7748812944f"}
+:::paragraph{nodeId="4143afb59e22472481c13801688dc12b"}
+房客侧下发
+:::
+:::
+:::table_header{colwidth="255" numCell=false nodeId="a0ec4f3ad22f48f6b12ade47df060d1c"}
+:::paragraph{nodeId="d6478e6093674fc7aaa6b0ebb7ad6c5a"}
+房东侧下发
+:::
+:::
+:::
+:::table_row{nodeId="2d8b1ae9c7324a4e9fc4077303852fb4"}
+:::table_cell{colwidth="286" numCell=false nodeId="929ba6b4ee634a9ea417641204b9620a"}
+:::paragraph{nodeId="d5d82fcc042145f5a3983a745fd60364"}
+![](https://km.sankuai.com/api/file/cdn/2756533569/231948177065?contentType=1){width=265 height=153 small="https://km.sankuai.com/api/file/cdn/2756533569/231945154865?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/231953292168?contentType=1" nodeId="3d34219d9b6547239392444166b2fa2d"}
+:::
+:::
+:::table_cell{colwidth="255" numCell=false nodeId="b62863b4b9a74ff59a3837e12e2e7a5f"}
+:::paragraph{nodeId="3d10df34fd5c4facad29a56fda632129"}
+![](https://km.sankuai.com/api/file/cdn/2756533569/231946109583?contentType=1){width=218 height=142 small="https://km.sankuai.com/api/file/cdn/2756533569/231951862777?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/231948497253?contentType=1" nodeId="380339a8c6624820b29c721bdf5b637c"}
+:::
+:::
+:::
+:::
+
+:::paragraph{nodeId="10819a1bae5a48d39e7bf2398e7cb0fe"}:::
+:::
+:::table_cell{colwidth="569" numCell=false nodeId="1939a14d7b85438f846317ac60888168"}
+:::paragraph{nodeId="735034b837904c72a65fa55ca38ca721"}
+房客端：
+:::
+
+:::ordered_list{indent=0 nodeId="5b154976a7004a85b6315b00008c1913"}
+:::list_item{level=0 hidden=false nodeId="37ec8a202b304cc3ae8e507f22600272"}
+:::paragraph{nodeId="7d944f6f511d40e4871441561adeefbd"}
+退款订单卡片
+:::
+
+:::ordered_list{indent=0 nodeId="9cc4fe2fcdef4262adecca34e7cfe4f2"}
+:::list_item{level=0 hidden=false nodeId="c7b7941ac7a1429783ab2a4c83104974"}
+:::paragraph{nodeId="0b38c46ceeda49128ccfc956908b4d5b"}
+高优先级【继续入住】
+:::
+
+:::ordered_list{indent=0 nodeId="ae08463012674989a75654d3860ea21e"}
+:::list_item{level=0 hidden=false nodeId="cc30e20eedff4a118add097bd69136cd"}
+:::paragraph{nodeId="bc8602d620f4401e99a0dd883e28b12c"}
+点击继续入住则toast“期待您的光临，祝您旅途愉快”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="82c46d75216d4c58aebbda15e648f350"}
+:::paragraph{nodeId="ddae4cd0d55a4d0b82cf77ea14829ba3"}
+低优先级【坚持取消】
+:::
+
+:::ordered_list{indent=0 nodeId="a50ac83b8b324267ab0edbb92b8476be"}
+:::list_item{level=0 hidden=false nodeId="c1d2120b49f84a738ea0b8f508cb6cd5"}
+:::paragraph{nodeId="add52fcceea1424db8a6e0d758506248"}
+点击坚持取消则下发协商退助手卡片，且点击后按钮置为灰色不再支持点击
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="92b2163ef47a4a57b0d6a2806f7a9455"}
+:::paragraph{nodeId="7a8edba79f2e4da3ae08f20d7e369110"}
+协商退助手卡片
+:::
+
+:::ordered_list{indent=0 nodeId="8f67a533c99e4d24b3c2d56794113fda"}
+:::list_item{level=0 hidden=false nodeId="97b7ee6cd6904271bf8362578a501d17"}
+:::paragraph{nodeId="bd877dcf4ef841ae9c393e1dd348fbd0"}
+文案：
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="a3a5f63a3d684ce59567932d29fe9207"}
+:::paragraph{nodeId="0e81d127afa2478780fc3d9a1672e27b"}
+按钮-前往订单页申请
+:::
+
+:::ordered_list{indent=0 nodeId="2852d0cc2dba406e9de7a0f0ef167dd4"}
+:::list_item{level=0 hidden=false nodeId="c3ec8cdf8a8444eb9fc7d701a337be4f"}
+:::paragraph{nodeId="e73f6af238594da99e8fd2a652c5ee1a"}
+点击后跳转订单详情页，默认勾选与房东协商
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="2179128483a349ea9b2a19dd810d6049"}
+:::paragraph{nodeId="f42eff15a23a411cb277cb227f6e3079"}
+房客发送申请后接入线上已有流程，房客和房东侧均下发协商退处理卡片
+:::
+:::
+:::
+
+:::paragraph{nodeId="f3ac438f55674add85c1cef1da2c46d7"}
+房东端：
+:::
+
+:::ordered_list{indent=0 nodeId="3c1ffebd860c4b9286eb1ef3b5939262"}
+:::list_item{level=0 hidden=false nodeId="abc88ff08c944dcd8670ff19e72a0981"}
+:::paragraph{nodeId="002cd524a46a4af98b3e492650e5f42e"}
+房东端镜像对称看到所有智能助手发出的卡片但不可操作
+:::
+
+:::paragraph{nodeId="637ee621a7b841ed93c5067052f87fc4"}:::
+:::
+:::
+
+:::paragraph{nodeId="e8b6dc65afa540919993ea719c7471ee"}:::
+
+:::paragraph{nodeId="51dabe83a84f4e858c7e994f6af7951b"}:::
+:::
+:::
+:::table_row{nodeId="c4c4d736747847ac82c32a0e6832d19c"}
+:::table_cell{colwidth="75" numCell=false nodeId="21b21473b68d4f8c90d3f262e99accc1"}
+:::paragraph{nodeId="bf86b745415f4217a2e61c37acdcf0ea"}
+房客侧不可发起协商退的流程
+:::
+:::
+:::table_cell{colwidth="739" numCell=false nodeId="8d8dc83522094343956656181b556899"}
+:::paragraph{nodeId="2f7a50c1c1a7462794e9f5dc8b520cad"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232472545119?contentType=1&isNewContent=false){width=624.03 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232472545119?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232472545119?contentType=1&isNewContent=false" nodeId="a4a78bea97dc4ad3be7f8645c7ea6a49"}
+:::
+
+``` nodeId="08b5d444-bda2-4d0a-8dee-06077ab73f18"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-不可发起场景交互修正</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 750px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+        
+        /* 房东端镜像：保持颜色一致但不可点击 */
+        .host-mirror-no-action { pointer-events: none; }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <!-- ================= 房客端 (Guest) ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center leading-tight">
+                <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span> 房客端视角
+            </h2>
+            <div class="phone-mockup relative bg-[#ededed]">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area">
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">临时去不了了，能退吗？</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                    </div>
+
+                    <!-- 1. 政策卡片 (增加“坚持取消”按钮) -->
+                    <div class="flex justify-start mb-3">
+                        <div class="w-7 h-7 bg-white border border-gray-100 rounded-full mr-2 flex items-center justify-center text-[10px] text-[#ffb400] font-extrabold flex-shrink-0 card-shadow">美</div>
+                        <div class="bg-white rounded-2xl w-[280px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-2.5 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500 mt-0.5">10.10－10.15 | ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3 text-left">
+                                <div class="mb-2">
+                                    <div class="text-red-500 font-bold text-[13px]">不可取消</div>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                </div>
+                                <div class="bg-blue-50/50 p-2 rounded-lg border border-blue-100/30 text-blue-800 text-[10px] leading-relaxed italic mb-3">
+                                    💡 温馨提示：房东已为您预留好房间，建议您按计划入住。
+                                </div>
+                                <div class="space-y-2">
+                                    <button class="w-full bg-[#ffda00] py-2 rounded-lg text-[12px] font-bold btn-active">继续入住</button>
+                                    <!-- 新增按钮 -->
+                                    <button class="w-full bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[12px] font-bold btn-active">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 协商退小助手 (保持原样) -->
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0"></div>
+                        <div class="bg-white rounded-2xl w-[280px] p-3.5 card-shadow border border-blue-50 text-left">
+                            <div class="flex items-center mb-1.5 text-blue-600">
+                                <div class="bg-blue-500 rounded p-0.5 mr-1.5 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[11px] font-bold">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[10px] text-gray-500 mb-3 leading-relaxed">
+                                若上述方案无法解决，您可以向房东友好协商。建议<span class="text-blue-600 font-bold">说明真实困难</span>，房东会尽快处理。
+                            </p>
+                            <div class="flex gap-2">
+                                <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-1.5 rounded-lg text-[10px] font-bold btn-active">电话联系</button>
+                                <button class="flex-1 bg-blue-500 text-white py-1.5 rounded-lg text-[10px] font-bold btn-active shadow-sm shadow-blue-50">发送协商意向</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 房客发送协商话术 (用户坚持后的结果) -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-3 rounded-2xl rounded-tr-none max-w-[80%] text-[13px] leading-snug card-shadow text-left">
+                            房东您好，我有特殊情况希望能协商退款，如您同意，请您发送<span class="font-bold underline">协商退款链接</span>给我，谢谢。
+                        </div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm">请输入...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center leading-tight">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端视角
+            </h2>
+            <div class="phone-mockup relative">
+                <!-- Header -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area">
+                    <!-- 房客咨询 -->
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none max-w-[75%] text-[13px] shadow-sm italic text-left leading-relaxed">临时去不了了，能退吗？</div>
+                    </div>
+
+                    <!-- 1. 政策卡片镜像 (移除按钮，无“坚持取消”) -->
+                    <div class="flex justify-end mb-3">
+                        <div class="bg-white rounded-2xl w-[280px] card-shadow border border-gray-100 overflow-hidden host-mirror-no-action mr-2 text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-2.5 flex-1 flex flex-col justify-center">
+                                    <div class="font-bold text-[12px] text-gray-800 truncate">釜子锅的测试房</div>
+                                    <div class="text-[10px] text-gray-500 mt-0.5">10.10－10.15 | ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="mb-2">
+                                    <div class="text-red-500 font-bold text-[13px]">不可取消</div>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                </div>
+                                <div class="bg-blue-50/50 p-2 rounded-lg border border-blue-100/30 text-blue-800 text-[10px] leading-relaxed italic">
+                                    💡 温馨提示：房东已为您预留好房间，建议您按计划入住。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-100 rounded-full flex items-center justify-center text-[10px] text-[#ffb400] font-extrabold flex-shrink-0 card-shadow self-start">美</div>
+                    </div>
+
+                    <!-- 2. 协商小助手镜像 (无按钮) -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-white rounded-2xl w-[280px] p-3.5 card-shadow border border-blue-50 host-mirror-no-action mr-2 text-left">
+                            <div class="flex items-center mb-1.5 text-blue-600">
+                                <div class="bg-blue-500 rounded p-0.5 mr-1.5 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[11px] font-bold">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[10px] text-gray-500 leading-relaxed">
+                                若上述方案无法解决，您可以向房东友好协商。建议先<span class="text-blue-600 font-bold">说明真实困难</span>，房东会尽快处理。
+                            </p>
+                        </div>
+                        <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0 invisible"></div>
+                    </div>
+
+                    <!-- 3. 房客协商话术展示 -->
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0 text-center leading-none">客</div>
+                        <div class="bg-white text-gray-800 p-3 rounded-2xl rounded-tl-none max-w-[80%] text-[13px] leading-snug shadow-sm text-left">
+                            房东您好，我有特殊情况希望能协商退款，如您同意，请您发送<span class="font-bold underline">协商退款链接</span>给我，谢谢。
+                        </div>
+                    </div>
+
+                    <!-- 4. 房东侧协商工具卡片 (真实操作引导) -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-xl p-3.5 border border-blue-100 w-[260px] mr-2 shadow-sm">
+                            <p class="text-[11px] text-gray-800 mb-1.5 font-bold">房客寻求协商</p>
+                            <p class="text-[10px] text-gray-500 mb-3 leading-snug">您可以点击下方按钮，向房客下发协商退款单：</p>
+                            <button class="w-full bg-blue-500 text-white py-2 rounded-lg text-[12px] font-bold shadow-md shadow-blue-50 active:opacity-90">
+                                发送“协商退款单”
+                            </button>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-100 rounded-full flex items-center justify-center text-[10px] text-[#ffb400] font-extrabold flex-shrink-0 card-shadow self-start">美</div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200 flex items-center">
+                    <div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mr-2 font-bold">+</div>
+                    <div class="flex-1 bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm text-left">回复房客...</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
+
+:::collapse{nodeId="3c1636efc3f944498f8f712b82fa9d4f" titleNodeId="adee18c907a9455facd62aa6030060a3" contentNodeId="6c5c4a2df19e4cc091b3d4f729309fb7"}
+修改订单版本存档
+---
+:::paragraph{nodeId="6fa7f4e156c540d191b99456c2ea8845"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/231954936709?contentType=1){width=637 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/231954936709?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/231954936709?contentType=1" nodeId="becb09b2361741c5b05d66897b980865"}
+:::
+
+``` nodeId="9fe03f40-415e-4892-8cb5-98b55183bc52"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-受限引导场景</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 720px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+    </style>
+</head>
+<body class="p-8 text-left">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12 text-left">
+        
+        <!-- ================= 房客端 (Guest) - 受限场景 ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center text-center leading-tight">
+                <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span> 房客端视角 (引导协商)
+            </h2>
+            <div class="phone-mockup relative text-left">
+                <!-- 顶部栏 -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area text-left">
+                    <!-- 1. 房客咨询 + 头像 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">临时去不了了，能退吗？</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 2. 退改政策卡片 -->
+                    <div class="flex justify-start mb-3 text-left">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 text-left">美</div>
+                        <div class="bg-white rounded-2xl w-[300px] card-shadow border border-gray-100 overflow-hidden text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50 text-left">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center text-left">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3 text-left">
+                                <div class="text-left mb-2">
+                                    <div class="text-red-500 font-bold text-[14px]">不可取消</div>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">取消将扣除全额房费 <span class="text-blue-500">详情 ></span></p>
+                                </div>
+                                <!-- 温馨提示 -->
+                                <div class="mt-2 bg-blue-50/50 p-2.5 rounded-lg border border-blue-100/30 italic text-blue-800 text-[10px] leading-relaxed text-left">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+                                </div>
+                                <div class="mt-4 flex gap-2">
+                                    <button class="flex-1 bg-[#ffda00] py-2.5 rounded-lg text-[12px] font-bold btn-active">修改日期</button>
+                                    <button class="flex-1 bg-white border border-gray-200 text-gray-400 py-2 rounded-lg text-[11px] cursor-not-allowed">坚持取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 引导卡片 (已修正标题) -->
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0"></div> <!-- 对齐占位 -->
+                        <div class="bg-white rounded-2xl w-[300px] p-4 card-shadow border border-blue-50 text-left">
+                            <div class="flex items-center mb-1.5 text-blue-600 text-left">
+                                <div class="bg-blue-500 rounded p-0.5 mr-1.5 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-3 leading-relaxed text-left">
+                                若上述方案无法解决，您可以向房东友好协商。建议先<span class="text-blue-600 font-bold">说明真实困难</span>，房东更易理解。
+                            </p>
+                            <div class="flex gap-2">
+                                <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-1.5 rounded-lg text-[11px] font-bold btn-active">电话联系</button>
+                                <button class="flex-1 bg-blue-500 text-white py-1.5 rounded-lg text-[11px] font-bold btn-active shadow-md shadow-blue-50">发送协商意向</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 固定话术 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-3 rounded-2xl rounded-tr-none max-w-[80%] text-[13px] leading-snug card-shadow text-left">
+                            房东您好，我有特殊情况希望能协商退款，如您同意，请您发送<span class="font-bold underline">协商退款链接</span>给我，谢谢。
+                        </div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+                </div>
+
+                <!-- 底部输入栏 -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm">请输入...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) - 信息对称 ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center text-center leading-tight">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端视角 (信息对齐)
+            </h2>
+            <div class="phone-mockup relative">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col text-left">
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] shadow-sm italic text-left">临时去不了了，能退吗？</div>
+                    </div>
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-2xl w-[300px] overflow-hidden card-shadow border border-gray-100 mr-2 text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50 text-left">
+                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 text-left flex flex-col justify-center">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1 text-left">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500 text-left">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="p-3 text-left">
+                                <div class="flex justify-between items-start mb-2 text-left">
+                                    <div class="text-left">
+                                        <div class="text-red-500 font-bold text-[13px]">不可取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5">系统已同步扣费政策</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-red-500 font-bold text-[13px]">¥139.00</div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 bg-blue-50/30 p-2 rounded-lg border border-blue-100/20 italic text-blue-800 text-[9px] leading-relaxed text-left">
+                                    💡 温馨提示：房间已为您预留，建议您按原计划入住，不负旅途好时光，留住这段美好旅程。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start text-left">美</div>
+                    </div>
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-3 rounded-2xl rounded-tl-none max-w-[80%] text-[13px] leading-snug shadow-sm text-left">
+                            房东您好，我有特殊情况希望能协商退款，如您同意，请您发送<span class="font-bold underline">协商退款链接</span>给我，谢谢。
+                        </div>
+                    </div>
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-white rounded-xl p-3 border border-blue-100 w-[260px] mr-2 text-left shadow-sm">
+                            <p class="text-[11px] text-gray-800 mb-2 font-bold text-left">房客寻求协商</p>
+                            <p class="text-[10px] text-gray-500 mb-3 text-left">您可以点击下方按钮，向房客下发协商退款单：</p>
+                            <button class="w-full bg-blue-500 text-white py-2 rounded-lg text-[12px] font-bold shadow-md shadow-blue-50 active:opacity-90">
+                                发送“协商退款单”
+                            </button>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start">美</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+:::paragraph{nodeId="e2a6028686174296859b80b91eec093e"}
+:[link]{href="https://gemini.google.com/share/32c43d08a327" nodeId="5413c2bb954246858b7e207454443d6e"}https://gemini.google.com/share/32c43d08a327[/link]
+:::
+:::
+:::
+:::table_cell{colwidth="569" numCell=false nodeId="db51d922443d4f6188b66df77c8acd19"}
+:::paragraph{nodeId="5fa00317db284e24b4263cd65ef86938"}
+房客端：
+:::
+
+:::ordered_list{indent=0 nodeId="1797f5b4ad6548d4909fa2c5a1e8cbbe"}
+:::list_item{level=0 hidden=false nodeId="07663c19c3474fb78277c771805e8fb2"}
+:::paragraph{nodeId="0fdec346aa854c9999c45b08b330ce74"}
+退款订单卡片
+:::
+
+:::ordered_list{indent=0 nodeId="ec75b57410d44854b7a34cf5f82db412"}
+:::list_item{level=0 hidden=false nodeId="0e381d87ffe449a5a9dc68e7a7dbce5c"}
+:::paragraph{nodeId="0981347b12514beea6ac968f32da6a6a"}
+高优先级【继续入住】
+:::
+
+:::ordered_list{indent=0 nodeId="5e713bd9eceb4d3e85fb9fa34bba6332"}
+:::list_item{level=0 hidden=false nodeId="a1bf78d227244485836cbb3132ed4878"}
+:::paragraph{nodeId="976004aec4f4447a8531ada57febba65"}
+点击继续入住则toast“期待您的光临，祝您旅途愉快”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="ed6d7680c296435e9fab3fbfc8fdc2ec"}
+:::paragraph{nodeId="2bd61f27385d4448a0a863eba27a8367"}
+低优先级【坚持取消】
+:::
+
+:::ordered_list{indent=0 nodeId="a2f866c8c5eb4e45b66284e927ee3b1a"}
+:::list_item{level=0 hidden=false nodeId="30e25e6715c54ba997496b339664ab4c"}
+:::paragraph{nodeId="2b91c8adec4b4d5d87ad19bfe369ba31"}
+点击坚持取消则下发协商退助手卡片，且点击后按钮置为灰色不再支持点击
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="afcb254556c046c8a1e98ee876646976"}
+:::paragraph{nodeId="f23fb7db5953417892dbebba08176fc5"}
+协商退助手卡片
+:::
+
+:::ordered_list{indent=0 nodeId="3e706d0fca304341b19f1eb9e467fd5c"}
+:::list_item{level=0 hidden=false nodeId="2e269232d2224cf2a023013b67f2e105"}
+:::paragraph{nodeId="e083c5e250a44c60907285bd07bbede0"}
+文案：
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="c138d20eb4394a88bfba6295a0f291a2"}
+:::paragraph{nodeId="0ae037ddd9d949d9b2f77ab79d04cb06"}
+高优先级按钮-发送意向
+:::
+
+:::ordered_list{indent=0 nodeId="7d68fcc75dc6462c8f6ad338350e5cf2"}
+:::list_item{level=0 hidden=false nodeId="972a06ab97c54ee89a4a8cf5c5e5405b"}
+:::paragraph{nodeId="9fb03d567a314c0cb7ac9fc4e7ca9f38"}
+点击后以房客角色发消息，固定文案“”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="cf22ef8b71804149a4705ecbc100fd23"}
+:::paragraph{nodeId="c052c0a0817249639870775a02f79aff"}
+低优先级按钮-电话联系
+:::
+
+:::ordered_list{indent=0 nodeId="d760a4aa517945c8b58496556299d95b"}
+:::list_item{level=0 hidden=false nodeId="03975b3af05d40889f8d8fe7c4d7350c"}
+:::paragraph{nodeId="66ac9275ebe84cf7a48e58429b83efc3"}
+点击后拉起拨打电话弹层
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="6ec61011c65b4a2caa5e7d681b168601"}
+:::paragraph{nodeId="37d3d6a4d83d417e9b06270d42e43ef4"}
+房客发送申请后接入线上已有流程，房客和房东侧均下发协商退处理卡片
+:::
+:::
+:::
+
+:::paragraph{nodeId="6669704b3dd74f09a5712ffaeff71f0e"}
+房东端：
+:::
+
+:::ordered_list{indent=0 nodeId="0ceb294c08c043199e78351591c515f5"}
+:::list_item{level=0 hidden=false nodeId="6c1fbc035ecc43348dba81d09740929b"}
+:::paragraph{nodeId="fc1bc536d62c4c9d8f66e1ff45216fde"}
+房东端镜像对称看到所有智能助手发出的卡片但不可操作
+:::
+
+:::paragraph{nodeId="c5bcc8c7ce21435ea401c502b832c48f"}:::
+:::
+:::
+:::
+:::
+:::
+
+:::paragraph{nodeId="eaed5e44ffd74b4981eca8eb6c8ff4db"}:::
+
+:::paragraph{nodeId="bf65d526c80d493ea826ad21e4007544"}:::
+
+:::paragraph{nodeId="32c7c70f18a3405f84bfdb7855b4d6ad"}
+3、有损取消
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false nodeId="08c4b2a50dae4b59b864bc87d9a02cc0"}
+:::table_row{nodeId="61d3d99bebc74bb1818e19c11fe29322"}
+:::table_header{colwidth="77" numCell=false nodeId="956ab9af13554b41a3bd444af0b69f9e"}
+:::paragraph{nodeId="4edd092885f745b8905baa48fc1bab8c"}
+子场景
+:::
+:::
+:::table_header{colwidth="764" numCell=false nodeId="dd52149c219b4e5e8aada86e89b9a408"}
+:::paragraph{nodeId="c9744eeb61ba435684f2dd2705adc6f1"}
+交互图
+:::
+:::
+:::table_header{colwidth="583" numCell=false nodeId="21474a0604c34d51bc0418f5352f7e34"}
+:::paragraph{nodeId="217ccfc6e4d14d5ca841b9d0aecbd38d"}
+功能概述
+:::
+:::
+:::
+:::table_row{nodeId="1300d6458c34411db7292a3c03fac49d"}
+:::table_cell{colwidth="77" numCell=false nodeId="a1227875a0bc4a34bb9d8b374a51b53c"}
+:::paragraph{nodeId="421dabfd689e440d8dd45369dd6b73e8"}
+房客可发起协商退
+:::
+:::
+:::table_cell{colwidth="764" numCell=false nodeId="b31508ea43544128804c85e480dd37a0"}
+:::paragraph{nodeId="64ff036eb58545a4b4e82543ba4f72f1"}:::
+
+:::paragraph{nodeId="e1c7703f9dc1485ea6f83a61ade8b796"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1&isNewContent=false){width=603.88 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1&isNewContent=false" nodeId="5f02929292504a24a2bba464b1f37c67"}
+:::
+
+:::paragraph{nodeId="e0a10ebf9f574017a2929b24791acae3"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232493513467?contentType=1&isNewContent=false){width=598.46 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232493513467?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232493513467?contentType=1&isNewContent=false" nodeId="e9abde11b56d407baecb1278cd6ecf0e"}
+:::
+
+``` nodeId="f31110d9-7b68-4403-b3f1-c7971c14fc0a"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-协商退卡片样式更新</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 370px; height: 720px; background: #f4f4f4; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; scroll-behavior: smooth; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.98); transition: all 0.1s; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-append { animation: slideIn 0.3s ease-out forwards; }
+        
+        .btn-disabled { background-color: #f5f5f5 !important; color: #bbbbbb !important; border: 1px solid #eeeeee !important; cursor: not-allowed; pointer-events: none; }
+    </style>
+</head>
+<body class="p-6 flex flex-col items-center">
+
+    <div class="flex flex-wrap justify-center gap-8 w-full max-w-6xl">
+        
+        <!-- 房客端 -->
+        <div class="flex flex-col items-center">
+            <div class="mb-3 px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-bold uppercase">Guest (房客端)</div>
+            <div class="phone-mockup border-orange-200">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房</div>
+                    <div class="font-bold text-gray-800 text-xs">釜子锅 (房东)</div>
+                </div>
+
+                <div class="chat-area" id="guestChat">
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">计划有变，现在取消扣费太高了</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 1. 有损取消卡片 -->
+                    <div class="flex justify-start mb-3">
+                        <div class="w-7 h-7 bg-white border border-gray-100 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-50 overflow-hidden">
+                            <div class="p-4 flex">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 min-w-0">
+                                    <div class="font-bold text-[14px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[12px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            
+                            <div class="px-4 pb-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="text-orange-600 font-bold text-[14px]">有损取消</div>
+                                    <div class="text-red-500 font-bold text-[16px]">预计退 ¥97.30</div>
+                                </div>
+                                <div class="text-[11px] text-gray-400 mb-3">
+                                    当前取消需扣除30%违约金 <span class="text-blue-500 ml-1">详情 ></span>
+                                </div>
+                                
+                                <div class="bg-yellow-50/70 rounded-xl p-3 mb-4 border border-yellow-100/50 flex items-start">
+                                    <span class="text-[14px] mr-2 flex-shrink-0">💡</span>
+                                    <p class="text-[11px] text-orange-800 leading-relaxed font-medium">
+                                        温馨提示：房间已为您预留，建议您按计划入住，不负旅途好时光，留住绝美行程体验。
+                                    </p>
+                                </div>
+                                
+                                <div class="flex gap-3 mb-1">
+                                    <button id="g_cancelBtn" onclick="syncFlow('cancel')" class="flex-1 bg-white border border-gray-200 text-gray-600 py-2.5 rounded-xl text-[13px] font-medium btn-active">付费取消</button>
+                                    <button class="flex-1 bg-[#ffda00] py-2.5 rounded-xl text-[13px] font-bold btn-active">继续入住</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="g_append"></div>
+                </div>
+                <div class="bg-white p-3 pb-8 border-t border-gray-200"><div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">输入消息...</div></div>
+            </div>
+        </div>
+
+        <!-- 房东端 -->
+        <div class="flex flex-col items-center">
+            <div class="mb-3 px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase">Host (房东端)</div>
+            <div class="phone-mockup border-blue-200">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs">房客 (观察中)</div>
+                </div>
+
+                <div class="chat-area" id="hostChat">
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none max-w-[75%] text-[13px] border border-gray-100 shadow-sm">计划有变，现在取消扣费太高了</div>
+                    </div>
+                    <div id="h_append"></div>
+                </div>
+                <div class="bg-white p-3 pb-8 border-t border-gray-200"><div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">输入消息...</div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function syncFlow(step) {
+            const gAppend = document.getElementById('g_append');
+            const hAppend = document.getElementById('h_append');
+
+            if (step === 'cancel') {
+                document.getElementById('g_cancelBtn').disabled = true;
+                document.getElementById('g_cancelBtn').classList.add('opacity-50');
+
+                gAppend.innerHTML += `<div class="flex justify-end mb-4 animate-append"><div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none text-[13px]">付费取消</div><div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div></div>`;
+                hAppend.innerHTML += `<div class="flex justify-start mb-4 animate-append"><div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div><div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] border shadow-sm">付费取消</div></div>`;
+
+                setTimeout(() => {
+                    gAppend.innerHTML += `
+                        <div class="flex justify-start mb-4 animate-append">
+                            <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                            <div class="bg-white rounded-2xl w-[290px] card-shadow border border-red-50 overflow-hidden">
+                                <div class="p-5 text-center">
+                                    <div class="font-bold text-[15px] text-gray-800 mb-1">确定要付费取消吗？</div>
+                                    <p class="text-[11px] text-gray-400">操作后不可撤回</p>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <button class="w-full bg-[#ffda00] py-3 rounded-xl text-[14px] font-bold mb-3 btn-active">确认付费取消</button>
+                                    <button onclick="syncFlow('negotiate')" class="w-full text-blue-500 text-[13px] font-bold py-1 btn-active">尝试和房东协商</button>
+                                </div>
+                            </div>
+                        </div>`;
+                    
+                    hAppend.innerHTML += `
+                        <div class="flex justify-end mb-4 animate-append">
+                            <div class="bg-white rounded-2xl w-[280px] card-shadow border border-gray-100 overflow-hidden">
+                                <div class="p-5 text-center">
+                                    <div class="font-bold text-[15px] text-gray-800 mb-1">确定要付费取消吗？</div>
+                                    <p class="text-[11px] text-gray-400">操作后不可撤回</p>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <button class="w-full btn-disabled py-3 rounded-xl text-[14px] font-bold mb-3">确认付费取消</button>
+                                    <button class="w-full text-blue-300 text-[13px] font-bold py-1">尝试和房东协商</button>
+                                </div>
+                            </div>
+                            <div class="w-7 h-7 bg-white border border-orange-500 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        </div>`;
+                    autoScroll();
+                }, 600);
+            }
+
+            if (step === 'negotiate') {
+                gAppend.innerHTML += `<div class="flex justify-end mb-4 animate-append"><div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none text-[13px]">尝试和房东协商</div><div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div></div>`;
+                hAppend.innerHTML += `<div class="flex justify-start mb-4 animate-append"><div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div><div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] border shadow-sm">尝试和房东协商</div></div>`;
+
+                setTimeout(() => {
+                    // 使用最新的“平台协商退小助手”卡片样式 (房客发起场景)
+                    gAppend.innerHTML += `
+                        <div class="flex justify-start mb-4 animate-append">
+                            <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                            <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-blue-50">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-blue-500 rounded p-0.5 mr-2">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                    </div>
+                                    <span class="text-[12px] font-bold text-gray-700">平台协商退小助手</span>
+                                </div>
+                                <p class="text-[11px] text-gray-500 mb-3 leading-relaxed">
+                                    您可以向房东说明情况请求协商退款。需勾选<span class="text-blue-600 font-bold">“与房东协商退款”</span>并提供：
+                                    <span class="text-gray-900 font-bold">取消原因、期望金额。</span>
+                                </p>
+                                <button class="w-full border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-lg text-[12px] font-bold btn-active">前往订单页申请 →</button>
+                            </div>
+                        </div>`;
+                    
+                    hAppend.innerHTML += `
+                        <div class="flex justify-end mb-4 animate-append">
+                            <div class="bg-white rounded-2xl w-[290px] p-4 card-shadow border border-gray-100">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-gray-300 rounded p-0.5 mr-2">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                    </div>
+                                    <span class="text-[12px] font-bold text-gray-400">平台协商退小助手</span>
+                                </div>
+                                <p class="text-[11px] text-gray-300 mb-3 leading-relaxed">
+                                    您可以向房东说明情况请求协商退款。需勾选“与房东协商退款”并提供：
+                                    取消原因、期望金额。
+                                </p>
+                                <button class="w-full btn-disabled py-2 rounded-lg text-[12px] font-bold">前往订单页申请 →</button>
+                            </div>
+                            <div class="w-7 h-7 bg-white border border-orange-500 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        </div>`;
+                    autoScroll();
+                }, 600);
+            }
+        }
+
+        function autoScroll() {
+            document.getElementById('guestChat').scrollTop = document.getElementById('guestChat').scrollHeight;
+            document.getElementById('hostChat').scrollTop = document.getElementById('hostChat').scrollHeight;
+        }
+    </script>
+</body>
+</html>
+```
+
+:::collapse{nodeId="0ff3bab6263a40c192c0c6ebeafcd6ba" titleNodeId="26221127ebed4899a8114fa856833527" contentNodeId="bd19d93a023847ca854791cde7c31a2d"}
+历史版本
+---
+:::paragraph{nodeId="01c4c63057f546b993625f656bc70fcc"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232482619910?contentType=1&isNewContent=false){width=627.66 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232482619910?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232482619910?contentType=1&isNewContent=false" nodeId="68ea885dbcfa45b68792f472d6fe42cd"}
+:::
+
+``` nodeId="8f5edab3-49c2-4b32-bdb8-373f8983f8ac"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-追加确认卡片</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 720px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative; }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; scroll-behavior: smooth; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+        
+        /* 动画进入效果 */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide { animation: slideIn 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+        
+        <!-- ================= 房客端 (Guest) ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span> 房客端视角
+            </h2>
+            <div class="phone-mockup">
+                <!-- 顶部栏 -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area" id="guestChat">
+                    <!-- 1. 房客咨询 -->
+                    <div class="flex justify-end mb-5">
+                        <div class="bg-[#ffda00] text-gray-800 p-3 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">临时去不了了，能退多少钱？</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 2. 初始引导卡片 (卡片 A) -->
+                    <div class="flex justify-start mb-5" id="cardAContainer">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-100 overflow-hidden">
+                            <div class="p-3 bg-gray-50 flex items-center border-b border-gray-100">
+                                <span class="text-[11px] font-bold text-gray-600">退改政策试算</span>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-[13px] text-gray-800">预计退还金额</span>
+                                    <span class="text-red-500 font-bold text-[16px]">¥97.30</span>
+                                </div>
+                                <div class="bg-amber-50 rounded-lg p-2.5 mb-4 border border-amber-100">
+                                    <p class="text-[11px] text-amber-700 leading-relaxed">💡 房间已为您预留，现在取消将扣除 ¥41.70 违约金。建议您按原计划入住。</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button onclick="sendConfirmCard(this)" class="flex-1 bg-white border border-gray-200 text-gray-500 py-2.5 rounded-lg text-[12px] font-medium btn-active">坚持取消</button>
+                                    <button class="flex-1 bg-[#ffda00] py-2.5 rounded-lg text-[12px] font-bold btn-active">继续入住</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 动态追加区 -->
+                    <div id="dynamicContentGuest"></div>
+                </div>
+
+                <!-- 底部输入栏 -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">请输入您的回复...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端视角
+            </h2>
+            <div class="phone-mockup">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area" id="hostChat">
+                    <div class="flex justify-start mb-5">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-3 rounded-2xl rounded-tl-none text-[13px] shadow-sm">临时去不了了，能退多少钱？</div>
+                    </div>
+                    
+                    <div class="flex justify-end mb-5">
+                        <div class="bg-white rounded-2xl w-[290px] overflow-hidden card-shadow border border-gray-100 mr-2">
+                            <div class="p-3 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                                <span class="text-[11px] text-gray-500">向房客展示的退改政策</span>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[12px] text-gray-600">有损取消金额</span>
+                                    <span class="text-red-500 font-bold text-[14px]">¥97.30</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                    </div>
+
+                    <!-- 动态追加区 -->
+                    <div id="dynamicContentHost"></div>
+                </div>
+                
+                <div class="bg-white p-3 pb-8 border-t border-gray-200">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">请输入...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendConfirmCard(btn) {
+            // 1. 禁用原卡片按钮避免重复点击
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            
+            const guestContainer = document.getElementById('dynamicContentGuest');
+            const hostContainer = document.getElementById('dynamicContentHost');
+
+            // 2. 模拟房客发送“坚持取消”文本消息
+            const textMsg = `
+                <div class="flex justify-end mb-5 animate-slide">
+                    <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none text-[13px]">坚持取消</div>
+                    <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                </div>
+            `;
+            guestContainer.innerHTML += textMsg;
+
+            // 3. 延迟下发新卡片 (卡片 B)
+            setTimeout(() => {
+                const confirmCard = `
+                    <div class="flex justify-start mb-5 animate-slide">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-blue-100 overflow-hidden">
+                            <div class="p-4 bg-white">
+                                <div class="text-center mb-4">
+                                    <div class="text-[14px] font-bold text-gray-800 mb-1">确认取消订单并支付违约金？</div>
+                                    <p class="text-[11px] text-gray-400">取消后，¥97.30 将原路退回支付账号</p>
+                                </div>
+                                <div class="space-y-3">
+                                    <button class="w-full bg-[#ffda00] py-3 rounded-xl text-[14px] font-bold btn-active shadow-sm">付费取消</button>
+                                    
+                                    <div class="flex flex-col items-center pt-1">
+                                        <div class="flex items-center w-full px-4 mb-2">
+                                            <div class="h-[1px] bg-gray-100 flex-1"></div>
+                                            <span class="px-2 text-[10px] text-gray-300">或</span>
+                                            <div class="h-[1px] bg-gray-100 flex-1"></div>
+                                        </div>
+                                        <button onclick="showFinalNego()" class="text-blue-500 text-[12px] font-medium py-1 px-4">与房东协商退更多 ></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                guestContainer.innerHTML += confirmCard;
+                
+                // 同步给房东端
+                hostContainer.innerHTML += `
+                    <div class="flex justify-start mb-4 animate-slide">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] shadow-sm">坚持取消</div>
+                    </div>
+                    <div class="flex justify-end mb-5 animate-slide">
+                        <div class="bg-white rounded-2xl w-[290px] overflow-hidden card-shadow border border-gray-100 mr-2">
+                             <div class="p-4 text-center">
+                                <div class="text-[12px] font-bold text-gray-700">房客正在决策“付费取消”</div>
+                                <p class="text-[10px] text-gray-400 mt-1">系统已下发二次确认卡片</p>
+                             </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                    </div>
+                `;
+
+                // 滚动
+                scrollToBottom();
+            }, 600);
+        }
+
+        function showFinalNego() {
+             const guestContainer = document.getElementById('dynamicContentGuest');
+             const negoCard = `
+                <div class="flex justify-start mb-5 animate-slide">
+                    <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0"></div>
+                    <div class="bg-blue-50 rounded-2xl w-[290px] p-4 border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <span class="text-blue-600 font-bold text-[12px]">协商退款助手</span>
+                        </div>
+                        <p class="text-[11px] text-blue-800/70 leading-relaxed mb-3">若您有特殊困难（如就医、交通取消等），可尝试提供证明与房东友好协商。</p>
+                        <button class="w-full bg-white border border-blue-200 text-blue-600 py-2 rounded-lg text-[11px] font-bold btn-active">向房东反馈困难</button>
+                    </div>
+                </div>
+             `;
+             guestContainer.innerHTML += negoCard;
+             scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            const guestChat = document.getElementById('guestChat');
+            const hostChat = document.getElementById('hostChat');
+            guestChat.scrollTop = guestChat.scrollHeight;
+            hostChat.scrollTop = hostChat.scrollHeight;
+        }
+    </script>
+</body>
+</html>
+```
+
+:::paragraph{nodeId="6a8503df6e2a411196797a5364de5483"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/231971005158?contentType=1){width=553 height=528 small="https://km.sankuai.com/api/file/cdn/2756533569/231971005158?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/231971005158?contentType=1" nodeId="b2c285dafb884e8db9bfb73d59f5658c"}
+:::
+
+``` nodeId="0514989a-518c-4286-8847-a16b7def9b9e"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-有损引导场景</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 375px; height: 720px; background: #ededed; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.96); }
+    </style>
+</head>
+<body class="p-8 text-left">
+
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12 text-left">
+        
+        <!-- ================= 房客端 (Guest) - 有损场景 ================= -->
+        <div class="flex flex-col items-center">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center text-center leading-tight">
+                <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span> 房客端视角
+            </h2>
+            <div class="phone-mockup relative text-left">
+                <!-- 顶部栏 -->
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房东</div>
+                    <div class="font-bold text-gray-800 text-xs text-left">美团民宿房东</div>
+                </div>
+
+                <div class="chat-area text-left">
+                    <!-- 1. 房客咨询 -->
+                    <div class="flex justify-end mb-4 text-left">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px] text-left">临时去不了了，能退多少钱？</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 2. 退改政策卡片 (增加挽留提示) -->
+                    <div class="flex justify-start mb-3 text-left">
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[300px] card-shadow border border-gray-100 overflow-hidden text-left text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50 text-left text-left">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden text-left">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center text-left text-left">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1 text-left">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500 text-left">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 text-left text-left">
+                                <div class="text-left mb-3 text-left">
+                                    <div class="flex justify-between items-baseline text-left">
+                                        <div class="text-orange-500 font-bold text-[14px]">有损取消</div>
+                                        <div class="text-red-500 font-bold text-[15px]">预计退 ¥97.30</div>
+                                    </div>
+                                    <p class="text-[10px] text-gray-400 mt-1 text-left">当前取消需扣除30%违约金 <span class="text-blue-500 cursor-pointer">详情 ></span></p>
+                                </div>
+
+                                <!-- 房客端温馨提示：挽留话术 -->
+                                <div class="bg-amber-50 rounded-lg p-2.5 mb-4 border border-amber-100 text-left text-left">
+                                    <div class="flex items-start text-left">
+                                        <span class="text-amber-500 mr-1.5 mt-0.5">💡</span>
+                                        <p class="text-[11px] text-amber-700 leading-normal font-medium text-left">温馨提示：房间已为您预留，建议您按计划入住，不负旅途好时光，留住绝美行程体验。</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-2 text-left">
+                                    <button class="flex-1 bg-white border border-gray-200 text-gray-500 py-2.5 rounded-lg text-[13px] font-medium btn-active text-center">付费取消</button>
+                                    <button class="flex-1 bg-[#ffda00] py-2.5 rounded-lg text-[13px] font-bold btn-active text-center shadow-sm">继续入住</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 平台协商退小助手 -->
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-transparent mr-2 flex-shrink-0"></div>
+                        <div class="bg-white rounded-2xl w-[300px] p-4 card-shadow border border-blue-50 text-left text-left">
+                            <div class="flex items-center mb-1.5 text-blue-600 text-left">
+                                <div class="bg-blue-500 rounded p-0.5 mr-1.5 flex items-center justify-center text-left">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path></svg>
+                                </div>
+                                <span class="text-[12px] font-bold text-left">平台协商退小助手</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mb-3 leading-relaxed text-left">
+                                违约金太高？您可以向房东友好协商。说明您的<span class="text-blue-600 font-bold">特殊困难</span>，争取减少损失。
+                            </p>
+                            <div class="flex gap-2 text-left">
+                                <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-1.5 rounded-lg text-[11px] font-bold btn-active text-center text-center">电话联系</button>
+                                <button class="flex-1 bg-blue-500 text-white py-1.5 rounded-lg text-[11px] font-bold btn-active shadow-md shadow-blue-50 text-center text-center">发送协商意向</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部输入栏 -->
+                <div class="bg-white p-3 pb-8 border-t border-gray-200 text-left text-left">
+                    <div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-sm text-left">请输入...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 房东端 (Host) - 仅状态同步 ================= -->
+        <div class="flex flex-col items-center text-left">
+            <h2 class="mb-4 text-lg font-bold text-gray-700 flex items-center text-center leading-tight">
+                <span class="w-3 h-3 bg-orange-500 rounded-full mr-2"></span> 房东端视角
+            </h2>
+            <div class="phone-mockup relative text-left">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs text-left">美团民宿房客</div>
+                </div>
+
+                <div class="chat-area flex flex-col text-left">
+                    <div class="flex justify-start mb-4 text-left">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] shadow-sm italic text-left">临时去不了了，能退多少钱？</div>
+                    </div>
+                    
+                    <!-- 房东侧看到的政策卡片同步 (移除按钮，做截断) -->
+                    <div class="flex justify-end mb-4 text-left text-left">
+                        <div class="bg-white rounded-2xl w-[300px] overflow-hidden card-shadow border border-gray-100 mr-2 text-left">
+                            <div class="p-3 flex bg-gray-50/50 border-b border-gray-50 text-left text-left text-left">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden text-left">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 flex flex-col justify-center text-left text-left">
+                                    <div class="font-bold text-[13px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[11px] text-gray-500">¥139.00</div>
+                                </div>
+                            </div>
+                            <div class="p-3 text-left text-left text-left text-left">
+                                <div class="flex justify-between items-center text-left text-left">
+                                    <div class="text-left text-left text-left text-left text-left text-left">
+                                        <div class="text-orange-500 font-bold text-[13px]">有损取消</div>
+                                        <p class="text-[9px] text-gray-400 mt-0.5 text-left text-left">房客当前取消需扣30%</p>
+                                    </div>
+                                    <div class="text-right text-right text-right">
+                                        <div class="text-[10px] text-gray-400 text-right">预计退还金额</div>
+                                        <div class="text-red-500 font-bold text-[15px]">¥97.30</div>
+                                    </div>
+                                </div>
+
+                                <!-- 房东端温馨提示：帮房东挽留 -->
+                                <div class="mt-3 bg-amber-50 rounded-lg p-2.5 border border-amber-100 text-left text-left">
+                                    <div class="flex items-start text-left text-left">
+                                        <span class="text-amber-500 mr-1.5 mt-0.5 text-left">💡</span>
+                                        <p class="text-[11px] text-amber-700 leading-normal font-medium text-left">温馨提示：房间已为您预留，建议您按计划入住，不负旅途好时光，留住绝美行程体验。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 此处已移除按钮展示，实现视觉截断 -->
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0 self-start text-center">美</div>
+                    </div>
+
+                    <div class="mt-2 px-8 text-center text-center text-center">
+                        <p class="text-[10px] text-gray-400 italic">房东端已同步展示最新退改规则</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+:::
+:::
+:::table_cell{colwidth="583" numCell=false nodeId="3fee962b40f24004a55255d51362de69"}
+:::paragraph{nodeId="5fbf78abf8a04d8abbce15439c06b84f"}
+房客端：
+:::
+
+:::ordered_list{indent=0 nodeId="19c655a01cac410e9366246668f9fbf3"}
+:::list_item{level=0 hidden=false nodeId="0b559666e1f140eba128f77047498017"}
+:::paragraph{nodeId="bde0ea9a2ec04b0db4e14762a393dee9"}
+退款订单卡片
+:::
+
+:::ordered_list{indent=0 nodeId="d2461eb85f8e454e9c32ae5f256692f3"}
+:::list_item{level=0 hidden=false nodeId="1f94e7a5c03048eea63e894da3a237df"}
+:::paragraph{nodeId="980a33d4a4d14a81a7d7a1da19c0d985"}
+高优先级【继续入住】
+:::
+
+:::ordered_list{indent=0 nodeId="fb4075873a7b4cc1befd638c23db6730"}
+:::list_item{level=0 hidden=false nodeId="44c478ebdbb94d86b0f138602d3a512b"}
+:::paragraph{nodeId="44579900f85b4e01b9fbf7418c091162"}
+点击继续入住则toast“期待您的光临，祝您旅途愉快”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="0bc2db61e8984eb7995b342371aac549"}
+:::paragraph{nodeId="39b747d8b4284e0c8c96819af68fecbe"}
+低优先级【付费取消】
+:::
+
+:::ordered_list{indent=0 nodeId="1d98f7849ede4d81a0672e5b80938cc0"}
+:::list_item{level=0 hidden=false nodeId="9ce5a58e921943319ed794a6f4ad58ea"}
+:::paragraph{nodeId="0d333e16171f49dcaf7cb201e1e5b9a9"}
+点击则下发#二次确认卡片#
+:::
+
+:::ordered_list{indent=0 nodeId="14ee878ab17e47ed861f6758d6064d01"}
+:::list_item{level=0 hidden=false nodeId="37f67be85da948f89b38c0d343e1700f"}
+:::paragraph{nodeId="5651381d42bf46d8bab12b4b4061cab6"}
+文案
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="f06ad8ae92c0486a8552546c4dfeec36"}
+:::paragraph{nodeId="f5192e78d1e14f0486e867cb3ec250e5"}
+高优先级按钮-确认付费取消
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="40ccae6bce5742c689226f2eea458d58"}
+:::paragraph{nodeId="41b555a9cc464a1985dcc83f67622f0f"}
+低优先级-尝试和协商
+:::
+
+:::ordered_list{indent=0 nodeId="a6ee5b610a4d4221b7af96b502f6839a"}
+:::list_item{level=0 hidden=false nodeId="a7cbdc9efda540c99b958f3cc98f3432"}
+:::paragraph{nodeId="f9c249d45ea94f55908128172c5c5f8c"}
+点击后同不可取消场景的协商退流程
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="292dbee633614ba9bec833007c05c6fa"}
+:::paragraph{nodeId="03d6b07971224a3bb76e3801c0c85d0e"}
+协商退助手卡片
+:::
+
+:::ordered_list{indent=0 nodeId="8756f12861234f8db5e262b4fed8da83"}
+:::list_item{level=0 hidden=false nodeId="0c3b3299d1124cd7b1d0057c82b54b2d"}
+:::paragraph{nodeId="9eb319ffdbe042d286911a2fd6121919"}
+文案：
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="3b144c8826c54671bc9d9344261e31d7"}
+:::paragraph{nodeId="3ed34d05b42b45778fbf3d4ef4eacb66"}
+高优先级按钮-发送意向
+:::
+
+:::ordered_list{indent=0 nodeId="950cada009bc4a58a01211d97be1c2b9"}
+:::list_item{level=0 hidden=false nodeId="95d49bfceadc472bbb6b1cf6a8b20b19"}
+:::paragraph{nodeId="0aafed7bbae84907be0eaa9229c53a84"}
+点击后以房客角色发消息，固定文案“”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="c82777f52a674ee0b1595e2d6f25affe"}
+:::paragraph{nodeId="5fc4377cddce45b896e8cac32bd97f75"}
+低优先级按钮-电话联系
+:::
+
+:::ordered_list{indent=0 nodeId="95ac93d7076f46e9a0a71f9bccdc1d8a"}
+:::list_item{level=0 hidden=false nodeId="e01ffc24d8a14c7882c8b3082d35298b"}
+:::paragraph{nodeId="397ac3605bef4482833821355b9f7415"}
+点击后拉起拨打电话弹层
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="3aefb0b06abf4b1091504ff3c8233fd1"}
+:::paragraph{nodeId="64c8ad3bdc184d77846917d8dc13566f"}
+房客发送申请后接入线上已有流程，房客和房东侧均下发协商退处理卡片
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="c60a35f23ef74bfd87fa340f93d3a545"}
+:::paragraph{nodeId="cb760e06c11c44dc8f3dafeb964a6afe"}
+房东端：
+:::
+
+:::ordered_list{indent=0 nodeId="e65c8324248644a892fe2ec34a01e15b"}
+:::list_item{level=0 hidden=false nodeId="63ccca69d02e44569b55c87411b3d41e"}
+:::paragraph{nodeId="cfc32c67b2294ba5a574eb75867032e6"}
+房东端镜像对称看到所有智能助手发出的卡片但不可操作
+:::
+
+:::paragraph{nodeId="d882f3bc45d841ffaab0daeb8eb5be4e"}:::
+:::
+:::
+
+:::paragraph{nodeId="0a30363c4ad84f6680b728c71ee9c0f1"}:::
+:::
+:::
+:::
+:::
+:::table_row{nodeId="f1b5d25653954c0a8001dc1bb2887999"}
+:::table_cell{colwidth="77" numCell=false nodeId="405de4c98f514fd6bbecbdd010970101"}
+:::paragraph{nodeId="441f1614195e4f0b9a33bdaea192cc6f"}
+房客不可发起协商退
+:::
+:::
+:::table_cell{colwidth="764" numCell=false nodeId="dd5a7ebd75a84018a93077273c080b8d"}
+:::paragraph{nodeId="2cfa6e5a645b48f3b2fb6492cf832dac"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1){width=603 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1" origin="https://km.sankuai.com/api/file/cdn/2756533569/232491955785?contentType=1" nodeId="ca634b8fe0284e3fa09d7ac7843a04f8"}
+:::
+
+:::paragraph{nodeId="173eda1fce9f4dcd8e147e03438e225b"}
+![image.png](https://km.sankuai.com/api/file/cdn/2756533569/232486728042?contentType=1&isNewContent=false){width=604.65 height=600 small="https://km.sankuai.com/api/file/cdn/2756533569/232486728042?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2756533569/232486728042?contentType=1&isNewContent=false" nodeId="5e1b147a0dcd4c0295d9cfd47fd63fb0"}
+:::
+
+``` nodeId="d4cd9a9a-6979-4960-9f7b-260ab254b7e7"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM退款自助化-有损取消卡片样式优化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .phone-mockup { width: 370px; height: 720px; background: #f4f4f4; display: flex; flex-direction: column; overflow: hidden; border: 8px solid #333; border-radius: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; }
+        .chat-area { flex: 1; padding: 12px; overflow-y: auto; scrollbar-width: none; scroll-behavior: smooth; }
+        .chat-area::-webkit-scrollbar { display: none; }
+        .card-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .btn-active:active { opacity: 0.8; transform: scale(0.98); transition: all 0.1s; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-append { animation: slideIn 0.3s ease-out forwards; }
+        
+        .btn-disabled { background-color: #f5f5f5 !important; color: #bbbbbb !important; border: 1px solid #eeeeee !important; cursor: not-allowed; pointer-events: none; }
+    </style>
+</head>
+<body class="p-6 flex flex-col items-center">
+
+    <div class="flex flex-wrap justify-center gap-8 w-full max-w-6xl">
+        
+        <!-- 房客端 -->
+        <div class="flex flex-col items-center">
+            <div class="mb-3 px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-bold uppercase">Guest (房客端)</div>
+            <div class="phone-mockup border-orange-200">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">房</div>
+                    <div class="font-bold text-gray-800 text-xs">釜子锅 (房东)</div>
+                </div>
+
+                <div class="chat-area" id="guestChat">
+                    <div class="flex justify-end mb-4">
+                        <div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none max-w-[75%] text-[13px]">计划有变，现在取消扣费太高了</div>
+                        <div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                    </div>
+
+                    <!-- 1. 有损取消卡片 -->
+                    <div class="flex justify-start mb-3">
+                        <div class="w-7 h-7 bg-white border border-gray-100 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-50 overflow-hidden">
+                            <!-- 房源信息 -->
+                            <div class="p-4 flex">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div class="ml-3 flex-1 min-w-0">
+                                    <div class="font-bold text-[14px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[12px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 状态与退款 -->
+                            <div class="px-4 pb-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="text-orange-600 font-bold text-[14px]">有损取消</div>
+                                    <div class="text-red-500 font-bold text-[16px]">预计退 ¥97.30</div>
+                                </div>
+                                <div class="text-[11px] text-gray-400 mb-3">
+                                    当前取消需扣除30%违约金 <span class="text-blue-500 ml-1">详情 ></span>
+                                </div>
+                                
+                                <!-- 温馨提示 -->
+                                <div class="bg-yellow-50/70 rounded-xl p-3 mb-4 border border-yellow-100/50 flex items-start">
+                                    <span class="text-[14px] mr-2 flex-shrink-0">💡</span>
+                                    <p class="text-[11px] text-orange-800 leading-relaxed font-medium">
+                                        温馨提示：房间已为您预留，建议您按计划入住，不负旅途好时光，留住绝美行程体验。
+                                    </p>
+                                </div>
+                                
+                                <!-- 按钮 -->
+                                <div class="flex gap-3 mb-1">
+                                    <button id="g_cancelBtn" onclick="syncFlow('cancel')" class="flex-1 bg-white border border-gray-200 text-gray-600 py-2.5 rounded-xl text-[13px] font-medium btn-active">付费取消</button>
+                                    <button class="flex-1 bg-[#ffda00] py-2.5 rounded-xl text-[13px] font-bold btn-active">继续入住</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="g_append"></div>
+                </div>
+                <div class="bg-white p-3 pb-8 border-t border-gray-200"><div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">输入消息...</div></div>
+            </div>
+        </div>
+
+        <!-- 房东端 -->
+        <div class="flex flex-col items-center">
+            <div class="mb-3 px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase">Host (房东端)</div>
+            <div class="phone-mockup border-blue-200">
+                <div class="bg-[#f7f7f7] p-4 flex items-center border-b border-gray-200 sticky top-0 z-10">
+                    <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold">客</div>
+                    <div class="font-bold text-gray-800 text-xs">房客 (观察中)</div>
+                </div>
+
+                <div class="chat-area" id="hostChat">
+                    <div class="flex justify-start mb-4">
+                        <div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div>
+                        <div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none max-w-[75%] text-[13px] border border-gray-100 shadow-sm">计划有变，现在取消扣费太高了</div>
+                    </div>
+
+                    <!-- 1. 有损取消卡片 (房东端镜像) -->
+                    <div class="flex justify-end mb-3">
+                        <div class="bg-white rounded-2xl w-[290px] card-shadow border border-gray-50 overflow-hidden">
+                            <div class="p-4 flex">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop" class="w-full h-full object-cover"></div>
+                                <div class="ml-3 flex-1 min-w-0">
+                                    <div class="font-bold text-[14px] text-gray-800 truncate mb-1">釜子锅的测试房</div>
+                                    <div class="text-[12px] text-gray-500">10.10－10.15 | 合计 ¥139</div>
+                                </div>
+                            </div>
+                            <div class="px-4 pb-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="text-orange-600 font-bold text-[14px]">有损取消</div>
+                                    <div class="text-red-500 font-bold text-[16px]">预计退 ¥97.30</div>
+                                </div>
+                                <div class="text-[11px] text-gray-300 mb-3">
+                                    当前取消需扣除30%违约金 <span class="text-blue-300 ml-1">详情 ></span>
+                                </div>
+                                <div class="bg-yellow-50/70 rounded-xl p-3 mb-4 border border-yellow-100/50 flex items-start">
+                                    <span class="text-[14px] mr-2 flex-shrink-0">💡</span>
+                                    <p class="text-[11px] text-orange-800 leading-relaxed font-medium">
+                                        温馨提示：房间已为您预留，建议您按计划入住，不负旅途好时光，留住绝美行程体验。
+                                    </p>
+                                </div>
+                                <div class="flex gap-3 mb-1">
+                                    <button class="flex-1 btn-disabled py-2.5 rounded-xl text-[13px] font-medium">付费取消</button>
+                                    <button class="flex-1 btn-disabled py-2.5 rounded-xl text-[13px] font-bold">继续入住</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-7 h-7 bg-white border border-orange-500 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                    </div>
+                    <div id="h_append"></div>
+                </div>
+                <div class="bg-white p-3 pb-8 border-t border-gray-200"><div class="bg-gray-100 h-9 rounded-full px-4 flex items-center text-gray-400 text-[12px]">输入消息...</div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function syncFlow(step) {
+            const gAppend = document.getElementById('g_append');
+            const hAppend = document.getElementById('h_append');
+
+            if (step === 'cancel') {
+                document.getElementById('g_cancelBtn').disabled = true;
+                document.getElementById('g_cancelBtn').classList.add('opacity-50');
+
+                gAppend.innerHTML += `<div class="flex justify-end mb-4 animate-append"><div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none text-[13px]">付费取消</div><div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div></div>`;
+                hAppend.innerHTML += `<div class="flex justify-start mb-4 animate-append"><div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div><div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] border shadow-sm">付费取消</div></div>`;
+
+                setTimeout(() => {
+                    gAppend.innerHTML += `
+                        <div class="flex justify-start mb-4 animate-append">
+                            <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                            <div class="bg-white rounded-2xl w-[280px] card-shadow border border-red-50 overflow-hidden">
+                                <div class="p-5 text-center">
+                                    <div class="font-bold text-[15px] text-gray-800 mb-1">确定要付费取消吗？</div>
+                                    <p class="text-[11px] text-gray-400">操作后不可撤回</p>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <button class="w-full bg-[#ffda00] py-3 rounded-xl text-[14px] font-bold mb-3 btn-active">确认付费取消</button>
+                                    <button onclick="syncFlow('negotiate')" class="w-full text-blue-500 text-[13px] font-bold py-1 btn-active">尝试和房东协商</button>
+                                </div>
+                            </div>
+                        </div>`;
+                    
+                    hAppend.innerHTML += `
+                        <div class="flex justify-end mb-4 animate-append">
+                            <div class="bg-white rounded-2xl w-[280px] card-shadow border border-gray-100 overflow-hidden">
+                                <div class="p-5 text-center">
+                                    <div class="font-bold text-[15px] text-gray-800 mb-1">确定要付费取消吗？</div>
+                                    <p class="text-[11px] text-gray-400">操作后不可撤回</p>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <button class="w-full btn-disabled py-3 rounded-xl text-[14px] font-bold mb-3">确认付费取消</button>
+                                    <button class="w-full text-blue-300 text-[13px] font-bold py-1">尝试和房东协商</button>
+                                </div>
+                            </div>
+                            <div class="w-7 h-7 bg-white border border-orange-500 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        </div>`;
+                    autoScroll();
+                }, 600);
+            }
+
+            if (step === 'negotiate') {
+                gAppend.innerHTML += `<div class="flex justify-end mb-4 animate-append"><div class="bg-[#ffda00] text-gray-800 p-2.5 rounded-2xl rounded-tr-none text-[13px]">尝试和房东协商</div><div class="w-7 h-7 bg-orange-400 rounded-full ml-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div></div>`;
+                hAppend.innerHTML += `<div class="flex justify-start mb-4 animate-append"><div class="w-7 h-7 bg-orange-400 rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-bold flex-shrink-0">客</div><div class="bg-white text-gray-800 p-2.5 rounded-2xl rounded-tl-none text-[13px] border shadow-sm">尝试和房东协商</div></div>`;
+
+                setTimeout(() => {
+                    gAppend.innerHTML += `
+                        <div class="flex justify-start mb-4 animate-append">
+                            <div class="w-7 h-7 bg-white border border-gray-200 rounded-full mr-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                            <div class="bg-white rounded-2xl w-[280px] p-4 card-shadow border border-blue-50">
+                                <div class="flex items-center mb-1 text-blue-600 font-bold text-[13px]">平台协商退小助手</div>
+                                <p class="text-[11px] text-gray-500 mb-4 leading-normal">向房东友好协商。说明您的特殊困难，争取减少损失。</p>
+                                <div class="flex gap-2">
+                                    <button class="flex-1 border border-blue-100 bg-blue-50 text-blue-600 py-2 rounded-xl text-[11px] font-bold btn-active">电话联系</button>
+                                    <button class="flex-1 bg-blue-500 text-white py-2 rounded-xl text-[11px] font-bold btn-active">发送协商意向</button>
+                                </div>
+                            </div>
+                        </div>`;
+                    
+                    hAppend.innerHTML += `
+                        <div class="flex justify-end mb-4 animate-append">
+                            <div class="bg-white rounded-2xl w-[280px] p-4 card-shadow border border-gray-100">
+                                <div class="flex items-center mb-1 text-blue-600 font-bold text-[13px]">平台协商退小助手</div>
+                                <p class="text-[11px] text-gray-400 mb-4 leading-normal">房客正在向您友好协商。说明特殊困难，争取减少损失。</p>
+                                <div class="flex gap-2">
+                                    <button class="flex-1 btn-disabled py-2 rounded-xl text-[11px] font-bold">电话联系</button>
+                                    <button class="flex-1 btn-disabled py-2 rounded-xl text-[11px] font-bold">发送协商意向</button>
+                                </div>
+                            </div>
+                            <div class="w-7 h-7 bg-white border border-orange-500 rounded-full ml-2 flex items-center justify-center text-[10px] text-orange-500 font-bold flex-shrink-0">美</div>
+                        </div>`;
+                    autoScroll();
+                }, 600);
+            }
+        }
+
+        function autoScroll() {
+            document.getElementById('guestChat').scrollTop = document.getElementById('guestChat').scrollHeight;
+            document.getElementById('hostChat').scrollTop = document.getElementById('hostChat').scrollHeight;
+        }
+    </script>
+</body>
+</html>
+```
+:::
+:::table_cell{colwidth="583" nodeId="dcca0f8b3a14486684c73d4acb6c960f"}
+:::paragraph{nodeId="d9a2f62f2d92481bad7f8e0e42b49a83"}
+房客端：
+:::
+
+:::ordered_list{indent=0 nodeId="cd408752281d497b911ce2e39517d28b"}
+:::list_item{level=0 hidden=false nodeId="658e0c2b6402415e83c7c691b6127523"}
+:::paragraph{nodeId="39585027cb7e493cb4c8d8111ee77a47"}
+退款订单卡片
+:::
+
+:::ordered_list{indent=0 nodeId="da85035855304042ba6e9daa6c96e897"}
+:::list_item{level=0 hidden=false nodeId="911c945b8e6a4e3e8edab8d3fbe03b71"}
+:::paragraph{nodeId="f1c51f772a984614a01c98d791d3c9e4"}
+高优先级【继续入住】
+:::
+
+:::ordered_list{indent=0 nodeId="59168c44d7b440e2a73546673d0d1936"}
+:::list_item{level=0 hidden=false nodeId="66e8f76ced2d4c96a7ef249b3dcf63b3"}
+:::paragraph{nodeId="2d749c6dfe194c70ab2ff15aa8ce0e9c"}
+点击继续入住则toast“期待您的光临，祝您旅途愉快”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="c587103322444836a44270c079859122"}
+:::paragraph{nodeId="b742974149594824a59bb7fd9f11fbff"}
+低优先级【付费取消】
+:::
+
+:::ordered_list{indent=0 nodeId="e89bd17e71324d818e08cc60bfb7989b"}
+:::list_item{level=0 hidden=false nodeId="c4aac9a701ef4f3382e0b80ad1a683fc"}
+:::paragraph{nodeId="fcd56b7a419b4a1099041ad450cb1e06"}
+点击则下发#二次确认卡片#
+:::
+
+:::ordered_list{indent=0 nodeId="2dc6e4842b2f46beaf459503f37f3bb8"}
+:::list_item{level=0 hidden=false nodeId="07754b8fd2544374abe5e8b9e72f9419"}
+:::paragraph{nodeId="fd86855719784011b2684ca3746485ba"}
+文案
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="29d27d955cba4d3ea2fa9b0735e3f827"}
+:::paragraph{nodeId="32db904a7d3c4b52afe659036bcea691"}
+高优先级按钮-付费取消
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="09f622da858f41cc91a73127aaa99cc8"}
+:::paragraph{nodeId="674ac9e09a9e4836b8fa3d26a3dce1c6"}
+低优先级
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="ab48856a70d745f0b74324ecefcdd490"}
+:::paragraph{nodeId="14638d5833784c2ab5610463c18685f5"}
+#协商退助手卡片#
+:::
+
+:::ordered_list{indent=0 nodeId="6c39638013344098806fe1c75628cbbd"}
+:::list_item{level=0 hidden=false nodeId="e0a9ca17816342b1b07b1740e70ec591"}
+:::paragraph{nodeId="ea0010db562f4de2a49348c21831d1fd"}
+文案：
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="b2448fb3d1304873ba6207fccb776dba"}
+:::paragraph{nodeId="308cbdf30f6e4abca363181974a175b8"}
+高优先级按钮-发送意向
+:::
+
+:::ordered_list{indent=0 nodeId="28c78c76d2a9487e9e52a4520ac6344d"}
+:::list_item{level=0 hidden=false nodeId="9a49e35fc76f4f0697362e6acc4fb62e"}
+:::paragraph{nodeId="abe63bb6cb4a473f84a473dcc2b35d98"}
+点击后以房客角色发消息，固定文案“”
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="48e5f83d9c154029a14c3f98c20285ef"}
+:::paragraph{nodeId="ccbde8aa6e094b1c8dd25f2be0407593"}
+低优先级按钮-电话联系
+:::
+
+:::ordered_list{indent=0 nodeId="d536acd3686b429894acec63d303fd20"}
+:::list_item{level=0 hidden=false nodeId="f147a0b935284391ade58fcbbf77fa2b"}
+:::paragraph{nodeId="2cadae5e6db4422abb4d1831cbf7e71c"}
+点击后拉起拨打电话弹层
+:::
+:::
+:::
+:::
+:::
+:::
+:::list_item{level=0 hidden=false nodeId="0c51c41c018441248280c1599c3ca154"}
+:::paragraph{nodeId="32a9569c0e5c446585345e60013dbe4e"}
+房客发送申请后接入线上已有流程，房客和房东侧均下发协商退处理卡片
+:::
+:::
+:::
+
+:::paragraph{nodeId="090dca7d598641b8a89c042602199723"}
+房东端：
+:::
+
+:::ordered_list{indent=0 nodeId="687e917c4b794a4e862a3f9e0a987d8d"}
+:::list_item{level=0 hidden=false nodeId="6e9d54acb2e3493eba7f9a4ab10473dc"}
+:::paragraph{nodeId="c90b97246a7b46608d6b2dc63c61a775"}
+房东端镜像对称看到所有智能助手发出的卡片但不可操作
+:::
+:::
+:::
+:::
+:::
+:::
+
+:::paragraph{nodeId="23e654d92bad403ea3b9e4bc81b2d0fe"}:::
+
+:::paragraph{nodeId="ffd87c31f7da457480679a7f33c26597"}:::
+
+:::collapse{nodeId="0afc5b9d88514f4b807fdda5ed92ecdc" titleNodeId="86996760753e4d8293c33e49ddaee00f" contentNodeId="b4c7437163fe4ecab9ed071b0122933c"}
+代码存档
+---
+:::paragraph{nodeId="28d4b083182448bb8351fc8eab06c6e8"}:::
+
+:::paragraph{nodeId="e30c4c154be14ad78307710d3e9af2a2"}:::
+
+:::paragraph{nodeId="542b48d1a6d74b2e945860a9b6dfdb49"}:::
+
+:::paragraph{nodeId="5c8a895735df4602b7b1f7e8444da919"}:::
+:::
+
+:::paragraph{nodeId="9f1a3b8a57bc4177842b0794150bdb84"}:::
+
+:::paragraph{nodeId="f600164062774c71bbc5d217f1e85900"}:::

@@ -1,0 +1,4438 @@
+:::title{nodeId="1542a91c794f4b04becc0061a9041b34"}
+【PRD】降引发-IM新增订后退款自助化流程
+:::
+
+:::paragraph{}:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          152
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgb(0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(255, 255, 255)}模块[/color]"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1218
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgb(0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(255, 255, 255)}内容[/color]"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          152
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "Ones"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1218
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          152
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "设计稿"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1218
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "[https://imd.sankuai.com/file/181491422486067?fileOpenFrom=drafts&page_id=M&layer_id=16%3A0150](https://imd.sankuai.com/file/181491422486067?fileOpenFrom=drafts&page_id=M&layer_id=16%3A0150)"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          152
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "相关人员"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1218
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "产品主R：wanglingyun04\n\n技术主R： "
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          152
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "变更记录"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1218
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ":::table{borderColor=\"#dddddd\" borderStyle=\"solid\" borderWidth=1 responsive=false}\n[\n  [\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(240, 240, 240)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":[color]{#333}:[font]{size=14}**修改时间**[/font][/color]\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(240, 240, 240)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":[color]{#333}:[font]{size=14}修改内容[/font][/color]\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          66\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(240, 240, 240)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":[color]{#333}:[font]{size=14}**修改人**[/font][/color]\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          112\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(240, 240, 240)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":[color]{#333}:[font]{size=14}影响面[/font][/color]\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          66\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          112\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          66\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          112\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          80\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          66\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          112\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": \"top\",\n        \"bgColor\": \"rgb(255, 255, 255)\",\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \":::paragraph{align=start indent=0}\\n\\n:::\"\n    }\n  ]\n]\n:::"
+    }
+  ]
+]
+:::
+
+## 一、背景
+
+1. **IM线上化能力升级**
+
+:[quote]{quoteId="2748873777--e405a305-227d-40c2-8cc1-0d6460f28767"}目前IM主要承担“答”功能，[/quote]当用户产生退改意图时，IM仅能提供文字解答，用户需跳出对话框寻找订单列表执行操作，路径断裂。将IM从答到办升级。在对话流中集成业务原子能力（如退款卡片、规则查看、协商退），增加订后需求解决的能力。
+
+1. **房东成本降低**
+
+在各退款场景（免费退、有损退、协商退）下，房东无需耗费精力解答规则类问题，房客可以通过流程自助化解决问题。 系统代行房东职能处理确定性退改需求。不仅缩短房客等待时长，更让房东从枯燥的规则复读中解放，专注于提升房源品质和线下接待等。
+
+1. **平台进线降低**
+
+目前日均2.5k退改咨询，进线率达14.4%:[footnote]{id="c5f8e31f-fcde-4564-884e-99d7b65c3bfc" annotate="" nodeId="7712fec673f040b981f469cadc938cec"}。将需求收敛于端内。通过政策展示与自助入口，消除因“找不到入口”或“不理解政策”产生的焦虑，减少用户流向人工客服，降低平台客服进线。
+
+:::collapse{}
+竞品分析
+---
+携程、途家均为平台维度的智能客服的口子里有较完善的订后问题分流和用户自助化处理的链路，业务的客商im间暂无此流程。和我们目前的现状一致。
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          105
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgb(239, 239, 239)",
+        "color": null,
+        "numCell": null
+      },
+      "content": "**平台**"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          513
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgb(239, 239, 239)",
+        "color": null,
+        "numCell": null
+      },
+      "content": "**用户im内可解决率**"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          190
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "示意图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          105
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}携程 (Ctrip)[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          513
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}**极高。**[/color]:[color]{rgb(31, 31, 31)}其“小程”助手深度接入了退改 API。用户咨询“退票”，AI直接计算退费并弹出确认按钮。[/color]\n\n:[color]{rgb(31, 31, 31)}*tips：携程im为平台收口，各业务线无单独的im *[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          190
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/224437233724?&isNewContent=false&contentType=1){width=378 height=410 small=\"https://km.sankuai.com/api/file/cdn/2748873777/224435477908?&isNewContent=false&contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/224431698723?&isNewContent=false&contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          105
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}途家[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          513
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}**中高。**[/color]:[color]{rgb(31, 31, 31)}im集成了操作入口，取消订单操作仍跳转订详操作，无法一键退款[/color]:[color]{rgb(31, 31, 31)}**。**[/color]:[color]{rgb(31, 31, 31)}此外还侧重于给房东提供“经营助手”，如智能回复模板、房价提醒。[/color]\n\n:[color]{rgb(31, 31, 31)}*tips：途家的是平台im中有退改能力-对标我们的平台智能客服，房东咨询im中无此能力。*[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          190
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/224435798376?&isNewContent=false&contentType=1){width=615 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/224433056153?&isNewContent=false&contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/224433215543?&isNewContent=false&contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          105
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}淘宝/飞猪[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          513
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": "rgba(0, 0, 0, 0)",
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(31, 31, 31)}**极高。**[/color]:[color]{rgb(31, 31, 31)}阿里系的AI（如阿里小蜜）通过逻辑流强制闭环。对于符合规则的退改，基本实现零人工干预。[/color]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          190
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/224434453258?&isNewContent=false&contentType=1){width=376 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/224431698721?&isNewContent=false&contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/224437075554?&isNewContent=false&contentType=1\"}"
+    }
+  ]
+]
+:::
+
+:[link]{href="https://km.sankuai.com/collabpage/2744280737#b-a52dfdbf712e4625b6ffe21770d8dc6e" autoUpdate}3.1 竞品调研[/link]
+:::
+
+## 二、目标
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          93
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "类型"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          426
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "指标"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          379
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "口径 "
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          158
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "现状值"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          255
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "目标值"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          93
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "输出"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          426
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "未自助解决订单数"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          379
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "im内提出退款且24小时内又进入客服的订单量"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          158
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "360/日"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          255
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "252人/日，减少进线108人/日\n\n:::collapse{}\n 测算逻辑\n---\nim中提出退款后24小时内又进线客服的总人数360人/日，其中协商退242人/日，剩余为非协商退。按挽回率:[quote]{quoteId=\"2748873777--4bd52afe-fd87-4b3b-a72d-69b0757e3b10\"}30%[/quote]:[footnote]{id=\"a15bebe5-c8b9-4322-a532-2d1267722cc3\" annotate=\"\" nodeId=\"61760ab86f574ac8a1f949e93ab33a8a\"}，预计减少进线108人/日。\n\n:::collapse{}\n点击展开内容\n---\n:::table{borderColor=\"#dddddd\" borderStyle=\"solid\" borderWidth=1 responsive=false}\n[\n  [\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          84\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"类型\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"指标\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"口径\"\n    },\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"现状值\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 4,\n        \"colwidth\": [\n          84\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"退费退款\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出**退费退款需求**的房客数\\n\\n```Plain Text title=\\\"IM中提出退费退款需求的房客数/日均\\\"\\nWITH pre_filtered AS (\\n    -- 第一步：只拿必要的列，并过滤掉非目标行，减少参与后续匹配的数据量\\n    SELECT \\n        dt,\\n        from_phx_user_id,\\n        msg_payload\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n),\\ndaily_user_flag AS (\\n    -- 第二步：先按天和用户聚合。只要该用户当天发过一条满足条件的信息，就标记为 1\\n    -- 这样可以极大减少后续 AVG 运算的数据条数\\n    SELECT \\n        dt,\\n        from_phx_user_id\\n    FROM pre_filtered\\n    WHERE msg_payload RLIKE '(退款|退费|退钱|全额退|申请退|补差价|赔偿|取消订单|取消预订)'\\n      AND msg_payload NOT LIKE '%协商退款%' \\n    GROUP BY dt, from_phx_user_id\\n)\\n-- 第三步：对已经去重后的结果进行统计\\nSELECT \\n    ROUND(COUNT(1) * 1.0 / COUNT(DISTINCT dt), 2) AS avg_daily_guests\\nFROM daily_user_flag;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出退款退费相关，不包含协商退款卡片的标题\\n\\n:::collapse{}\\n口径详细解释\\n---\\n协商退款卡片标题为“我已发起协商退款，请处理”。抽查500条“协商退”关键词，msg payload中只有2条是房客自行提出协商退的内容，其他都是系统发送的卡片/文案\\n\\n因此实际统计的时候，需要减去“协商退款”这个关键词\\n:::\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"794人/天\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM内提出**退款退费**需求后，**1小时**内进线客服人数\\n\\n```Plain Text title=\\\"IM中提出退费退款需求的房客数/日均\\\"\\nWITH refund_intent_msgs AS (\\n    -- 1. 过滤：锁定含有退款意图的消息，排除系统卡片“协商退款”\\n    SELECT \\n        from_phx_user_id,\\n        dt,\\n        gmt_create AS intent_time\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      AND msg_payload RLIKE '(退款|退费|退钱|全额退|申请退|补差价|赔偿|取消订单|取消预订)'\\n      AND msg_payload NOT LIKE '%协商退款%'\\n),\\n\\nrefund_im_users AS (\\n    -- 2. 映射：关联维度表获取 mt_uid，并取用户每天首次意向时间\\n    SELECT \\n        r.from_phx_user_id,\\n        CAST(u.meituan_user_id AS BIGINT) AS mt_uid,\\n        r.dt,\\n        MIN(r.intent_time) AS first_intent_time \\n    FROM refund_intent_msgs r\\n    LEFT JOIN ba_phx.phx_dim_user u ON CAST(r.from_phx_user_id AS STRING) = CAST(u.phx_user_id AS STRING)\\n    GROUP BY 1, 2, 3\\n),\\n\\ncs_cases AS (\\n    -- 3. 客服表：窄化进线数据\\n    SELECT \\n        customer_id AS mt_uid,\\n        case_create_time AS cs_time\\n    FROM ba_phx.phx_topic_csp_case_lifecycle\\n    WHERE case_create_date BETWEEN '2025-12-15' AND '2026-01-16'\\n      AND customer_id IS NOT NULL\\n),\\n\\ndaily_metrics AS (\\n    -- 4. 统计：计算 1 小时内进线的去重人数\\n    SELECT \\n        r.dt,\\n        COUNT(DISTINCT r.from_phx_user_id) AS inquiry_cnt, \\n        COUNT(DISTINCT CASE \\n            WHEN c.cs_time >= r.first_intent_time \\n                 -- 关键修改：21600 (6h) -> 3600 (1h)\\n                 AND (unix_timestamp(c.cs_time) - unix_timestamp(r.first_intent_time)) <= 3600 \\n            THEN r.from_phx_user_id \\n        END) AS escalated_cnt\\n    FROM refund_im_users r\\n    LEFT JOIN cs_cases c ON r.mt_uid = c.mt_uid\\n    GROUP BY r.dt\\n)\\n\\n-- 5. 汇总日均值\\nSELECT \\n    ROUND(AVG(inquiry_cnt), 2) AS avg_daily_refund_inquiry_guests,\\n    ROUND(AVG(escalated_cnt), 2) AS avg_daily_escalated_guests,\\n    ROUND(SUM(escalated_cnt) * 100.0 / SUM(inquiry_cnt), 2) AS period_avg_escalation_rate_pct\\nFROM daily_metrics;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"间隔取1小时\\n\\n取数区间：2025-12-15到2026-01-15\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"73人/天，占比9.2%\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM内提出**退款退费**需求后，**6小时**内进线客服人数\\n\\n```Plain Text title=\\\"IM内提出退款退费需求后，6小时内进线客服人数/日均\\\"\\nWITH refund_intent_msgs AS (\\n    -- 1. 依然以原始 from_phx_user_id 为准进行过滤\\n    SELECT \\n        from_phx_user_id,\\n        dt,\\n        gmt_create AS intent_time\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      AND msg_payload RLIKE '(退款|退费|退钱|全额退|申请退|补差价|赔偿|取消订单|取消预订)'\\n      AND msg_payload NOT LIKE '%协商退款%'\\n),\\n\\nrefund_im_users AS (\\n    SELECT \\n        r.from_phx_user_id,\\n        CAST(u.meituan_user_id AS BIGINT) AS mt_uid, -- 用于关联客服的 ID\\n        r.dt,\\n        MIN(r.intent_time) AS first_intent_time \\n    FROM refund_intent_msgs r\\n    LEFT JOIN ba_phx.phx_dim_user u ON CAST(r.from_phx_user_id AS STRING) = CAST(u.phx_user_id AS STRING)\\n    GROUP BY 1, 2, 3\\n),\\n\\ncs_cases AS (\\n    SELECT \\n        customer_id AS mt_uid,\\n        case_create_time AS cs_time\\n    FROM ba_phx.phx_topic_csp_case_lifecycle\\n    WHERE case_create_date BETWEEN '2025-12-15' AND '2026-01-16'\\n      AND customer_id IS NOT NULL\\n),\\n\\ndaily_metrics AS (\\n    SELECT \\n        r.dt,\\n        COUNT(DISTINCT r.from_phx_user_id) AS inquiry_cnt, \\n        COUNT(DISTINCT CASE \\n            WHEN c.cs_time >= r.first_intent_time \\n                 AND unix_timestamp(c.cs_time) - unix_timestamp(r.first_intent_time) <= 21600 \\n            THEN r.from_phx_user_id \\n        END) AS escalated_cnt\\n    FROM refund_im_users r\\n    LEFT JOIN cs_cases c ON r.mt_uid = c.mt_uid\\n    GROUP BY r.dt\\n)\\n\\nSELECT \\n    ROUND(AVG(inquiry_cnt), 2) AS avg_daily_refund_inquiry_guests,\\n    ROUND(AVG(escalated_cnt), 2) AS avg_daily_escalated_guests,\\n    ROUND(SUM(escalated_cnt) * 100.0 / SUM(inquiry_cnt), 2) AS period_avg_escalation_rate_pct\\nFROM daily_metrics;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"间隔取6小时\\n\\n取数区间：2025-12-15到2026-01-15\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"89人/天，占比11.25%\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM内提出**退款退费**需求后，**24小时**内进线客服人数\\n\\n```Plain Text title=\\\"IM内提出退款退费需求后，6小时内进线客服人数/日均\\\"\\nWITH refund_intent_msgs AS (\\n    -- 1. 过滤：锁定含有退款意图的消息，排除系统卡片“协商退款”\\n    SELECT \\n        from_phx_user_id,\\n        dt,\\n        gmt_create AS intent_time\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      AND msg_payload RLIKE '(退款|退费|退钱|全额退|申请退|补差价|赔偿|取消订单|取消预订)'\\n      AND msg_payload NOT LIKE '%协商退款%'\\n),\\n\\nrefund_im_users AS (\\n    -- 2. 映射：关联维度表获取 mt_uid，并取用户每天首次意向时间\\n    SELECT \\n        r.from_phx_user_id,\\n        CAST(u.meituan_user_id AS BIGINT) AS mt_uid,\\n        r.dt,\\n        MIN(r.intent_time) AS first_intent_time \\n    FROM refund_intent_msgs r\\n    LEFT JOIN ba_phx.phx_dim_user u ON CAST(r.from_phx_user_id AS STRING) = CAST(u.phx_user_id AS STRING)\\n    GROUP BY 1, 2, 3\\n),\\n\\ncs_cases AS (\\n    -- 3. 客服表：窄化进线数据\\n    SELECT \\n        customer_id AS mt_uid,\\n        case_create_time AS cs_time\\n    FROM ba_phx.phx_topic_csp_case_lifecycle\\n    WHERE case_create_date BETWEEN '2025-12-15' AND '2026-01-16'\\n      AND customer_id IS NOT NULL\\n),\\n\\ndaily_metrics AS (\\n    -- 4. 统计：计算 24 小时内进线的去重人数\\n    SELECT \\n        r.dt,\\n        COUNT(DISTINCT r.from_phx_user_id) AS inquiry_cnt, \\n        COUNT(DISTINCT CASE \\n            WHEN c.cs_time >= r.first_intent_time \\n                 -- 关键修改：3600 (1h) -> 86400 (24h)\\n                 AND (unix_timestamp(c.cs_time) - unix_timestamp(r.first_intent_time)) <= 86400 \\n            THEN r.from_phx_user_id \\n        END) AS escalated_cnt\\n    FROM refund_im_users r\\n    LEFT JOIN cs_cases c ON r.mt_uid = c.mt_uid\\n    GROUP BY r.dt\\n)\\n\\n-- 5. 汇总日均值\\nSELECT \\n    ROUND(AVG(inquiry_cnt), 2) AS avg_daily_refund_inquiry_guests,\\n    ROUND(AVG(escalated_cnt), 2) AS avg_daily_escalated_guests,\\n    ROUND(SUM(escalated_cnt) * 100.0 / SUM(inquiry_cnt), 2) AS period_avg_escalation_rate_pct\\nFROM daily_metrics;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"间隔取24小时\\n\\n取数区间：2025-12-15到2026-01-15\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"118人/天，占比14.92%\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_header\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 3,\n        \"colwidth\": [\n          84\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"协商退\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出**协商退需求**的房客数\\n\\n```Plain Text title=\\\"IM中提出协商退需求的房客数/日均\\\"\\nWITH daily_stats AS (\\n    SELECT \\n        dt,\\n        -- 按天对房客ID进行去重，统计每天的提出量\\n        COUNT(DISTINCT from_phx_user_id) AS daily_guest_cnt\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      AND msg_payload RLIKE '(协商退)'\\n    GROUP BY dt\\n)\\n\\n-- 计算整个时段内的日平均值\\nSELECT \\n    ROUND(AVG(daily_guest_cnt), 2) AS avg_daily_refund_inquiry_guests\\nFROM daily_stats;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出协商退相关的房客数，包含协商退卡片的标题\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"1857人/天\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出**协商退**需求后，**6小时**内进线客服人数\\n\\n```Plain Text title=\\\"IM中提出协商退需求后，6小时内进线客服房客数/日均\\\"\\nWITH \\n-- 1. 瘦身：先从海量 IM 表中过滤出目标消息，减少后续 JOIN 的数据量\\nraw_refund_msgs AS (\\n    SELECT \\n        dt,\\n        from_phx_user_id,\\n        gmt_create AS im_time\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      -- 优化点：RLIKE 是计算密集型，先通过 dt 和方向过滤掉 90% 的数据再匹配关键词\\n      AND msg_payload RLIKE '(协商退)'\\n),\\n\\n-- 2. 映射：仅针对过滤后的用户进行 ID 转换\\nrefund_im_daily AS (\\n    SELECT \\n        r.dt,\\n        CAST(u.meituan_user_id AS BIGINT) AS mt_uid, \\n        r.im_time\\n    FROM raw_refund_msgs r\\n    JOIN ba_phx.phx_dim_user u \\n        ON CAST(r.from_phx_user_id AS STRING) = CAST(u.phx_user_id AS STRING)\\n),\\n\\n-- 3. 窄化：仅拉取对应区间内的客服 ID，减少内存占用\\ncs_cases AS (\\n    SELECT \\n        customer_id AS mt_uid,\\n        case_create_time AS cs_time\\n    FROM ba_phx.phx_topic_csp_case_lifecycle\\n    WHERE case_create_date BETWEEN '2025-12-15' AND '2026-01-16'\\n      AND customer_id IS NOT NULL\\n),\\n\\n-- 4. 聚合：按天统计\\ndaily_metrics AS (\\n    SELECT \\n        r.dt,\\n        COUNT(DISTINCT r.mt_uid) AS inquiry_cnt,\\n        COUNT(DISTINCT CASE \\n            WHEN c.cs_time >= r.im_time \\n                 AND (unix_timestamp(c.cs_time) - unix_timestamp(r.im_time)) <= 21600 \\n            THEN r.mt_uid \\n        END) AS escalated_cnt\\n    FROM refund_im_daily r\\n    LEFT JOIN cs_cases c ON r.mt_uid = c.mt_uid\\n    GROUP BY r.dt\\n)\\n\\n-- 5. 汇总：计算日均\\nSELECT \\n    ROUND(AVG(inquiry_cnt), 2) AS avg_daily_refund_inquiry_guests,\\n    ROUND(AVG(escalated_cnt), 2) AS avg_daily_escalated_guests,\\n    ROUND(SUM(escalated_cnt) * 100.0 / SUM(inquiry_cnt), 2) AS period_avg_escalation_rate_pct\\nFROM daily_metrics;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"间隔取6小时\\n\\n取数区间：2025-12-15到2026-01-15\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"195.06人/天，占比10.5%\"\n    }\n  ],\n  [\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          513\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"IM中提出**协商退**需求后，**24小时**内进线客服人数\\n\\n```Plain Text title=\\\"IM中提出协商退需求后，24小时内进线客服房客数/日均\\\"\\nWITH \\n-- 1. 基础池：圈选目标日期内有退款意图的房客\\nraw_refund_msgs AS (\\n    SELECT \\n        dt,\\n        from_phx_user_id,\\n        gmt_create AS im_time\\n    FROM ba_phx.phx_mdw_detail_message_sync\\n    WHERE dt BETWEEN '20251215' AND '20260115'\\n      AND is_from_phx_host = 0 \\n      AND is_to_phx_host = 1\\n      AND msg_payload LIKE '%协商退%'\\n),\\n\\n-- 2. 映射：桥接美团 ID\\nrefund_im_daily AS (\\n    SELECT \\n        r.dt,\\n        CAST(u.meituan_user_id AS BIGINT) AS mt_uid, \\n        r.im_time\\n    FROM raw_refund_msgs r\\n    JOIN ba_phx.phx_dim_user u \\n        ON CAST(r.from_phx_user_id AS STRING) = CAST(u.phx_user_id AS STRING)\\n),\\n\\n-- 3. 匹配池：客服工单需多覆盖一天（至 01-16），确保 01-15 晚上的用户有 24h 观测窗口\\ncs_cases AS (\\n    SELECT \\n        customer_id AS mt_uid,\\n        case_create_time AS cs_time\\n    FROM ba_phx.phx_topic_csp_case_lifecycle\\n    WHERE case_create_date BETWEEN '2025-12-15' AND '2026-01-16'\\n      AND customer_id IS NOT NULL\\n),\\n\\n-- 4. 核心逻辑：判定 24 小时（86400 秒）内的进线情况\\ndaily_metrics AS (\\n    SELECT \\n        r.dt,\\n        COUNT(DISTINCT r.mt_uid) AS inquiry_cnt,\\n        COUNT(DISTINCT CASE \\n            WHEN c.cs_time >= r.im_time \\n                 AND (unix_timestamp(c.cs_time) - unix_timestamp(r.im_time)) <= 86400 \\n            THEN r.mt_uid \\n        END) AS escalated_24h_cnt\\n    FROM refund_im_daily r\\n    LEFT JOIN cs_cases c ON r.mt_uid = c.mt_uid\\n    GROUP BY r.dt\\n)\\n\\n-- 5. 汇总：计算全月日均值\\nSELECT \\n    ROUND(AVG(inquiry_cnt), 2) AS avg_daily_refund_inquiry_guests,\\n    ROUND(AVG(escalated_24h_cnt), 2) AS avg_daily_escalated_24h_guests,\\n    ROUND(SUM(escalated_24h_cnt) * 100.0 / SUM(inquiry_cnt), 2) AS period_avg_escalation_rate_24h_pct\\nFROM daily_metrics;\\n```\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          487\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"间隔取24小时\\n\\n取数区间：2025-12-15到2026-01-15\"\n    },\n    {\n      \"type\": \"table_cell\",\n      \"attrs\": {\n        \"colspan\": 1,\n        \"rowspan\": 1,\n        \"colwidth\": [\n          281\n        ],\n        \"textAlign\": null,\n        \"verticalAlign\": null,\n        \"bgColor\": null,\n        \"color\": null,\n        \"numCell\": null\n      },\n      \"content\": \"242.41人/天，占比13.05%\"\n    }\n  ]\n]\n:::\n:::\n:::"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          93
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          426
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "被动人工服务率-退改相关（feat项目二） "
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          379
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "转人工客服进线量/总支付单-退改相关:[footnote]{id=\"fe6945df-036c-4168-af86-af13a9b4f31f\" annotate=\"退改人工服务率 = 规则外+规则内人工工单数 / 总支付订单数，初始值25年全年平均1.18%，其中规则外+规则内人工工单数 = 535282单，总支付订单数 = 45214531单\" nodeId=\"b762990defb1479d84f4e6b812e21d17\"}"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          158
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "480:[footnote]{id=\"0e39df27-e7a5-4909-965e-5622f6d4ca5b\" annotate=\"\" nodeId=\"b39e11195a854b0799a75939ac21d43f\"}"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          255
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "降低客服被动人工服务率2% \n\n:::collapse{}\n测算逻辑\n---\nim中提出退款后24小时内又进线客服的 总人数360人/日，其中协商退242人/日。按挽回率30%，预计减少进线108人/日。按照客服被动人工服务率480的话，24小时相当于降2%。\n:::"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          93
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "输入指标"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          426
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "IM内发起协商退数量    \n\n```Plain Text title=\"IM内房东发起的协商退订单数 代码\"\nSELECT\n    date(r.gmt_create),\n    count(DISTINCT order_id)\nFROM ba_phx.phx_base_phx_message_sync s\nJOIN ba_phx.phx_mdw_detail_trade_order_negotiate_refund r\n    ON s.to_user_id = r.phx_user_id\nWHERE \n    date(r.gmt_create) between '2025-12-15' and '2026-01-15'\n    AND get_json_object(msg_extension,'$.PHXExtensionType') = 'PHXExtensionTypeRefund'\nGROUP BY\n    date(r.gmt_create)\n```"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          379
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "统计周期内，IM中由房东发起的协商退日均订单数"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          158
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "521单/日"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          255
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "580单/日"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          93
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "观测指标"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          426
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "im内退需求提出量/日均\n\n```Plain Text title=\"提退款退费房客数 代码\"\nSELECT\n    dt,\n    -- 统计每一天提出退款相关需求的去重房客数\n    COUNT(DISTINCT from_dx_uid) AS refund_inquiry_guest_cnt\nFROM\n    ba_phx.phx_mdw_detail_message_sync\nWHERE\n    dt BETWEEN '20251215' AND '20260115'\n    -- 1. 限定方向：房客发给房东\n    AND is_from_phx_host = 0 \n    AND is_to_phx_host = 1\n    -- 2. 核心：模糊匹配退款意图关键词\n    AND msg_payload RLIKE '(退款|退费|退钱|全额退|申请退|协商退|补差价|赔偿|取消订单|取消预订)'\nGROUP BY\n    dt\nORDER BY \n    dt;\n```"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          379
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "统计周期内，IM中提出退款和退费的日均房客数 \n\n:::collapse{}\n口径明细\n---\n统计周期内房客咨询关键词为(退款|退费|退钱|全额退|申请退|协商退|补差价|赔偿|取消订单|取消预订)的日均房客数\n:::"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          158
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "2501人/日"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          255
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "2.5-3.0k人/日"
+    }
+  ]
+]
+:::
+
+*取数周期：20251215 - 20260115 *
+
+## 三、产品功能
+
+#### 用户侧交互流:[quote]{quoteId="2748873777--e040aa6f-ef01-4e10-ac76-410949c4cc35"}程：[/quote]
+
+![image.png](https://km.sankuai.com/api/file/cdn/2748873777/224525333854?contentType=1&isNewContent=false){width=1530 height=600 small="https://km.sankuai.com/api/file/cdn/2748873777/224525333854?contentType=1&isNewContent=false" origin="https://km.sankuai.com/api/file/cdn/2748873777/224525333854?contentType=1&isNewContent=false" quoteId="2748873777--b26bf6fb-cfd0-4ba9-9041-bf370640a7dc"}
+
+#### :[quote]{quoteId="2748873777--6f8a173b-e31e-4fa9-a27f-3ef1f598865f"}工作流：[/quote]
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "意图分类"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "订单已取消"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "是否可免费取消"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款规则"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "解决方案"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "工作流"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互样式"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "是（极速退在免费时间内）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "操作免费取消 / 查询取消规则"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "流程a：取消订单API + 流程b：查询规则"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/223806001231?contentType=1){width=361 height=216 small=\"https://km.sankuai.com/api/file/cdn/2748873777/223800716349?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/223804867738?contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "是（阶梯退可免费）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "阶梯"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "操作免费取消 / 查询取消规则"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "流程a + 流程b"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/223797986506?contentType=1){width=361 height=216 small=\"https://km.sankuai.com/api/file/cdn/2748873777/223797029236?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/223794319037?contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "是（非阶梯退可免费）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "非阶梯"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "操作免费取消 / 查询取消规则"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "流程a + 流程b"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/223801035112?contentType=1){width=361 height=216 small=\"https://km.sankuai.com/api/file/cdn/2748873777/223801992113?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/223798942794?contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "阶梯"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "扣费取消 / 引导邀请房东下发协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "流程a + **新增：引导房客邀请房东协商退**:[footnote]{id=\"3975c16c-44f0-4674-b557-f09521c7d1f5\" annotate=\"\" nodeId=\"3cc8f8bdea1c43f18a0ad911a866f6ef\"}"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/223804228149?contentType=1){width=411 height=493 small=\"https://km.sankuai.com/api/file/cdn/2748873777/223805186003?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/223794319036?contentType=1\" quoteId=\"2748873777--78c777d0-b3c7-488e-bf37-53f16329d07e\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "否"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "非阶梯"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "扣费取消 / 引导房客发起协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "流程a + **新增：引导房客发起协商退**"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![](https://km.sankuai.com/api/file/cdn/2748873777/223804547599?contentType=1){width=411 height=493 small=\"https://km.sankuai.com/api/file/cdn/2748873777/223798306625?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/223794319038?contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "是"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "查看退款详情"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "**新增：查看退款详情信息**"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/224360489565?contentType=1){width=428 height=389 small=\"https://km.sankuai.com/api/file/cdn/2748873777/224360489565?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/224360489565?contentType=1\"}"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "查退款政策"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "查退款进度"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "撤销退款"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "话术回复"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "无工作流"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          111
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "改签订单"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          96
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          201
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          81
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          258.3125
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "话术回复"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          341
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "无工作流"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          108
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "/"
+    }
+  ]
+]
+:::
+
+只for单订单场景，选取房客名下创建时间最近的一笔订单（若多订单组件好做再考虑）
+
+#### 系统流程：
+
+:::collapse{}
+点击展开内容
+---
+:::drawio{src="https://km.sankuai.com/api/file/cdn/2748873777/230803674335?contentType=0" width=1404 height=1233}:::
+
+:::drawio{src="https://km.sankuai.com/api/file/cdn/2748873777/223751831392?isNewContent=false&contentType=0&isNewContent=false" width=1238 height=610}:::
+:::
+
+#### 3.1 房客意图识别 :[quote]{quoteId="2748873777--30d8ef58-fb00-492e-bd24-3968d9cf395a"}@算法[/quote]
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "意图序号"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "意图分类"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "典型话术"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "承接"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "退款退订"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "退款、退订、取消、取消订单、如何取消订单、我要退、"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "基于订单状态和退订规则进行不同的功能承接；\n\n其中若命中可协商退场景，会用协商退意图的工作流。"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "查退款政策"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "扣多少钱、能不能退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "基于订单状态进行信息展示"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "查退款进度"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "退款进度、退款到了吗、什么时候到账"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "基于订单状态进行信息展示"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "协商退款、商量下退款"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "基于订单退订规则进行不同的功能承接；"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "撤销取消"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "撤销"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "无功能、话术承接"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          50
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": true
+      },
+      "content": ""
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "改签"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          368
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "能改签吗、怎么改签、修改、改名字、改日期"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          557
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "无功能、话术承接"
+    }
+  ]
+]
+:::
+
+```
+退改意图树
+│
+├── 1. 取消订单
+│ ├── 免费期内 → 自助取消流程
+│ ├── 付费期（非阶梯退）
+│ │ ├── 展示扣款金额卡片
+│ │ ├── [直接取消] → 执行取消
+│ │ └── [尝试协商] → 跳意图3
+│ ├── 付费期（阶梯退）
+│ │ ├── 展示扣款金额卡片
+│ │ ├── [直接取消] → 执行取消
+│ │ └── [尝试协商] → 跳意图3
+│ └── 不可取消期（18点后）
+│ └── 提示不可取消 → 引导跳意图3
+│
+├── 2. 查退订政策
+│ └── 拉该订单当前退订规则 → 直接文字回答
+│ （"您的订单当前政策是XX，入住前X小时内免费取消"）
+│
+├── 3. 协商退
+│ ├── 非阶梯退 → 引导房客去订详页自行发起（7步流程）
+│ └── 阶梯退
+│ └── 展示卡片："需由房东发起"
+│ → [联系房东] 拉起虚拟号
+│ → 房东 IM 下发 notice
+│
+├── 4. 查退款进度
+│ ├── 订单取消中/退款处理中 → 展示预计到账时间
+│ ├── 退款已完成 → 告知已到账 + 金额
+│ └── 订单未取消 → 提示"您的订单尚未取消" 
+│
+├── 5. 撤销取消（无功能，话术承接）
+│ └── 回复："取消操作已生效，暂不支持撤销。
+│ 如需重新预订，您可以[查看该房源]"
+│ （附房源跳转链接）
+│
+└── 6. 改签（无功能，话术承接）
+└── 回复："当前暂不支持自助改签，
+您可以先取消本订单，再重新预订心仪日期。
+[查看退订政策] [联系房东]"
+
+```
+
+:::paragraph{}:::
+
+#### 3.2 意图识别后承接工作流 
+
+意图识别后，获取订:[quote]{quoteId="2748873777--404e15ae-9309-44c8-9202-81fc0516db63"}单id，本[/quote]期只做单订单，取房客id下创建时间最近的一笔订单。二期再支持多个订单选择。
+
+:::collapse{}
+点击展开内容
+---
+订单id选择弹层-- 看下咨询时有多笔未取消订单的占比，如果较低本期不做，sop引导到客服入口处理。做的话需要交互上支持，存在多个订单时弹，仅一个订单的时候不弹。
+:::
+
+##### 3.2.1 意图1-退款退订 
+
+:::drawio{src="https://km.sankuai.com/api/file/cdn/2748873777/231271162327?contentType=0" width=666 height=46}:::
+
+以下按照 订单状态 + 退款规则 + 当前是否可免费取消 分模块阐述
+
+a）订单未取消+免费取消+极速退/阶梯退/非阶梯退
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "房客id下创建时间最近的一笔订单的\n\n订单状态为未取消\n\n&&\n\n该订单当前为:[quote]{quoteId=\"2748873777--4a76d725-ebab-485d-bddb-aed853de2030\"}免费退[/quote]"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "1. 对话页中房客端下发操作卡片\n  1. 文案： %付费取消节点%\n  2. 高优按钮：我要取消\n    1. 点击后弹窗二次确认\n    2. :[quote]{quoteId=\"2748873777--8cc1ac96-b6e8-4f7c-af19-5302f94279ab\"}点[/quote]:[quote]{quoteId=\"2748873777--8cc1ac96-b6e8-4f7c-af19-5302f94279ab\"}:[quote]{quoteId=\"2748873777--cfd95c17-d448-419f-a960-8078e3f83fbf\"}击则对话页中自动以房客身份发送消息，内容为“我要取消”[/quote][/quote]\n    3. 后端调取消订单接口，操作此订单取消，后续触达等流程和普通订单取消保持一致\n    4. 对话页下发卡片\n      1. 文案：%退款总额%、%预计到账时间% - 调交易接口获取\n      2. 按钮：\n        1. 点击后跳转订详并拉起弹层-复用，跳转后左上角返回为当前对话页\n          ![image.png](https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1&isNewContent=false){width=140 height=234 small=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1&isNewContent=false\"}\n    5. 二次点击以上按:[quote]{quoteId=\"2748873777--49ab2ed4-e5fe-493a-a974-11716f5e8ac3\"}钮的交互[/quote]\n  3. 低优按钮：取消规则\n    1. 点击后跳转订详拉起退订政策弹层，跳转后左上角返回为当前对话页"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/230844895772?contentType=1&isNewContent=false){width=781.58 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/230844895772?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/230844895772?contentType=1&isNewContent=false\"}"
+    }
+  ]
+]
+:::
+
+b）订单未取消+付费取消**+阶梯退**
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          654
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客id下创建时间最近的一笔订单的\n\n订单状态为未取消\n\n&& \n\n该订单当前需付费取消且为阶梯退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          654
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "1. 对话页中房客端下发操作卡片\n  1. 标题文案： \n  2. 订单卡\n  3. 副标题文案：\n    1. %订单当前退款政策%\n    2. icon：点击后跳转订详拉起退订政策弹层，跳转后左上角返回为当前对话页\n  4. :[quote]{quoteId=\"2748873777--35dbc1a5-0980-4e60-8831-020ccd955d79\"}多个按钮：[/quote]\n    1. ~~继续入住~~\n      1. ~~点击后对话框按钮置灰，toast“”~~\n    2. 仍要取消\n      1. 点击则对话页中自动以房客身份发送消息，内容为“我要取消”\n      2. 后端调取消订单接口，操作此订单取消，后续触达等流程和普通订单取消保持一致\n      3. 对话页下发卡片\n        1. 文案：%退款总额%、%预计到账时间% - 调交易接口获取\n        2. 按钮：\n          1. 方案1-点击后跳转订详并拉起弹层-复用，跳转后左上角返回为当前对话页\n            ![image.png](https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1){width=140 height=234 small=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1\"}\n          2. 方案2-对话页中拉起弹层-复用订详\n        3. 点击按钮时校验订单状态，若订单已取消toast“当前订单已成功取消”\n      4. :[quote]{quoteId=\"2748873777--91629eb0-3fab-427f-951d-2ebc3a4ab738\"}尝试协商[/quote]\n    1. 房客端下发卡片\n      1. 文案：该订单需由房东发起协商退，请直接在对话中告知房东您的诉求  \n        或通过拨打电话联系房东。房东发送后您可填写期望的退订金额。\n      2. 按钮：:[quote]{quoteId=\"2748873777--75a54f80-da20-4ab1-a0f3-46608c8b3e3a\"}联系房东[/quote] \n        1. 点击后拉起下拉框虚拟号-已有订后流程\n      3. 点击尝试协商按钮时校验订单状态，若订单在协商中toast“当前订单正在协商中”、已取消toast“当前订单已取消”\n    2. 房东端:[quote]{quoteId=\"2748873777--b4fd3853-38cf-40e6-af27-c12e8dabf8d2\"}对话页下发text notice[/quote]：\":[quote]{quoteId=\"2748873777--fb074524-0a82-484c-96d4-c9f1549cae2e\"}房客希望与您协商退款，您可[/quote]:[color]{#166FF7}**:[quote]{quoteId=\"2748873777--fb074524-0a82-484c-96d4-c9f1549cae2e\"}点击发起协商退[/quote]**[/color]:[quote]{quoteId=\"2748873777--fb074524-0a82-484c-96d4-c9f1549cae2e\"}\"[/quote]。 点击高亮部分:[quote]{quoteId=\"2748873777--972a8b3f-754e-46d4-b1dd-17914a529012\"}即刻[/quote]对话页下发协商退卡片（绑定此订单id）\n    "
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "两个ui方案：\n\n![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1&isNewContent=false){width=275.97 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1&isNewContent=false\" quoteId=\"2748873777--1439dd88-3135-47bf-a2aa-e46f66ae8666\"}\n\n![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1&isNewContent=false){width=269.2 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1&isNewContent=false\" quoteId=\"2748873777--a1357cc1-e1f1-428d-a9ad-ae9e1ea6dca2\"}"
+    }
+  ]
+]
+:::
+
+c）订单未取消+付费取消+**:[quote]{quoteId="2748873777--a5456d85-4c97-4fcd-8a0c-a10a8df773b3"}非阶梯退[/quote]**
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          303
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          666
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          303
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客id下创建时间最近的一笔订单的\n\n订单状态为未取消\n\n&& \n\n该订单当前需付费取消且为阶梯退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          666
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "1. 对话页中房客端下发操作卡片，房东端可见\n  1. 标题文案： \n  2. 订单卡\n  3. 副标题文案：\n    1. %订单当前退款政策%\n    2. icon：点击后跳转订详拉起退订政策弹层，跳转后左上角返回为当前对话页\n  4. 多个按钮：\n    1. ~~继续入住~~\n      1. ~~点击后对话框按钮置灰，toast“”~~\n    2. **仍要取消**\n      1. 点击则对话页中自动以房客身份发送消息，内容为“我要取消”\n      2. 后端调取消订单接口，操作此订单取消，后续触达等流程和普通订单取消保持一致\n      3. 对话页下发卡片\n        1. 文案：%退款总额%、%预计到账时间% - 调交易接口获取\n        2. 按钮：\n          1. 点击后跳转订详并拉起弹层-复用，跳转后左上角返回为当前对话页\n            ![image.png](https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1){width=140 height=234 small=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/230839389082?contentType=1\"}\n        3. 订单取消成功后再点击卡片上的按钮均不生效，toast“当前订单已成功取消”\n      4. 点击**仍要取消**按钮时校验订单状态，若订单已取消toast“当前订单已成功取消”\n  5. **尝试协商 **\n    1. 用户角色发出消息“尝试协商”\n    2. :[quote]{quoteId=\"2748873777--0ca3a57d-26b9-4316-9fdd-c996063141cf\"}跳转订详，默认勾选与房东协商退款[/quote]\n      ![](https://km.sankuai.com/api/file/cdn/2748873777/231109324929?contentType=1&isNewContent=false){width=201 height=384 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231110919446?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231111079842?contentType=1&isNewContent=false\"} \n    3. 在订详返回上一级为对话页 \n    4. 点击尝试协商按钮时校验订单状态，若订单在协商中toast“当前订单正在协商中”、已取消toast“当前订单已取消”"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "两个ui方案：\n\n![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1){width=275 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231092357958?contentType=1\"}\n\n![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1){width=269 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\"}"
+    }
+  ]
+]
+:::
+
+d）订单已取消+极速退/阶梯退/非阶梯退
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ":[quote]{quoteId=\"2748873777--50e70ed1-58c7-4b1a-aaa4-c268bca1ca8e\"}交互图[/quote]"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "订单状态为取消中或已取消"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "对话页下发卡片：\n\n1. 文案：您的订单已取消，退款 **XX元** 将原路退回至您的支付账户，:[quote]{quoteId=\"2748873777--1944533b-ba70-48b2-aa01-15431b92b916\"}预计个工作日内到账[/quote]。\n2. 按钮：\n  1. 文案-查看退款详情\n  2. 点击后跳转订详并拉起退款进度弹层"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231165016939?contentType=1&isNewContent=false){width=853.58 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231165016939?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231165016939?contentType=1&isNewContent=false\"}"
+    }
+  ]
+]
+:::
+
+##### 3.2.2 意图2-查退款政策
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          769
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ":[quote]{quoteId=\"2748873777--bc2a0ae4-5972-4cae-ae31-a1f593bf6617\"}交互图[/quote]"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中查询退款政策"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          769
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "对话页下发卡片：\n\n1. 文案：\n  :::table{borderColor=\"#dddddd\" borderStyle=\"solid\" borderWidth=1 responsive=false}\n  [\n    [\n      {\n        \"type\": \"table_header\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            251\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"订单状态\"\n      },\n      {\n        \"type\": \"table_header\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            376\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"文案\"\n      }\n    ],\n    [\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            251\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"订单未取消且需付费取消\"\n      },\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            376\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"需扣除%退订费金额%。\"\n      }\n    ],\n    [\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            251\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"订单未取消且免费取消\"\n      },\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            376\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": null\n        },\n        \"content\": \"当前您可免费取消\"\n      }\n    ],\n    [\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            251\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": false\n        },\n        \"content\": \"订单已取消或取消中\"\n      },\n      {\n        \"type\": \"table_cell\",\n        \"attrs\": {\n          \"colspan\": 1,\n          \"rowspan\": 1,\n          \"colwidth\": [\n            376\n          ],\n          \"textAlign\": null,\n          \"verticalAlign\": null,\n          \"bgColor\": null,\n          \"color\": null,\n          \"numCell\": false\n        },\n        \"content\": \"走 d）订单已取消+极速退/阶梯退/非阶梯退 的流程\"\n      }\n    ]\n  ]\n  :::\n2. 按钮\n  1. 查看取消规则\n  2. 点击跳转订详拉起退订政策弹层"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "\n\n"
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+##### 3.2.3 意图3-查退款进度
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          775
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中查退款进度"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          775
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "对话页下发卡片：\n\n1. 订:[quote]{quoteId=\"2748873777--1b9fe281-c37c-4189-9e1b-cbfc09eaf82b\"}单状态为未取消[/quote]\n  1. :[quote]{quoteId=\"2748873777--1b9fe281-c37c-4189-9e1b-cbfc09eaf82b\"}文案：[/quote]查询到您当前订单并未取消，未产生退款。如有其他问题可继续咨询。\n2. 订单状态为已取消或取消中\n  走 d）订单已取消+极速退/阶梯退/非阶梯退 的流程"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ""
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+##### 3.2.4 意图4-协商退
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中\n\n且\n\n订单为**阶梯退**且当前支持协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "*同b）订单未取消+付费取消****+阶梯退中的尝试协商***\n\n对话页下发卡片：\n\n尝试协商\n\n1. 房客端下发卡片\n  1. 文案：该订单需由房东发起协商退，请直接在对话中告知房东您的诉求  \n    或通过拨打电话联系房东。房东发送后您可填写期望的退订金额。\n  2. 按钮：联系房东\n    1. 点击后拉起下拉框虚拟号-已有订后流程\n  3. 点击尝试协商按钮时校验订单状态，若订单在协商中toast“当前订单正在协商中”、已取消toast“当前订单已取消”\n2. 房东端对话页下发text notice：\"房客希望与您协商退款，您可:[color]{#166FF7}**点击发起协商退**[/color]\"。 点击高亮部分即刻对话页下发协商退卡片（绑定此订单id）\n\n"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1){width=269 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\"}"
+    }
+  ]
+]
+:::
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中\n\n且\n\n订单为**非阶梯退**且当前支持协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "*同c）订单未取消+付费取消+****非阶梯退 中尝试协商流程***\n\n对话页下发卡片：\n\n **尝试协商 **\n\n1. 用户角色发出消息“尝试协商”\n2. 跳转订详，默认勾选与房东协商退款\n  ![](https://km.sankuai.com/api/file/cdn/2748873777/231109324929?contentType=1){width=201 height=384 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231110919446?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231111079842?contentType=1\"}\n3. 在订详返回上一级为对话页\n4. 点击尝试协商按钮时校验订单状态，若订单在协商中toast“当前订单正在协商中”、已取消toast“当前订单已取消”"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          344
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1){width=269 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231098545162?contentType=1\"}"
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+##### 3.2.5 意图5-:[quote]{quoteId="2748873777--3604d319-b062-4d0a-bddf-c41b85a86e29"}撤销取[/quote]消 
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          115
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "交互图"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "对话页下发卡片，固定文案兜底。"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          115
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231311799749?contentType=1&isNewContent=false){width=275.97 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231311799749?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231311799749?contentType=1&isNewContent=false\"}"
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+##### 3.2.6 意图6-改签 
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "前置条件"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "功能说明"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          121
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": ":[quote]{quoteId=\"2748873777--c1e551ff-2868-4c92-b468-abe29737e75e\"}交互图[/quote]"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          276
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "房客咨询意图命中"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          651
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "对话页下发卡片，固定文案兜底。"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          121
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": false
+      },
+      "content": "![image.png](https://km.sankuai.com/api/file/cdn/2748873777/231308635908?contentType=1&isNewContent=false){width=275.97 height=600 small=\"https://km.sankuai.com/api/file/cdn/2748873777/231308635908?contentType=1&isNewContent=false\" origin=\"https://km.sankuai.com/api/file/cdn/2748873777/231308635908?contentType=1&isNewContent=false\"}"
+    }
+  ]
+]
+:::
+
+:[link]{href="https://km.sankuai.com/collabpage/2746169532" autoUpdate}https://km.sankuai.com/collabpage/2746169532[/link]
+
+## 四、数据需求
+
+埋点：后续补充
+
+数据表：
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          288
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "字段"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "说明"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          288
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "im自助化流程中完成退款的订单量"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          288
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "各意图的query量级"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          288
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "算法指标-意图准召率"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          150
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+数据表统计：
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ""
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "意图分类"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "订单id"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "是否协商退"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          120
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "是否取消成功"
+    }
+  ]
+]
+:::
+
+:::paragraph{}:::
+
+:::collapse{}
+线上退订规则 
+---
+:[link]{href="https://km.sankuai.com/collabpage/2733985233" autoUpdate}【民宿退订政策梳理】20251120[/link]:[link]{href="https://km.sankuai.com/collabpage/2725908076" autoUpdate}业务能力与速查口诀[/link]:[link]{href="https://km.sankuai.com/collabpage/2723230007" autoUpdate}【现状】协商退款能力[/link]
+
+:::table{borderColor="#dddddd" borderStyle="solid" borderWidth=1 responsive=false}
+[
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "房源设置"
+    },
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "退订政策详情"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 3,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "阶梯"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "取消订单：:[color]{rgb(25, 25, 25)}:[font]{size=14}入住当天0点前免费取消，0-12点扣10%（旺季20%）后可取消，12-18点扣30%（旺季50%）后可取消，18点后不可取消。旺季可提升比例，比例可智能测算。[/font][/color]"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "提前离店：已入住的房费不可退，当天12点前扣除当日30%，12点后扣除当日100%"
+    }
+  ],
+  [
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "*动态阶梯退:[footnote]{id=\"62254c3e-75f8-4f61-9250-dbb5bd871c80\" annotate=\"房东可进一步设置项\" nodeId=\"fa9e31c4589f48b2bb5f9b840c70e4ed\"}:[font]{size=15}：在下单时基于每个房源的售出概率计算出退订导致的机会损失，详见[/font]:[link]{href=\"https://km.sankuai.com/collabpage/2025166401\" autoUpdate}【PRD】动态阶梯退算法[/link]"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "灵活"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(25, 25, 25)}:[font]{size=14}入住当天18：00前免费取消[/font][/color]"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "适中退（仅限多居室）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(25, 25, 25)}:[font]{size=14}入住前3天12：00前免费取消[/font][/color]"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "适中退（已下线）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": ":[color]{rgb(25, 25, 25)}:[font]{size=14}入住前5天12：00前免费取消[/font][/color]"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "严格（已下线）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "入住前7天12:00前，退50%"
+    }
+  ],
+  [
+    {
+      "type": "table_header",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          177
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "宽松（已下线）"
+    },
+    {
+      "type": "table_cell",
+      "attrs": {
+        "colspan": 1,
+        "rowspan": 1,
+        "colwidth": [
+          1006
+        ],
+        "textAlign": null,
+        "verticalAlign": null,
+        "bgColor": null,
+        "color": null,
+        "numCell": null
+      },
+      "content": "入住前1天12:00前，全额退"
+    }
+  ]
+]
+:::
+:::
+
+:::footnote_list
+[
+  {
+    "footnoteNodeId": "7712fec673f040b981f469cadc938cec",
+    "nodeId": "b37b993f14ff4a61938284606e1135b7",
+    "content": "14.4%：360/2500"
+  },
+  {
+    "footnoteNodeId": "61760ab86f574ac8a1f949e93ab33a8a",
+    "nodeId": "654962f54750488cbcb94ec2fcc2b5ea",
+    "content": "30%：参考协商退智能回复分流需求的解决率约为 20-40%"
+  },
+  {
+    "footnoteNodeId": "b762990defb1479d84f4e6b812e21d17",
+    "nodeId": "a24f91cbeb944d71a044c08755ed6f30",
+    "content": "退改人工服务率 = 规则外+规则内人工工单数 / 总支付订单数，初始值25年全年平均1.18%，其中规则外+规则内人工工单数 = 535282单，总支付订单数 = 45214531单"
+  },
+  {
+    "footnoteNodeId": "b39e11195a854b0799a75939ac21d43f",
+    "nodeId": "8396c8e77f664f95a69076136033bc54",
+    "content": "480：1月份被动总服务率1740，YOY降34.5%。客服被动人工服务率480，YOY降30.6%"
+  },
+  {
+    "footnoteNodeId": "3cc8f8bdea1c43f18a0ad911a866f6ef",
+    "nodeId": "32357df5f7ec4e62bc73891c3dad3e28",
+    "content": "引导房客邀请房东协商退：目前此场景下不存在房客发起协商退的功能，只能由房东发起协商退"
+  },
+  {
+    "footnoteNodeId": "fa9e31c4589f48b2bb5f9b840c70e4ed",
+    "nodeId": "bf62641951504d218fd226f07f160fd9",
+    "content": "房东可进一步设置项"
+  }
+]
+:::
