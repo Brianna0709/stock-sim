@@ -1,6 +1,0 @@
-requests
-websocket-client
-cryptography
-pytest
-pytest-html
-pytest-metadata
