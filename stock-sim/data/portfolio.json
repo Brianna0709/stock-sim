@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 107765.68,
-    "invested": 57765.65
+    "total_value": 106562.91,
+    "invested": 56562.88
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 652.54,
-      "market_value": 16958.47,
-      "pnl": 1958.49,
-      "pnl_pct": 13.06,
-      "today_chg_pct": 1.27
+      "cur_price": 651.42,
+      "market_value": 16929.36,
+      "pnl": 1929.38,
+      "pnl_pct": 12.86,
+      "today_chg_pct": -0.56
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 202.5,
-      "market_value": 17416.86,
-      "pnl": 2416.86,
-      "pnl_pct": 16.11,
-      "today_chg_pct": 1.31
+      "cur_price": 199.64,
+      "market_value": 17170.88,
+      "pnl": 2170.88,
+      "pnl_pct": 14.47,
+      "today_chg_pct": -1.43
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 432.92,
-      "market_value": 23390.32,
-      "pnl": 3390.33,
-      "pnl_pct": 16.95,
-      "today_chg_pct": 2.07
+      "cur_price": 415.75,
+      "market_value": 22462.64,
+      "pnl": 2462.65,
+      "pnl_pct": 12.31,
+      "today_chg_pct": -3.97
     }
   },
   "trades": [
@@ -220,16 +220,24 @@
       "invested": 57765.65,
       "return_pct": 7.7657,
       "note": "收盘复盘：NVDA $202.5 (+1.31%) | MSFT $432.92 (+2.07%) | QQQ $652.54 (+1.27%)"
+    },
+    {
+      "date": "2026-04-23",
+      "total_value": 106562.91,
+      "cash": 50000.03,
+      "invested": 56562.88,
+      "return_pct": 6.5629,
+      "note": "收盘复盘：NVDA $199.64 (-1.43%) | MSFT $415.75 (-3.97%) | QQQ $651.42 (-0.56%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7064.01,
-    "sp500_change_pct": -0.63,
-    "nasdaq": 24259.96,
-    "nasdaq_change_pct": -0.59,
-    "dow": 49149.38,
-    "dow_change_pct": -0.59,
-    "note": "2026-04-22收盘复盘：三大指数全线下跌。标普-0.63%至7064.01，纳指-0.59%至24259.96，道指-0.59%至49149.38。NVDA上涨+1.31%，MSFT上涨+2.07%，QQQ上涨+1.27%。持仓跑赢大盘。"
+    "sp500": 7109.3,
+    "sp500_change_pct": -0.4,
+    "nasdaq": 24435.6,
+    "nasdaq_change_pct": -0.9,
+    "dow": 49292.1,
+    "dow_change_pct": -0.4,
+    "note": "2026-04-23收盘：三大指数回调。特斯拉财报引发科技股抛售，S&P -0.40%，纳指 -0.90%，道指 -0.40%。持仓随势回调。"
   }
 }
