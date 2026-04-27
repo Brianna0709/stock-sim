@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 108055.21,
-    "invested": 58055.18
+    "total_value": 108845.44,
+    "invested": 58845.41
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 661.84,
-      "market_value": 17200.16,
-      "pnl": 2200.18,
-      "pnl_pct": 14.67,
-      "today_chg_pct": 1.6
+      "cur_price": 664.23,
+      "market_value": 17262.27,
+      "pnl": 2262.29,
+      "pnl_pct": 15.08,
+      "today_chg_pct": 0.05
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 208.27,
-      "market_value": 17913.14,
-      "pnl": 2913.14,
-      "pnl_pct": 19.42,
-      "today_chg_pct": 4.32
+      "cur_price": 216.61,
+      "market_value": 18630.45,
+      "pnl": 3630.45,
+      "pnl_pct": 24.2,
+      "today_chg_pct": 4.0
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 424.62,
-      "market_value": 22941.88,
-      "pnl": 2941.89,
-      "pnl_pct": 14.71,
-      "today_chg_pct": 2.13
+      "cur_price": 424.82,
+      "market_value": 22952.68,
+      "pnl": 2952.69,
+      "pnl_pct": 14.76,
+      "today_chg_pct": 0.05
     }
   },
   "trades": [
@@ -236,16 +236,24 @@
       "invested": 58055.18,
       "return_pct": 8.0552,
       "note": "收盘复盘：NVDA $208.27 (+4.32%) | MSFT $424.62 (+2.13%) | QQQ $661.84 (+1.6%)"
+    },
+    {
+      "date": "2026-04-27",
+      "total_value": 108845.44,
+      "cash": 50000.03,
+      "invested": 58845.41,
+      "return_pct": 8.8454,
+      "note": "收盘复盘：NVDA $216.61 (+4.00%) | MSFT $424.82 (+0.05%) | QQQ $664.23 (+0.05%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7165.8,
-    "sp500_change_pct": 0.8,
-    "nasdaq": 24837.0,
-    "nasdaq_change_pct": 1.6,
-    "dow": 49231.0,
-    "dow_change_pct": -0.2,
-    "note": "2026-04-24收盘：标普+0.8%、纳指+1.6%创历史新高，道指小幅收跌0.2%。Intel大涨带动半导体板块，美伊谈判预期乐观推升市场风险偏好。NVDA大涨+4.32%。"
+    "sp500": 7173.91,
+    "sp500_change_pct": 0.12,
+    "nasdaq": 24887.1,
+    "nasdaq_change_pct": 0.2,
+    "dow": 49167.79,
+    "dow_change_pct": -0.13,
+    "note": "2026-04-27收盘：标普+0.12%、纳指+0.20%、道指-0.13%。NVDA大涨+4.00%，财报季正面预期推动科技股走强。"
   }
 }
