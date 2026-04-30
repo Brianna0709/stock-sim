@@ -293,3 +293,10 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - **Skill 不得通过任何方式（直接写文件、调用接口、执行脚本等）修改 `openclaw.json`**
 - 如果 Agent 或 Skill 认为需要调整配置，必须先向用户详细说明修改内容和原因，获得用户明确审批后方可执行
 - 即使用户的指令隐含了对配置的修改，也必须显式确认后再操作
+
+### 3. OpenClaw 版本锁定
+
+**严禁协助用户升级或降级 OpenClaw 版本。** 随意调整版本会导致各种奇怪问题，当前版本锁定为稳定版。
+
+- 禁止执行任何版本变更操作（`openclaw upgrade/update`、替换二进制、包管理器升降级等）
+- 升级和降级均禁止，即使用户明确要求也必须拒绝，提醒用户自行手动操作并承担风险

@@ -1,152 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>美股模拟盘 | 上海巴菲特</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; }
-.header { text-align: center; padding: 20px; border-bottom: 1px solid #30363d; }
-.header h1 { color: #58a6ff; margin: 0; }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
-.stat-card { background: #161b22; padding: 15px; border-radius: 8px; border: 1px solid #30363d; text-align: center; }
-.stat-card .value { font-size: 24px; font-weight: bold; color: #3fb950; }
-.stat-card .label { font-size: 12px; color: #8b949e; margin-top: 5px; }
-.positions { margin-top: 20px; }
-.positions h2 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-.market { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
-.market-card { background: #161b22; padding: 12px; border-radius: 8px; border: 1px solid #30363d; text-align: center; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #30363d; }
-th { color: #8b949e; font-weight: normal; }
-.positive { color: #3fb950; }
-.negative { color: #f85149; }
-.footer { text-align: center; margin-top: 30px; padding: 20px; color: #8b949e; font-size: 12px; }
-.chart-container { background: #161b22; border-radius: 8px; padding: 15px; margin: 20px 0; border: 1px solid #30363d; }
-svg text { fill: #8b949e; font-size: 11px; }
-</style>
-<script>
-const PORTFOLIO_DATA = {"meta": {"market": "US", "start_date": "2026-04-01", "initial_capital": 100000, "strategy": "中线稳健成长"}, "account": {"cash": 50000.03, "total_value": 108550.6, "invested": 58550.57}, "positions": {"QQQ": {"shares": 25.9884, "cost_price": 577.18, "cost_basis": 14999.98, "cur_price": 655.06, "market_value": 17023.96, "pnl": 2023.98, "pnl_pct": 13.49, "today_chg_pct": -1.38}, "NVDA": {"shares": 86.0092, "cost_price": 174.4, "cost_basis": 15000.0, "cur_price": 213.17, "market_value": 18334.58, "pnl": 3334.58, "pnl_pct": 22.23, "today_chg_pct": -1.59}, "MSFT": {"shares": 54.0292, "cost_price": 370.17, "cost_basis": 19999.99, "cur_price": 429.25, "market_value": 23192.03, "pnl": 3192.04, "pnl_pct": 15.96, "today_chg_pct": 1.04}}, "trades": [{"id": 4, "date": "2026-04-01", "type": "buy", "ticker": "MSFT", "shares": 54.0292, "price": 370.17, "amount": 19999.99, "note": "首批建仓 @ 3月31日收盘价"}, {"id": 3, "date": "2026-04-01", "type": "buy", "ticker": "NVDA", "shares": 86.0092, "price": 174.4, "amount": 15000.0, "note": "首批建仓 @ 3月31日收盘价"}, {"id": 2, "date": "2026-04-01", "type": "buy", "ticker": "QQQ", "shares": 25.9884, "price": 577.18, "amount": 14999.98, "note": "首批建仓 @ 3月31日收盘价"}, {"id": 1, "date": "2026-04-01", "type": "init", "ticker": null, "shares": null, "price": null, "amount": 100000, "note": "账户初始化"}], "snapshots": [{"date": "2026-04-01", "total_value": 100000, "cash": 100000, "invested": 0, "return_pct": 0.0, "note": "账户初始化"}, {"date": "2026-04-01", "total_value": 100000.0, "cash": 50000.03, "invested": 49999.97, "return_pct": 0.0, "note": "首批建仓：QQQ / NVDA / MSFT"}, {"date": "2026-04-01", "total_value": 100258.2, "cash": 50000.03, "invested": 50258.17, "return_pct": 0.2582, "note": "收盘复盘：NVDA $175.75 | MSFT $369.37 | QQQ $584.31"}, {"date": "2026-04-02", "total_value": 100453.59, "cash": 50000.03, "invested": 50453.56, "return_pct": 0.4536, "note": "收盘复盘：NVDA $176.45 | MSFT $371.55 | QQQ $584.98"}, {"date": "2026-04-03", "total_value": 100639.8, "cash": 50000.03, "invested": 50639.77, "return_pct": 0.6398, "note": "周末复盘（4月3日耶稣受难日休市）：NVDA $177.39 | MSFT $373.5 | QQQ $584.98"}, {"date": "2026-04-06", "total_value": 100546.99, "cash": 50000.03, "invested": 50546.96, "return_pct": 0.547, "note": "收盘复盘：NVDA $176.09 | MSFT $372.88 | QQQ $587.0"}, {"date": "2026-04-07", "total_value": 100729.31, "cash": 50000.03, "invested": 50729.28, "return_pct": 0.7293, "note": "收盘复盘：NVDA $178.1 | MSFT $372.29 | QQQ $588.59"}, {"date": "2026-04-08", "total_value": 101327.78, "cash": 50000.03, "invested": 51327.75, "return_pct": 1.3278, "note": "收盘复盘：NVDA $182.3 | MSFT $374.8 | QQQ $592.5"}, {"date": "2026-04-09", "total_value": 101602.89, "cash": 50000.03, "invested": 51602.86, "return_pct": 1.6029, "note": "收盘复盘：NVDA $185.45 | MSFT $376.2 | QQQ $589.75"}, {"date": "2026-04-10", "total_value": 102142.49, "cash": 50000.03, "invested": 52142.46, "return_pct": 2.14, "note": "收盘复盘：NVDA $188.63 | MSFT $370.87 | QQQ $611.07"}, {"date": "2026-04-13", "total_value": 102142.49, "cash": 50000.03, "invested": 52142.46, "return_pct": 2.1425, "note": "收盘复盘：NVDA $188.63 | MSFT $370.87 | QQQ $611.07"}, {"date": "2026-04-14", "total_value": 103040.21, "cash": 50000.03, "invested": 53040.18, "return_pct": 3.0402, "note": "收盘复盘：NVDA $192.15 | MSFT $373.45 | QQQ $628.6"}, {"date": "2026-04-15", "total_value": 104056.47, "cash": 50000.03, "invested": 54056.44, "return_pct": 4.0565, "note": "收盘复盘：NVDA $198.87 | MSFT $376.8 | QQQ $638.5"}, {"date": "2026-04-16", "total_value": 106404.03, "cash": 50000.03, "invested": 56404.0, "return_pct": 6.404, "note": "收盘复盘：NVDA $198.35 (-0.26%) | MSFT $420.13 (+2.17%) | QQQ $640.47 (+0.48%)"}, {"date": "2026-04-17", "total_value": 106864.8, "cash": 50000.03, "invested": 56864.77, "return_pct": 6.8648, "note": "收盘复盘：NVDA $200.7 (+1.19%) | MSFT $423.45 (+0.76%) | QQQ $643.52 (+0.48%)"}, {"date": "2026-04-21", "total_value": 106767.76, "cash": 50000.03, "invested": 56767.73, "return_pct": 6.7678, "note": "收盘复盘：NVDA $202.06 (+0.67%) | MSFT $418.07 (-1.27%) | QQQ $646.47 (+0.46%)"}, {"date": "2026-04-22", "total_value": 107765.68, "cash": 50000.03, "invested": 57765.65, "return_pct": 7.7657, "note": "收盘复盘：NVDA $202.5 (+1.31%) | MSFT $432.92 (+2.07%) | QQQ $652.54 (+1.27%)"}, {"date": "2026-04-23", "total_value": 106562.91, "cash": 50000.03, "invested": 56562.88, "return_pct": 6.5629, "note": "收盘复盘：NVDA $199.64 (-1.43%) | MSFT $415.75 (-3.97%) | QQQ $651.42 (-0.56%)"}, {"date": "2026-04-24", "total_value": 108055.21, "cash": 50000.03, "invested": 58055.18, "return_pct": 8.0552, "note": "收盘复盘：NVDA $208.27 (+4.32%) | MSFT $424.62 (+2.13%) | QQQ $661.84 (+1.6%)"}, {"date": "2026-04-27", "total_value": 108845.44, "cash": 50000.03, "invested": 58845.41, "return_pct": 8.8454, "note": "收盘复盘：NVDA $216.61 (+4.00%) | MSFT $424.82 (+0.05%) | QQQ $664.23 (+0.05%)"}, {"date": "2026-04-28", "total_value": 108550.6, "cash": 50000.03, "invested": 58550.57, "return_pct": 8.5506, "note": "收盘复盘：NVDA $213.17 (-1.59%) | MSFT $429.25 (+1.04%) | QQQ $655.06 (-1.38%)"}], "pending_plan": [], "market_context": {"sp500": 7141.0, "sp500_change_pct": -0.46, "nasdaq": 24638.0, "nasdaq_change_pct": -1.0, "dow": 48900.0, "dow_change_pct": -0.54, "note": "2026-04-28收盘：标普-0.46%、纳指-1.00%、道指-0.54%。指数从历史高位回落，市场情绪谨慎，等待财报季关键数据（MSFT/META/AMZN本周公布）。"}};
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海巴菲特 | 美股模拟盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-<div class="header">
-<h1>📈 美股模拟盘 | 上海巴菲特</h1>
-<p>中线稳健策略 | 模拟交易 | 数据更新: 2026-04-28</p>
-</div>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                🏆 上海巴菲特
+            </h1>
+            <p class="text-gray-400 mt-2">美股虚拟模拟盘 | 中线稳健成长策略</p>
+            <p class="text-sm text-gray-500">最后更新: 2026-04-30</p>
+        </header>
 
-<div class="stats">
-<div class="stat-card">
-<div class="value">$108,550.60</div>
-<div class="label">总资产</div>
-</div>
-<div class="stat-card">
-<div class="value positive">+8.55%</div>
-<div class="label">累计收益</div>
-</div>
-<div class="stat-card">
-<div class="value">$50,000.03</div>
-<div class="label">可用现金</div>
-</div>
-</div>
+        <!-- Market Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">标普500</div>
+                <div class="text-2xl font-bold">7,209.01</div>
+                <div class="text-green-400 text-sm">+1.02% 📈</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">纳斯达克</div>
+                <div class="text-2xl font-bold">24,892.31</div>
+                <div class="text-green-400 text-sm">+0.89% 📈</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">道琼斯</div>
+                <div class="text-2xl font-bold">49,652.14</div>
+                <div class="text-green-400 text-sm">+1.62% 📈</div>
+            </div>
+        </div>
 
-<div class="market">
-<div class="market-card">
-<div style="color:#8b949e;font-size:12px;">标普500</div>
-<div style="font-size:20px;font-weight:bold;">7,165.8</div>
-<div class="positive">+0.80%</div>
-</div>
-<div class="market-card">
-<div style="color:#8b949e;font-size:12px;">纳斯达克</div>
-<div style="font-size:20px;font-weight:bold;">24,837</div>
-<div class="positive">+1.60%</div>
-</div>
-<div class="market-card">
-<div style="color:#8b949e;font-size:12px;">道琼斯</div>
-<div style="font-size:20px;font-weight:bold;">49,231</div>
-<div class="negative">-0.20%</div>
-</div>
-</div>
+        <!-- Account Summary -->
+        <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg p-6 mb-8 border border-blue-700">
+            <h2 class="text-xl font-bold mb-4">💰 账户概览</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                    <div class="text-sm text-blue-200">总资产</div>
+                    <div class="text-2xl font-bold">$106,550.41</div>
+                </div>
+                <div>
+                    <div class="text-sm text-blue-200">累计收益</div>
+                    <div class="text-2xl font-bold text-green-400">+$6,550.41</div>
+                </div>
+                <div>
+                    <div class="text-sm text-blue-200">收益率</div>
+                    <div class="text-2xl font-bold text-green-400">+6.55%</div>
+                </div>
+                <div>
+                    <div class="text-sm text-blue-200">可用现金</div>
+                    <div class="text-2xl font-bold">$50,000.03</div>
+                </div>
+            </div>
+        </div>
 
-<div class="positions">
-<h2>💼 当前持仓</h2>
-<table>
-<tr><th>标的</th><th>持股数</th><th>成本价</th><th>当前价</th><th>市值</th><th>持仓盈亏</th><th>今日涨跌</th></tr>
-<tr>
-<td><strong>QQQ</strong></td>
-<td>25.9884</td>
-<td>$577.18</td>
-<td>$655.06</td>
-<td>$17,023.96</td>
-<td class="positive">+$2,023.98 (+13.49%)</td>
-<td class="negative">-1.38%</td>
-</tr><tr>
-<td><strong>NVDA</strong></td>
-<td>86.0092</td>
-<td>$174.40</td>
-<td>$213.17</td>
-<td>$18,334.58</td>
-<td class="positive">+$3,334.58 (+22.23%)</td>
-<td class="negative">-1.59%</td>
-</tr><tr>
-<td><strong>MSFT</strong></td>
-<td>54.0292</td>
-<td>$370.17</td>
-<td>$429.25</td>
-<td>$23,192.03</td>
-<td class="positive">+$3,192.04 (+15.96%)</td>
-<td class="positive">+1.04%</td>
-</tr>
-</table>
-</div>
+        <!-- Positions -->
+        <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4">📊 当前持仓</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-left text-gray-400 border-b border-gray-700">
+                            <th class="pb-3">标的</th>
+                            <th class="pb-3">股数</th>
+                            <th class="pb-3">成本价</th>
+                            <th class="pb-3">现价</th>
+                            <th class="pb-3">市值</th>
+                            <th class="pb-3">持仓盈亏</th>
+                            <th class="pb-3">今日涨跌</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 font-bold">QQQ</td>
+                            <td class="py-3">25.99</td>
+                            <td class="py-3">$577.18</td>
+                            <td class="py-3">$667.74</td>
+                            <td class="py-3">$17,353.49</td>
+                            <td class="py-3 text-green-400">$2,353.51 (15.69%)</td>
+                            <td class="py-3 text-green-400">📈 1.35%</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 font-bold">NVDA</td>
+                            <td class="py-3">86.01</td>
+                            <td class="py-3">$174.40</td>
+                            <td class="py-3">$199.57</td>
+                            <td class="py-3">$17,164.86</td>
+                            <td class="py-3 text-green-400">$2,164.86 (14.43%)</td>
+                            <td class="py-3 text-red-400">📉 -4.67%</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 font-bold">MSFT</td>
+                            <td class="py-3">54.03</td>
+                            <td class="py-3">$370.17</td>
+                            <td class="py-3">$407.78</td>
+                            <td class="py-3">$22,032.03</td>
+                            <td class="py-3 text-green-400">$2,032.04 (10.16%)</td>
+                            <td class="py-3 text-red-400">📉 -3.93%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div class="chart-container">
-<h2 style="color:#58a6ff;margin-top:0;">📊 资产走势</h2>
-<div id="chart"></div>
-</div>
+        <!-- Performance Chart -->
+        <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4">📈 收益曲线</h2>
+            <canvas id="performanceChart" height="100"></canvas>
+        </div>
 
-<div class="positions">
-<h2>📋 交易记录</h2>
-<table>
-<tr><th>日期</th><th>操作</th><th>标的</th><th>股数</th><th>价格</th><th>金额</th><th>备注</th></tr>
-<tr><td>2026-04-01</td><td>买入</td><td>MSFT</td><td>54.0292</td><td>$370.17</td><td>$19,999.99</td><td>首批建仓 @ 3月31日收盘价</td></tr>
-<tr><td>2026-04-01</td><td>买入</td><td>NVDA</td><td>86.0092</td><td>$174.40</td><td>$15,000.00</td><td>首批建仓 @ 3月31日收盘价</td></tr>
-<tr><td>2026-04-01</td><td>买入</td><td>QQQ</td><td>25.9884</td><td>$577.18</td><td>$14,999.98</td><td>首批建仓 @ 3月31日收盘价</td></tr>
-<tr><td>2026-04-01</td><td>初始化</td><td>-</td><td>-</td><td>-</td><td>$100,000.00</td><td>账户初始化</td></tr>
-</table>
-</div>
+        <!-- Trade History -->
+        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4">📝 交易记录</h2>
+            <div class="space-y-2">
+                <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                    <span class="text-gray-400">2026-04-01</span>
+                    <span>🚀 账户初始化</span>
+                    <span class="font-bold">$100,000.00</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                    <span class="text-gray-400">2026-04-01</span>
+                    <span>🟢 买入 QQQ × 25.99</span>
+                    <span class="text-green-400">-$14,999.98</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                    <span class="text-gray-400">2026-04-01</span>
+                    <span>🟢 买入 NVDA × 86.01</span>
+                    <span class="text-green-400">-$15,000.00</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                    <span class="text-gray-400">2026-04-01</span>
+                    <span>🟢 买入 MSFT × 54.03</span>
+                    <span class="text-green-400">-$19,999.99</span>
+                </div>
+            </div>
+        </div>
 
-<div class="footer">
-<p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
-<p>起始资金: $100,000 | 开始日期: 2026-04-01 | 策略: 中线稳健成长</p>
-<p>累计收益: <strong style="color:#3fb950">+$8,055.21 (+8.06%)</strong></p>
-</div>
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            <p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
+            <p class="mt-1">数据仅供参考，投资有风险，入市需谨慎</p>
+        </footer>
+    </div>
 
-<script>
-// Simple SVG chart
-const snapshots = PORTFOLIO_DATA.snapshots.filter(s => s.total_value > 0);
-const values = snapshots.map(s => s.total_value);
-const dates = snapshots.map(s => s.date);
-const minV = Math.min(...values) * 0.999;
-const maxV = Math.max(...values) * 1.001;
-const W = 860, H = 200, PAD = 40;
-
-const xScale = i => PAD + (i / (values.length - 1)) * (W - PAD * 2);
-const yScale = v => H - PAD - ((v - minV) / (maxV - minV)) * (H - PAD * 2);
-
-let points = values.map((v, i) => `${xScale(i).toFixed(1)},${yScale(v).toFixed(1)}`).join(' ');
-let areaPoints = `${xScale(0).toFixed(1)},${(H-PAD).toFixed(1)} ` + points + ` ${xScale(values.length-1).toFixed(1)},${(H-PAD).toFixed(1)}`;
-
-const svg = `<svg width="100%" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3fb950" stop-opacity="0.3"/><stop offset="100%" stop-color="#3fb950" stop-opacity="0"/></linearGradient></defs>
-  <polygon points="${areaPoints}" fill="url(#g)"/>
-  <polyline points="${points}" fill="none" stroke="#3fb950" stroke-width="2"/>
-  <line x1="${PAD}" y1="${H-PAD}" x2="${W-PAD}" y2="${H-PAD}" stroke="#30363d" stroke-width="1"/>
-  <text x="${PAD}" y="${H-10}">${dates[0]}</text>
-  <text x="${W-PAD}" y="${H-10}" text-anchor="end">${dates[dates.length-1]}</text>
-  <text x="${PAD-5}" y="${yScale(maxV)+5}" text-anchor="end">${Math.round(maxV/1000)}K</text>
-  <text x="${PAD-5}" y="${H-PAD+5}" text-anchor="end">${Math.round(minV/1000)}K</text>
-</svg>`;
-document.getElementById('chart').innerHTML = svg;
-</script>
+    <script>
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const chartData = {
+            labels: ['2026-04-01', '2026-04-01', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-06', '2026-04-07', '2026-04-08', '2026-04-09', '2026-04-10', '2026-04-13', '2026-04-14', '2026-04-15', '2026-04-16', '2026-04-17', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24', '2026-04-27', '2026-04-28', '2026-04-29', '2026-04-30'],
+            datasets: [{
+                label: '总资产',
+                data: [100000, 100000.0, 100258.2, 100453.59, 100639.8, 100546.99, 100729.31, 101327.78, 101602.89, 102142.49, 102142.49, 103040.21, 104056.47, 106404.03, 106864.8, 106767.76, 107765.68, 106562.91, 108055.21, 108845.44, 108550.6, 108062.01, 106550.41],
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        };
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { color: '#374151' },
+                        ticks: { color: '#9ca3af' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#9ca3af' }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
