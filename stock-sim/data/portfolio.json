@@ -7,39 +7,39 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 106550.41,
-    "invested": 56550.38
+    "total_value": 107217.71,
+    "invested": 57217.68
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 667.74,
-      "market_value": 17353.49,
-      "pnl": 2353.51,
-      "pnl_pct": 15.69,
-      "today_chg_pct": 1.35
+      "cur_price": 673.68,
+      "market_value": 17507.87,
+      "pnl": 2507.89,
+      "pnl_pct": 16.72,
+      "today_chg_pct": 0.89
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 199.57,
-      "market_value": 17164.86,
-      "pnl": 2164.86,
-      "pnl_pct": 14.43,
-      "today_chg_pct": -4.67
+      "cur_price": 201.35,
+      "market_value": 17317.95,
+      "pnl": 2317.95,
+      "pnl_pct": 15.45,
+      "today_chg_pct": 0.89
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 407.78,
-      "market_value": 22032.03,
-      "pnl": 2032.04,
-      "pnl_pct": 10.16,
-      "today_chg_pct": -3.93
+      "cur_price": 414.44,
+      "market_value": 22391.86,
+      "pnl": 2391.87,
+      "pnl_pct": 11.96,
+      "today_chg_pct": 1.63
     }
   },
   "trades": [
@@ -268,16 +268,24 @@
       "invested": 56550.38,
       "return_pct": 6.55,
       "note": "收盘复盘：NVDA $199.57 (-4.67%) | MSFT $407.78 (-3.93%) | QQQ $667.74 (+1.35%)"
+    },
+    {
+      "date": "2026-05-01",
+      "total_value": 107217.71,
+      "cash": 50000.03,
+      "invested": 57217.68,
+      "return_pct": 7.2177,
+      "note": "收盘复盘：NVDA $201.35 (+0.89%) | MSFT $414.44 (+1.63%) | QQQ $673.68 (+0.89%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7209.01,
-    "sp500_change_pct": 1.02,
-    "nasdaq": 24892.31,
+    "sp500": 7229.92,
+    "sp500_change_pct": 0.29,
+    "nasdaq": 25113.85,
     "nasdaq_change_pct": 0.89,
-    "dow": 49652.14,
-    "dow_change_pct": 1.62,
-    "note": "2026-04-30收盘：标普+1.02%、纳指+0.89%、道指+1.62%。谷歌财报超预期涨10%，带动大盘创新高。"
+    "dow": 49498.22,
+    "dow_change_pct": -0.31,
+    "note": "2026-05-01收盘（美东周五）：标普+0.29%、纳指+0.89%、道指-0.31%。苹果+3%、特斯拉+2%、微软+1.64%领涨，英特尔+5%，存储板块强势。NVDA跟随纳指温和反弹。"
   }
 }
