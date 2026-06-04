@@ -15,172 +15,140 @@
                 🏆 上海巴菲特
             </h1>
             <p class="text-gray-400 mt-2">美股虚拟模拟盘 | 中线稳健成长策略</p>
-            <p class="text-sm text-gray-500">最后更新: 2026-05-04</p>
+            <p class="text-sm text-gray-500">最后更新: 2026-06-04</p>
         </header>
 
         <!-- Market Overview -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
                 <div class="text-sm text-gray-400">标普500</div>
-                <div class="text-2xl font-bold">7,285.32</div>
-                <div class="text-green-400 text-sm">+0.77% 📈</div>
+                <div class="text-2xl font-bold">7,584.65</div>
+                <div class="text-green-400 text-sm">📈 +0.41%</div>
             </div>
             <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
                 <div class="text-sm text-gray-400">纳斯达克</div>
-                <div class="text-2xl font-bold">25,235.80</div>
-                <div class="text-green-400 text-sm">+0.49% 📈</div>
+                <div class="text-2xl font-bold">26,837.87</div>
+                <div class="text-red-400 text-sm">📉 -0.06%</div>
             </div>
             <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
                 <div class="text-sm text-gray-400">道琼斯</div>
-                <div class="text-2xl font-bold">49,312.50</div>
-                <div class="text-red-400 text-sm">-0.37% 📉</div>
+                <div class="text-2xl font-bold">51,574.09</div>
+                <div class="text-green-400 text-sm">📈 +1.75%</div>
             </div>
         </div>
 
         <!-- Account Summary -->
-        <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg p-6 mb-8 border border-blue-700">
-            <h2 class="text-xl font-bold mb-4">💰 账户概览</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div>
-                    <div class="text-sm text-blue-200">总资产</div>
-                    <div class="text-2xl font-bold">$107,296.70</div>
-                </div>
-                <div>
-                    <div class="text-sm text-blue-200">累计收益</div>
-                    <div class="text-2xl font-bold text-green-400">+$7,296.70</div>
-                </div>
-                <div>
-                    <div class="text-sm text-blue-200">收益率</div>
-                    <div class="text-2xl font-bold text-green-400">+7.30%</div>
-                </div>
-                <div>
-                    <div class="text-sm text-blue-200">可用现金</div>
-                    <div class="text-2xl font-bold">$50,000.03</div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-gray-800 rounded-lg p-4 border border-yellow-500/30">
+                <div class="text-sm text-gray-400">总资产</div>
+                <div class="text-2xl font-bold text-yellow-400">$113,059.70</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">累计收益</div>
+                <div class="text-2xl font-bold text-green-400">+$13,059.70</div>
+                <div class="text-green-400 text-sm">+13.06%</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">可用现金</div>
+                <div class="text-2xl font-bold">$50,000.03</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">持仓市值</div>
+                <div class="text-2xl font-bold">$63,059.67</div>
             </div>
         </div>
 
-        <!-- Positions -->
+        <!-- Positions Table -->
         <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
-            <h2 class="text-xl font-bold mb-4">📊 当前持仓</h2>
+            <h2 class="text-xl font-bold mb-4 text-yellow-400">📊 当前持仓</h2>
             <div class="overflow-x-auto">
-                <table class="w-full">
+                <table class="w-full text-sm">
                     <thead>
-                        <tr class="text-left text-gray-400 border-b border-gray-700">
-                            <th class="pb-3">标的</th>
-                            <th class="pb-3">股数</th>
-                            <th class="pb-3">成本价</th>
-                            <th class="pb-3">现价</th>
-                            <th class="pb-3">市值</th>
-                            <th class="pb-3">持仓盈亏</th>
-                            <th class="pb-3">今日涨跌</th>
+                        <tr class="text-gray-400 text-left">
+                            <th class="py-2 px-4">标的</th>
+                            <th class="py-2 px-4">成本价</th>
+                            <th class="py-2 px-4">现价</th>
+                            <th class="py-2 px-4">持仓量</th>
+                            <th class="py-2 px-4">市值</th>
+                            <th class="py-2 px-4">持仓盈亏%</th>
+                            <th class="py-2 px-4">今日涨跌%</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3 font-bold">QQQ</td>
-                            <td class="py-3">25.99</td>
-                            <td class="py-3">$577.18</td>
-                            <td class="py-3">$678.50</td>
-                            <td class="py-3">$17,633.13</td>
-                            <td class="py-3 text-green-400">$2,633.15 (+17.55%)</td>
-                            <td class="py-3 text-green-400">📈 +0.49%</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3 font-bold">NVDA</td>
-                            <td class="py-3">86.01</td>
-                            <td class="py-3">$174.40</td>
-                            <td class="py-3">$198.45</td>
-                            <td class="py-3">$17,068.53</td>
-                            <td class="py-3 text-green-400">$2,068.53 (+13.79%)</td>
-                            <td class="py-3 text-green-400">📈 +0.49%</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3 font-bold">MSFT</td>
-                            <td class="py-3">54.03</td>
-                            <td class="py-3">$370.17</td>
-                            <td class="py-3">$418.20</td>
-                            <td class="py-3">$22,595.01</td>
-                            <td class="py-3 text-green-400">$2,595.02 (+12.98%)</td>
-                            <td class="py-3 text-green-400">📈 +1.63%</td>
-                        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-yellow-400">QQQ</td>
+            <td class="py-3 px-4">$577.18</td>
+            <td class="py-3 px-4">$731.20</td>
+            <td class="py-3 px-4">25.9884</td>
+            <td class="py-3 px-4">$19,002.72</td>
+            <td class="py-3 px-4 text-green-400">+26.68%</td>
+            <td class="py-3 px-4 text-red-400">-0.06%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-yellow-400">NVDA</td>
+            <td class="py-3 px-4">$174.40</td>
+            <td class="py-3 px-4">$241.00</td>
+            <td class="py-3 px-4">86.0092</td>
+            <td class="py-3 px-4">$20,728.22</td>
+            <td class="py-3 px-4 text-green-400">+38.19%</td>
+            <td class="py-3 px-4 text-green-400">+1.94%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-yellow-400">MSFT</td>
+            <td class="py-3 px-4">$370.17</td>
+            <td class="py-3 px-4">$431.78</td>
+            <td class="py-3 px-4">54.0292</td>
+            <td class="py-3 px-4">$23,328.73</td>
+            <td class="py-3 px-4 text-green-400">+16.64%</td>
+            <td class="py-3 px-4 text-green-400">+0.50%</td>
+        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Performance Chart -->
+        <!-- Chart -->
         <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
-            <h2 class="text-xl font-bold mb-4">📈 收益曲线</h2>
-            <canvas id="performanceChart" height="100"></canvas>
+            <h2 class="text-xl font-bold mb-4 text-yellow-400">📈 资产走势</h2>
+            <canvas id="portfolioChart" height="100"></canvas>
         </div>
 
-        <!-- Trade History -->
-        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h2 class="text-xl font-bold mb-4">📝 交易记录</h2>
-            <div class="space-y-2">
-                <div class="flex justify-between items-center py-2 border-b border-gray-700">
-                    <span class="text-gray-400">2026-04-01</span>
-                    <span>🚀 账户初始化</span>
-                    <span class="font-bold">$100,000.00</span>
-                </div>
-                <div class="flex justify-between items-center py-2 border-b border-gray-700">
-                    <span class="text-gray-400">2026-04-01</span>
-                    <span>🟢 买入 QQQ × 25.99</span>
-                    <span class="font-bold"><span class='text-green-400'>-$14,999.98</span></span>
-                </div>
-                <div class="flex justify-between items-center py-2 border-b border-gray-700">
-                    <span class="text-gray-400">2026-04-01</span>
-                    <span>🟢 买入 NVDA × 86.01</span>
-                    <span class="font-bold"><span class='text-green-400'>-$15,000.00</span></span>
-                </div>
-                <div class="flex justify-between items-center py-2 border-b border-gray-700">
-                    <span class="text-gray-400">2026-04-01</span>
-                    <span>🟢 买入 MSFT × 54.03</span>
-                    <span class="font-bold"><span class='text-green-400'>-$19,999.99</span></span>
-                </div>
-            </div>
-        </div>
-
-        <footer class="mt-8 text-center text-gray-500 text-sm">
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-8">
             <p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
-            <p class="mt-1">数据仅供参考，投资有风险，入市需谨慎</p>
+            <p class="mt-1">上海巴菲特 · 万能小汪分身 🐕</p>
         </footer>
     </div>
 
     <script>
-        // Performance Chart
-        const ctx = document.getElementById('performanceChart').getContext('2d');
-        const chartData = {
-            labels: ["2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01"],
-            datasets: [{
-                label: '总资产',
-                data: [100258.2, 100453.59, 100639.8, 100546.99, 100729.31, 101327.78, 101602.89, 102142.49, 102142.49, 103040.21, 104056.47, 106404.03, 106864.8, 106767.76, 107765.68, 106562.91, 108055.21, 108845.44, 108550.6, 108062.01, 106550.41, 107217.71],
-                borderColor: '#10b981',
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                fill: true,
-                tension: 0.4
-            }]
-        };
-        
+        const ctx = document.getElementById('portfolioChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
-            data: chartData,
+            data: {
+                labels: ["2026-04-17", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-13", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04"],
+                datasets: [{
+                    label: '总资产 ($)',
+                    data: [106864.8, 106767.76, 107765.68, 106562.91, 108055.21, 108845.44, 108550.6, 108062.01, 106550.41, 107217.71, 107296.7, 106772.28, 108323.2, 108674.96, 108641.57, 108966.57, 107921.06, 110019.35, 110276.71, 109759.03, 110565.11, 111019.62, 111703.21, 112352.96, 112238.44, 111504.96, 111595.87, 112095.76, 113515.18, 114175.04, 112560.18, 113059.7],
+                    borderColor: '#EAB308',
+                    backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 3,
+                }]
+            },
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { display: false }
+                    legend: { labels: { color: '#9CA3AF' } },
+                    tooltip: {
+                        callbacks: {
+                            label: (ctx) => `${ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits:2})}`
+                        }
+                    }
                 },
                 scales: {
-                    y: {
-                        beginAtZero: false,
-                        grid: { color: '#374151' },
-                        ticks: { color: '#9ca3af' }
-                    },
-                    x: {
-                        grid: { display: false },
-                        ticks: { color: '#9ca3af' }
-                    }
+                    x: { ticks: { color: '#6B7280', maxTicksLimit: 10 }, grid: { color: '#374151' } },
+                    y: { ticks: { color: '#6B7280', callback: v => '$'+v.toLocaleString() }, grid: { color: '#374151' } }
                 }
             }
         });
