@@ -1,0 +1,3 @@
+{"qid":"2067470081067372591","url":"https://wenshu-s3.sankuai.com/v2/wsjr_898/T20260618_125053_04572_7r3kc.csv?AWSAccessKeyId=SRV_STkYgII727423zKqISimZLlxREvY4nQL&Expires=1781761866&Signature=YaG3PFD67MY31nwXxpedMkuNxo%3D","totalRows":1,"materialKey":"342919025932660736"}
+{"columns":["avg_total_session","avg_ai_session","session_coverage_pct","msg_coverage_pct","ics_open_session_pct"]}
+{"avg_ai_session":"107692.0","avg_total_session":"145756.0","ics_open_session_pct":"85.19","msg_coverage_pct":"22.85","session_coverage_pct":"73.89"}

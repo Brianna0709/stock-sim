@@ -1,0 +1,3 @@
+{"qid":"2067470203046314035","url":"https://wenshu-s3.sankuai.com/v2/wsjr_898/T20260618_125122_04610_36atm.csv?AWSAccessKeyId=SRV_STkYgII727423zKqISimZLlxREvY4nQL&Expires=1781761895&Signature=kz1HfBCr%2Bqk%2B2uwqq%2B0I5ca6j0o%3D","totalRows":1,"materialKey":"342919145721982976"}
+{"columns":["segment","total_hosts","smart_reply_hosts","usage_rate_pct"]}
+{"segment":"有在线房源的房东","smart_reply_hosts":"148360","total_hosts":"383230","usage_rate_pct":"38.71"}

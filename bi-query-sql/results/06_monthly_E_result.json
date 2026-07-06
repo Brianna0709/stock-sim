@@ -1,0 +1,3 @@
+{"qid":"2067470570375381065","url":"https://wenshu-s3.sankuai.com/v2/wsjr_898/T20260618_125250_04682_3kbid.csv?AWSAccessKeyId=SRV_STkYgII727423zKqISimZLlxREvY4nQL&Expires=1781761993&Signature=0s4XmCLyHFxNDvXIyDV%2B7BM8n0Q%3D","totalRows":1,"materialKey":"342919559469101056"}
+{"columns":["host_survey_total","ai_reply_total","error_rate_pct"]}
+{"ai_reply_total":"8886812","error_rate_pct":"0.18","host_survey_total":"16248"}

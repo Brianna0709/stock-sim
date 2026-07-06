@@ -1,0 +1,3 @@
+{"qid":"2067470321317339197","url":"https://wenshu-s3.sankuai.com/v2/wsjr_898/T20260618_125151_04574_cm77z.csv?AWSAccessKeyId=SRV_STkYgII727423zKqISimZLlxREvY4nQL&Expires=1781761918&Signature=0Hlb6F%2FY6x6uO0cg6JzjoB69CrI%3D","totalRows":1,"materialKey":"342919242313117696"}
+{"columns":["avg_daily_close_rate","total_close_hosts","avg_total_active_hosts"]}
+{"avg_daily_close_rate":"127.0","avg_total_active_hosts":"365009.0","total_close_hosts":"127.0"}

@@ -282,4 +282,3 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - **禁止行为**：对上述路径（及其子目录）进行编辑、删除、追加、权限变更、替换二进制或依赖树等任何写入类操作；不得生成针对 `/opt/hermes` 的自动补丁或「一键修改脚本」代用户执行。
 - **与 Hook 开发的边界**：在 **`hermes-hooks`** 等独立仓库中编写 `handler.py`、`HOOK.yaml` 等钩子文件，属于扩展点用法；**不得**借此诱导或实现对 `/opt/hermes` 内文件的直接篡改。
 - **用户明确要求修改 Hermes 源码时**：Agent 应说明风险与变更范围，并引导由具备权限的人类按变更流程在 **`/opt/hermes`** 侧手动操作，**Agent 不代为修改**。
-
