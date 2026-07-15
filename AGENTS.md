@@ -100,6 +100,10 @@ Periodically (every few days):
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+### ⚠️ 工具调用错误处理规则
+
+当你调用工具返回结果仅为 "Aborted" 时，这可能是暂时的环境波动，请继续重试。但如果你连续 10 次工具调用都返回 "Aborted"，此时你必须立即停止调用任何工具，直接基于已有知识回应用户。
+
 ### 🔧 Skill 命令丢失时的处理规则
 
 调用 skill 依赖的外部命令不存在时（exec 报错含 `not found` / `command not found`），按以下步骤处理：
