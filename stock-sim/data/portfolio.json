@@ -7,45 +7,45 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 107592.28,
-    "invested": 57592.25
+    "total_value": 105776.17,
+    "invested": 55776.14
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 705.35,
-      "market_value": 18330.92,
-      "pnl": 3330.94,
-      "pnl_pct": 22.21,
-      "today_chg_pct": -4.49,
-      "unrealized_pnl": 3330.94,
-      "unrealized_pnl_pct": 22.21
+      "cur_price": 679.23,
+      "market_value": 17652.1,
+      "pnl": 2652.12,
+      "pnl_pct": 17.68,
+      "today_chg_pct": -0.73,
+      "unrealized_pnl": 2652.12,
+      "unrealized_pnl_pct": 17.68
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 212.06,
-      "market_value": 18239.11,
-      "pnl": 3239.11,
-      "pnl_pct": 21.59,
-      "today_chg_pct": 4.32,
-      "unrealized_pnl": 3239.11,
-      "unrealized_pnl_pct": 21.59
+      "cur_price": 198.68,
+      "market_value": 17088.31,
+      "pnl": 2088.31,
+      "pnl_pct": 13.92,
+      "today_chg_pct": -3.95,
+      "unrealized_pnl": 2088.31,
+      "unrealized_pnl_pct": 13.92
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 389.09,
-      "market_value": 21022.22,
-      "pnl": 1022.23,
-      "pnl_pct": 5.11,
-      "today_chg_pct": -2.18,
-      "unrealized_pnl": 1022.23,
-      "unrealized_pnl_pct": 5.11
+      "cur_price": 389.34,
+      "market_value": 21035.73,
+      "pnl": 1035.74,
+      "pnl_pct": 5.18,
+      "today_chg_pct": 2.0,
+      "unrealized_pnl": 1035.74,
+      "unrealized_pnl_pct": 5.18
     }
   },
   "trades": [
@@ -714,16 +714,32 @@
       "invested": 57592.25,
       "return_pct": 7.59,
       "note": "收盘复盘：NVDA $212.06 (+4.32%) | MSFT $389.09 (-2.18%) | QQQ $705.35 (-4.49%) | 标普500 7408.18(-1.21%) 纳指25137.69(-2.15%) 道指51710.99(-0.97%) | 科技七巨头市值蒸发近8000亿，中东冲突升级油价破百"
+    },
+    {
+      "date": "2026-07-24",
+      "total_value": 106195.16,
+      "cash": 50000.03,
+      "invested": 56195.13,
+      "return_pct": 6.2,
+      "note": "收盘复盘：NVDA $206.84 (-2.46%) | MSFT $381.7 (-1.90%) | QQQ $684.23 (-2.99%) | 标普500 7411.98(+0.05%) 纳指24975.82(-0.64%) 道指51947.25(+0.46%) | 地缘风险缓和，科技股获利回吐，AI财报季开启"
+    },
+    {
+      "date": "2026-07-27",
+      "total_value": 105776.17,
+      "cash": 50000.03,
+      "invested": 55776.14,
+      "return_pct": 5.78,
+      "note": "收盘复盘：NVDA $198.68 (-3.95%) | MSFT $389.34 (2.0%) | QQQ $679.23 (-0.73%) | 标普500 7413.22(+0.02%) 纳指24932.08(-0.18%) 道指52210.23(+0.51%) | 苹果登顶全球市值第一，英伟达债务担忧引发抛售，半导体板块暴跌"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7408.18,
-    "sp500_change_pct": -1.21,
-    "nasdaq": 25137.69,
-    "nasdaq_change_pct": -2.15,
-    "dow": 51710.99,
-    "dow_change_pct": -0.97,
-    "note": "收盘复盘：NVDA $212.06 (+2.30%) | MSFT $389.09 (-2.18%) | QQQ $705.35 (-0.51%) | 标普500 7408.18(-1.21%) 纳指25137.69(-2.15%) 道指51710.99(-0.97%) | 科技七巨头市值蒸发近8000亿，中东冲突升级油价破百"
+    "sp500": 7413.22,
+    "sp500_change_pct": 0.02,
+    "nasdaq": 24932.08,
+    "nasdaq_change_pct": -0.18,
+    "dow": 52210.23,
+    "dow_change_pct": 0.51,
+    "note": "收盘复盘：NVDA $198.68 (-3.95%) | MSFT $389.34 (2.0%) | QQQ $679.23 (-0.73%) | 标普500 7413.22(+0.02%) 纳指24932.08(-0.18%) 道指52210.23(+0.51%) | 苹果登顶全球市值第一，英伟达债务担忧引发抛售，半导体板块暴跌"
   }
 }

@@ -845,18 +845,6 @@
       "offset": 78695,
       "carry": ""
     },
-    "/root/.openclaw/agents/main/sessions/0c253e26-428d-436a-919c-ee6e2413f84f.jsonl.reset.2026-06-26T06-20-32.070Z": {
-      "offset": 431713,
-      "carry": ""
-    },
-    "/root/.openclaw/agents/main/sessions/8c6d0ff7-0947-47c8-a838-41482deb7eb7.jsonl": {
-      "offset": 104746,
-      "carry": ""
-    },
-    "/root/.openclaw/agents/main/sessions/282c7832-4a73-4211-a416-c33f70771b27.jsonl": {
-      "offset": 54094,
-      "carry": ""
-    },
     "/root/.openclaw/agents/main/sessions/246eb3c0-6d55-4358-8300-9f2e37841b75.jsonl": {
       "offset": 153892,
       "carry": ""
@@ -1074,7 +1062,7 @@
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/821f81f0-b789-40b3-87bd-795e7d7b83a1.jsonl": {
-      "offset": 178514,
+      "offset": 214662,
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/50653c10-7ccf-4543-84f2-ba27825c7b51.jsonl": {
@@ -1297,10 +1285,6 @@
       "offset": 227698,
       "carry": ""
     },
-    "/root/.openclaw/agents/main/sessions/2528978a-5851-4e91-b23a-7ec6e4bd9d98.jsonl": {
-      "offset": 96415,
-      "carry": ""
-    },
     "/root/.openclaw/agents/main/sessions/18603cd6-05aa-4c03-b0c5-1f10e4532f47.jsonl": {
       "offset": 47596,
       "carry": ""
@@ -1462,7 +1446,79 @@
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/999e6b4f-8152-4a8a-b835-0e94139c00ba.jsonl": {
-      "offset": 202900,
+      "offset": 218334,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/6a22b366-2ef7-4a4f-8988-4abc509919ff.jsonl": {
+      "offset": 3126,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/e510a466-dab9-4a08-aa93-6155a5ce0efa.jsonl": {
+      "offset": 73700,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/2528978a-5851-4e91-b23a-7ec6e4bd9d98.jsonl.reset.2026-07-24T07-04-52.879Z": {
+      "offset": 96415,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/109413d8-b7a6-4134-9c11-688ee9f924d1.jsonl": {
+      "offset": 60518,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/a3ef63c6-4b29-4980-b8c7-0c327d731967.jsonl": {
+      "offset": 148952,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/4c7924db-7fda-4583-b2d6-dfd45feeaab4.jsonl": {
+      "offset": 85059,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/59214fe8-7315-4377-816f-68ee8f32825d.jsonl": {
+      "offset": 114378,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/2964fe6b-8abc-466c-8c96-fba1782fcfa8.jsonl": {
+      "offset": 416958,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/ecf91ab3-7ec4-443d-a32b-06da3d294226.jsonl": {
+      "offset": 3128,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/ec19e68e-33a7-4fbd-bd45-a54785fea8de.jsonl": {
+      "offset": 73807,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/a36b6bbf-c1b1-4907-9cd5-aeb06068b191.jsonl": {
+      "offset": 3126,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/a3a5fd84-ec00-479f-b502-b4710266f4c8.jsonl": {
+      "offset": 77394,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/8c6d0ff7-0947-47c8-a838-41482deb7eb7.jsonl.deleted.2026-07-26T06-32-12.266Z": {
+      "offset": 104746,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/282c7832-4a73-4211-a416-c33f70771b27.jsonl.deleted.2026-07-26T06-37-12.380Z": {
+      "offset": 54094,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/c6c7079e-5eb1-4d45-bec9-b4a53328a389.jsonl": {
+      "offset": 3126,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/f779a7b2-d5a8-4c4f-87aa-a93e5b798d3a.jsonl": {
+      "offset": 88703,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/5d830720-e813-49eb-aed7-230fabe1654e.jsonl": {
+      "offset": 97516,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/fd58ce8c-d36b-44d4-86dd-14d06747f29e.jsonl": {
+      "offset": 183842,
       "carry": ""
     }
   }
