@@ -7,45 +7,45 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 105776.17,
-    "invested": 55776.14
+    "total_value": 104874.89,
+    "invested": 54874.86
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 679.23,
-      "market_value": 17652.1,
-      "pnl": 2652.12,
-      "pnl_pct": 17.68,
-      "today_chg_pct": -0.73,
-      "unrealized_pnl": 2652.12,
-      "unrealized_pnl_pct": 17.68
+      "cur_price": 664.5,
+      "market_value": 17269.29,
+      "pnl": 2269.31,
+      "pnl_pct": 15.13,
+      "today_chg_pct": -1.74,
+      "unrealized_pnl": 2269.31,
+      "unrealized_pnl_pct": 15.13
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 198.68,
-      "market_value": 17088.31,
-      "pnl": 2088.31,
-      "pnl_pct": 13.92,
-      "today_chg_pct": -3.95,
-      "unrealized_pnl": 2088.31,
-      "unrealized_pnl_pct": 13.92
+      "cur_price": 189.53,
+      "market_value": 16301.32,
+      "pnl": 1301.32,
+      "pnl_pct": 8.68,
+      "today_chg_pct": -3.55,
+      "unrealized_pnl": 1301.32,
+      "unrealized_pnl_pct": 8.68
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 389.34,
-      "market_value": 21035.73,
-      "pnl": 1035.74,
-      "pnl_pct": 5.18,
-      "today_chg_pct": 2.0,
-      "unrealized_pnl": 1035.74,
-      "unrealized_pnl_pct": 5.18
+      "cur_price": 394.31,
+      "market_value": 21304.25,
+      "pnl": 1304.26,
+      "pnl_pct": 6.52,
+      "today_chg_pct": -0.71,
+      "unrealized_pnl": 1304.26,
+      "unrealized_pnl_pct": 6.52
     }
   },
   "trades": [
@@ -730,16 +730,32 @@
       "invested": 55776.14,
       "return_pct": 5.78,
       "note": "收盘复盘：NVDA $198.68 (-3.95%) | MSFT $389.34 (2.0%) | QQQ $679.23 (-0.73%) | 标普500 7413.22(+0.02%) 纳指24932.08(-0.18%) 道指52210.23(+0.51%) | 苹果登顶全球市值第一，英伟达债务担忧引发抛售，半导体板块暴跌"
+    },
+    {
+      "date": "2026-07-28",
+      "total_value": 105933.5,
+      "cash": 50000.03,
+      "invested": 55933.47,
+      "return_pct": 5.93,
+      "note": "收盘复盘：NVDA $196.51 (-4.99%) | MSFT $397.13 (+2.00%) | QQQ $676.27 (-0.44%) | 标普500 7428.78(+0.21%) 纳指24876.91(-0.22%) 道指52747.32(+1.03%) | 苹果登顶全球市值第一，英伟达大跌5%创最大单日跌幅，费城半导体指数入熊"
+    },
+    {
+      "date": "2026-07-29",
+      "total_value": 104874.89,
+      "cash": 50000.03,
+      "invested": 54874.86,
+      "return_pct": 4.87,
+      "note": "收盘复盘：NVDA $189.53 (-3.55%) | MSFT $394.31 (-0.71%) | QQQ $664.5 (-1.74%) | 标普500 7316.15(-1.52%) 纳指24442.94(-1.74%) 道指51594.14(-2.19%) | 美联储维持利率不变，特朗普称将打击伊朗油价飙涨，芯片股全线暴跌费城半导体指数跌5.33%"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7413.22,
-    "sp500_change_pct": 0.02,
-    "nasdaq": 24932.08,
-    "nasdaq_change_pct": -0.18,
-    "dow": 52210.23,
-    "dow_change_pct": 0.51,
-    "note": "收盘复盘：NVDA $198.68 (-3.95%) | MSFT $389.34 (2.0%) | QQQ $679.23 (-0.73%) | 标普500 7413.22(+0.02%) 纳指24932.08(-0.18%) 道指52210.23(+0.51%) | 苹果登顶全球市值第一，英伟达债务担忧引发抛售，半导体板块暴跌"
+    "sp500": 7316.15,
+    "sp500_change_pct": -1.52,
+    "nasdaq": 24442.94,
+    "nasdaq_change_pct": -1.74,
+    "dow": 51594.14,
+    "dow_change_pct": -2.19,
+    "note": "收盘复盘：NVDA $189.53 (-3.55%) | MSFT $394.31 (-0.71%) | QQQ $664.5 (-1.74%) | 标普500 7316.15(-1.52%) 纳指24442.94(-1.74%) 道指51594.14(-2.19%) | 美联储维持利率不变，特朗普称将打击伊朗油价飙涨，芯片股全线暴跌费城半导体指数跌5.33%"
   }
 }
