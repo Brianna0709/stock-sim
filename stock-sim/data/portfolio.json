@@ -7,45 +7,45 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 104874.89,
-    "invested": 54874.86
+    "total_value": 109137.91,
+    "invested": 59137.88
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 664.5,
-      "market_value": 17269.29,
-      "pnl": 2269.31,
-      "pnl_pct": 15.13,
-      "today_chg_pct": -1.74,
-      "unrealized_pnl": 2269.31,
-      "unrealized_pnl_pct": 15.13
+      "cur_price": 682.0,
+      "market_value": 17724.09,
+      "pnl": 2724.11,
+      "pnl_pct": 18.16,
+      "today_chg_pct": 2.63,
+      "unrealized_pnl": 2724.11,
+      "unrealized_pnl_pct": 18.16
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 189.53,
-      "market_value": 16301.32,
-      "pnl": 1301.32,
-      "pnl_pct": 8.68,
-      "today_chg_pct": -3.55,
-      "unrealized_pnl": 1301.32,
-      "unrealized_pnl_pct": 8.68
+      "cur_price": 196.65,
+      "market_value": 16913.71,
+      "pnl": 1913.71,
+      "pnl_pct": 12.76,
+      "today_chg_pct": 3.76,
+      "unrealized_pnl": 1913.71,
+      "unrealized_pnl_pct": 12.76
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 394.31,
-      "market_value": 21304.25,
-      "pnl": 1304.26,
-      "pnl_pct": 6.52,
-      "today_chg_pct": -0.71,
-      "unrealized_pnl": 1304.26,
-      "unrealized_pnl_pct": 6.52
+      "cur_price": 453.46,
+      "market_value": 24500.08,
+      "pnl": 4500.09,
+      "pnl_pct": 22.5,
+      "today_chg_pct": 15.0,
+      "unrealized_pnl": 4500.09,
+      "unrealized_pnl_pct": 22.5
     }
   },
   "trades": [
@@ -746,16 +746,24 @@
       "invested": 54874.86,
       "return_pct": 4.87,
       "note": "收盘复盘：NVDA $189.53 (-3.55%) | MSFT $394.31 (-0.71%) | QQQ $664.5 (-1.74%) | 标普500 7316.15(-1.52%) 纳指24442.94(-1.74%) 道指51594.14(-2.19%) | 美联储维持利率不变，特朗普称将打击伊朗油价飙涨，芯片股全线暴跌费城半导体指数跌5.33%"
+    },
+    {
+      "date": "2026-07-30",
+      "total_value": 109137.91,
+      "cash": 50000.03,
+      "invested": 59137.88,
+      "return_pct": 9.14,
+      "note": "收盘复盘：NVDA $196.65 (+3.76%) | MSFT $453.46 (+15.0%) | QQQ $682.0 (+2.63%) | 标普500 7438(+1.67%) 道指52208(+1.19%) 纳指25122(+2.78%) | 微软财报大超预期Azure云业务爆发，科技股暴力反弹"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7316.15,
-    "sp500_change_pct": -1.52,
-    "nasdaq": 24442.94,
-    "nasdaq_change_pct": -1.74,
-    "dow": 51594.14,
-    "dow_change_pct": -2.19,
-    "note": "收盘复盘：NVDA $189.53 (-3.55%) | MSFT $394.31 (-0.71%) | QQQ $664.5 (-1.74%) | 标普500 7316.15(-1.52%) 纳指24442.94(-1.74%) 道指51594.14(-2.19%) | 美联储维持利率不变，特朗普称将打击伊朗油价飙涨，芯片股全线暴跌费城半导体指数跌5.33%"
+    "sp500": 7438,
+    "sp500_change_pct": 1.67,
+    "nasdaq": 25122,
+    "nasdaq_change_pct": 2.78,
+    "dow": 52208,
+    "dow_change_pct": 1.19,
+    "note": "收盘复盘：NVDA $196.65 (+3.76%) | MSFT $453.46 (+15.0%) | QQQ $682.0 (+2.63%) | 标普500 7438(+1.67%) 道指52208(+1.19%) 纳指25122(+2.78%) | 微软财报大超预期Azure云业务爆发，科技股暴力反弹"
   }
 }
