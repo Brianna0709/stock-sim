@@ -7,45 +7,45 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 109137.91,
-    "invested": 59137.88
+    "total_value": 113187.16,
+    "invested": 63187.13
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 682.0,
-      "market_value": 17724.09,
-      "pnl": 2724.11,
-      "pnl_pct": 18.16,
-      "today_chg_pct": 2.63,
-      "unrealized_pnl": 2724.11,
-      "unrealized_pnl_pct": 18.16
+      "cur_price": 710.0,
+      "market_value": 18451.76,
+      "pnl": 3006.6,
+      "pnl_pct": 20.04,
+      "today_chg_pct": 2.47,
+      "unrealized_pnl": 3451.78,
+      "unrealized_pnl_pct": 23.01
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 196.65,
-      "market_value": 16913.71,
-      "pnl": 1913.71,
-      "pnl_pct": 12.76,
-      "today_chg_pct": 3.76,
-      "unrealized_pnl": 1913.71,
-      "unrealized_pnl_pct": 12.76
+      "cur_price": 210.55,
+      "market_value": 18109.24,
+      "pnl": 2398.8,
+      "pnl_pct": 15.99,
+      "today_chg_pct": 4.08,
+      "unrealized_pnl": 3109.24,
+      "unrealized_pnl_pct": 20.73
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 453.46,
-      "market_value": 24500.08,
-      "pnl": 4500.09,
-      "pnl_pct": 22.5,
-      "today_chg_pct": 15.0,
-      "unrealized_pnl": 4500.09,
-      "unrealized_pnl_pct": 22.5
+      "cur_price": 492.81,
+      "market_value": 26626.13,
+      "pnl": 6454.33,
+      "pnl_pct": 32.27,
+      "today_chg_pct": 0.65,
+      "unrealized_pnl": 6626.14,
+      "unrealized_pnl_pct": 33.13
     }
   },
   "trades": [
@@ -754,16 +754,40 @@
       "invested": 59137.88,
       "return_pct": 9.14,
       "note": "收盘复盘：NVDA $196.65 (+3.76%) | MSFT $453.46 (+15.0%) | QQQ $682.0 (+2.63%) | 标普500 7438(+1.67%) 道指52208(+1.19%) 纳指25122(+2.78%) | 微软财报大超预期Azure云业务爆发，科技股暴力反弹"
+    },
+    {
+      "date": "2026-07-31",
+      "total_value": 109048.64,
+      "cash": 50000.03,
+      "invested": 59048.61,
+      "return_pct": 9.05,
+      "note": "收盘复盘：NVDA $195.04 (+2.65%) | MSFT $451.10 (+15.51%) | QQQ $688.80 (+1.00%) | 标普500 7489.72(+0.70%) 道指52485.03(+0.53%) 纳指25373.85(+1.00%) | 微软财报超预期Azure爆发，科技股延续反弹"
+    },
+    {
+      "date": "2026-08-03",
+      "total_value": 111859.73,
+      "cash": 50000.03,
+      "invested": 61859.7,
+      "return_pct": 11.86,
+      "note": "收盘复盘：NVDA $202.29 (+3.71%) | MSFT $489.63 (+8.54%) | QQQ $692.87 (+0.59%) | 标普500 7600.48(+1.48%) 道指53178.17(+1.32%) 纳指25913.90(+2.13%) | 微软财报爆发Azure超预期，科技七姐妹集体暴涨，近6年最大买盘突现"
+    },
+    {
+      "date": "2026-08-04",
+      "total_value": 113187.16,
+      "cash": 50000.03,
+      "invested": 63187.13,
+      "return_pct": 13.19,
+      "note": "收盘复盘：NVDA $210.55 (+4.08%) | MSFT $492.81 (+0.65%) | QQQ $710.0 (+2.47%) | 标普500 +2.01% 道指+2.04% 纳指+2.75% | 芯片半导体全线爆发，道指标普创新高"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7438,
-    "sp500_change_pct": 1.67,
-    "nasdaq": 25122,
-    "nasdaq_change_pct": 2.78,
-    "dow": 52208,
-    "dow_change_pct": 1.19,
-    "note": "收盘复盘：NVDA $196.65 (+3.76%) | MSFT $453.46 (+15.0%) | QQQ $682.0 (+2.63%) | 标普500 7438(+1.67%) 道指52208(+1.19%) 纳指25122(+2.78%) | 微软财报大超预期Azure云业务爆发，科技股暴力反弹"
+    "sp500": 7753.25,
+    "sp500_change_pct": 2.01,
+    "nasdaq": 26626.53,
+    "nasdaq_change_pct": 2.75,
+    "dow": 54263.0,
+    "dow_change_pct": 2.04,
+    "note": "收盘复盘：NVDA $210.55 (+4.08%) | MSFT $492.81 (+0.65%) | QQQ $710.0 (+2.47%) | 标普500 +2.01% 道指+2.04% 纳指+2.75% | 芯片半导体全线爆发，道指标普创新高"
   }
 }
