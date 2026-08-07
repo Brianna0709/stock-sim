@@ -100,7 +100,7 @@ html = f'''<!DOCTYPE html>
             </div>
         </div>
         <div class="bg-gray-800 rounded-lg p-3 mb-8 border border-gray-700 text-sm text-gray-400">
-            📰 {mc['note']}
+            📰 {mc.get('note', '科技股分化：道指续创新高，纳指回调')}
         </div>
 
         <!-- Account Summary -->

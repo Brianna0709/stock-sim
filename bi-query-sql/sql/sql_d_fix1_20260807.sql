@@ -1,0 +1,1 @@
+SHOW PARTITIONS origindb_ss.hotel_ia_phx_user__phx_auto_reply_msg_survey;
