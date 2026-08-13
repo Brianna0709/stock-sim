@@ -1,90 +1,108 @@
-#!/usr/bin/env python3
-"""Update portfolio.json with today's closing prices and recalculate metrics."""
-import json
-import os
-from datetime import datetime, timedelta
+import json, datetime
 
-BASE = '/root/.openclaw/workspace/stock-sim'
-DATA = os.path.join(BASE, 'data', 'portfolio.json')
+# 读取现有portfolio
+with open('/root/.openclaw/workspace/stock-sim/data/portfolio.json', 'r') as f:
+    data = json.load(f)
 
-def load():
-    with open(DATA, 'r') as f:
-        return json.load(f)
+# 8月13日收盘价
+prices = {
+    'QQQ': 721.80,
+    'NVDA': 225.50,
+    'MSFT': 502.50
+}
 
-def save(d):
-    with open(DATA, 'w') as f:
-        json.dump(d, f, indent=2)
+# 前一日收盘价（portfolio中的cur_price）
+prev_prices = {
+    'QQQ': data['positions']['QQQ']['cur_price'],
+    'NVDA': data['positions']['NVDA']['cur_price'],
+    'MSFT': data['positions']['MSFT']['cur_price']
+}
 
-def update_portfolio(today_prices, index_data, note):
-    d = load()
-    
-    # Update positions
-    total_invested = 0
-    for ticker, price in today_prices.items():
-        if ticker in d['positions']:
-            p = d['positions'][ticker]
-            prev_price = p['cur_price']
-            p['cur_price'] = price
-            p['market_value'] = p['shares'] * price
-            p['pnl'] = p['market_value'] - p['cost_basis']
-            p['pnl_pct'] = (p['pnl'] / p['cost_basis']) * 100
-            p['today_chg_pct'] = ((price - prev_price) / prev_price) * 100
-            total_invested += p['market_value']
-    
-    # Update account
-    d['account']['invested'] = total_invested
-    d['account']['total_value'] = d['account']['cash'] + total_invested
-    
-    # Update market context
-    d['market_context'] = {
-        'sp500': index_data['sp500'],
-        'sp500_change_pct': index_data['sp500_change_pct'],
-        'nasdaq': index_data['nasdaq'],
-        'nasdaq_change_pct': index_data['nasdaq_change_pct'],
-        'dow': index_data['dow'],
-        'dow_change_pct': index_data['dow_change_pct'],
-        'note': note
-    }
-    
-    # Add snapshot
-    return_pct = (d['account']['total_value'] - d['meta']['initial_capital']) / d['meta']['initial_capital'] * 100
-    snapshot = {
-        'date': index_data['date'],
-        'total_value': round(d['account']['total_value'], 2),
-        'cash': d['account']['cash'],
-        'invested': round(d['account']['invested'], 2),
-        'return_pct': round(return_pct, 2),
-        'note': note
-    }
-    d['snapshots'].append(snapshot)
-    
-    save(d)
-    return d
+print("=== 前一日价格 ===")
+for k, v in prev_prices.items():
+    print(f"  {k}: ${v}")
 
-if __name__ == '__main__':
-    # 2026-07-02 data (based on market analysis)
-    today_prices = {
-        'NVDA': 198.5,
-        'MSFT': 372.5,
-        'QQQ': 734.5
-    }
+print("\n=== 8月13日收盘价 ===")
+for k, v in prices.items():
+    chg = (v - prev_prices[k]) / prev_prices[k] * 100
+    print(f"  {k}: ${v} ({'+' if chg>=0 else ''}{chg:.2f}%)")
+
+# 更新每个持仓
+total_market_value = 0
+total_cost = 0
+daily_pnl = 0
+
+for symbol in ['QQQ', 'NVDA', 'MSFT']:
+    pos = data['positions'][symbol]
+    new_price = prices[symbol]
+    old_price = prev_prices[symbol]
     
-    index_data = {
-        'date': '2026-07-02',
-        'sp500': 7510.0,
-        'sp500_change_pct': 0.14,
-        'nasdaq': 26200.0,
-        'nasdaq_change_pct': 0.00,
-        'dow': 52400.0,
-        'dow_change_pct': 0.15
-    }
+    shares = pos['shares']
+    cost_price = pos['cost_price']
     
-    note = "收盘复盘：NVDA $198.5 (-0.80%) | MSFT $372.5 (+0.16%) | QQQ $734.5 (-0.08%) | 标普500 7510.0(+0.14%) 道指52400.0(+0.15%) 纳指26200.0(0.00%) | 假期前市场交投清淡，芯片股高开低走小幅回调"
+    market_value = round(shares * new_price, 2)
+    cost_basis = round(shares * cost_price, 2)
+    unrealized_pnl = round(market_value - cost_basis, 2)
+    unrealized_pnl_pct = round((unrealized_pnl / cost_basis) * 100, 2)
     
-    d = update_portfolio(today_prices, index_data, note)
+    daily_change_pct = round((new_price - old_price) / old_price * 100, 2)
+    daily_pnl_change = round(shares * (new_price - old_price), 2)
     
-    print(f"Portfolio updated for {index_data['date']}")
-    print(f"Total value: ${d['account']['total_value']:,.2f}")
-    print(f"Return: {(d['account']['total_value'] - 100000) / 100000 * 100:.2f}%")
-    for ticker, p in d['positions'].items():
-        print(f"  {ticker}: ${p['cur_price']:.2f} ({p['today_chg_pct']:+.2f}%) | PnL: {p['pnl_pct']:+.2f}%")
+    pos['cur_price'] = new_price
+    pos['market_value'] = market_value
+    pos['unrealized_pnl'] = unrealized_pnl
+    pos['unrealized_pnl_pct'] = unrealized_pnl_pct
+    
+    total_market_value += market_value
+    total_cost += cost_basis
+    daily_pnl += daily_pnl_change
+    
+    print(f"\n=== {symbol} ===")
+    print(f"  持仓: {shares} 股")
+    print(f"  成本: ${cost_price}")
+    print(f"  收盘: ${new_price}")
+    print(f"  市值: ${market_value}")
+    print(f"  盈亏: ${unrealized_pnl} ({unrealized_pnl_pct}%)")
+    print(f"  今日涨跌: {daily_change_pct}% (${daily_pnl_change})")
+
+# 更新账户级数据
+cash = data['account']['cash']
+total_value = round(cash + total_market_value, 2)
+initial_capital = 100000
+total_pnl = round(total_value - initial_capital, 2)
+total_pnl_pct = round((total_pnl / initial_capital) * 100, 2)
+
+data['account']['total_value'] = total_value
+data['account']['total_unrealized_pnl'] = round(total_market_value - total_cost, 2)
+data['account']['daily_pnl'] = round(daily_pnl, 2)
+
+# 更新快照日期
+today_str = "2026-08-13"
+data['account']['last_update'] = today_str
+
+# 更新快照
+if 'snapshots' not in data['account']:
+    data['account']['snapshots'] = []
+
+data['account']['snapshots'].append({
+    'date': today_str,
+    'total_value': total_value,
+    'cash': cash,
+    'market_value': round(total_market_value, 2),
+    'daily_pnl': round(daily_pnl, 2),
+    'total_pnl': total_pnl,
+    'total_pnl_pct': total_pnl_pct
+})
+
+print(f"\n=== 账户总结 ===")
+print(f"  现金: ${cash}")
+print(f"  持仓市值: ${round(total_market_value, 2)}")
+print(f"  总资产: ${total_value}")
+print(f"  累计收益: ${total_pnl} ({total_pnl_pct}%)")
+print(f"  今日盈亏: ${round(daily_pnl, 2)}")
+
+# 写入文件
+with open('/root/.openclaw/workspace/stock-sim/data/portfolio.json', 'w') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("\n✅ portfolio.json 已更新")
