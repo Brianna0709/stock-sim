@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 115303.2,
-    "invested": 64996.27,
-    "total_unrealized_pnl": 15303.2,
-    "daily_pnl": 306.89,
-    "last_update": "2026-08-13",
+    "total_value": 115131.27,
+    "invested": 65131.24,
+    "total_unrealized_pnl": 15131.27,
+    "daily_pnl": -171.93,
+    "last_update": "2026-08-14",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -21,6 +21,15 @@
         "daily_pnl": 306.89,
         "total_pnl": 15303.2,
         "total_pnl_pct": 15.3
+      },
+      {
+        "date": "2026-08-14",
+        "total_value": 115131.27,
+        "cash": 50000.03,
+        "market_value": 65131.24,
+        "daily_pnl": -171.93,
+        "total_pnl": 15131.27,
+        "total_pnl_pct": 15.13
       }
     ]
   },
@@ -29,37 +38,37 @@
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 721.8,
-      "market_value": 18758.43,
-      "pnl": 3612.39,
-      "pnl_pct": 24.08,
-      "today_chg_pct": -0.6,
-      "unrealized_pnl": 3758.45,
-      "unrealized_pnl_pct": 25.06
+      "cur_price": 731.07,
+      "market_value": 18999.34,
+      "pnl": 3999.36,
+      "pnl_pct": 26.66,
+      "today_chg_pct": -0.14,
+      "unrealized_pnl": 3999.36,
+      "unrealized_pnl_pct": 26.66
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 225.5,
-      "market_value": 19395.07,
-      "pnl": 3705.28,
-      "pnl_pct": 24.7,
-      "today_chg_pct": -0.74,
-      "unrealized_pnl": 4395.07,
-      "unrealized_pnl_pct": 29.3
+      "cur_price": 225.16,
+      "market_value": 19365.83,
+      "pnl": 4365.83,
+      "pnl_pct": 29.11,
+      "today_chg_pct": -0.06,
+      "unrealized_pnl": 4365.83,
+      "unrealized_pnl_pct": 29.11
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 502.5,
-      "market_value": 27149.67,
-      "pnl": 7678.63,
-      "pnl_pct": 38.39,
-      "today_chg_pct": 1.23,
-      "unrealized_pnl": 7149.68,
-      "unrealized_pnl_pct": 35.75
+      "cur_price": 495.4,
+      "market_value": 26766.07,
+      "pnl": 6766.08,
+      "pnl_pct": 33.83,
+      "today_chg_pct": -0.3,
+      "unrealized_pnl": 6766.08,
+      "unrealized_pnl_pct": 33.83
     }
   },
   "trades": [
@@ -824,15 +833,23 @@
       "invested": 64996.27,
       "return_pct": 15.0,
       "note": "收盘复盘：NVDA $217.48 (-0.74%) | MSFT $512.29 (+1.23%) | QQQ $716.18 (-0.60%) | 三大指数两连跌，芯片股承压，微软逆势上涨"
+    },
+    {
+      "date": "2026-08-14",
+      "total_value": 115131.27,
+      "cash": 50000.03,
+      "invested": 65131.24,
+      "return_pct": 15.13,
+      "note": "收盘复盘：NVDA $225.16 (-0.06%) | MSFT $495.40 (-0.30%) | QQQ $731.07 (-0.14%) | 标普500 7785.76(-0.17%) 道指53732.41(-0.20%) 纳指26729.16(-0.28%) | 零售销售下滑消费者信心转弱，三大指数小幅收跌"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7728.2,
-    "sp500_change_pct": -0.32,
-    "nasdaq": 26445.45,
-    "nasdaq_change_pct": -0.6,
-    "dow": 53791.85,
-    "dow_change_pct": -0.34
+    "sp500": 7785.76,
+    "sp500_change_pct": -0.17,
+    "nasdaq": 26729.16,
+    "nasdaq_change_pct": -0.28,
+    "dow": 53732.41,
+    "dow_change_pct": -0.2
   }
 }
