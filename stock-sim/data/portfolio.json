@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 115131.27,
-    "invested": 65131.24,
-    "total_unrealized_pnl": 15131.27,
-    "daily_pnl": -171.93,
-    "last_update": "2026-08-14",
+    "total_value": 113211.03,
+    "invested": 63211.0,
+    "total_unrealized_pnl": 13211.03,
+    "daily_pnl": -797.37,
+    "last_update": "2026-08-26",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -30,6 +30,81 @@
         "daily_pnl": -171.93,
         "total_pnl": 15131.27,
         "total_pnl_pct": 15.13
+      },
+      {
+        "date": "2026-08-17",
+        "total_value": 114296.66,
+        "cash": 50000.03,
+        "market_value": 64296.63,
+        "daily_pnl": -834.61,
+        "total_pnl": 14296.66,
+        "total_pnl_pct": 14.3
+      },
+      {
+        "date": "2026-08-18",
+        "total_value": 113575.2,
+        "cash": 50000.03,
+        "market_value": 63575.17,
+        "daily_pnl": -721.46,
+        "total_pnl": 13575.2,
+        "total_pnl_pct": 13.58
+      },
+      {
+        "date": "2026-08-19",
+        "total_value": 113501.16,
+        "cash": 50000.03,
+        "market_value": 63501.13,
+        "daily_pnl": -74.04,
+        "total_pnl": 13501.16,
+        "total_pnl_pct": 13.5
+      },
+      {
+        "date": "2026-08-20",
+        "total_value": 112826.23,
+        "cash": 50000.03,
+        "market_value": 62826.2,
+        "daily_pnl": -674.93,
+        "total_pnl": 12826.23,
+        "total_pnl_pct": 12.83
+      },
+      {
+        "date": "2026-08-21",
+        "total_value": 113052.93,
+        "cash": 50000.03,
+        "market_value": 63052.9,
+        "daily_pnl": 226.7,
+        "total_pnl": 13052.93,
+        "total_pnl_pct": 13.05
+      },
+      {
+        "date": "2026-08-24",
+        "total_value": 113245.66,
+        "cash": 50000.03,
+        "market_value": 63245.63,
+        "daily_pnl": 192.73,
+        "total_pnl": 13245.66,
+        "total_pnl_pct": 13.25,
+        "note": "收盘复盘：NVDA $214.72 (-0.98%) | MSFT $484.33 (+0.56%) | QQQ $716.08 (-0.20%) | 标普500 7652.86(-0.28%) 道指53417.16(+0.26%) 纳指25980.19(-0.76%)"
+      },
+      {
+        "date": "2026-08-25",
+        "total_value": 114008.4,
+        "cash": 50000.03,
+        "market_value": 64008.37,
+        "daily_pnl": 762.74,
+        "total_pnl": 14008.4,
+        "total_pnl_pct": 14.01,
+        "note": "收盘复盘：NVDA $219.42 (+2.19%) | MSFT $488.69 (+0.90%) | QQQ $720.81 (+0.66%) | 标普500 7677.28(+0.32%) 道指53577.40(+0.30%) 纳指26151.30(+0.66%)"
+      },
+      {
+        "date": "2026-08-26",
+        "total_value": 113211.03,
+        "cash": 50000.03,
+        "market_value": 63211.0,
+        "daily_pnl": -797.37,
+        "total_pnl": 13211.03,
+        "total_pnl_pct": 13.21,
+        "note": "收盘复盘：NVDA $209.66 (-4.45%) | MSFT $494.0 (+1.09%) | QQQ $711.39 (-1.31%) | 标普500 7675.70(-0.02%) 道指53463.88(-0.21%) 纳指26130.20(-0.08%) | 英伟达盘后财报超预期但股价反跌，AI信仰承压"
       }
     ]
   },
@@ -38,37 +113,37 @@
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 731.07,
-      "market_value": 18999.34,
-      "pnl": 3999.36,
-      "pnl_pct": 26.66,
-      "today_chg_pct": -0.14,
-      "unrealized_pnl": 3999.36,
-      "unrealized_pnl_pct": 26.66
+      "cur_price": 711.39,
+      "market_value": 18487.89,
+      "pnl": 3487.91,
+      "pnl_pct": 23.25,
+      "today_chg_pct": -1.31,
+      "unrealized_pnl": 3487.91,
+      "unrealized_pnl_pct": 23.25
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 225.16,
-      "market_value": 19365.83,
-      "pnl": 4365.83,
-      "pnl_pct": 29.11,
-      "today_chg_pct": -0.06,
-      "unrealized_pnl": 4365.83,
-      "unrealized_pnl_pct": 29.11
+      "cur_price": 209.66,
+      "market_value": 18032.69,
+      "pnl": 3032.69,
+      "pnl_pct": 20.22,
+      "today_chg_pct": -4.45,
+      "unrealized_pnl": 3032.69,
+      "unrealized_pnl_pct": 20.22
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 495.4,
-      "market_value": 26766.07,
-      "pnl": 6766.08,
-      "pnl_pct": 33.83,
-      "today_chg_pct": -0.3,
-      "unrealized_pnl": 6766.08,
-      "unrealized_pnl_pct": 33.83
+      "cur_price": 494.0,
+      "market_value": 26690.42,
+      "pnl": 6690.43,
+      "pnl_pct": 33.45,
+      "today_chg_pct": 1.09,
+      "unrealized_pnl": 6690.43,
+      "unrealized_pnl_pct": 33.45
     }
   },
   "trades": [
@@ -841,15 +916,65 @@
       "invested": 65131.24,
       "return_pct": 15.13,
       "note": "收盘复盘：NVDA $225.16 (-0.06%) | MSFT $495.40 (-0.30%) | QQQ $731.07 (-0.14%) | 标普500 7785.76(-0.17%) 道指53732.41(-0.20%) 纳指26729.16(-0.28%) | 零售销售下滑消费者信心转弱，三大指数小幅收跌"
+    },
+    {
+      "date": "2026-08-18",
+      "total_value": 113575.2,
+      "cash": 50000.03,
+      "invested": 63575.17,
+      "return_pct": 13.58,
+      "note": "收盘复盘：NVDA $219.74 (-2.41) | MSFT $481.63 (0.23) | QQQ $717.76 (-1.66) | 标普500 7691.76(-0.69%) 道指53343.40(-0.22%) 纳指26289.71(-1.33%) | 美债收益率创19年新高，半导体板块集体回调"
+    },
+    {
+      "date": "2026-08-19",
+      "total_value": 113501.16,
+      "cash": 50000.03,
+      "invested": 63501.13,
+      "return_pct": 13.5,
+      "note": "收盘复盘：NVDA $217.56 (-0.99%) | MSFT $483.85 (+0.46%) | QQQ $717.51 (-0.03%) | 标普500 7707.98(+0.21%) 道指53463.05(+0.22%) 纳指26331.09(+0.16%) | 美债收益率回落，科技股小幅反弹"
+    },
+    {
+      "date": "2026-08-20",
+      "total_value": 112826.23,
+      "cash": 50000.03,
+      "invested": 62826.2,
+      "return_pct": 12.83,
+      "note": "收盘复盘：NVDA $214.5 (-1.41%) | MSFT $479.0 (-1.00%) | QQQ $711.75 (-0.80%) | 标普500 7641.16(-0.87%) 道指52759.21(-1.32%) 纳指26067.17(-1.00%) | 沃尔玛财报不及预期引发消费担忧"
+    },
+    {
+      "date": "2026-08-21",
+      "total_value": 113052.93,
+      "cash": 50000.03,
+      "invested": 63052.9,
+      "return_pct": 13.05,
+      "note": "收盘复盘：NVDA $214.72 (0.1%) | MSFT $483.24 (0.89%) | QQQ $710.93 (-0.12%) | 标普500 -0.87% 道指-1.32% 纳指-1.00% | 沃尔玛财报暴雷拖累道指重挫700点"
+    },
+    {
+      "date": "2026-08-24",
+      "total_value": 113245.66,
+      "cash": 50000.03,
+      "invested": 63245.63,
+      "return_pct": 13.25,
+      "note": "收盘复盘：NVDA $214.72 (-0.98%) | MSFT $484.33 (+0.56%) | QQQ $716.08 (-0.20%) | 标普500 7652.86(-0.28%) 道指53417.16(+0.26%) 纳指25980.19(-0.76%)"
+    },
+    {
+      "date": "2026-08-25",
+      "total_value": 114008.4,
+      "cash": 50000.03,
+      "market_value": 64008.37,
+      "daily_pnl": 762.74,
+      "total_pnl": 14008.4,
+      "total_pnl_pct": 14.01,
+      "note": "收盘复盘：NVDA $219.42 (+2.19%) | MSFT $488.69 (+0.90%) | QQQ $720.81 (+0.66%) | 标普500 7677.28(+0.32%) 道指53577.40(+0.30%) 纳指26151.30(+0.66%)"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7785.76,
-    "sp500_change_pct": -0.17,
-    "nasdaq": 26729.16,
-    "nasdaq_change_pct": -0.28,
-    "dow": 53732.41,
-    "dow_change_pct": -0.2
+    "sp500": 7675.7,
+    "sp500_change_pct": -0.02,
+    "nasdaq": 26130.2,
+    "nasdaq_change_pct": -0.08,
+    "dow": 53463.88,
+    "dow_change_pct": -0.21
   }
 }

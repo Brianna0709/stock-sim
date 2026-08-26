@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@mtfe/mtsso-auth-official": "^1.0.10"
+    "@mtfe/mtsso-auth-official": "^1.0.11"
   }
 }
