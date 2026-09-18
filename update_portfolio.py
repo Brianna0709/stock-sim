@@ -1,105 +1,100 @@
 #!/usr/bin/env python3
+"""Update portfolio.json with 2026-09-18 closing prices."""
 import json
-from datetime import datetime, timezone
 
-# 读取 portfolio.json
-with open('/root/.openclaw/workspace/stock-sim/data/portfolio.json', 'r') as f:
-    portfolio = json.load(f)
-
-# 2026年5月15日收盘价数据（基于搜索结果）
-closing_prices = {
-    'QQQ': 712.57,    # 搜索结果：$712.57, 下跌 -1.004%
-    'NVDA': 225.32,   # 搜索结果：收盘价 $225.32
-    'MSFT': 409.43    # 搜索结果：收盘价 $409.43
+# 2026-09-18 closing data
+CLOSING = {
+    "QQQ":   {"price": 716.95, "prev": 704.72, "today_chg_pct": 1.71},
+    "NVDA":  {"price": 222.27, "prev": 219.34, "today_chg_pct": 1.34},
+    "MSFT":  {"price": 497.75, "prev": 490.30, "today_chg_pct": 1.50},
 }
 
-# 前一日收盘价（用于计算今日涨跌）
-prev_prices = {
-    'QQQ': 687.50,
-    'NVDA': 205.00,
-    'MSFT': 415.00
+INDEX = {
+    "sp500":    {"close": 7650.50,  "chg_pct": 0.17},
+    "nasdaq":   {"close": 26522.54, "chg_pct": 0.39},
+    "dow":      {"close": 51682.64, "chg_pct": -0.18},
 }
 
-# 三大指数数据
-market_data = {
-    'sp500': 7444.25,
-    'sp500_change_pct': 0.58,
-    'nasdaq': 26402.34,
-    'nasdaq_change_pct': 1.20,
-    'dow': 49693.20,
-    'dow_change_pct': -0.14
+with open("/root/.openclaw/workspace/stock-sim/data/portfolio.json", "r") as f:
+    data = json.load(f)
+
+# Update positions
+for ticker, info in CLOSING.items():
+    pos = data["positions"][ticker]
+    pos["cur_price"] = info["price"]
+    pos["market_value"] = round(pos["shares"] * info["price"], 2)
+    pos["pnl"] = round(pos["market_value"] - pos["cost_basis"], 2)
+    pos["pnl_pct"] = round((pos["market_value"] - pos["cost_basis"]) / pos["cost_basis"] * 100, 2)
+    pos["today_chg_pct"] = info["today_chg_pct"]
+    pos["unrealized_pnl"] = round(pos["market_value"] - pos["cost_basis"], 2)
+    pos["unrealized_pnl_pct"] = round((pos["market_value"] - pos["cost_basis"]) / pos["cost_basis"] * 100, 2)
+
+# Recalculate account
+market_value = sum(p["market_value"] for p in data["positions"].values())
+total_value = round(market_value + data["account"]["cash"], 2)
+invested = sum(p["cost_basis"] for p in data["positions"].values())
+prev_total = data["account"]["total_value"]
+daily_pnl = round(total_value - prev_total, 2)
+total_pnl = round(total_value - data["meta"]["initial_capital"], 2)
+total_pnl_pct = round(total_pnl / data["meta"]["initial_capital"] * 100, 2)
+
+data["account"]["total_value"] = total_value
+data["account"]["invested"] = round(invested, 2)
+data["account"]["market_value"] = round(market_value, 2)
+data["account"]["total_unrealized_pnl"] = round(market_value - invested, 2)
+data["account"]["daily_pnl"] = daily_pnl
+data["account"]["last_update"] = "2026-09-18"
+
+# Update market context
+data["market_context"] = {
+    "sp500": INDEX["sp500"]["close"],
+    "sp500_change_pct": INDEX["sp500"]["chg_pct"],
+    "nasdaq": INDEX["nasdaq"]["close"],
+    "nasdaq_change_pct": INDEX["nasdaq"]["chg_pct"],
+    "dow": INDEX["dow"]["close"],
+    "dow_change_pct": INDEX["dow"]["chg_pct"],
 }
 
-# 更新持仓数据
-for ticker, data in portfolio['positions'].items():
-    cur_price = closing_prices[ticker]
-    prev_price = prev_prices[ticker]
-    
-    # 计算市值
-    market_value = data['shares'] * cur_price
-    
-    # 计算未实现盈亏
-    unrealized_pnl = market_value - data['cost_basis']
-    unrealized_pnl_pct = (unrealized_pnl / data['cost_basis']) * 100
-    
-    # 计算今日涨跌
-    today_chg_pct = ((cur_price - prev_price) / prev_price) * 100
-    
-    # 更新数据
-    data['cur_price'] = round(cur_price, 2)
-    data['market_value'] = round(market_value, 2)
-    data['pnl'] = round(unrealized_pnl, 2)
-    data['pnl_pct'] = round(unrealized_pnl_pct, 4)
-    data['today_chg_pct'] = round(today_chg_pct, 4)
-
-# 计算账户总值
-invested = sum(p['market_value'] for p in portfolio['positions'].values())
-total_value = invested + portfolio['account']['cash']
-return_pct = ((total_value - portfolio['meta']['initial_capital']) / portfolio['meta']['initial_capital']) * 100
-
-# 更新账户数据
-portfolio['account']['invested'] = round(invested, 2)
-portfolio['account']['total_value'] = round(total_value, 2)
-
-# 添加今日快照
-today = '2026-05-15'
+# Add snapshot
 snapshot = {
-    'date': today,
-    'total_value': round(total_value, 2),
-    'cash': portfolio['account']['cash'],
-    'invested': round(invested, 2),
-    'return_pct': round(return_pct, 2),
-    'note': f"收盘复盘：NVDA ${closing_prices['NVDA']:.2f} ({portfolio['positions']['NVDA']['today_chg_pct']:+.2f}%) | MSFT ${closing_prices['MSFT']:.2f} ({portfolio['positions']['MSFT']['today_chg_pct']:+.2f}%) | QQQ ${closing_prices['QQQ']:.2f} ({portfolio['positions']['QQQ']['today_chg_pct']:+.2f}%) | 标普500 {market_data['sp500']:.2f}({market_data['sp500_change_pct']:+.2f}%) 道指{market_data['dow']:.2f}({market_data['dow_change_pct']:+.2f}%) 纳指{market_data['nasdaq']:.2f}({market_data['nasdaq_change_pct']:+.2f}%)"
+    "date": "2026-09-18",
+    "total_value": total_value,
+    "cash": data["account"]["cash"],
+    "market_value": round(market_value, 2),
+    "daily_pnl": daily_pnl,
+    "total_pnl": total_pnl,
+    "total_pnl_pct": total_pnl_pct,
+    "return_pct": total_pnl_pct,
+    "note": f"收盘复盘：NVDA ${CLOSING['NVDA']['price']:.2f} (+{CLOSING['NVDA']['today_chg_pct']:.2f}%) | MSFT ${CLOSING['MSFT']['price']:.2f} (+{CLOSING['MSFT']['today_chg_pct']:.2f}%) | QQQ ${CLOSING['QQQ']['price']:.2f} (+{CLOSING['QQQ']['today_chg_pct']:.2f}%) | 标普500 {INDEX['sp500']['close']:.2f}({INDEX['sp500']['chg_pct']:+.2f}%) 道指{INDEX['dow']['close']:.2f}({INDEX['dow']['chg_pct']:+.2f}%) 纳指{INDEX['nasdaq']['close']:.2f}({INDEX['nasdaq']['chg_pct']:+.2f}%) | 半导体板块继续走强，三大指数涨跌分化，纳指三连阳"
 }
 
-# 检查是否已有今日快照，有则更新，无则添加
-existing_dates = [s['date'] for s in portfolio['snapshots']]
-if today in existing_dates:
-    for i, s in enumerate(portfolio['snapshots']):
-        if s['date'] == today:
-            portfolio['snapshots'][i] = snapshot
-            break
-else:
-    portfolio['snapshots'].append(snapshot)
+# Avoid duplicate if re-run
+existing = [s for s in data.get("snapshots", []) if s.get("date") == "2026-09-18"]
+if existing:
+    data["snapshots"] = [s for s in data["snapshots"] if s.get("date") != "2026-09-18"]
 
-# 更新市场上下文
-portfolio['market_context'] = {
-    'sp500': market_data['sp500'],
-    'sp500_change_pct': market_data['sp500_change_pct'],
-    'nasdaq': market_data['nasdaq'],
-    'nasdaq_change_pct': market_data['nasdaq_change_pct'],
-    'dow': market_data['dow'],
-    'dow_change_pct': market_data['dow_change_pct'],
-    'note': f"{today}收盘：道指{market_data['dow_change_pct']:+.2f}%，纳指{market_data['nasdaq_change_pct']:+.2f}%，标普{market_data['sp500_change_pct']:+.2f}%。科技股分化，NVDA反弹强劲。"
+data.setdefault("snapshots", []).append(snapshot)
+
+# Add account snapshot as well
+acc_snapshot = {
+    "date": "2026-09-18",
+    "total_value": total_value,
+    "cash": data["account"]["cash"],
+    "invested": round(invested, 2),
+    "return_pct": total_pnl_pct,
+    "note": snapshot["note"],
 }
+existing_acc = [s for s in data.get("account", {}).get("snapshots", []) if s.get("date") == "2026-09-18"]
+if existing_acc:
+    data["account"]["snapshots"] = [s for s in data["account"]["snapshots"] if s.get("date") != "2026-09-18"]
+data["account"].setdefault("snapshots", []).append(acc_snapshot)
 
-# 保存文件
-with open('/root/.openclaw/workspace/stock-sim/data/portfolio.json', 'w') as f:
-    json.dump(portfolio, f, indent=2, ensure_ascii=False)
+with open("/root/.openclaw/workspace/stock-sim/data/portfolio.json", "w") as f:
+    json.dump(data, f, indent=2)
 
-print(f"✅ Portfolio updated for {today}")
-print(f"💰 Total Value: ${total_value:.2f}")
-print(f"📈 Return: {return_pct:.2f}%")
-print("\n持仓明细:")
-for ticker, data in portfolio['positions'].items():
-    print(f"  {ticker}: ${data['cur_price']:.2f} (今日{data['today_chg_pct']:+.2f}%, 持仓{data['pnl_pct']:+.2f}%)")
+print("Portfolio updated successfully.")
+print(f"Total Value: ${total_value:,.2f}")
+print(f"Daily PnL: ${daily_pnl:+,.2f}")
+print(f"Total PnL: ${total_pnl:+,.2f} ({total_pnl_pct:+.2f}%)")
+for t, p in data["positions"].items():
+    print(f"  {t}: ${p['cur_price']:.2f} | MV: ${p['market_value']:,.2f} | PnL: {p['pnl_pct']:+.2f}%")
