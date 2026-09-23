@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 116014.39,
-    "invested": 49999.97,
-    "total_unrealized_pnl": 16014.39,
-    "daily_pnl": 88.54,
-    "last_update": "2026-09-22",
+    "total_value": 115684.23,
+    "invested": 65684.2,
+    "total_unrealized_pnl": 15684.23,
+    "daily_pnl": -330.16,
+    "last_update": "2026-09-23",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -298,46 +298,57 @@
         "total_pnl_pct": 16.01,
         "return_pct": 16.01,
         "note": "收盘复盘：NVDA $228.87 (+0.66%) | MSFT $502.02 (-0.72%) | QQQ $739.01 (约+0.82%估算) | 标普500 7764.64(平收-0.06点) 道指51863.69(-0.36% 跌180点) 纳指27244.28(+0.45% 再创历史新高 四连涨) | 纳指100创新高，费半+2%创7月中旬以来新高；存储板块爆发：闪迪+6.8%、美光+5%、希捷+4%；大型银行股集体跌超3%；油价连跌五日，美伊会谈现进展(伊朗或7天内重开霍尔木兹海峡)"
+      },
+      {
+        "date": "2026-09-23",
+        "total_value": 115684.23,
+        "cash": 50000.03,
+        "market_value": 65684.2,
+        "daily_pnl": -330.16,
+        "total_pnl": 15684.23,
+        "total_pnl_pct": 15.68,
+        "return_pct": 15.68,
+        "note": "收盘复盘：NVDA $225.51 (-1.47%) | MSFT $504.63 (+0.52%) | QQQ $732.00 (约-0.95%估算) | 标普500 7706.03(-0.75%) 道指51511.59(-0.68% 跌352点) 纳指26936.04(-1.13%) | 三大指数集体收跌结束四连涨，十一大板块十跌一涨仅能源+1.04%；谷歌-3.8%领跌七姐妹，油价反弹(布油+3.12%报98.39)，伊朗总统联大放话'永不屈膝投降'；光通信、存储芯片股多数回落"
       }
     ],
-    "market_value": 66014.36
+    "market_value": 65684.2
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 739.01,
-      "market_value": 19205.69,
-      "pnl": 4205.71,
-      "pnl_pct": 28.04,
-      "today_chg_pct": 0.82,
-      "unrealized_pnl": 4205.71,
-      "unrealized_pnl_pct": 28.04
+      "cur_price": 732.0,
+      "market_value": 19023.51,
+      "pnl": 4023.53,
+      "pnl_pct": 26.82,
+      "today_chg_pct": -0.95,
+      "unrealized_pnl": 4023.53,
+      "unrealized_pnl_pct": 26.82
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 228.87,
-      "market_value": 19684.93,
-      "pnl": 4684.93,
-      "pnl_pct": 31.23,
-      "today_chg_pct": 0.66,
-      "unrealized_pnl": 4684.93,
-      "unrealized_pnl_pct": 31.23
+      "cur_price": 225.51,
+      "market_value": 19395.93,
+      "pnl": 4395.93,
+      "pnl_pct": 29.31,
+      "today_chg_pct": -1.47,
+      "unrealized_pnl": 4395.93,
+      "unrealized_pnl_pct": 29.31
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 502.02,
-      "market_value": 27123.74,
-      "pnl": 7123.75,
-      "pnl_pct": 35.62,
-      "today_chg_pct": -0.72,
-      "unrealized_pnl": 7123.75,
-      "unrealized_pnl_pct": 35.62
+      "cur_price": 504.63,
+      "market_value": 27264.76,
+      "pnl": 7264.77,
+      "pnl_pct": 36.32,
+      "today_chg_pct": 0.52,
+      "unrealized_pnl": 7264.77,
+      "unrealized_pnl_pct": 36.32
     }
   },
   "trades": [
@@ -1294,15 +1305,26 @@
       "total_pnl_pct": 16.01,
       "return_pct": 16.01,
       "note": "收盘复盘：NVDA $228.87 (+0.66%) | MSFT $502.02 (-0.72%) | QQQ $739.01 (约+0.82%估算) | 标普500 7764.64(平收-0.06点) 道指51863.69(-0.36% 跌180点) 纳指27244.28(+0.45% 再创历史新高 四连涨) | 纳指100创新高，费半+2%创7月中旬以来新高；存储板块爆发：闪迪+6.8%、美光+5%、希捷+4%；大型银行股集体跌超3%；油价连跌五日，美伊会谈现进展(伊朗或7天内重开霍尔木兹海峡)"
+    },
+    {
+      "date": "2026-09-23",
+      "total_value": 115684.23,
+      "cash": 50000.03,
+      "market_value": 65684.2,
+      "daily_pnl": -330.16,
+      "total_pnl": 15684.23,
+      "total_pnl_pct": 15.68,
+      "return_pct": 15.68,
+      "note": "收盘复盘：NVDA $225.51 (-1.47%) | MSFT $504.63 (+0.52%) | QQQ $732.00 (约-0.95%估算) | 标普500 7706.03(-0.75%) 道指51511.59(-0.68% 跌352点) 纳指26936.04(-1.13%) | 三大指数集体收跌结束四连涨，十一大板块十跌一涨仅能源+1.04%；谷歌-3.8%领跌七姐妹，油价反弹(布油+3.12%报98.39)，伊朗总统联大放话'永不屈膝投降'；光通信、存储芯片股多数回落"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7764.64,
-    "sp500_change_pct": 0.0,
-    "nasdaq": 27244.28,
-    "nasdaq_change_pct": 0.45,
-    "dow": 51863.69,
-    "dow_change_pct": -0.36
+    "sp500": 7706.03,
+    "sp500_change_pct": -0.75,
+    "nasdaq": 26936.04,
+    "nasdaq_change_pct": -1.13,
+    "dow": 51511.59,
+    "dow_change_pct": -0.68
   }
 }
