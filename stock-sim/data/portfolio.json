@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 116760.87,
-    "invested": 49999.97,
-    "total_unrealized_pnl": 16760.87,
-    "daily_pnl": 263.15,
-    "last_update": "2026-10-01",
+    "total_value": 118615.1,
+    "invested": 68615.07,
+    "total_unrealized_pnl": -32520.92,
+    "daily_pnl": 1135.99,
+    "last_update": "2026-10-05",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -377,48 +377,72 @@
         "total_pnl_pct": 16.76,
         "return_pct": 16.76,
         "note": "收盘复盘：NVDA $230.86 (+1.09%) | MSFT $512.76 (-0.02%) | QQQ $738.82 (约+0.04%估算) | 标普500 7666.45(+0.19%) 道指50926.56(+0.04%) 纳指26871.60(+0.04%) | 10年期美债收益率盘中破5.34%创2002年4月来新高后回落，三大指数微涨；油价大涨(WTI+2.71%布油+4.37%，美国向中东增兵至多1万人+第三艘航母)；英伟达+1.09%创5月中旬以来收盘新高，光通信领涨(Coherent+10.9%)、存储走强(美光+3%)；苹果-0.81%、谷歌-1.7%，金龙指数-1.03%"
+      },
+      {
+        "date": "2026-10-02",
+        "total_value": 117479.11,
+        "cash": 50000.03,
+        "market_value": 67479.08,
+        "invested": 49999.97,
+        "daily_pnl": 718.24,
+        "total_pnl": 17479.11,
+        "total_pnl_pct": 17.48,
+        "return_pct": 17.48,
+        "note": "收盘复盘：NVDA $233.95 (+1.34% 盘中创历史新高) | MSFT $517.58 (+0.94%) | QQQ $746.21 (约+1.0%估算) | 标普500 7722.72(+0.73%) 道指51176.96(+0.49%) 纳指27190.86(+1.19% 盘中新高) | 9月非农仅2.9万远逊预期，美联储10月按兵不动概率升至78%，10Y美债收益率回落至5.15%；G7宣布释放1亿桶油储，WTI跌1.9%；存储股大跌(希捷/西数-10%)，光通信续强(Coherent+5%)"
+      },
+      {
+        "date": "2026-10-05",
+        "total_value": 118615.1,
+        "cash": 50000.03,
+        "market_value": 68615.07,
+        "invested": 68615.07,
+        "daily_pnl": 1135.99,
+        "total_pnl": 18615.1,
+        "total_pnl_pct": 18.62,
+        "return_pct": 18.62,
+        "note": "收盘复盘：NVDA $238.90 (+2.12%) | MSFT $525.92 (+1.62%) | QQQ $756.20 (+0.88%) | 标普500 7773.95(+0.66%) 道指51267.90(+0.18%) 纳指27477.31(+1.05% 盘中及收盘双创新高) | AI交易领跑：SpaceX+7.66%、台积电+2.75%、特斯拉+2.2%、Meta+1.9%；医药股爆发(Vaxcyte+30.7%)；油价续跌WTI -1.99%报89.3；10Y美债收益率逼近5.3%但科技股无视压力；英特尔-2.63%；市场等待周三美联储会议纪要"
       }
     ],
-    "market_value": 66760.84,
-    "total_pnl": 16760.87,
-    "total_pnl_pct": 16.76
+    "market_value": 68615.07,
+    "total_pnl": 18615.1,
+    "total_pnl_pct": 18.62
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 738.82,
-      "market_value": 19200.75,
-      "pnl": 4200.77,
-      "pnl_pct": 28.01,
-      "today_chg_pct": 0.04,
-      "unrealized_pnl": 4200.77,
-      "unrealized_pnl_pct": 28.01
+      "cur_price": 756.2,
+      "market_value": 19652.43,
+      "pnl": 4652.45,
+      "pnl_pct": 31.02,
+      "today_chg_pct": 0.88,
+      "unrealized_pnl": 4652.45,
+      "unrealized_pnl_pct": 31.02
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 230.86,
-      "market_value": 19856.08,
-      "pnl": 4856.08,
-      "pnl_pct": 32.37,
-      "today_chg_pct": 1.09,
-      "unrealized_pnl": 4856.08,
-      "unrealized_pnl_pct": 32.37
+      "cur_price": 238.9,
+      "market_value": 20547.6,
+      "pnl": 5547.6,
+      "pnl_pct": 36.98,
+      "today_chg_pct": 2.12,
+      "unrealized_pnl": 5547.6,
+      "unrealized_pnl_pct": 36.98
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 512.76,
-      "market_value": 27704.01,
-      "pnl": 7704.02,
-      "pnl_pct": 38.52,
-      "today_chg_pct": -0.02,
-      "unrealized_pnl": 7704.02,
-      "unrealized_pnl_pct": 38.52
+      "cur_price": 525.92,
+      "market_value": 28415.04,
+      "pnl": 8415.05,
+      "pnl_pct": 42.08,
+      "today_chg_pct": 1.62,
+      "unrealized_pnl": 8415.05,
+      "unrealized_pnl_pct": 42.08
     }
   },
   "trades": [
@@ -1420,15 +1444,39 @@
       "total_pnl_pct": 16.5,
       "return_pct": 16.5,
       "note": "收盘复盘：NVDA $228.36 (+0.51%) | MSFT $512.86 (+0.77%) | QQQ $738.53 (约+0.24%估算) | 标普500 7651.54(-0.25%) 道指50906.05(-0.86% 跌441点) 纳指26861.06(+0.24%) | 9月收官日：核心PCE通胀3.0%低于预期，10年期美债收益率从高点回落至5.23%；科技+0.61%逆势走强，必需消费-1.68%/医疗-1.39%领跌；七姐妹六涨一跌(Meta -1.84%)；9月标普累计-0.2%，高收益率整月压制股市"
+    },
+    {
+      "date": "2026-10-02",
+      "total_value": 117479.11,
+      "cash": 50000.03,
+      "market_value": 67479.08,
+      "invested": 49999.97,
+      "daily_pnl": 718.24,
+      "total_pnl": 17479.11,
+      "total_pnl_pct": 17.48,
+      "return_pct": 17.48,
+      "note": "收盘复盘：NVDA $233.95 (+1.34% 盘中创历史新高) | MSFT $517.58 (+0.94%) | QQQ $746.21 (约+1.0%估算) | 标普500 7722.72(+0.73%) 道指51176.96(+0.49%) 纳指27190.86(+1.19% 盘中新高) | 9月非农仅2.9万远逊预期，美联储10月按兵不动概率升至78%，10Y美债收益率回落至5.15%；G7宣布释放1亿桶油储，WTI跌1.9%；存储股大跌(希捷/西数-10%)，光通信续强(Coherent+5%)"
+    },
+    {
+      "date": "2026-10-05",
+      "total_value": 118615.1,
+      "cash": 50000.03,
+      "market_value": 68615.07,
+      "invested": 68615.07,
+      "daily_pnl": 1135.99,
+      "total_pnl": 18615.1,
+      "total_pnl_pct": 18.62,
+      "return_pct": 18.62,
+      "note": "收盘复盘：NVDA $238.90 (+2.12%) | MSFT $525.92 (+1.62%) | QQQ $756.20 (+0.88%) | 标普500 7773.95(+0.66%) 道指51267.90(+0.18%) 纳指27477.31(+1.05% 盘中及收盘双创新高) | AI交易领跑：SpaceX+7.66%、台积电+2.75%、特斯拉+2.2%、Meta+1.9%；医药股爆发(Vaxcyte+30.7%)；油价续跌WTI -1.99%报89.3；10Y美债收益率逼近5.3%但科技股无视压力；英特尔-2.63%；市场等待周三美联储会议纪要"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7666.45,
-    "sp500_change_pct": 0.19,
-    "nasdaq": 26871.6,
-    "nasdaq_change_pct": 0.04,
-    "dow": 50926.56,
-    "dow_change_pct": 0.04
+    "sp500": 7773.95,
+    "sp500_change_pct": 0.66,
+    "nasdaq": 27477.31,
+    "nasdaq_change_pct": 1.05,
+    "dow": 51267.9,
+    "dow_change_pct": 0.18
   }
 }
