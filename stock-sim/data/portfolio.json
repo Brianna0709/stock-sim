@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 118615.1,
-    "invested": 68615.07,
-    "total_unrealized_pnl": -32520.92,
-    "daily_pnl": 1135.99,
-    "last_update": "2026-10-05",
+    "total_value": 118949.88,
+    "invested": 68949.85,
+    "total_unrealized_pnl": 18949.88,
+    "daily_pnl": 334.79,
+    "last_update": "2026-10-06",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -401,48 +401,58 @@
         "total_pnl_pct": 18.62,
         "return_pct": 18.62,
         "note": "收盘复盘：NVDA $238.90 (+2.12%) | MSFT $525.92 (+1.62%) | QQQ $756.20 (+0.88%) | 标普500 7773.95(+0.66%) 道指51267.90(+0.18%) 纳指27477.31(+1.05% 盘中及收盘双创新高) | AI交易领跑：SpaceX+7.66%、台积电+2.75%、特斯拉+2.2%、Meta+1.9%；医药股爆发(Vaxcyte+30.7%)；油价续跌WTI -1.99%报89.3；10Y美债收益率逼近5.3%但科技股无视压力；英特尔-2.63%；市场等待周三美联储会议纪要"
+      },
+      {
+        "date": "2026-10-06",
+        "total_value": 118949.88,
+        "cash": 50000.03,
+        "market_value": 68949.85,
+        "daily_pnl": 334.79,
+        "total_pnl": 18949.88,
+        "total_pnl_pct": 18.95,
+        "note": "收盘复盘：NVDA $239.24 (+0.14%) | MSFT $529.3 (+0.64%) | QQQ $760.93 (+0.63%) | 标普500 7818.93(+0.58% 首次收于7800上方) 道指51521.28(+0.49%) 纳指27599.79(+0.45% 双双创收盘新高) | 标普纳指双创新高：美债收益率自多年高位回落+油价企稳(G7释放油储)，AI芯片与电力股领涨(Marvell+5.8%、博通+3.7%、AMD+2.8%、Constellation+12%)；存储续跌(希捷-9%、西数-7%、SK海力士-6%)；英伟达微涨市值逼近6万亿，市场转向Q3财报季与周三美联储会议纪要"
       }
     ],
-    "market_value": 68615.07,
-    "total_pnl": 18615.1,
-    "total_pnl_pct": 18.62
+    "market_value": 68949.85,
+    "total_pnl": 18949.88,
+    "total_pnl_pct": 18.95
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 756.2,
-      "market_value": 19652.43,
-      "pnl": 4652.45,
-      "pnl_pct": 31.02,
-      "today_chg_pct": 0.88,
-      "unrealized_pnl": 4652.45,
-      "unrealized_pnl_pct": 31.02
+      "cur_price": 760.93,
+      "market_value": 19775.35,
+      "pnl": 4775.37,
+      "pnl_pct": 31.84,
+      "today_chg_pct": 0.63,
+      "unrealized_pnl": 4775.37,
+      "unrealized_pnl_pct": 31.84
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 238.9,
-      "market_value": 20547.6,
-      "pnl": 5547.6,
-      "pnl_pct": 36.98,
-      "today_chg_pct": 2.12,
-      "unrealized_pnl": 5547.6,
-      "unrealized_pnl_pct": 36.98
+      "cur_price": 239.24,
+      "market_value": 20576.84,
+      "pnl": 5576.84,
+      "pnl_pct": 37.18,
+      "today_chg_pct": 0.14,
+      "unrealized_pnl": 5576.84,
+      "unrealized_pnl_pct": 37.18
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 525.92,
-      "market_value": 28415.04,
-      "pnl": 8415.05,
-      "pnl_pct": 42.08,
-      "today_chg_pct": 1.62,
-      "unrealized_pnl": 8415.05,
-      "unrealized_pnl_pct": 42.08
+      "cur_price": 529.3,
+      "market_value": 28597.66,
+      "pnl": 8597.67,
+      "pnl_pct": 42.99,
+      "today_chg_pct": 0.64,
+      "unrealized_pnl": 8597.67,
+      "unrealized_pnl_pct": 42.99
     }
   },
   "trades": [
@@ -488,6 +498,14 @@
     }
   ],
   "snapshots": [
+    {
+      "date": "2026-10-06",
+      "total_value": 118949.88,
+      "cash": 50000.03,
+      "invested": 68949.85,
+      "return_pct": 18.95,
+      "note": "收盘复盘：NVDA $239.24 (+0.14%) | MSFT $529.3 (+0.64%) | QQQ $760.93 (+0.63%) | 标普500 7818.93(+0.58% 首次收于7800上方) 道指51521.28(+0.49%) 纳指27599.79(+0.45% 双双创收盘新高) | 标普纳指双创新高：美债收益率自多年高位回落+油价企稳(G7释放油储)，AI芯片与电力股领涨(Marvell+5.8%、博通+3.7%、AMD+2.8%、Constellation+12%)；存储续跌(希捷-9%、西数-7%、SK海力士-6%)；英伟达微涨市值逼近6万亿，市场转向Q3财报季与周三美联储会议纪要"
+    },
     {
       "date": "2026-04-01",
       "total_value": 100000,
@@ -1472,11 +1490,11 @@
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7773.95,
-    "sp500_change_pct": 0.66,
-    "nasdaq": 27477.31,
-    "nasdaq_change_pct": 1.05,
-    "dow": 51267.9,
-    "dow_change_pct": 0.18
+    "sp500": 7818.93,
+    "sp500_change_pct": 0.58,
+    "nasdaq": 27599.79,
+    "nasdaq_change_pct": 0.45,
+    "dow": 51521.28,
+    "dow_change_pct": 0.49
   }
 }
