@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 118405.41,
-    "invested": 68405.38,
-    "total_unrealized_pnl": 18405.41,
-    "daily_pnl": 213.7,
-    "last_update": "2026-10-13",
+    "total_value": 116884.29,
+    "invested": 66884.26,
+    "total_unrealized_pnl": 16884.29,
+    "daily_pnl": -1521.12,
+    "last_update": "2026-10-14",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -471,48 +471,60 @@
         "total_pnl_pct": 18.41,
         "return_pct": 18.41,
         "note": "收盘复盘：NVDA $228.52 (+0.97%) | MSFT $543.45 (+0.43% 创历史新高) | QQQ $746.04 (-0.70%) | 标普500 7805.45(-0.02%) 道指51670.10(-0.35%) 纳指27204.38(-0.15%) | 银行财报季开启：摩根大通Q3盈利营收不及预期但上调净利息收入指引、富国-2%、高盛超预期小涨；韩国股市隔夜大跌拖累存储芯片(SK海力士-3.19%、美光-3.62%、西数-1.61%)；道指盘中一度涨超460点后回落转跌，医疗-1.33%/金融-0.41%领跌，能源+1.74%/通信服务+0.88%领涨；微软拟大规模部署自研AI芯片，股价续创历史新高；Meta+2.63%"
+      },
+      {
+        "date": "2026-10-14",
+        "total_value": 116884.29,
+        "cash": 50000.03,
+        "market_value": 66884.26,
+        "invested": 66884.26,
+        "daily_pnl": -1521.12,
+        "total_pnl": 16884.29,
+        "total_pnl_pct": 16.88,
+        "return_pct": 16.88,
+        "note": "收盘复盘：NVDA $221.51 (-3.07%) | MSFT $533.69 (-1.80%) | QQQ $731.00 (约-2.0%估算) | 标普500 7718.94(-1.11%) 道指51621.48(-0.09%) 纳指26692.87(-1.88%) | 9月CPI超预期(同比3.7%)推升美债收益率与加息押注，费半-4.3%六连跌创去年5月以来最长；CoreWeave -15%、甲骨文-9%，存储全线下挫；苹果逆势+0.5%市值破5万亿美元；防御板块(医药/油气/食品)领涨"
       }
     ],
-    "market_value": 68405.38,
-    "total_pnl": 18405.41,
-    "total_pnl_pct": 18.41
+    "market_value": 66884.26,
+    "total_pnl": 16884.29,
+    "total_pnl_pct": 16.88
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 746.04,
-      "market_value": 19388.39,
-      "pnl": 4388.41,
-      "pnl_pct": 29.26,
-      "today_chg_pct": -0.7,
-      "unrealized_pnl": 4388.41,
-      "unrealized_pnl_pct": 29.26
+      "cur_price": 731.0,
+      "market_value": 18997.52,
+      "pnl": 3997.54,
+      "pnl_pct": 26.65,
+      "today_chg_pct": -2.0,
+      "unrealized_pnl": 3997.54,
+      "unrealized_pnl_pct": 26.65
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 228.52,
-      "market_value": 19654.82,
-      "pnl": 4654.82,
-      "pnl_pct": 31.03,
-      "today_chg_pct": 0.97,
-      "unrealized_pnl": 4654.82,
-      "unrealized_pnl_pct": 31.03
+      "cur_price": 221.51,
+      "market_value": 19051.9,
+      "pnl": 4051.9,
+      "pnl_pct": 27.01,
+      "today_chg_pct": -3.07,
+      "unrealized_pnl": 4051.9,
+      "unrealized_pnl_pct": 27.01
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 543.45,
-      "market_value": 29362.17,
-      "pnl": 9362.18,
-      "pnl_pct": 46.81,
-      "today_chg_pct": 0.43,
-      "unrealized_pnl": 9362.18,
-      "unrealized_pnl_pct": 46.81
+      "cur_price": 533.69,
+      "market_value": 28834.84,
+      "pnl": 8834.85,
+      "pnl_pct": 44.17,
+      "today_chg_pct": -1.8,
+      "unrealized_pnl": 8834.85,
+      "unrealized_pnl_pct": 44.17
     }
   },
   "trades": [
@@ -1606,15 +1618,27 @@
       "total_pnl_pct": 18.41,
       "return_pct": 18.41,
       "note": "收盘复盘：NVDA $228.52 (+0.97%) | MSFT $543.45 (+0.43% 创历史新高) | QQQ $746.04 (-0.70%) | 标普500 7805.45(-0.02%) 道指51670.10(-0.35%) 纳指27204.38(-0.15%) | 银行财报季开启：摩根大通Q3盈利营收不及预期但上调净利息收入指引、富国-2%、高盛超预期小涨；韩国股市隔夜大跌拖累存储芯片(SK海力士-3.19%、美光-3.62%、西数-1.61%)；道指盘中一度涨超460点后回落转跌，医疗-1.33%/金融-0.41%领跌，能源+1.74%/通信服务+0.88%领涨；微软拟大规模部署自研AI芯片，股价续创历史新高；Meta+2.63%"
+    },
+    {
+      "date": "2026-10-14",
+      "total_value": 116884.29,
+      "cash": 50000.03,
+      "market_value": 66884.26,
+      "invested": 66884.26,
+      "daily_pnl": -1521.12,
+      "total_pnl": 16884.29,
+      "total_pnl_pct": 16.88,
+      "return_pct": 16.88,
+      "note": "收盘复盘：NVDA $221.51 (-3.07%) | MSFT $533.69 (-1.80%) | QQQ $731.00 (约-2.0%估算) | 标普500 7718.94(-1.11%) 道指51621.48(-0.09%) 纳指26692.87(-1.88%) | 9月CPI超预期(同比3.7%)推升美债收益率与加息押注，费半-4.3%六连跌创去年5月以来最长；CoreWeave -15%、甲骨文-9%，存储全线下挫；苹果逆势+0.5%市值破5万亿美元；防御板块(医药/油气/食品)领涨"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7805.45,
-    "sp500_change_pct": -0.02,
-    "nasdaq": 27204.38,
-    "nasdaq_change_pct": -0.15,
-    "dow": 51670.1,
-    "dow_change_pct": -0.35
+    "sp500": 7718.94,
+    "sp500_change_pct": -1.11,
+    "nasdaq": 26692.87,
+    "nasdaq_change_pct": -1.88,
+    "dow": 51621.48,
+    "dow_change_pct": -0.09
   }
 }
