@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 116335.32,
-    "invested": 66335.29,
-    "total_unrealized_pnl": 16335.32,
-    "daily_pnl": 680.62,
-    "last_update": "2026-10-19",
+    "total_value": 116005.01,
+    "invested": 66004.98,
+    "total_unrealized_pnl": 16005.01,
+    "daily_pnl": -330.31,
+    "last_update": "2026-10-20",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -518,48 +518,61 @@
         "total_pnl_pct": 16.34,
         "return_pct": 16.34,
         "note": "收盘复盘：NVDA $216.93 (+1.38%) | MSFT $536.90 (+0.84%) | QQQ $718.36 (+1.21%) | 标普500 7690.73(+0.41%) 道指51966.03(-0.07%) 纳指26430.89(+1.11%) | 存储半导体大反弹：韩财政部长\"半导体繁荣至少持续到2027\"+黄仁勋\"AI芯片需求持续超供应\"双催化，费半结束八连跌；亚马逊+4.98%领涨七巨头，银行/医药/加密走弱，油价回落(WTI -0.79%)"
+      },
+      {
+        "date": "2026-10-20",
+        "total_value": 116005.01,
+        "cash": 50000.03,
+        "market_value": 66004.98,
+        "invested": 66004.98,
+        "daily_pnl": -330.31,
+        "total_pnl": 16005.01,
+        "total_pnl_pct": 16.01,
+        "return_pct": 16.01,
+        "note": "收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%"
       }
     ],
-    "market_value": 66335.29,
-    "total_pnl": 15654.7,
-    "total_pnl_pct": 15.65
+    "market_value": 66004.98,
+    "total_pnl": 16005.01,
+    "total_pnl_pct": 16.01,
+    "return_pct": 16.01
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 718.36,
-      "market_value": 18669.03,
-      "pnl": 3669.05,
-      "pnl_pct": 24.46,
-      "today_chg_pct": 1.21,
-      "unrealized_pnl": 3669.05,
-      "unrealized_pnl_pct": 24.46
+      "cur_price": 717.63,
+      "market_value": 18650.06,
+      "pnl": 3650.08,
+      "pnl_pct": 24.33,
+      "today_chg_pct": -0.1,
+      "unrealized_pnl": 3650.08,
+      "unrealized_pnl_pct": 24.33
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 216.93,
-      "market_value": 18657.98,
-      "pnl": 3657.98,
-      "pnl_pct": 24.39,
-      "today_chg_pct": 1.38,
-      "unrealized_pnl": 3657.98,
-      "unrealized_pnl_pct": 24.39
+      "cur_price": 216.47,
+      "market_value": 18618.41,
+      "pnl": 3618.41,
+      "pnl_pct": 24.12,
+      "today_chg_pct": -0.29,
+      "unrealized_pnl": 3618.41,
+      "unrealized_pnl_pct": 24.12
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 536.9,
-      "market_value": 29008.28,
-      "pnl": 9008.29,
-      "pnl_pct": 45.04,
-      "today_chg_pct": 0.84,
-      "unrealized_pnl": 9008.29,
-      "unrealized_pnl_pct": 45.04
+      "cur_price": 531.87,
+      "market_value": 28736.51,
+      "pnl": 8736.52,
+      "pnl_pct": 43.68,
+      "today_chg_pct": -0.31,
+      "unrealized_pnl": 8736.52,
+      "unrealized_pnl_pct": 43.68
     }
   },
   "trades": [
@@ -1700,15 +1713,27 @@
       "total_pnl_pct": 16.34,
       "return_pct": 16.34,
       "note": "收盘复盘：NVDA $216.93 (+1.38%) | MSFT $536.90 (+0.84%) | QQQ $718.36 (+1.21%) | 标普500 7690.73(+0.41%) 道指51966.03(-0.07%) 纳指26430.89(+1.11%) | 存储半导体大反弹：韩财政部长\"半导体繁荣至少持续到2027\"+黄仁勋\"AI芯片需求持续超供应\"双催化，费半结束八连跌；亚马逊+4.98%领涨七巨头，银行/医药/加密走弱，油价回落(WTI -0.79%)"
+    },
+    {
+      "date": "2026-10-20",
+      "total_value": 116005.01,
+      "cash": 50000.03,
+      "market_value": 66004.98,
+      "invested": 66004.98,
+      "daily_pnl": -330.31,
+      "total_pnl": 16005.01,
+      "total_pnl_pct": 16.01,
+      "return_pct": 16.01,
+      "note": "收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7690.73,
-    "sp500_change_pct": 0.41,
-    "nasdaq": 26430.89,
-    "nasdaq_change_pct": 1.11,
-    "dow": 51966.03,
-    "dow_change_pct": -0.07
+    "sp500": 7712.57,
+    "sp500_change_pct": 0.29,
+    "nasdaq": 26424.82,
+    "nasdaq_change_pct": -0.02,
+    "dow": 52495.88,
+    "dow_change_pct": 1.02
   }
 }
