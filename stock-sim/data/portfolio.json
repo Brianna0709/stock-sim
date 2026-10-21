@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 116005.01,
-    "invested": 66004.98,
-    "total_unrealized_pnl": 16005.01,
-    "daily_pnl": -330.31,
-    "last_update": "2026-10-20",
+    "total_value": 116732.62,
+    "invested": 66732.59,
+    "total_unrealized_pnl": 16732.62,
+    "daily_pnl": 727.61,
+    "last_update": "2026-10-21",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -530,49 +530,61 @@
         "total_pnl_pct": 16.01,
         "return_pct": 16.01,
         "note": "收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%"
+      },
+      {
+        "date": "2026-10-21",
+        "total_value": 116732.62,
+        "cash": 50000.03,
+        "market_value": 66732.59,
+        "invested": 66732.59,
+        "daily_pnl": 727.61,
+        "total_pnl": 16732.62,
+        "total_pnl_pct": 16.73,
+        "return_pct": 16.73,
+        "note": "收盘复盘：NVDA $221.97 (+2.54%) | MSFT $532.95 (+0.20%) | QQQ $725.18 (约+1.05%估算) | 标普500 7757.17(+0.58%) 道指52856.09(+0.69%) 纳指26702.86(+1.05%) | SpaceX Q3营收146亿美元同比+161%、净利44亿美元扭亏，股价大涨7.79%市值超台积电，点燃AI情绪；黄仁勋GTC柏林发布DSX POD AI工厂，英伟达+2.54%；费半+1.97%，存储芯片普涨(西数+3.89%/希捷+3.22%)；超微电脑+9.55%、AI服务器概念爆发；Meta盘后财报营收646亿美元+26%续涨约4%；奈飞指引疲软-6%"
       }
     ],
-    "market_value": 66004.98,
-    "total_pnl": 16005.01,
-    "total_pnl_pct": 16.01,
-    "return_pct": 16.01
+    "market_value": 66732.59,
+    "total_pnl": 16732.62,
+    "total_pnl_pct": 16.73,
+    "return_pct": 16.73
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 717.63,
-      "market_value": 18650.06,
-      "pnl": 3650.08,
-      "pnl_pct": 24.33,
-      "today_chg_pct": -0.1,
-      "unrealized_pnl": 3650.08,
-      "unrealized_pnl_pct": 24.33
+      "cur_price": 725.18,
+      "market_value": 18846.27,
+      "pnl": 3846.29,
+      "pnl_pct": 25.64,
+      "today_chg_pct": 1.05,
+      "unrealized_pnl": 3846.29,
+      "unrealized_pnl_pct": 25.64
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 216.47,
-      "market_value": 18618.41,
-      "pnl": 3618.41,
-      "pnl_pct": 24.12,
-      "today_chg_pct": -0.29,
-      "unrealized_pnl": 3618.41,
-      "unrealized_pnl_pct": 24.12
+      "cur_price": 221.97,
+      "market_value": 19091.46,
+      "pnl": 4091.46,
+      "pnl_pct": 27.28,
+      "today_chg_pct": 2.54,
+      "unrealized_pnl": 4091.46,
+      "unrealized_pnl_pct": 27.28
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 531.87,
-      "market_value": 28736.51,
-      "pnl": 8736.52,
-      "pnl_pct": 43.68,
-      "today_chg_pct": -0.31,
-      "unrealized_pnl": 8736.52,
-      "unrealized_pnl_pct": 43.68
+      "cur_price": 532.95,
+      "market_value": 28794.86,
+      "pnl": 8794.87,
+      "pnl_pct": 43.97,
+      "today_chg_pct": 0.2,
+      "unrealized_pnl": 8794.87,
+      "unrealized_pnl_pct": 43.97
     }
   },
   "trades": [
@@ -1725,15 +1737,27 @@
       "total_pnl_pct": 16.01,
       "return_pct": 16.01,
       "note": "收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%"
+    },
+    {
+      "date": "2026-10-21",
+      "total_value": 116732.62,
+      "cash": 50000.03,
+      "market_value": 66732.59,
+      "invested": 66732.59,
+      "daily_pnl": 727.61,
+      "total_pnl": 16732.62,
+      "total_pnl_pct": 16.73,
+      "return_pct": 16.73,
+      "note": "收盘复盘：NVDA $221.97 (+2.54%) | MSFT $532.95 (+0.20%) | QQQ $725.18 (约+1.05%估算) | 标普500 7757.17(+0.58%) 道指52856.09(+0.69%) 纳指26702.86(+1.05%) | SpaceX Q3营收146亿美元同比+161%、净利44亿美元扭亏，股价大涨7.79%市值超台积电，点燃AI情绪；黄仁勋GTC柏林发布DSX POD AI工厂，英伟达+2.54%；费半+1.97%，存储芯片普涨(西数+3.89%/希捷+3.22%)；超微电脑+9.55%、AI服务器概念爆发；Meta盘后财报营收646亿美元+26%续涨约4%；奈飞指引疲软-6%"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7712.57,
-    "sp500_change_pct": 0.29,
-    "nasdaq": 26424.82,
-    "nasdaq_change_pct": -0.02,
-    "dow": 52495.88,
-    "dow_change_pct": 1.02
+    "sp500": 7757.17,
+    "sp500_change_pct": 0.58,
+    "nasdaq": 26702.86,
+    "nasdaq_change_pct": 1.05,
+    "dow": 52856.09,
+    "dow_change_pct": 0.69
   }
 }
