@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 116732.62,
-    "invested": 66732.59,
-    "total_unrealized_pnl": 16732.62,
-    "daily_pnl": 727.61,
-    "last_update": "2026-10-21",
+    "total_value": 114753.52,
+    "invested": 64753.49,
+    "total_unrealized_pnl": 14753.52,
+    "daily_pnl": 39.89,
+    "last_update": "2026-10-23",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -542,49 +542,71 @@
         "total_pnl_pct": 16.73,
         "return_pct": 16.73,
         "note": "收盘复盘：NVDA $221.97 (+2.54%) | MSFT $532.95 (+0.20%) | QQQ $725.18 (约+1.05%估算) | 标普500 7757.17(+0.58%) 道指52856.09(+0.69%) 纳指26702.86(+1.05%) | SpaceX Q3营收146亿美元同比+161%、净利44亿美元扭亏，股价大涨7.79%市值超台积电，点燃AI情绪；黄仁勋GTC柏林发布DSX POD AI工厂，英伟达+2.54%；费半+1.97%，存储芯片普涨(西数+3.89%/希捷+3.22%)；超微电脑+9.55%、AI服务器概念爆发；Meta盘后财报营收646亿美元+26%续涨约4%；奈飞指引疲软-6%"
+      },
+      {
+        "date": "2026-10-22",
+        "total_value": 114713.63,
+        "cash": 50000.03,
+        "market_value": 64713.6,
+        "daily_pnl": -2018.99,
+        "total_pnl": 14713.63,
+        "total_pnl_pct": 14.71,
+        "return_pct": 14.71,
+        "note": "收盘复盘：NVDA $212.21 (-4.40%) | MSFT $521.08 (-2.23%) | QQQ $704.47 (-2.86%) | 标普500 7663.43(-1.21%) 道指52867.98(+0.02%) 纳指26008.86(-2.60%) | 科技股暴跌：奈飞跌超10%创2020年4月来最大跌幅，Meta跌超4%，泛林集团跌超9%；油价突破110美元，美债收益率跳升，贸易不确定性+财报季双重施压"
+      },
+      {
+        "date": "2026-10-23",
+        "total_value": 114753.52,
+        "cash": 50000.03,
+        "market_value": 64753.49,
+        "daily_pnl": 39.89,
+        "total_pnl": 14753.52,
+        "total_pnl_pct": 14.75,
+        "return_pct": 14.75,
+        "note": "收盘复盘：NVDA $210.96 (-0.59%) | MSFT $524.52 (+0.66%) | QQQ $702.99 (-0.21%) | 标普500 7623.68(-0.52%) 道指52215.16(-1.23%) 纳指25955.34(-0.21%) | 抛售从AI扩散至更广泛领域，油价上涨+美伊冲突担忧"
       }
     ],
-    "market_value": 66732.59,
-    "total_pnl": 16732.62,
-    "total_pnl_pct": 16.73,
-    "return_pct": 16.73
+    "market_value": 64753.49,
+    "total_pnl": 14753.52,
+    "total_pnl_pct": 14.75,
+    "return_pct": 14.75
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 725.18,
-      "market_value": 18846.27,
-      "pnl": 3846.29,
-      "pnl_pct": 25.64,
-      "today_chg_pct": 1.05,
-      "unrealized_pnl": 3846.29,
-      "unrealized_pnl_pct": 25.64
+      "cur_price": 702.99,
+      "market_value": 18269.59,
+      "pnl": 3308.07,
+      "pnl_pct": 22.05,
+      "today_chg_pct": -0.21,
+      "unrealized_pnl": 3269.61,
+      "unrealized_pnl_pct": 21.8
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 221.97,
-      "market_value": 19091.46,
-      "pnl": 4091.46,
-      "pnl_pct": 27.28,
-      "today_chg_pct": 2.54,
-      "unrealized_pnl": 4091.46,
-      "unrealized_pnl_pct": 27.28
+      "cur_price": 210.96,
+      "market_value": 18144.5,
+      "pnl": 3252.01,
+      "pnl_pct": 21.68,
+      "today_chg_pct": -0.59,
+      "unrealized_pnl": 3144.5,
+      "unrealized_pnl_pct": 20.96
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 532.95,
-      "market_value": 28794.86,
-      "pnl": 8794.87,
-      "pnl_pct": 43.97,
-      "today_chg_pct": 0.2,
-      "unrealized_pnl": 8794.87,
-      "unrealized_pnl_pct": 43.97
+      "cur_price": 524.52,
+      "market_value": 28339.4,
+      "pnl": 8153.55,
+      "pnl_pct": 40.77,
+      "today_chg_pct": 0.66,
+      "unrealized_pnl": 8339.41,
+      "unrealized_pnl_pct": 41.7
     }
   },
   "trades": [
@@ -1753,11 +1775,11 @@
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7757.17,
-    "sp500_change_pct": 0.58,
-    "nasdaq": 26702.86,
-    "nasdaq_change_pct": 1.05,
-    "dow": 52856.09,
-    "dow_change_pct": 0.69
+    "sp500": 7663.43,
+    "sp500_change_pct": -1.21,
+    "nasdaq": 26008.86,
+    "nasdaq_change_pct": -2.6,
+    "dow": 52867.98,
+    "dow_change_pct": 0.02
   }
 }
