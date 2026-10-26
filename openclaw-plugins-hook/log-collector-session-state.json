@@ -1430,7 +1430,7 @@
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/e4ac5d05-78d6-4634-a6f7-95901e6a050f.jsonl": {
-      "offset": 228776,
+      "offset": 251325,
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/26d82204-fde8-4f7e-9164-196f978444ea.jsonl": {
@@ -1713,10 +1713,6 @@
       "offset": 35179,
       "carry": ""
     },
-    "/root/.openclaw/agents/main/sessions/16fd53d1-cda2-4d5e-9ba4-b18228ab3e14.jsonl": {
-      "offset": 239083,
-      "carry": ""
-    },
     "/root/.openclaw/agents/main/sessions/417a5757-e848-4f2a-bfdd-2d023f7dc33d.jsonl": {
       "offset": 165625,
       "carry": ""
@@ -1730,7 +1726,47 @@
       "carry": ""
     },
     "/root/.openclaw/agents/main/sessions/6c9d3477-7200-4e2f-a3c6-715e8407f3f4.jsonl": {
-      "offset": 274591,
+      "offset": 327672,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/dc54917c-4f2f-4c79-9708-8ab50bbf552e.jsonl": {
+      "offset": 3131,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/3a372b10-cf30-4168-b0eb-44a3ee30177c.jsonl": {
+      "offset": 91068,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/6796b06f-31d1-43c6-bbdc-3cbe2baaef91.jsonl": {
+      "offset": 3129,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/4654798b-f37f-407c-8329-51451bb14b84.jsonl": {
+      "offset": 73492,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/20c2f11d-8c2e-4236-8c3c-d3f9f75d3f52.jsonl": {
+      "offset": 3129,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/5ea09c9e-0ba3-4ad6-bbe2-737fbce1f810.jsonl": {
+      "offset": 79989,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/16fd53d1-cda2-4d5e-9ba4-b18228ab3e14.jsonl.reset.2026-10-26T08-48-53.130Z": {
+      "offset": 239083,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/a6ae79df-e549-464b-9077-9063f9f4392f.jsonl": {
+      "offset": 18241,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/846c4c83-1831-4531-9231-c1dfe709ddf4.jsonl": {
+      "offset": 102982,
+      "carry": ""
+    },
+    "/root/.openclaw/agents/main/sessions/26d48c44-0388-47a9-8794-20cb2f9a7cb6.jsonl": {
+      "offset": 262040,
       "carry": ""
     }
   }
