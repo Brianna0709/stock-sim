@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 115839.41,
-    "invested": 65839.38,
-    "total_unrealized_pnl": 15839.41,
-    "daily_pnl": -190.36,
-    "last_update": "2026-10-28",
+    "total_value": 115610.34,
+    "invested": 65610.31,
+    "total_unrealized_pnl": 15610.34,
+    "daily_pnl": -229.07,
+    "last_update": "2026-10-29",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -597,49 +597,60 @@
         "total_pnl_pct": 15.84,
         "return_pct": 15.84,
         "note": "收盘复盘：NVDA $215.39 (-1.17%) | MSFT $532.28 (-0.06%) | QQQ $713.98 (约+0.25%估算) | 标普500 7743.98(+0.28%) 道指52475.10(+0.19%) 纳指26549.85(+0.27%) | 美联储按兵不动(3.75%-4%)两人反对主张加息，三大指数三连涨；存储芯片飙涨(SK海力士+13.3%/美光+5.9%/闪迪+7.7%)；甲骨文投资者日大涨11%；盘后微软Azure+48%超预期股价大涨约4%，谷歌财报双差盘后跌8.5%"
+      },
+      {
+        "date": "2026-10-29",
+        "total_value": 115610.34,
+        "cash": 50000.03,
+        "market_value": 65610.31,
+        "daily_pnl": -229.07,
+        "total_pnl": 15610.34,
+        "total_pnl_pct": 15.61,
+        "return_pct": 15.61,
+        "note": "收盘复盘：NVDA $213.66 (-0.80%) | MSFT $530.14 (-0.16%) | QQQ $715.34 (-1.42%) | 标普500 7720.39(-0.30%) 道指52342.56(-0.25%) 纳指26184.72(-1.38%) | 谷歌财报暴雷(EPS $2.12远逊预期$2.99、自由现金流连续两季为负)暴跌超12%市值蒸发4000亿美元，通信服务-6.60%领跌；微软Azure+48%超预期但冲高回落；医疗+2.50%/房地产+2.25%防御领涨"
       }
     ],
-    "market_value": 65839.38,
-    "total_pnl": 15839.41,
-    "total_pnl_pct": 15.84,
-    "return_pct": 15.84
+    "market_value": 65610.31,
+    "total_pnl": 15610.34,
+    "total_pnl_pct": 15.61,
+    "return_pct": 15.61
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 713.98,
-      "market_value": 18555.2,
-      "pnl": 3555.22,
-      "pnl_pct": 23.7,
-      "today_chg_pct": 0.25,
-      "unrealized_pnl": 3555.22,
-      "unrealized_pnl_pct": 23.7
+      "cur_price": 715.34,
+      "market_value": 18590.54,
+      "pnl": 3590.56,
+      "pnl_pct": 23.94,
+      "today_chg_pct": -1.42,
+      "unrealized_pnl": 3590.56,
+      "unrealized_pnl_pct": 23.94
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 215.39,
-      "market_value": 18525.52,
-      "pnl": 3525.52,
-      "pnl_pct": 23.5,
-      "today_chg_pct": -1.17,
-      "unrealized_pnl": 3525.52,
-      "unrealized_pnl_pct": 23.5
+      "cur_price": 213.66,
+      "market_value": 18376.73,
+      "pnl": 3376.73,
+      "pnl_pct": 22.51,
+      "today_chg_pct": -0.8,
+      "unrealized_pnl": 3376.73,
+      "unrealized_pnl_pct": 22.51
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 532.28,
-      "market_value": 28758.66,
-      "pnl": 8758.67,
-      "pnl_pct": 43.79,
-      "today_chg_pct": -0.06,
-      "unrealized_pnl": 8758.67,
-      "unrealized_pnl_pct": 43.79
+      "cur_price": 530.14,
+      "market_value": 28643.04,
+      "pnl": 8643.05,
+      "pnl_pct": 43.22,
+      "today_chg_pct": -0.16,
+      "unrealized_pnl": 8643.05,
+      "unrealized_pnl_pct": 43.22
     }
   },
   "trades": [
@@ -1837,15 +1848,26 @@
       "total_pnl_pct": 15.84,
       "return_pct": 15.84,
       "note": "收盘复盘：NVDA $215.39 (-1.17%) | MSFT $532.28 (-0.06%) | QQQ $713.98 (约+0.25%估算) | 标普500 7743.98(+0.28%) 道指52475.10(+0.19%) 纳指26549.85(+0.27%) | 美联储按兵不动(3.75%-4%)两人反对主张加息，三大指数三连涨；存储芯片飙涨(SK海力士+13.3%/美光+5.9%/闪迪+7.7%)；甲骨文投资者日大涨11%；盘后微软Azure+48%超预期股价大涨约4%，谷歌财报双差盘后跌8.5%"
+    },
+    {
+      "date": "2026-10-29",
+      "total_value": 115610.34,
+      "cash": 50000.03,
+      "market_value": 65610.31,
+      "daily_pnl": -229.07,
+      "total_pnl": 15610.34,
+      "total_pnl_pct": 15.61,
+      "return_pct": 15.61,
+      "note": "收盘复盘：NVDA $213.66 (-0.80%) | MSFT $530.14 (-0.16%) | QQQ $715.34 (-1.42%) | 标普500 7720.39(-0.30%) 道指52342.56(-0.25%) 纳指26184.72(-1.38%) | 谷歌财报暴雷(EPS $2.12远逊预期$2.99、自由现金流连续两季为负)暴跌超12%市值蒸发4000亿美元，通信服务-6.60%领跌；微软Azure+48%超预期但冲高回落；医疗+2.50%/房地产+2.25%防御领涨"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7743.98,
-    "sp500_change_pct": 0.28,
-    "nasdaq": 26549.85,
-    "nasdaq_change_pct": 0.27,
-    "dow": 52475.1,
-    "dow_change_pct": 0.19
+    "sp500": 7720.39,
+    "sp500_change_pct": -0.3,
+    "nasdaq": 26184.72,
+    "nasdaq_change_pct": -1.38,
+    "dow": 52342.56,
+    "dow_change_pct": -0.25
   }
 }
