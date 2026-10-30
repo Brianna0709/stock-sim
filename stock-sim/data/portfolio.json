@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 115610.34,
-    "invested": 65610.31,
-    "total_unrealized_pnl": 15610.34,
-    "daily_pnl": -229.07,
-    "last_update": "2026-10-29",
+    "total_value": 114033.57,
+    "invested": 64033.54,
+    "total_unrealized_pnl": 14033.57,
+    "daily_pnl": -1576.77,
+    "last_update": "2026-10-30",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -608,49 +608,64 @@
         "total_pnl_pct": 15.61,
         "return_pct": 15.61,
         "note": "收盘复盘：NVDA $213.66 (-0.80%) | MSFT $530.14 (-0.16%) | QQQ $715.34 (-1.42%) | 标普500 7720.39(-0.30%) 道指52342.56(-0.25%) 纳指26184.72(-1.38%) | 谷歌财报暴雷(EPS $2.12远逊预期$2.99、自由现金流连续两季为负)暴跌超12%市值蒸发4000亿美元，通信服务-6.60%领跌；微软Azure+48%超预期但冲高回落；医疗+2.50%/房地产+2.25%防御领涨"
+      },
+      {
+        "date": "2026-10-30",
+        "total_value": 114033.57,
+        "cash": 50000.03,
+        "market_value": 64033.54,
+        "invested": 64033.54,
+        "daily_pnl": -1576.77,
+        "total_pnl": 14033.57,
+        "total_pnl_pct": 14.03,
+        "return_pct": 14.03,
+        "note": "收盘复盘：纳指25437.00(-2.86% 六月以来最差单日) 标普500 7580.07(-1.82%) 道指51770.31(-1.09%) | NVDA $206.61 (-3.30%) | MSFT $521.91 (-1.55%) | QQQ $695.11 (约-2.83%估算) | 周四盘后英特尔Q4指引暴雷(指引EPS $0.25 vs 预期$0.43)开盘暴跌29%+市值蒸发1500亿美元，亚马逊财报不及预期跌7%，财报连环雷+中期选举不确定性+月末获利了结，资金撤离AI核心流向能源(+1.91%)/必需消费(+1.38%)防御板块，科技板块-4.24%领跌，费半-7.20%创2020年3月以来最大单日跌幅，纳指较近期高点回撤约8%"
       }
     ],
-    "market_value": 65610.31,
-    "total_pnl": 15610.34,
-    "total_pnl_pct": 15.61,
-    "return_pct": 15.61
+    "market_value": 64033.54,
+    "total_pnl": 14033.57,
+    "total_pnl_pct": 14.03,
+    "return_pct": 14.03
   },
   "positions": {
     "QQQ": {
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 715.34,
-      "market_value": 18590.54,
-      "pnl": 3590.56,
-      "pnl_pct": 23.94,
-      "today_chg_pct": -1.42,
-      "unrealized_pnl": 3590.56,
-      "unrealized_pnl_pct": 23.94
+      "cur_price": 695.11,
+      "market_value": 18064.8,
+      "pnl": 3064.82,
+      "pnl_pct": 20.43,
+      "today_chg_pct": -2.83,
+      "unrealized_pnl": 3064.82,
+      "unrealized_pnl_pct": 20.43,
+      "prev_price": 715.34
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 213.66,
-      "market_value": 18376.73,
-      "pnl": 3376.73,
-      "pnl_pct": 22.51,
-      "today_chg_pct": -0.8,
-      "unrealized_pnl": 3376.73,
-      "unrealized_pnl_pct": 22.51
+      "cur_price": 206.61,
+      "market_value": 17770.36,
+      "pnl": 2770.36,
+      "pnl_pct": 18.47,
+      "today_chg_pct": -3.3,
+      "unrealized_pnl": 2770.36,
+      "unrealized_pnl_pct": 18.47,
+      "prev_price": 213.66
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 530.14,
-      "market_value": 28643.04,
-      "pnl": 8643.05,
-      "pnl_pct": 43.22,
-      "today_chg_pct": -0.16,
-      "unrealized_pnl": 8643.05,
-      "unrealized_pnl_pct": 43.22
+      "cur_price": 521.91,
+      "market_value": 28198.38,
+      "pnl": 8198.39,
+      "pnl_pct": 40.99,
+      "today_chg_pct": -1.55,
+      "unrealized_pnl": 8198.39,
+      "unrealized_pnl_pct": 40.99,
+      "prev_price": 530.14
     }
   },
   "trades": [
@@ -1859,15 +1874,27 @@
       "total_pnl_pct": 15.61,
       "return_pct": 15.61,
       "note": "收盘复盘：NVDA $213.66 (-0.80%) | MSFT $530.14 (-0.16%) | QQQ $715.34 (-1.42%) | 标普500 7720.39(-0.30%) 道指52342.56(-0.25%) 纳指26184.72(-1.38%) | 谷歌财报暴雷(EPS $2.12远逊预期$2.99、自由现金流连续两季为负)暴跌超12%市值蒸发4000亿美元，通信服务-6.60%领跌；微软Azure+48%超预期但冲高回落；医疗+2.50%/房地产+2.25%防御领涨"
+    },
+    {
+      "date": "2026-10-30",
+      "total_value": 114033.57,
+      "cash": 50000.03,
+      "market_value": 64033.54,
+      "invested": 64033.54,
+      "daily_pnl": -1576.77,
+      "total_pnl": 14033.57,
+      "total_pnl_pct": 14.03,
+      "return_pct": 14.03,
+      "note": "收盘复盘：纳指25437.00(-2.86% 六月以来最差单日) 标普500 7580.07(-1.82%) 道指51770.31(-1.09%) | NVDA $206.61 (-3.30%) | MSFT $521.91 (-1.55%) | QQQ $695.11 (约-2.83%估算) | 周四盘后英特尔Q4指引暴雷(指引EPS $0.25 vs 预期$0.43)开盘暴跌29%+市值蒸发1500亿美元，亚马逊财报不及预期跌7%，财报连环雷+中期选举不确定性+月末获利了结，资金撤离AI核心流向能源(+1.91%)/必需消费(+1.38%)防御板块，科技板块-4.24%领跌，费半-7.20%创2020年3月以来最大单日跌幅，纳指较近期高点回撤约8%"
     }
   ],
   "pending_plan": [],
   "market_context": {
-    "sp500": 7720.39,
-    "sp500_change_pct": -0.3,
-    "nasdaq": 26184.72,
-    "nasdaq_change_pct": -1.38,
-    "dow": 52342.56,
-    "dow_change_pct": -0.25
+    "sp500": 7580.07,
+    "sp500_change_pct": -1.82,
+    "nasdaq": 25437.0,
+    "nasdaq_change_pct": -2.86,
+    "dow": 51770.31,
+    "dow_change_pct": -1.09
   }
 }
