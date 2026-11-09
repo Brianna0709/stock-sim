@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 111782.53,
-    "invested": 61782.5,
-    "total_unrealized_pnl": 11782.53,
-    "daily_pnl": 145.98,
-    "last_update": "2026-11-06",
+    "total_value": 112245.6,
+    "invested": 62245.57,
+    "total_unrealized_pnl": 12245.6,
+    "daily_pnl": 463.07,
+    "last_update": "2026-11-09",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -680,19 +680,30 @@
         "total_pnl_pct": 11.78,
         "return_pct": 11.78,
         "note": "收盘复盘：标普500 7376.86(+0.31%) 纳指24579.42(+1.09%) 道指51285.73(-0.46% 跌237点) | NVDA $186.76 (+2.84%) | MSFT $530.61 (-0.99%) | QQQ $656.10 (-0.06%) | 暴跌后首日企稳：逢低买盘涌入芯片股，费半+4.21%(AMD+11%/英特尔+7%/台积电+6.3%)，但经济数据强化12月加息预期，道指续跌；民主党呼吁管控数据中心建设，AI监管担忧未消"
+      },
+      {
+        "date": "2026-11-09",
+        "total_value": 112245.6,
+        "cash": 50000.03,
+        "market_value": 62245.57,
+        "daily_pnl": 463.07,
+        "total_pnl": 12245.6,
+        "total_pnl_pct": 12.25,
+        "return_pct": 12.25,
+        "note": "收盘复盘：标普500 7549.94(+2.35%) 纳指25253.14(+2.74%) 道指52389.75(+2.15% 涨超1100点) | NVDA $173.85 (-4.27%) | MSFT $550.67 (+2.75%) | QQQ $674.94 (约+2.87%估算) | 三大指数全线大涨逾2%：超跌反弹+费半暴涨近7%(AMD+8.9%/美光+4.2%/博通+6.5%)，特斯拉+5.5%、Meta+5.1%；但英伟达逆势大跌4.27%成七姐妹中唯一收跌，资金在AI内部大轮动；十一大板块全线上涨，工业+3.78%领涨"
       }
     ],
-    "market_value": 61782.5,
-    "total_pnl": 11782.53,
-    "total_pnl_pct": 11.78,
-    "return_pct": 11.78,
+    "market_value": 62245.57,
+    "total_pnl": 12245.6,
+    "total_pnl_pct": 12.25,
+    "return_pct": 12.25,
     "market_context": {
-      "sp500": 7376.86,
-      "sp500_change_pct": 0.31,
-      "nasdaq": 24579.42,
-      "nasdaq_change_pct": 1.09,
-      "dow": 51285.73,
-      "dow_change_pct": -0.46
+      "sp500": 7549.94,
+      "sp500_change_pct": 2.35,
+      "nasdaq": 25253.14,
+      "nasdaq_change_pct": 2.74,
+      "dow": 52389.75,
+      "dow_change_pct": 2.15
     }
   },
   "positions": {
@@ -700,40 +711,40 @@
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 656.1,
-      "market_value": 17050.99,
-      "pnl": 2051.01,
-      "pnl_pct": 13.67,
-      "today_chg_pct": -0.06,
-      "unrealized_pnl": 2051.01,
-      "unrealized_pnl_pct": 13.67,
-      "prev_price": 656.5
+      "cur_price": 674.94,
+      "market_value": 17540.61,
+      "pnl": 2540.63,
+      "pnl_pct": 16.94,
+      "today_chg_pct": 2.87,
+      "unrealized_pnl": 2540.63,
+      "unrealized_pnl_pct": 16.94,
+      "prev_price": 656.1
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 186.76,
-      "market_value": 16063.08,
-      "pnl": 1063.08,
-      "pnl_pct": 7.09,
-      "today_chg_pct": 2.84,
-      "unrealized_pnl": 1063.08,
-      "unrealized_pnl_pct": 7.09,
-      "prev_price": 181.6
+      "cur_price": 173.85,
+      "market_value": 14952.7,
+      "pnl": -47.3,
+      "pnl_pct": -0.32,
+      "today_chg_pct": -4.27,
+      "unrealized_pnl": -47.3,
+      "unrealized_pnl_pct": -0.32,
+      "prev_price": 186.76
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 530.61,
-      "market_value": 28668.43,
-      "pnl": 8668.44,
-      "pnl_pct": 43.34,
-      "today_chg_pct": -0.99,
-      "unrealized_pnl": 8668.44,
-      "unrealized_pnl_pct": 43.34,
-      "prev_price": 535.93
+      "cur_price": 550.67,
+      "market_value": 29752.26,
+      "pnl": 9752.27,
+      "pnl_pct": 48.76,
+      "today_chg_pct": 2.75,
+      "unrealized_pnl": 9752.27,
+      "unrealized_pnl_pct": 48.76,
+      "prev_price": 530.61
     }
   },
   "trades": [
@@ -2014,6 +2025,17 @@
       "total_pnl_pct": 11.78,
       "return_pct": 11.78,
       "note": "收盘复盘：标普500 7376.86(+0.31%) 纳指24579.42(+1.09%) 道指51285.73(-0.46% 跌237点) | NVDA $186.76 (+2.84%) | MSFT $530.61 (-0.99%) | QQQ $656.10 (-0.06%) | 暴跌后首日企稳：逢低买盘涌入芯片股，费半+4.21%(AMD+11%/英特尔+7%/台积电+6.3%)，但经济数据强化12月加息预期，道指续跌；民主党呼吁管控数据中心建设，AI监管担忧未消"
+    },
+    {
+      "date": "2026-11-09",
+      "total_value": 112245.6,
+      "cash": 50000.03,
+      "market_value": 62245.57,
+      "daily_pnl": 463.07,
+      "total_pnl": 12245.6,
+      "total_pnl_pct": 12.25,
+      "return_pct": 12.25,
+      "note": "收盘复盘：标普500 7549.94(+2.35%) 纳指25253.14(+2.74%) 道指52389.75(+2.15% 涨超1100点) | NVDA $173.85 (-4.27%) | MSFT $550.67 (+2.75%) | QQQ $674.94 (约+2.87%估算) | 三大指数全线大涨逾2%：超跌反弹+费半暴涨近7%(AMD+8.9%/美光+4.2%/博通+6.5%)，特斯拉+5.5%、Meta+5.1%；但英伟达逆势大跌4.27%成七姐妹中唯一收跌，资金在AI内部大轮动；十一大板块全线上涨，工业+3.78%领涨"
     }
   ],
   "pending_plan": [],

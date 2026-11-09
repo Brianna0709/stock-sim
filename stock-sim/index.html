@@ -1,1349 +1,270 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐕 万能小汪 · 模拟盘</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;min-height:100vh}
-.header{background:#161b27;border-bottom:1px solid #21262d;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.logo-wrap{display:flex;align-items:center;gap:10px}
-.title{font-size:16px;font-weight:700;color:#58a6ff}
-.sub{font-size:11px;color:#8b949e;margin-top:1px}
-.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(46,160,67,.15);border:1px solid rgba(46,160,67,.35);color:#3fb950;padding:3px 9px;border-radius:20px;font-size:11px}
-.dot{width:5px;height:5px;background:#3fb950;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.update-txt{font-size:11px;color:#8b949e;margin-top:3px;text-align:right}
-.main{padding:18px 24px;max-width:1200px;margin:0 auto}
-/* KPI */
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
-.kpi{background:#161b27;border:1px solid #21262d;border-radius:10px;padding:16px 18px;position:relative;overflow:hidden}
-.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.kpi.bl::before{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
-.kpi.gr::before{background:linear-gradient(90deg,#2ea043,#3fb950)}
-.kpi.ye::before{background:linear-gradient(90deg,#9e6a03,#e3b341)}
-.kpi.pu::before{background:linear-gradient(90deg,#6e40c9,#bc8cff)}
-.kl{font-size:11px;color:#8b949e;margin-bottom:7px;text-transform:uppercase;letter-spacing:.4px}
-.kv{font-size:24px;font-weight:700;letter-spacing:-.5px}
-.kv.blue{color:#58a6ff}.kv.green{color:#3fb950}.kv.yellow{color:#e3b341}.kv.purple{color:#bc8cff}.kv.red{color:#f85149}.kv.dim{color:#8b949e}
-.ks{font-size:11px;color:#8b949e;margin-top:4px}
-.ki{position:absolute;right:14px;top:14px;font-size:20px;opacity:.18}
-/* 布局 */
-.row2{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:12px}
-.row2b{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.panel{background:#161b27;border:1px solid #21262d;border-radius:10px;overflow:hidden}
-.ph{padding:12px 16px;border-bottom:1px solid #21262d;display:flex;align-items:center;justify-content:space-between}
-.pt{font-size:13px;font-weight:600;color:#c9d1d9}
-.pb2{font-size:11px;padding:2px 7px;border-radius:10px;background:rgba(88,166,255,.12);color:#58a6ff;border:1px solid rgba(88,166,255,.25)}
-.pb{padding:16px}
-/* 表格 */
-table{width:100%;border-collapse:collapse}
-th{font-size:11px;color:#8b949e;font-weight:500;padding:7px 10px;text-align:left;text-transform:uppercase;border-bottom:1px solid #21262d}
-td{padding:10px 10px;font-size:13px;border-bottom:1px solid rgba(33,38,45,.5)}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:rgba(88,166,255,.025)}
-.tk{display:inline-block;padding:2px 7px;border-radius:5px;font-weight:700;font-size:12px}
-.t-qqq{background:rgba(88,166,255,.2);color:#58a6ff}
-.t-nvda{background:rgba(63,185,80,.2);color:#3fb950}
-.t-msft{background:rgba(188,140,255,.2);color:#bc8cff}
-.t-def{background:rgba(139,148,158,.12);color:#8b949e}
-.pos{color:#3fb950;font-weight:600}.neg{color:#f85149;font-weight:600}.neu{color:#8b949e}
-/* 交易记录 */
-.tlog{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto}
-.ti{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid #21262d;border-radius:7px}
-.tic{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.tc-buy{background:rgba(46,160,67,.15)}.tc-sell{background:rgba(248,81,73,.15)}.tc-init{background:rgba(88,166,255,.15)}
-.tinfo{flex:1}
-.ttitle{font-size:13px;font-weight:600;color:#c9d1d9}
-.tmeta{font-size:11px;color:#8b949e;margin-top:1px}
-.tamt{text-align:right}
-.tprice{font-size:13px;font-weight:700}
-.tdate{font-size:11px;color:#8b949e;margin-top:1px}
-/* 仓位条 */
-.bars{margin-top:14px}
-.brow{margin-bottom:10px}
-.blabel{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
-.blabel span:first-child{color:#c9d1d9}
-.blabel span:last-child{color:#8b949e}
-.btrack{height:5px;background:#21262d;border-radius:3px;overflow:hidden}
-.bfill{height:100%;border-radius:3px;transition:width 1s ease}
-.fy{background:linear-gradient(90deg,#9e6a03,#e3b341)}
-.fb{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
-.fg{background:linear-gradient(90deg,#2ea043,#3fb950)}
-.fp{background:linear-gradient(90deg,#6e40c9,#bc8cff)}
-/* 日历 */
-.cal-wrap{display:flex;gap:16px}
-.cal{flex-shrink:0;width:260px}
-.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cal-nav button{background:none;border:1px solid #21262d;color:#8b949e;width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.15s}
-.cal-nav button:hover{border-color:#58a6ff;color:#58a6ff}
-.cal-month{font-size:13px;font-weight:600;color:#c9d1d9}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.cal-dow{font-size:10px;color:#8b949e;text-align:center;padding:3px 0}
-.cal-day{font-size:12px;text-align:center;padding:5px 0;border-radius:5px;cursor:pointer;transition:.15s;border:1px solid transparent;position:relative}
-.cal-day:hover{background:rgba(88,166,255,.1);border-color:rgba(88,166,255,.2)}
-.cal-day.active{background:rgba(88,166,255,.2);border-color:#58a6ff;color:#58a6ff;font-weight:700}
-.cal-day.has-data{color:#c9d1d9}
-.cal-day.has-data.pos-day::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#3fb950;border-radius:50%}
-.cal-day.has-data.neg-day::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#f85149;border-radius:50%}
-.cal-day.today{border-color:rgba(227,179,65,.4);color:#e3b341}
-.cal-day.other-month{opacity:.25;cursor:default}
-.cal-detail{flex:1;display:flex;flex-direction:column;justify-content:center}
-.cd-date{font-size:12px;color:#8b949e;margin-bottom:12px}
-.cd-val{font-size:32px;font-weight:700;letter-spacing:-1px;margin-bottom:6px}
-.cd-pct{font-size:14px;margin-bottom:16px}
-.cd-rows{display:flex;flex-direction:column;gap:7px}
-.cd-row{display:flex;justify-content:space-between;font-size:12px;padding:7px 10px;background:rgba(255,255,255,.02);border-radius:6px;border:1px solid #21262d}
-.cd-row span:first-child{color:#8b949e}
-.cd-row span:last-child{color:#c9d1d9;font-weight:600}
-.cd-empty{color:#8b949e;font-size:13px;text-align:center;padding:24px 0}
-/* 市场 */
-.mkt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mitem{padding:11px;background:rgba(255,255,255,.02);border-radius:7px;border:1px solid #21262d}
-.ml{font-size:11px;color:#8b949e;margin-bottom:3px}
-.mv{font-size:18px;font-weight:700}
-.ms{font-size:11px;margin-top:1px}
-/* 策略 */
-.rules{font-size:12px;color:#8b949e;line-height:1.9;padding:12px;background:rgba(255,255,255,.02);border-radius:7px;border:1px solid #21262d}
-.rules span{color:#c9d1d9}
-/* Tooltip */
-.tip{position:relative;display:inline-flex;align-items:center;cursor:help}
-.tip-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;background:rgba(139,148,158,.18);border:1px solid rgba(139,148,158,.3);border-radius:50%;font-size:9px;color:#8b949e;margin-left:4px;vertical-align:middle;transition:.15s;flex-shrink:0;line-height:1}
-.tip:hover .tip-icon{background:rgba(88,166,255,.2);border-color:#58a6ff;color:#58a6ff}
-.tip-box{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1a1f2e;border:1px solid #30363d;border-radius:8px;padding:9px 12px;width:210px;font-size:11px;line-height:1.7;color:#c9d1d9;z-index:200;pointer-events:none;transition:opacity .15s,visibility .15s;box-shadow:0 4px 16px rgba(0,0,0,.5)}
-.tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#30363d}
-.tip:hover .tip-box{visibility:visible;opacity:1}
-/* 右对齐（用于左侧容易被截断的 tip） */
-.tip-box.right{left:0;transform:none}
-.tip-box.right::after{left:14px;transform:none}
-/* 左对齐（用于右侧容易被截断的 tip） */
-.tip-box.left{left:auto;right:0;transform:none}
-.tip-box.left::after{left:auto;right:14px;transform:none}
-/* 市场 item with tooltip */
-.mitem{position:relative}
-/* loading */
-.loading{position:fixed;inset:0;background:rgba(13,17,23,.8);display:flex;align-items:center;justify-content:center;z-index:999;font-size:15px;color:#58a6ff;gap:8px;backdrop-filter:blur(4px)}
-.spin{animation:spin 1s linear infinite;display:inline-block}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@media(max-width:900px){.kpi-row{grid-template-columns:1fr 1fr}.row2,.row2b{grid-template-columns:1fr}.cal-wrap{flex-direction:column}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海巴菲特 | 美股模拟盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-<div id="loading" class="loading"><span class="spin">⚙️</span> 加载中…</div>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                🏆 上海巴菲特
+            </h1>
+            <p class="text-gray-400 mt-2">美股虚拟模拟盘 | 中线稳健成长策略</p>
+            <p class="text-sm text-gray-500">最后更新: 2026-11-09</p>
+        </header>
 
-<div class="header">
-  <div class="logo-wrap">
-    <span style="font-size:24px">🐕</span>
-    <div>
-      <div class="title">万能小汪 · 虚拟模拟盘</div>
-      <div class="sub">美股中线 · 初始 $100,000 · 2026-04-01</div>
-    </div>
-  </div>
-  <div style="text-align:right">
-    <div class="badge"><div class="dot"></div>模拟运行中</div>
-    <div class="update-txt" id="update-txt">加载中…</div>
-  </div>
-</div>
-
-<div class="main">
-  <!-- KPI -->
-  <div class="kpi-row">
-    <div class="kpi bl"><div class="ki">💰</div><div class="kl">账户总资产</div><div class="kv blue" id="k-total">—</div><div class="ks" id="k-total-s">—</div></div>
-    <div class="kpi gr"><div class="ki">📈</div><div class="kl">累计收益</div><div class="kv" id="k-pnl">—</div><div class="ks" id="k-pnl-s">—</div></div>
-    <div class="kpi ye"><div class="ki">🏦</div><div class="kl">可用现金</div><div class="kv yellow" id="k-cash">—</div><div class="ks" id="k-cash-s">—</div></div>
-    <div class="kpi pu"><div class="ki">📊</div><div class="kl">持仓市值</div><div class="kv purple" id="k-mkt">—</div><div class="ks" id="k-mkt-s">—</div></div>
-  </div>
-
-  <!-- 净值曲线 + 仓位 -->
-  <div class="row2">
-    <div class="panel">
-      <div class="ph"><div class="pt">📈 净值曲线</div><div class="pb2" id="chart-badge">—</div></div>
-      <div class="pb"><div style="height:210px;position:relative"><canvas id="equityChart"></canvas></div></div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">🥧 仓位分布</div><div class="pb2" id="alloc-badge">—</div></div>
-      <div class="pb">
-        <div style="height:130px;display:flex;justify-content:center"><canvas id="allocChart"></canvas></div>
-        <div class="bars" id="alloc-bars"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 持仓 + 交易 -->
-  <div class="row2b">
-    <div class="panel">
-      <div class="ph"><div class="pt">💼 当前持仓</div><div class="pb2" id="pos-badge">0 只</div></div>
-      <div class="pb">
-        <table><thead><tr><th>标的</th><th>成本价</th><th>现价</th><th>持股</th><th>市值</th><th>盈亏%</th></tr></thead>
-        <tbody id="holdings-body"></tbody></table>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">📋 操作记录</div><div class="pb2" id="trade-badge">0 条</div></div>
-      <div class="pb"><div class="tlog" id="trade-list"></div></div>
-    </div>
-  </div>
-
-  <!-- 历史收益日历 -->
-  <div class="panel" style="margin-bottom:12px">
-    <div class="ph"><div class="pt">📅 历史收益日历</div><div class="pb2">点击日期查看详情</div></div>
-    <div class="pb">
-      <div class="cal-wrap">
-        <div class="cal">
-          <div class="cal-nav">
-            <button id="cal-prev" onclick="calMove(-1)">‹</button>
-            <div class="cal-month" id="cal-title">—</div>
-            <button id="cal-next" onclick="calMove(1)">›</button>
-          </div>
-          <div class="cal-grid" id="cal-grid"></div>
-        </div>
-        <div class="cal-detail" id="cal-detail">
-          <div class="cd-empty">← 点击左侧日期查看当天收益</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 市场背景 + 策略 -->
-  <div class="row2b">
-    <div class="panel">
-      <div class="ph"><div class="pt">🌍 市场背景</div></div>
-      <div class="pb">
-        <div class="mkt-grid">
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">S&amp;P 500<span class="tip-icon">?</span><div class="tip-box right">标普500指数，追踪美国500家最大上市公司，是衡量美股整体健康度的最重要指标。指数涨 = 大盘好。</div></span>
+        <!-- Market Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">标普500</div>
+                <div class="text-2xl font-bold">7,541.40</div>
+                <div class="text-green-400 text-sm">📉 -0.51%</div>
             </div>
-            <div class="mv" style="color:#3fb950" id="m-sp">—</div><div class="ms" style="color:#3fb950" id="m-spc">—</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">近4周涨幅<span class="tip-icon">?</span><div class="tip-box right">S&amp;P 500 近四周累计涨幅，反映短期市场动能。持续上涨说明资金情绪乐观，是做多的顺风局。</div></span>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">纳斯达克</div>
+                <div class="text-2xl font-bold">25,164.32</div>
+                <div class="text-green-400 text-sm">📉 -1.07%</div>
             </div>
-            <div class="mv" style="color:#3fb950">+5.13%</div><div class="ms" style="color:#8b949e">趋势向上</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">华尔街目标<span class="tip-icon">?</span><div class="tip-box left">高盛、摩根士丹利、德银等大行预测的 S&amp;P 500 年末目标价，当前约 6,528，目标 7,500 意味着还有约 15% 上涨空间。</div></span>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">道琼斯</div>
+                <div class="text-2xl font-bold">51,983.98</div>
+                <div class="text-green-400 text-sm">📉 0.41%</div>
             </div>
-            <div class="mv" style="color:#58a6ff">7,500</div><div class="ms" style="color:#8b949e">大摩/高盛/德银</div>
-          </div>
-          <div class="mitem">
-            <div class="ml">
-              <span class="tip">美联储预期<span class="tip-icon">?</span><div class="tip-box left">市场预期美联储年内降息2次（各25BP）。降息 = 借钱变便宜 = 企业估值提升 = 利好股市，科技股尤其受益。</div></span>
-            </div>
-            <div class="mv" style="color:#e3b341">↓ 2次</div><div class="ms" style="color:#8b949e">年内各降25BP</div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">📌 策略规则</div></div>
-      <div class="pb">
-        <div class="rules">
-          · <span class="tip" style="display:inline">单票最大仓位<span class="tip-icon">?</span><div class="tip-box right">一只股票最多买入 $20,000。避免单票暴雷拖垮整个组合，哪怕看再准也要控制集中度。</div></span>：<span>20%</span>
-          &nbsp;· <span class="tip" style="display:inline">同时持仓<span class="tip-icon">?</span><div class="tip-box right">同时持有 5-8 只标的。太少风险集中，太多精力分散管不过来，5-8 是平衡点。</div></span>：<span>5-8 只</span><br>
-          · <span class="tip" style="display:inline">现金储备<span class="tip-icon">?</span><div class="tip-box right">账户始终保留至少 20% 现金（≥$20,000）。大跌时有弹药加仓，不会被迫在低点卖股换钱。</div></span>：<span>≥20%</span>
-          &nbsp;· <span class="tip" style="display:inline">止损线<span class="tip-icon">?</span><div class="tip-box right">单只股票亏损达到 -8% 时强制卖出清仓。铁纪律，不赌反弹，保留本金是最重要的事。</div></span>：<span style="color:#f85149">单票 -8%</span><br>
-          · <span class="tip" style="display:inline">持仓周期<span class="tip-icon">?</span><div class="tip-box right">中线策略，持有 2-8 周等趋势充分发展。不追涨杀跌，也不长期死守，跟着基本面和技术面走。</div></span>：<span>2-8 周（中线）</span><br>
-          · <span class="tip" style="display:inline">盘前推送<span class="tip-icon">?</span><div class="tip-box right">北京时间 21:00 = 美股开盘前1小时。此时推送操作计划，你确认后记录为当日交易。</div></span>：<span style="color:#e3b341">北京 21:00</span>
-          &nbsp;· <span class="tip" style="display:inline">复盘<span class="tip-icon">?</span><div class="tip-box right">北京时间次日 06:00 = 美股收盘后约1小时。此时更新实际收盘盈亏，推送页面最新数据。</div></span>：<span style="color:#e3b341">次日 06:00</span><br>
-          <br>
-          <span style="color:#8b949e;font-size:11px">⚠ 本模拟盘为虚拟交易，不构成任何真实投资建议。</span>
+        <div class="bg-gray-800 rounded-lg p-3 mb-8 border border-gray-700 text-sm text-gray-400">
+            📰 暴跌后企稳：费半+4.21%芯片大反弹(AMD+11%/英特尔+7.7%)；但12月加息预期升温道指续跌，AI监管阴影未散
         </div>
-      </div>
+
+        <!-- Account Summary -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-gray-800 rounded-lg p-4 border border-yellow-500/30">
+                <div class="text-sm text-gray-400">总资产</div>
+                <div class="text-2xl font-bold text-yellow-400">$112,245.60</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">累计收益</div>
+                <div class="text-2xl font-bold text-green-400">$12,245.60</div>
+                <div class="text-green-400 text-sm">+12.25%</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">可用现金</div>
+                <div class="text-2xl font-bold">$50,000.03</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div class="text-sm text-gray-400">持仓市值</div>
+                <div class="text-2xl font-bold">$62,245.57</div>
+            </div>
+        </div>
+
+        <!-- Positions Table -->
+        <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 text-yellow-400">📊 当前持仓</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-gray-400 text-left">
+                            <th class="py-2 px-4">标的</th>
+                            <th class="py-2 px-4">成本价</th>
+                            <th class="py-2 px-4">现价</th>
+                            <th class="py-2 px-4">持仓量</th>
+                            <th class="py-2 px-4">市值</th>
+                            <th class="py-2 px-4">持仓盈亏%</th>
+                            <th class="py-2 px-4">今日涨跌%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-green-400">QQQ</td>
+            <td class="py-3 px-4">$577.18</td>
+            <td class="py-3 px-4">$656.10</td>
+            <td class="py-3 px-4">25.9884</td>
+            <td class="py-3 px-4">$17,050.99</td>
+            <td class="py-3 px-4 text-green-400">+13.67%</td>
+            <td class="py-3 px-4 text-red-400">-0.06%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-green-400">NVDA</td>
+            <td class="py-3 px-4">$174.40</td>
+            <td class="py-3 px-4">$186.76</td>
+            <td class="py-3 px-4">86.0092</td>
+            <td class="py-3 px-4">$16,063.08</td>
+            <td class="py-3 px-4 text-green-400">+7.09%</td>
+            <td class="py-3 px-4 text-green-400">+2.84%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-3 px-4 font-bold text-green-400">MSFT</td>
+            <td class="py-3 px-4">$370.17</td>
+            <td class="py-3 px-4">$530.61</td>
+            <td class="py-3 px-4">54.0292</td>
+            <td class="py-3 px-4">$28,668.43</td>
+            <td class="py-3 px-4 text-green-400">+43.34%</td>
+            <td class="py-3 px-4 text-red-400">-0.99%</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 text-yellow-400">📈 资产走势</h2>
+            <canvas id="portfolioChart" height="100"></canvas>
+        </div>
+
+        <!-- Snapshot History -->
+        <div class="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
+            <h2 class="text-xl font-bold mb-4 text-yellow-400">📜 历史净值</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-gray-400 text-left">
+                            <th class="py-2 px-4">日期</th>
+                            <th class="py-2 px-4">总资产</th>
+                            <th class="py-2 px-4">收益率</th>
+                            <th class="py-2 px-4">备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-28</td>
+            <td class="py-2 px-4 font-bold">$115,472.56</td>
+            <td class="py-2 px-4 text-green-400">+15.47%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $202.36 (-3.00%) | MSFT $552.25 (+6.03%) | QQQ $701.47 (约+1.30%估算) | 标普500 7743.98(+0.28%) 道指52475.10(+0.19%) 纳指26549.85(+0.27%) | 美联储按兵不动(3.75%-4%)两人反对主张加息，三大指数三连涨；存储芯片飙涨(SK海力士+13.3%/美光+5.9%/闪迪+7.7%)；甲骨文投资者日大涨11%；盘后微软Azure+48%超预期股价大涨约4%，谷歌财报双差盘后跌8.5%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-27</td>
+            <td class="py-2 px-4 font-bold">$116,029.77</td>
+            <td class="py-2 px-4 text-green-400">+16.03%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $217.94 (+0.90%) | MSFT $532.6 (+1.54%) | QQQ $712.2 (+1.11%) | 标普500 7722.60(+0.60%) 道指52377.57(+0.03%) 纳指26477.81(+1.18%) | AI情绪修复反弹，科技股领涨，油价回落</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-26</td>
+            <td class="py-2 px-4 font-bold">$115,862.91</td>
+            <td class="py-2 px-4 text-green-400">+15.86%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $216.0 (+2.39%) | MSFT $532.6 (+1.54%) | QQQ $712.2 (+1.31%) | 标普500 7676.77(+0.70%) 道指52361.58(+0.28%) 纳指26169.38(+0.82%) | 科技股领涨，Anthropic IPO催化AI情绪反弹</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-21</td>
+            <td class="py-2 px-4 font-bold">$116,732.62</td>
+            <td class="py-2 px-4 text-green-400">+16.73%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $221.97 (+2.54%) | MSFT $532.95 (+0.20%) | QQQ $725.18 (约+1.05%估算) | 标普500 7757.17(+0.58%) 道指52856.09(+0.69%) 纳指26702.86(+1.05%) | SpaceX Q3营收146亿美元同比+161%、净利44亿美元扭亏，股价大涨7.79%市值超台积电，点燃AI情绪；黄仁勋GTC柏林发布DSX POD AI工厂，英伟达+2.54%；费半+1.97%，存储芯片普涨(西数+3.89%/希捷+3.22%)；超微电脑+9.55%、AI服务器概念爆发；Meta盘后财报营收646亿美元+26%续涨约4%；奈飞指引疲软-6%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-20</td>
+            <td class="py-2 px-4 font-bold">$116,005.01</td>
+            <td class="py-2 px-4 text-green-400">+16.01%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-19</td>
+            <td class="py-2 px-4 font-bold">$115,472.56</td>
+            <td class="py-2 px-4 text-green-400">+15.47%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $216.93 (+1.38%) | MSFT $536.90 (+0.84%) | QQQ $718.36 (+1.21%) | 标普500 7690.73(+0.41%) 道指51966.03(-0.07%) 纳指26430.89(+1.11%) | 存储半导体大反弹：韩财政部长"半导体繁荣至少持续到2027"+黄仁勋"AI芯片需求持续超供应"双催化，费半结束八连跌；亚马逊+4.98%领涨七巨头，银行/医药/加密走弱，油价回落(WTI -0.79%)</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-16</td>
+            <td class="py-2 px-4 font-bold">$115,472.56</td>
+            <td class="py-2 px-4 text-green-400">+15.47%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $213.97 (约-1.5%) | MSFT $532.43 (约-1.3%) | QQQ $711.26 (约-2.3%) | 标普500 7659.44(-1.09%) 道指52002.41(-0.34%) 纳指26140.03(-2.14%) | 恐慌蔓延：VIX四个月首破22，费半-3.83%八连跌追平2006年以来最长，存储概念-6.28%；CoreWeave -12%（周跌25%，债务超510亿美元）拖垮AI融资链情绪；布油5个月来首触110美元，通胀+AI融资双重担忧，资金逃向能源/食品饮料等防御板块；本周纳指-4.48%创6月以来最差单周，道指逆势+0.67%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-15</td>
+            <td class="py-2 px-4 font-bold">$116,748.88</td>
+            <td class="py-2 px-4 text-green-400">+16.75%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $217.23 (-1.84%) | MSFT $539.44 (+1.08%) | QQQ $728.00 (-0.13%) | 标普500 7744.06(+0.33%) 道指52177.69(+1.08% 涨556点) 纳指26713.03(+0.08%) | 超跌反弹+板块大轮动：医疗+1.84%/材料+1.71%领涨，能源-1.55%/科技-0.54%领跌；黄仁勋力挺CoreWeave大涨近6%，存储多空博弈激烈(美光+1.87%成交额全市场第一)；道指反弹领涨，纳指勉强收平，9月CPI超预期后加息押注仍在压制高估值科技股</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-14</td>
+            <td class="py-2 px-4 font-bold">$116,884.29</td>
+            <td class="py-2 px-4 text-green-400">+16.88%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $221.51 (-3.07%) | MSFT $533.69 (-1.80%) | QQQ $731.00 (约-2.0%估算) | 标普500 7718.94(-1.11%) 道指51621.48(-0.09%) 纳指26692.87(-1.88%) | 9月CPI超预期(同比3.7%)推升美债收益率与加息押注，费半-4.3%六连跌创去年5月以来最长；CoreWeave -15%、甲骨文-9%，存储全线下挫；苹果逆势+0.5%市值破5万亿美元；防御板块(医药/油气/食品)领涨</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-13</td>
+            <td class="py-2 px-4 font-bold">$118,405.41</td>
+            <td class="py-2 px-4 text-green-400">+18.41%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $228.52 (+0.97%) | MSFT $543.45 (+0.43% 创历史新高) | QQQ $746.04 (-0.70%) | 标普500 7805.45(-0.02%) 道指51670.10(-0.35%) 纳指27204.38(-0.15%) | 银行财报季开启：摩根大通Q3盈利营收不及预期但上调净利息收入指引、富国-2%、高盛超预期小涨；韩国股市隔夜大跌拖累存储芯片(SK海力士-3.19%、美光-3.62%、西数-1.61%)；道指盘中一度涨超460点后回落转跌，医疗-1.33%/金融-0.41%领跌，能源+1.74%/通信服务+0.88%领涨；微软拟大规模部署自研AI芯片，股价续创历史新高；Meta+2.63%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-12</td>
+            <td class="py-2 px-4 font-bold">$118,191.71</td>
+            <td class="py-2 px-4 text-green-400">+18.19%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $226.32 (-1.29%) | MSFT $541.15 (+1.14%) | QQQ $749.88 (约-0.35%估算) | 标普500 7807.24(+6.03%) 道指51850.55(+0.38% 涨195点) 纳指27245.90(-0.44%) | 三大指数涨跌不一，标普纳指自纪录高位回落；费半-2.67%，存储光通信重挫(Lumentum-9.8%、Coherent-7.9%、闪迪-6%、美光-3.9%)；Meta+3.38%领涨七姐妹，苹果+1.29%微软+1.14%；油气/必需消费领涨，油价连涨(WTI+1.43%报93.16布油105.93)，俄美启动柴油供应谈判；资金避险轮动明显</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-09</td>
+            <td class="py-2 px-4 font-bold">$118,185.07</td>
+            <td class="py-2 px-4 text-green-400">+18.19%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $229.28 (-0.52%) | MSFT $535.05 (+2.38%) | QQQ $752.51 (约+0.65%估算) | 标普500 7811.18(+0.59%) 道指51654.95(+0.83% 涨423点) 纳指27366.17(+0.64%) | 周五科技股修复性反弹，三大指数集体收涨且本周均录得涨幅，道指创8月上旬以来最大单周涨幅；特朗普称普京同意向美及全球市场供应柴油，油价回落预期升温，消息公布后美股升至日内高点；微软发布快速决策模型Microsoft-Decision-1涨2.38%，亚马逊+3.29%领涨七姐妹；英伟达拟投资AI推理芯片初创d-Matrix但股价微跌0.52%；苹果-1.11%、Meta-0.31%；T-Mobile暴跌13%创2013年来最大跌幅</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-08</td>
+            <td class="py-2 px-4 font-bold">$117,489.86</td>
+            <td class="py-2 px-4 text-green-400">+17.49%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $230.48 (-2.94%) | MSFT $522.61 (-1.35%) | QQQ $747.65 (-1.33%) | 标普500 7765.36(-0.47%) 道指51231.64(+0.10%) 纳指27193.34(-1.25%) | OpenAI年化收入被曝低于预期200亿美元引发AI支出担忧，芯片股重挫(费半-3.39%)；油价大涨(WTI+3.29%报91.18、布油重上104)推升通胀忧虑；资金避险轮动：能源+2.9%/必需消费+2.1%领涨，科技-1.8%领跌；10年期美债收益率从5.365%高点回落至5.231%</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-07</td>
+            <td class="py-2 px-4 font-bold">$118,735.89</td>
+            <td class="py-2 px-4 text-green-400">+18.74%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $237.43 (-0.75%) | MSFT $529.76 (+0.09%) | QQQ $757.73 (-0.25%) | 标普500 7801.75(-0.22%) 道指51180.17(-0.66%) 纳指27538.69(-0.22%) | 标普自历史高位回落：10年期美债收益率跳升至多年高位+油价反弹+美联储9月会议纪要，工业板块-2.14%领跌，医疗+1.06%独涨，科技相对抗跌</td>
+        </tr>
+        <tr class="border-t border-gray-700 hover:bg-gray-700/50">
+            <td class="py-2 px-4">2026-10-05</td>
+            <td class="py-2 px-4 font-bold">$118,615.10</td>
+            <td class="py-2 px-4 text-green-400">+18.62%</td>
+            <td class="py-2 px-4 text-gray-400 text-xs">收盘复盘：NVDA $238.90 (+2.12%) | MSFT $525.92 (+1.62%) | QQQ $756.20 (+0.88%) | 标普500 7773.95(+0.66%) 道指51267.90(+0.18%) 纳指27477.31(+1.05% 盘中及收盘双创新高) | AI交易领跑：SpaceX+7.66%、台积电+2.75%、特斯拉+2.2%、Meta+1.9%；医药股爆发(Vaxcyte+30.7%)；油价续跌WTI -1.99%报89.3；10Y美债收益率逼近5.3%但科技股无视压力；英特尔-2.63%；市场等待周三美联储会议纪要</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            <p>⚠️ 本模拟盘为虚拟交易，不构成真实投资建议</p>
+            <p class="mt-1">上海巴菲特 · 万能小汪分身 🐕</p>
+        </footer>
     </div>
-  </div>
-</div>
 
-<script>
-// ── 内嵌快照兜底(GitHub Pages 静态数据) ──
-window.__PORTFOLIO_DATA__ = {
-  "meta": {
-    "market": "US",
-    "start_date": "2026-04-01",
-    "initial_capital": 100000,
-    "strategy": "中线稳健成长"
-  },
-  "account": {
-    "cash": 50000.03,
-    "total_value": 111782.53,
-    "invested": 61782.5,
-    "total_unrealized_pnl": 11782.53,
-    "daily_pnl": 145.98,
-    "last_update": "2026-11-06",
-    "snapshots": [
-      {
-        "date": "2026-08-13",
-        "total_value": 115303.2,
-        "cash": 50000.03,
-        "market_value": 65303.17,
-        "daily_pnl": 306.89,
-        "total_pnl": 15303.2,
-        "total_pnl_pct": 15.3
-      },
-      {
-        "date": "2026-08-14",
-        "total_value": 115131.27,
-        "cash": 50000.03,
-        "market_value": 65131.24,
-        "daily_pnl": -171.93,
-        "total_pnl": 15131.27,
-        "total_pnl_pct": 15.13
-      },
-      {
-        "date": "2026-08-17",
-        "total_value": 114296.66,
-        "cash": 50000.03,
-        "market_value": 64296.63,
-        "daily_pnl": -834.61,
-        "total_pnl": 14296.66,
-        "total_pnl_pct": 14.3
-      },
-      {
-        "date": "2026-08-18",
-        "total_value": 113575.2,
-        "cash": 50000.03,
-        "market_value": 63575.17,
-        "daily_pnl": -721.46,
-        "total_pnl": 13575.2,
-        "total_pnl_pct": 13.58
-      },
-      {
-        "date": "2026-08-19",
-        "total_value": 113501.16,
-        "cash": 50000.03,
-        "market_value": 63501.13,
-        "daily_pnl": -74.04,
-        "total_pnl": 13501.16,
-        "total_pnl_pct": 13.5
-      },
-      {
-        "date": "2026-08-20",
-        "total_value": 112826.23,
-        "cash": 50000.03,
-        "market_value": 62826.2,
-        "daily_pnl": -674.93,
-        "total_pnl": 12826.23,
-        "total_pnl_pct": 12.83
-      },
-      {
-        "date": "2026-08-21",
-        "total_value": 113052.93,
-        "cash": 50000.03,
-        "market_value": 63052.9,
-        "daily_pnl": 226.7,
-        "total_pnl": 13052.93,
-        "total_pnl_pct": 13.05
-      },
-      {
-        "date": "2026-08-24",
-        "total_value": 113245.66,
-        "cash": 50000.03,
-        "market_value": 63245.63,
-        "daily_pnl": 192.73,
-        "total_pnl": 13245.66,
-        "total_pnl_pct": 13.25,
-        "note": "收盘复盘：NVDA $214.72 (-0.98%) | MSFT $484.33 (+0.56%) | QQQ $716.08 (-0.20%) | 标普500 7652.86(-0.28%) 道指53417.16(+0.26%) 纳指25980.19(-0.76%)"
-      },
-      {
-        "date": "2026-08-25",
-        "total_value": 114008.4,
-        "cash": 50000.03,
-        "market_value": 64008.37,
-        "daily_pnl": 762.74,
-        "total_pnl": 14008.4,
-        "total_pnl_pct": 14.01,
-        "note": "收盘复盘：NVDA $219.42 (+2.19%) | MSFT $488.69 (+0.90%) | QQQ $720.81 (+0.66%) | 标普500 7677.28(+0.32%) 道指53577.40(+0.30%) 纳指26151.30(+0.66%)"
-      },
-      {
-        "date": "2026-08-26",
-        "total_value": 113211.03,
-        "cash": 50000.03,
-        "market_value": 63211.0,
-        "daily_pnl": -797.37,
-        "total_pnl": 13211.03,
-        "total_pnl_pct": 13.21,
-        "note": "收盘复盘：NVDA $209.66 (-4.45%) | MSFT $494.0 (+1.09%) | QQQ $711.39 (-1.31%) | 标普500 7675.70(-0.02%) 道指53463.88(-0.21%) 纳指26130.20(-0.08%) | 英伟达盘后财报超预期但股价反跌，AI信仰承压"
-      },
-      {
-        "date": "2026-08-27",
-        "total_value": 115549.29,
-        "cash": 50000.03,
-        "market_value": 65549.26,
-        "daily_pnl": 2338.26,
-        "total_pnl": 15549.29,
-        "total_pnl_pct": 15.55,
-        "note": "收盘复盘：NVDA $226.895 (+8.22%) | MSFT $505.06 (+2.24%) | QQQ $721.33 (+1.4%) | 标普500 7730.99(+0.72%) 道指53569.44(+0.20%) 纳指26541.35(+1.57%) | 英伟达暴涨8.22%创16个月最大单日涨幅，AI行情点燃"
-      },
-      {
-        "date": "2026-08-28",
-        "total_value": 115076.9,
-        "cash": 50000.03,
-        "market_value": 65076.87,
-        "daily_pnl": -472.39,
-        "total_pnl": 15076.9,
-        "total_pnl_pct": 15.08,
-        "note": "收盘复盘：NVDA $217.55 (-4.12%) | MSFT $513.55 (1.68%) | QQQ $716.43 (-0.68%) | 标普500 7711.76(-0.25%) 道指53559.99(-0.02%) 纳指26402.42(-0.52%) | 周五科技股回调"
-      },
-      {
-        "date": "2026-08-31",
-        "total_value": 115189.3,
-        "cash": 50000.03,
-        "market_value": 65189.27,
-        "daily_pnl": 112.4,
-        "total_pnl": 15189.3,
-        "total_pnl_pct": 15.19,
-        "note": "收盘复盘：NVDA $220.78 (+1.48%) | MSFT $511.21 (-0.46%) | QQQ $714.93 (-0.21%) | 标普500 7686.14(-0.33%) 道指53185.90(-0.70%) 纳指26370.89(-0.12%) | 中东局势升级油价走高，芯片股分化英伟达逆势涨"
-      },
-      {
-        "date": "2026-09-01",
-        "total_value": 114165.13,
-        "cash": 50000.03,
-        "market_value": 64165.1,
-        "daily_pnl": -1024.17,
-        "total_pnl": 14165.13,
-        "total_pnl_pct": 14.17,
-        "note": "收盘复盘：NVDA $217.44 (-1.51%) | MSFT $501.02 (-1.99%) | QQQ $707.76 (-1.00%) | 标普500 7631.47(-0.71%) 道指52766.88(-0.79%) 纳指26099.77(-1.03%) | 中东局势升级油价大涨，科技股全线承压"
-      },
-      {
-        "date": "2026-09-02",
-        "total_value": 114569.66,
-        "cash": 50000.03,
-        "market_value": 64569.63,
-        "daily_pnl": 404.53,
-        "total_pnl": 14569.66,
-        "total_pnl_pct": 14.57,
-        "note": "收盘复盘：NVDA $224.41 (+3.21%) | MSFT $496.82 (-0.84%) | QQQ $708.99 (+0.17%) | 标普500 7666.60(+0.46%) 道指53061.95(+0.56%) 纳指26217.83(+0.45%) | 市场反弹，英伟达涨超3%领涨科技股"
-      },
-      {
-        "date": "2026-09-03",
-        "total_value": 115861.31,
-        "cash": 50000.03,
-        "market_value": 65861.28,
-        "daily_pnl": 1291.65,
-        "total_pnl": 15861.31,
-        "total_pnl_pct": 15.86,
-        "note": "收盘复盘：NVDA $228.45 (+1.80%) | MSFT $510.12 (+2.68%) | QQQ $717.67 (+1.22%) | 标普500 7749.10(+1.08%) 道指53682.02(+1.17%) 纳指26595.46(+1.44%) | 科技股全线反弹，三大指数集体上涨"
-      },
-      {
-        "date": "2026-09-04",
-        "total_value": 115497.94,
-        "cash": 50000.03,
-        "market_value": 65497.91,
-        "daily_pnl": -363.37,
-        "total_pnl": 15497.94,
-        "total_pnl_pct": 15.5,
-        "note": "收盘复盘：NVDA $230.36 (+0.84%) | MSFT $499.7 (-2.04%) | QQQ $719.03 (+0.21%) | 标普500 7718.6(-0.38%) 道指53414.25(-0.51%) 纳指26506.99(-0.29%) | 市场分化：道指标普纳指齐跌，但科技股逆势走强"
-      },
-      {
-        "date": "2026-09-07",
-        "total_value": 115497.94,
-        "cash": 50000.03,
-        "market_value": 65497.91,
-        "daily_pnl": 0.0,
-        "total_pnl": 15497.94,
-        "total_pnl_pct": 15.5,
-        "note": "收盘复盘：NVDA $230.36 (+0.84%) | MSFT $499.7 (-2.04%) | QQQ $719.03 (+0.21%) | 标普500 7718.6(-0.38%) 道指53414.25(-0.51%) 纳指26506.99(-0.29%) | 美股休市（Labor Day劳动节），数据为上一交易日9月4日收盘",
-        "return_pct": 15.5
-      },
-      {
-        "date": "2026-09-08",
-        "total_value": 114771.64,
-        "cash": 50000.03,
-        "market_value": 64771.61,
-        "daily_pnl": -726.3,
-        "total_pnl": 14771.64,
-        "total_pnl_pct": 14.77,
-        "note": "收盘复盘：NVDA $225.73 (-2.01%) | MSFT $493.95 (-1.15%) | QQQ $718.36 (-0.09%) | 标普500 7673.52(-0.58%) 道指52786.07(-1.18%) 纳指26421.41(-0.32%) | 美伊冲突升级油价飙涨，科技股全线承压，道指暴跌超600点",
-        "return_pct": 14.77
-      },
-      {
-        "date": "2026-09-09",
-        "total_value": 114771.64,
-        "cash": 50000.03,
-        "market_value": 64771.61,
-        "daily_pnl": 0.0,
-        "total_pnl": 14771.64,
-        "total_pnl_pct": 14.77,
-        "note": "收盘复盘：NVDA $225.73 (-2.01%) | MSFT $493.95 (-1.15%) | QQQ $718.36 (-0.09%) | 标普500 7673.52(-0.58%) 道指52786.07(-1.18%) 纳指26421.41(-0.32%) | 中东冲突升级油价飙涨，科技股全线承压，道指暴跌超600点"
-      },
-      {
-        "date": "2026-09-10",
-        "total_value": 113804.86,
-        "cash": 50000.03,
-        "market_value": 63804.83,
-        "daily_pnl": -966.78,
-        "total_pnl": 13804.86,
-        "total_pnl_pct": 13.8,
-        "note": "收盘复盘：NVDA $218.36 (-3.26%) | MSFT $492.44 (-0.31%) | QQQ $708.69 (-1.35%) | 标普500 7591.7(-0.58%) 道指52064.1(-0.6%) 纳指26081.72(-0.65%) | 美油破百加剧通胀担忧，三大指数四连跌，芯片存储光通信集体回落"
-      },
-      {
-        "date": "2026-09-11",
-        "total_value": 114132.06,
-        "cash": 50000.03,
-        "market_value": 64132.03,
-        "daily_pnl": 327.2,
-        "total_pnl": 14132.06,
-        "total_pnl_pct": 14.13,
-        "note": "收盘复盘：NVDA $218.29 (-0.03%) | MSFT $495.63 (+0.65%) | QQQ $714.88 (+0.87%) | 标普500 7656.98(+0.86%) 道指52573.29(+0.98%) 纳指26333.04(+0.96%) | 美股周五集体反弹，三大指数均涨近1%"
-      },
-      {
-        "date": "2026-09-14",
-        "total_value": 113881.88,
-        "cash": 50000.03,
-        "market_value": 63881.85,
-        "daily_pnl": -250.18,
-        "total_pnl": 13881.88,
-        "total_pnl_pct": 13.88,
-        "note": "收盘复盘：NVDA $210.96 (-3.36%) | MSFT $505.41 (+1.97%) | QQQ $709.18 (-0.80%) | 标普500 7619.98(-0.48%) 道指52421.20(-0.29%) 纳指26186.41(-0.56%) | 三大指数集体收跌，芯片股领跌纳指，微软逆势涨近2%成压舱石"
-      },
-      {
-        "date": "2026-09-15",
-        "total_value": 113881.88,
-        "cash": 50000.03,
-        "market_value": 63881.85,
-        "daily_pnl": 0.0,
-        "total_pnl": 13881.88,
-        "total_pnl_pct": 13.88,
-        "return_pct": 13.88,
-        "note": "收盘复盘：NVDA $210.96 (-3.36%) | MSFT $505.41 (+1.97%) | QQQ $709.18 (-0.80%) | 标普500 7619.98(-0.48%) 道指52421.20(-0.29%) 纳指26186.41(-0.56%) | AI安全担忧+美债破5%双杀芯片股，微软逆势成避风港"
-      },
-      {
-        "date": "2026-09-16",
-        "total_value": 113331.06,
-        "cash": 50000.03,
-        "market_value": 63331.03,
-        "daily_pnl": -550.83,
-        "total_pnl": 13331.06,
-        "total_pnl_pct": 13.33
-      },
-      {
-        "date": "2026-09-17",
-        "total_value": 114346.78,
-        "cash": 50000.03,
-        "market_value": 64346.75,
-        "daily_pnl": 1015.72,
-        "total_pnl": 14346.78,
-        "total_pnl_pct": 14.35,
-        "return_pct": 14.35,
-        "note": "收盘复盘：NVDA $219.34 (+2.54%) | MSFT $497.75 (+1.52%) | QQQ $715.26 (+1.50%) | 标普500 7637.76(+1.14%) 道指51778.04(+0.61%) 纳指26418.30(+1.69%) | 美联储利率决议后市场强劲反弹，科技股领涨"
-      },
-      {
-        "date": "2026-09-18",
-        "total_value": 114642.7,
-        "cash": 50000.03,
-        "invested": 49999.97,
-        "return_pct": 14.64,
-        "note": "收盘复盘：NVDA $222.27 (+1.34%) | MSFT $497.75 (+1.50%) | QQQ $716.95 (+1.71%) | 标普500 7650.50(+0.17%) 道指51682.64(-0.18%) 纳指26522.54(+0.39%) | 半导体板块继续走强，三大指数涨跌分化，纳指三连阳"
-      },
-      {
-        "date": "2026-09-21",
-        "total_value": 115925.85,
-        "cash": 50000.03,
-        "market_value": 65925.82,
-        "daily_pnl": 1283.15,
-        "total_pnl": 15925.85,
-        "total_pnl_pct": 15.93,
-        "return_pct": 15.93,
-        "note": "收盘复盘：NVDA $227.37 (+2.30%) | MSFT $505.66 (+1.59%) | QQQ $733.00 (约+2.2%估算，当日除息) | 标普500 7764.70(+1.49%) 道指52048.83(+0.71%) 纳指27122.09(+2.26% 创历史新高) | AI行情爆发：AMD市值首破1万亿美元、英特尔+12%、Meta+11.4%、费半+4.3%，国际油价跌超4%"
-      },
-      {
-        "date": "2026-09-22",
-        "total_value": 116014.39,
-        "cash": 50000.03,
-        "market_value": 66014.36,
-        "daily_pnl": 88.54,
-        "total_pnl": 16014.39,
-        "total_pnl_pct": 16.01,
-        "return_pct": 16.01,
-        "note": "收盘复盘：NVDA $228.87 (+0.66%) | MSFT $502.02 (-0.72%) | QQQ $739.01 (约+0.82%估算) | 标普500 7764.64(平收-0.06点) 道指51863.69(-0.36% 跌180点) 纳指27244.28(+0.45% 再创历史新高 四连涨) | 纳指100创新高，费半+2%创7月中旬以来新高；存储板块爆发：闪迪+6.8%、美光+5%、希捷+4%；大型银行股集体跌超3%；油价连跌五日，美伊会谈现进展(伊朗或7天内重开霍尔木兹海峡)"
-      },
-      {
-        "date": "2026-09-23",
-        "total_value": 115684.23,
-        "cash": 50000.03,
-        "market_value": 65684.2,
-        "daily_pnl": -330.16,
-        "total_pnl": 15684.23,
-        "total_pnl_pct": 15.68,
-        "return_pct": 15.68,
-        "note": "收盘复盘：NVDA $225.51 (-1.47%) | MSFT $504.63 (+0.52%) | QQQ $732.00 (约-0.95%估算) | 标普500 7706.03(-0.75%) 道指51511.59(-0.68% 跌352点) 纳指26936.04(-1.13%) | 三大指数集体收跌结束四连涨，十一大板块十跌一涨仅能源+1.04%；谷歌-3.8%领跌七姐妹，油价反弹(布油+3.12%报98.39)，伊朗总统联大放话'永不屈膝投降'；光通信、存储芯片股多数回落"
-      },
-      {
-        "date": "2026-09-24",
-        "total_value": 115462.67,
-        "cash": 50000.03,
-        "market_value": 65462.64,
-        "daily_pnl": -221.56,
-        "total_pnl": 15462.67,
-        "total_pnl_pct": 15.46,
-        "return_pct": 15.46,
-        "note": "收盘复盘：NVDA $224.59 (-0.41%) | MSFT $501.96 (-0.53%) | QQQ $732.07 (+0.01%) | 标普500 7704.13(-0.02%) 道指51349.98(-0.31% 跌162点) 纳指26939.37(+0.01%) | 三大指数涨跌不一窄幅震荡，Meta+4.5%领涨七姐妹，谷歌+1.34%反弹，通信服务板块+1.92%领涨，公用事业/材料领跌；油价涨近3%布油逼近100美元，创新药走高(Moderna+7%)，存储芯片续跌(闪迪-3.47%、西数-4.94%)"
-      },
-      {
-        "date": "2026-09-25",
-        "total_value": 116594.73,
-        "cash": 50000.03,
-        "market_value": 66594.7,
-        "daily_pnl": 1132.06,
-        "total_pnl": 16594.73,
-        "total_pnl_pct": 16.59,
-        "return_pct": 16.59,
-        "note": "收盘复盘：NVDA $225.07 (+0.22%) | MSFT $516.17 (+3.66%) | QQQ $744.50 (+0.46%) | 标普500 7743.41(+0.51%) 道指51828.62(+0.93% 涨478点) 纳指27068.72(+0.48%) | 三大指数集体反弹：微软发布新版Copilot(Home/Code/Autopilot)大涨3.66%领涨七巨头，美伊被曝探讨阶段性协议提振风险偏好，费半涨超1%(ARM+5%)，Meta走弱"
-      },
-      {
-        "date": "2026-09-28",
-        "total_value": 116358.74,
-        "cash": 50000.03,
-        "market_value": 66358.71,
-        "daily_pnl": -235.99,
-        "total_pnl": 16358.74,
-        "total_pnl_pct": 16.36,
-        "return_pct": 16.36,
-        "note": "收盘复盘：NVDA $228.85 (+1.68%) | MSFT $509.19 (-1.35%) | QQQ $737.42 (约-0.95%估算) | 标普500 7683.69(-0.77%) 道指51481.51(-0.67% 跌347点) 纳指26820.38(-0.92%) | 利率风暴：10年期美债收益率站上5.2%、30年期破5.5%，高估值科技股承压；英伟达逆势涨1.68%(回购授权增加1500亿美元)，Meta重挫4.79%、波音跌近7%；半导体/光通信走低(ARM-8%、高通-7%)，金龙指数逆势+1.12%"
-      },
-      {
-        "date": "2026-09-29",
-        "total_value": 116186.15,
-        "cash": 50000.03,
-        "market_value": 66186.12,
-        "daily_pnl": -172.58,
-        "total_pnl": 16186.15,
-        "total_pnl_pct": 16.19,
-        "return_pct": 16.19,
-        "note": "收盘复盘：NVDA $227.20 (-0.72%) | MSFT $508.94 (-0.05%) | QQQ $736.76 (约-0.09%估算) | 标普500 7670.84(-0.17%) 道指51349.92(-0.26%) 纳指26797.54(-0.09%) | 美伊谈判前景不明油价剧烈波动，美债收益率高位企稳，三大指数窄幅收跌；Meta反弹+3%，存储芯片回暖(SK海力士+2%、美光+1%)，苹果跌超2%，英伟达回购利好次日回落"
-      },
-      {
-        "date": "2026-09-30",
-        "total_value": 116497.72,
-        "cash": 50000.03,
-        "market_value": 66497.69,
-        "invested": 66497.69,
-        "daily_pnl": 311.57,
-        "total_pnl": 16497.72,
-        "total_pnl_pct": 16.5,
-        "return_pct": 16.5,
-        "note": "收盘复盘：NVDA $228.36 (+0.51%) | MSFT $512.86 (+0.77%) | QQQ $738.53 (约+0.24%估算) | 标普500 7651.54(-0.25%) 道指50906.05(-0.86% 跌441点) 纳指26861.06(+0.24%) | 9月收官日：核心PCE通胀3.0%低于预期，10年期美债收益率从高点回落至5.23%；科技+0.61%逆势走强，必需消费-1.68%/医疗-1.39%领跌；七姐妹六涨一跌(Meta -1.84%)；9月标普累计-0.2%，高收益率整月压制股市"
-      },
-      {
-        "date": "2026-10-01",
-        "total_value": 116760.87,
-        "cash": 50000.03,
-        "market_value": 66760.84,
-        "invested": 49999.97,
-        "daily_pnl": 263.15,
-        "total_pnl": 16760.87,
-        "total_pnl_pct": 16.76,
-        "return_pct": 16.76,
-        "note": "收盘复盘：NVDA $230.86 (+1.09%) | MSFT $512.76 (-0.02%) | QQQ $738.82 (约+0.04%估算) | 标普500 7666.45(+0.19%) 道指50926.56(+0.04%) 纳指26871.60(+0.04%) | 10年期美债收益率盘中破5.34%创2002年4月来新高后回落，三大指数微涨；油价大涨(WTI+2.71%布油+4.37%，美国向中东增兵至多1万人+第三艘航母)；英伟达+1.09%创5月中旬以来收盘新高，光通信领涨(Coherent+10.9%)、存储走强(美光+3%)；苹果-0.81%、谷歌-1.7%，金龙指数-1.03%"
-      },
-      {
-        "date": "2026-10-02",
-        "total_value": 117479.11,
-        "cash": 50000.03,
-        "market_value": 67479.08,
-        "invested": 49999.97,
-        "daily_pnl": 718.24,
-        "total_pnl": 17479.11,
-        "total_pnl_pct": 17.48,
-        "return_pct": 17.48,
-        "note": "收盘复盘：NVDA $233.95 (+1.34% 盘中创历史新高) | MSFT $517.58 (+0.94%) | QQQ $746.21 (约+1.0%估算) | 标普500 7722.72(+0.73%) 道指51176.96(+0.49%) 纳指27190.86(+1.19% 盘中新高) | 9月非农仅2.9万远逊预期，美联储10月按兵不动概率升至78%，10Y美债收益率回落至5.15%；G7宣布释放1亿桶油储，WTI跌1.9%；存储股大跌(希捷/西数-10%)，光通信续强(Coherent+5%)"
-      },
-      {
-        "date": "2026-10-05",
-        "total_value": 118615.1,
-        "cash": 50000.03,
-        "market_value": 68615.07,
-        "invested": 68615.07,
-        "daily_pnl": 1135.99,
-        "total_pnl": 18615.1,
-        "total_pnl_pct": 18.62,
-        "return_pct": 18.62,
-        "note": "收盘复盘：NVDA $238.90 (+2.12%) | MSFT $525.92 (+1.62%) | QQQ $756.20 (+0.88%) | 标普500 7773.95(+0.66%) 道指51267.90(+0.18%) 纳指27477.31(+1.05% 盘中及收盘双创新高) | AI交易领跑：SpaceX+7.66%、台积电+2.75%、特斯拉+2.2%、Meta+1.9%；医药股爆发(Vaxcyte+30.7%)；油价续跌WTI -1.99%报89.3；10Y美债收益率逼近5.3%但科技股无视压力；英特尔-2.63%；市场等待周三美联储会议纪要"
-      },
-      {
-        "date": "2026-10-06",
-        "total_value": 118949.88,
-        "cash": 50000.03,
-        "market_value": 68949.85,
-        "daily_pnl": 334.79,
-        "total_pnl": 18949.88,
-        "total_pnl_pct": 18.95,
-        "note": "收盘复盘：NVDA $239.24 (+0.14%) | MSFT $529.3 (+0.64%) | QQQ $760.93 (+0.63%) | 标普500 7818.93(+0.58% 首次收于7800上方) 道指51521.28(+0.49%) 纳指27599.79(+0.45% 双双创收盘新高) | 标普纳指双创新高：美债收益率自多年高位回落+油价企稳(G7释放油储)，AI芯片与电力股领涨(Marvell+5.8%、博通+3.7%、AMD+2.8%、Constellation+12%)；存储续跌(希捷-9%、西数-7%、SK海力士-6%)；英伟达微涨市值逼近6万亿，市场转向Q3财报季与周三美联储会议纪要"
-      },
-      {
-        "date": "2026-10-07",
-        "total_value": 118735.89,
-        "cash": 50000.03,
-        "market_value": 68735.86,
-        "invested": 68735.86,
-        "daily_pnl": -213.99,
-        "total_pnl": 18735.89,
-        "total_pnl_pct": 18.74,
-        "return_pct": 18.74,
-        "note": "收盘复盘：NVDA $237.43 (-0.75%) | MSFT $529.76 (+0.09%) | QQQ $757.73 (-0.25%) | 标普500 7801.75(-0.22%) 道指51180.17(-0.66%) 纳指27538.69(-0.22%) | 标普自历史高位回落：10年期美债收益率跳升至多年高位+油价反弹+美联储9月会议纪要，工业板块-2.14%领跌，医疗+1.06%独涨，科技相对抗跌"
-      },
-      {
-        "date": "2026-10-08",
-        "total_value": 117489.86,
-        "cash": 50000.03,
-        "market_value": 67489.83,
-        "invested": 67489.83,
-        "daily_pnl": -1246.03,
-        "total_pnl": 17489.86,
-        "total_pnl_pct": 17.49,
-        "return_pct": 17.49,
-        "note": "收盘复盘：NVDA $230.48 (-2.94%) | MSFT $522.61 (-1.35%) | QQQ $747.65 (-1.33%) | 标普500 7765.36(-0.47%) 道指51231.64(+0.10%) 纳指27193.34(-1.25%) | OpenAI年化收入被曝低于预期200亿美元引发AI支出担忧，芯片股重挫(费半-3.39%)；油价大涨(WTI+3.29%报91.18、布油重上104)推升通胀忧虑；资金避险轮动：能源+2.9%/必需消费+2.1%领涨，科技-1.8%领跌；10年期美债收益率从5.365%高点回落至5.231%"
-      },
-      {
-        "date": "2026-10-09",
-        "total_value": 118185.07,
-        "cash": 50000.03,
-        "market_value": 68185.04,
-        "invested": 68185.04,
-        "daily_pnl": 695.21,
-        "total_pnl": 18185.07,
-        "total_pnl_pct": 18.19,
-        "return_pct": 18.19,
-        "note": "收盘复盘：NVDA $229.28 (-0.52%) | MSFT $535.05 (+2.38%) | QQQ $752.51 (约+0.65%估算) | 标普500 7811.18(+0.59%) 道指51654.95(+0.83% 涨423点) 纳指27366.17(+0.64%) | 周五科技股修复性反弹，三大指数集体收涨且本周均录得涨幅，道指创8月上旬以来最大单周涨幅；特朗普称普京同意向美及全球市场供应柴油，油价回落预期升温，消息公布后美股升至日内高点；微软发布快速决策模型Microsoft-Decision-1涨2.38%，亚马逊+3.29%领涨七姐妹；英伟达拟投资AI推理芯片初创d-Matrix但股价微跌0.52%；苹果-1.11%、Meta-0.31%；T-Mobile暴跌13%创2013年来最大跌幅"
-      },
-      {
-        "date": "2026-10-12",
-        "total_value": 118191.71,
-        "cash": 50000.03,
-        "market_value": 68191.68,
-        "invested": 68191.68,
-        "daily_pnl": 6.64,
-        "total_pnl": 18191.71,
-        "total_pnl_pct": 18.19,
-        "return_pct": 18.19,
-        "note": "收盘复盘：NVDA $226.32 (-1.29%) | MSFT $541.15 (+1.14%) | QQQ $749.88 (约-0.35%估算) | 标普500 7807.24(-0.06%) 道指51850.55(+0.38% 涨195点) 纳指27245.90(-0.44%) | 三大指数涨跌不一，标普纳指自纪录高位回落；费半-2.67%，存储光通信重挫(Lumentum-9.8%、Coherent-7.9%、闪迪-6%、美光-3.9%)；Meta+3.38%领涨七姐妹，苹果+1.29%微软+1.14%；油气/必需消费领涨，油价连涨(WTI+1.43%报93.16布油105.93)，俄美启动柴油供应谈判；资金避险轮动明显"
-      },
-      {
-        "date": "2026-10-13",
-        "total_value": 118405.41,
-        "cash": 50000.03,
-        "market_value": 68405.38,
-        "invested": 68405.38,
-        "daily_pnl": 213.7,
-        "total_pnl": 18405.41,
-        "total_pnl_pct": 18.41,
-        "return_pct": 18.41,
-        "note": "收盘复盘：NVDA $228.52 (+0.97%) | MSFT $543.45 (+0.43% 创历史新高) | QQQ $746.04 (-0.70%) | 标普500 7805.45(-0.02%) 道指51670.10(-0.35%) 纳指27204.38(-0.15%) | 银行财报季开启：摩根大通Q3盈利营收不及预期但上调净利息收入指引、富国-2%、高盛超预期小涨；韩国股市隔夜大跌拖累存储芯片(SK海力士-3.19%、美光-3.62%、西数-1.61%)；道指盘中一度涨超460点后回落转跌，医疗-1.33%/金融-0.41%领跌，能源+1.74%/通信服务+0.88%领涨；微软拟大规模部署自研AI芯片，股价续创历史新高；Meta+2.63%"
-      },
-      {
-        "date": "2026-10-14",
-        "total_value": 116884.29,
-        "cash": 50000.03,
-        "market_value": 66884.26,
-        "invested": 66884.26,
-        "daily_pnl": -1521.12,
-        "total_pnl": 16884.29,
-        "total_pnl_pct": 16.88,
-        "return_pct": 16.88,
-        "note": "收盘复盘：NVDA $221.51 (-3.07%) | MSFT $533.69 (-1.80%) | QQQ $731.00 (约-2.0%估算) | 标普500 7718.94(-1.11%) 道指51621.48(-0.09%) 纳指26692.87(-1.88%) | 9月CPI超预期(同比3.7%)推升美债收益率与加息押注，费半-4.3%六连跌创去年5月以来最长；CoreWeave -15%、甲骨文-9%，存储全线下挫；苹果逆势+0.5%市值破5万亿美元；防御板块(医药/油气/食品)领涨"
-      },
-      {
-        "date": "2026-10-15",
-        "total_value": 116748.88,
-        "cash": 50000.03,
-        "market_value": 66748.85,
-        "invested": 66748.85,
-        "daily_pnl": -135.41,
-        "total_pnl": 16748.88,
-        "total_pnl_pct": 16.75,
-        "return_pct": 16.75,
-        "note": "收盘复盘：NVDA $217.23 (-1.84%) | MSFT $539.44 (+1.08%) | QQQ $728.00 (-0.13%) | 标普500 7744.06(+0.33%) 道指52177.69(+1.08% 涨556点) 纳指26713.03(+0.08%) | 超跌反弹+板块大轮动：医疗+1.84%/材料+1.71%领涨，能源-1.55%/科技-0.54%领跌；黄仁勋力挺CoreWeave大涨近6%，存储多空博弈激烈(美光+1.87%成交额全市场第一)；道指反弹领涨，纳指勉强收平，9月CPI超预期后加息押注仍在压制高估值科技股"
-      },
-      {
-        "date": "2026-10-16",
-        "total_value": 115654.7,
-        "cash": 50000.03,
-        "market_value": 65654.67,
-        "invested": 65654.67,
-        "daily_pnl": -1094.18,
-        "total_pnl": 15654.7,
-        "total_pnl_pct": 15.65,
-        "return_pct": 15.65,
-        "note": "收盘复盘：NVDA $213.97 (约-1.5%) | MSFT $532.43 (约-1.3%) | QQQ $711.26 (约-2.3%) | 标普500 7659.44(-1.09%) 道指52002.41(-0.34%) 纳指26140.03(-2.14%) | 恐慌蔓延：VIX四个月首破22，费半-3.83%八连跌追平2006年以来最长，存储概念-6.28%；CoreWeave -12%（周跌25%，债务超510亿美元）拖垮AI融资链情绪；布油5个月来首触110美元，通胀+AI融资双重担忧，资金逃向能源/食品饮料等防御板块；本周纳指-4.48%创6月以来最差单周，道指逆势+0.67%"
-      },
-      {
-        "date": "2026-10-19",
-        "total_value": 116335.32,
-        "cash": 50000.03,
-        "market_value": 66335.29,
-        "daily_pnl": 680.62,
-        "total_pnl": 16335.32,
-        "total_pnl_pct": 16.34,
-        "return_pct": 16.34,
-        "note": "收盘复盘：NVDA $216.93 (+1.38%) | MSFT $536.90 (+0.84%) | QQQ $718.36 (+1.21%) | 标普500 7690.73(+0.41%) 道指51966.03(-0.07%) 纳指26430.89(+1.11%) | 存储半导体大反弹：韩财政部长\"半导体繁荣至少持续到2027\"+黄仁勋\"AI芯片需求持续超供应\"双催化，费半结束八连跌；亚马逊+4.98%领涨七巨头，银行/医药/加密走弱，油价回落(WTI -0.79%)"
-      },
-      {
-        "date": "2026-10-20",
-        "total_value": 116005.01,
-        "cash": 50000.03,
-        "market_value": 66004.98,
-        "invested": 66004.98,
-        "daily_pnl": -330.31,
-        "total_pnl": 16005.01,
-        "total_pnl_pct": 16.01,
-        "return_pct": 16.01,
-        "note": "收盘复盘：NVDA $216.47 (-0.29%) | MSFT $531.87 (-0.31%) | QQQ $717.63 (-0.10%) | 标普500 7712.57(+0.29%) 道指52495.88(+1.02% 涨529点创历史新高) 纳指26424.82(-0.02%) | 财报季轮动：3M+5%、诺格+4%领涨道指创新高；油价回落(WTI -1.8%报101.79)；科技巨头观望财报按兵不动，盘后道指期货+1.26%、纳指100期货+0.58%；苹果/谷歌/Meta跌超1%，特斯拉+1.54%"
-      },
-      {
-        "date": "2026-10-21",
-        "total_value": 116732.62,
-        "cash": 50000.03,
-        "market_value": 66732.59,
-        "invested": 66732.59,
-        "daily_pnl": 727.61,
-        "total_pnl": 16732.62,
-        "total_pnl_pct": 16.73,
-        "return_pct": 16.73,
-        "note": "收盘复盘：NVDA $221.97 (+2.54%) | MSFT $532.95 (+0.20%) | QQQ $725.18 (约+1.05%估算) | 标普500 7757.17(+0.58%) 道指52856.09(+0.69%) 纳指26702.86(+1.05%) | SpaceX Q3营收146亿美元同比+161%、净利44亿美元扭亏，股价大涨7.79%市值超台积电，点燃AI情绪；黄仁勋GTC柏林发布DSX POD AI工厂，英伟达+2.54%；费半+1.97%，存储芯片普涨(西数+3.89%/希捷+3.22%)；超微电脑+9.55%、AI服务器概念爆发；Meta盘后财报营收646亿美元+26%续涨约4%；奈飞指引疲软-6%"
-      },
-      {
-        "date": "2026-10-22",
-        "total_value": 114713.63,
-        "cash": 50000.03,
-        "market_value": 64713.6,
-        "daily_pnl": -2018.99,
-        "total_pnl": 14713.63,
-        "total_pnl_pct": 14.71,
-        "return_pct": 14.71,
-        "note": "收盘复盘：NVDA $212.21 (-4.40%) | MSFT $521.08 (-2.23%) | QQQ $704.47 (-2.86%) | 标普500 7663.43(-1.21%) 道指52867.98(+0.02%) 纳指26008.86(-2.60%) | 科技股暴跌：奈飞跌超10%创2020年4月来最大跌幅，Meta跌超4%，泛林集团跌超9%；油价突破110美元，美债收益率跳升，贸易不确定性+财报季双重施压"
-      },
-      {
-        "date": "2026-10-23",
-        "total_value": 114753.52,
-        "cash": 50000.03,
-        "market_value": 64753.49,
-        "daily_pnl": 39.89,
-        "total_pnl": 14753.52,
-        "total_pnl_pct": 14.75,
-        "return_pct": 14.75,
-        "note": "收盘复盘：NVDA $210.96 (-0.59%) | MSFT $524.52 (+0.66%) | QQQ $702.99 (-0.21%) | 标普500 7623.68(-0.52%) 道指52215.16(-1.23%) 纳指25955.34(-0.21%) | 抛售从AI扩散至更广泛领域，油价上涨+美伊冲突担忧"
-      },
-      {
-        "date": "2026-10-26",
-        "total_value": 115862.91,
-        "cash": 50000.03,
-        "market_value": 65862.88,
-        "daily_pnl": 1109.39,
-        "total_pnl": 15862.91,
-        "total_pnl_pct": 15.86,
-        "return_pct": 15.86,
-        "note": "收盘复盘：NVDA $216.0 (+2.39%) | MSFT $532.6 (+1.54%) | QQQ $712.2 (+1.31%) | 标普500 7676.77(+0.70%) 道指52361.58(+0.28%) 纳指26169.38(+0.82%) | 科技股领涨，Anthropic IPO催化AI情绪反弹"
-      },
-      {
-        "date": "2026-10-27",
-        "total_value": 116029.77,
-        "cash": 50000.03,
-        "market_value": 66029.74,
-        "daily_pnl": 806.66,
-        "total_pnl": 16029.77,
-        "total_pnl_pct": 16.03,
-        "return_pct": 16.03,
-        "note": "收盘复盘：NVDA $217.94 (+0.90%) | MSFT $532.6 (+1.54%) | QQQ $712.2 (+1.11%) | 标普500 7722.60(+0.60%) 道指52377.57(+0.03%) 纳指26477.81(+1.18%) | AI情绪修复反弹，科技股领涨，油价回落"
-      },
-      {
-        "date": "2026-10-28",
-        "total_value": 115839.41,
-        "cash": 50000.03,
-        "market_value": 65839.38,
-        "daily_pnl": -190.36,
-        "total_pnl": 15839.41,
-        "total_pnl_pct": 15.84,
-        "return_pct": 15.84,
-        "note": "收盘复盘：NVDA $215.39 (-1.17%) | MSFT $532.28 (-0.06%) | QQQ $713.98 (约+0.25%估算) | 标普500 7743.98(+0.28%) 道指52475.10(+0.19%) 纳指26549.85(+0.27%) | 美联储按兵不动(3.75%-4%)两人反对主张加息，三大指数三连涨；存储芯片飙涨(SK海力士+13.3%/美光+5.9%/闪迪+7.7%)；甲骨文投资者日大涨11%；盘后微软Azure+48%超预期股价大涨约4%，谷歌财报双差盘后跌8.5%"
-      },
-      {
-        "date": "2026-10-29",
-        "total_value": 115610.34,
-        "cash": 50000.03,
-        "market_value": 65610.31,
-        "daily_pnl": -229.07,
-        "total_pnl": 15610.34,
-        "total_pnl_pct": 15.61,
-        "return_pct": 15.61,
-        "note": "收盘复盘：NVDA $213.66 (-0.80%) | MSFT $530.14 (-0.16%) | QQQ $715.34 (-1.42%) | 标普500 7720.39(-0.30%) 道指52342.56(-0.25%) 纳指26184.72(-1.38%) | 谷歌财报暴雷(EPS $2.12远逊预期$2.99、自由现金流连续两季为负)暴跌超12%市值蒸发4000亿美元，通信服务-6.60%领跌；微软Azure+48%超预期但冲高回落；医疗+2.50%/房地产+2.25%防御领涨"
-      },
-      {
-        "date": "2026-10-30",
-        "total_value": 114033.57,
-        "cash": 50000.03,
-        "market_value": 64033.54,
-        "invested": 64033.54,
-        "daily_pnl": -1576.77,
-        "total_pnl": 14033.57,
-        "total_pnl_pct": 14.03,
-        "return_pct": 14.03,
-        "note": "收盘复盘：纳指25437.00(-2.86% 六月以来最差单日) 标普500 7580.07(-1.82%) 道指51770.31(-1.09%) | NVDA $206.61 (-3.30%) | MSFT $521.91 (-1.55%) | QQQ $695.11 (约-2.83%估算) | 周四盘后英特尔Q4指引暴雷(指引EPS $0.25 vs 预期$0.43)开盘暴跌29%+市值蒸发1500亿美元，亚马逊财报不及预期跌7%，财报连环雷+中期选举不确定性+月末获利了结，资金撤离AI核心流向能源(+1.91%)/必需消费(+1.38%)防御板块，科技板块-4.24%领跌，费半-7.20%创2020年3月以来最大单日跌幅，纳指较近期高点回撤约8%"
-      },
-      {
-        "date": "2026-11-02",
-        "total_value": 112818.58,
-        "cash": 50000.03,
-        "market_value": 62818.55,
-        "invested": 62818.55,
-        "daily_pnl": -1214.99,
-        "total_pnl": 12818.58,
-        "total_pnl_pct": 12.82,
-        "return_pct": 12.82,
-        "note": "收盘复盘：道指51983.98(+0.41%) 标普500 7541.40(-0.51%) 纳指25164.32(-1.07%) | NVDA $204.01 (-1.26%) | MSFT $507.15 (-2.83%) | QQQ $687.66 (约-1.07%估算) | 费半-3.37%续跌，油价暴跌(WTI -7.36%报96.46)因美伊谈判现进展，道指独涨、资金离开AI芯片流向价值股，金龙指数+2.25%"
-      },
-      {
-        "date": "2026-11-03",
-        "total_value": 114079.49,
-        "cash": 50000.03,
-        "market_value": 64079.46,
-        "invested": 64079.46,
-        "daily_pnl": 1260.91,
-        "total_pnl": 14079.49,
-        "total_pnl_pct": 14.08,
-        "return_pct": 14.08,
-        "note": "收盘复盘：道指51786(-0.38% 跌近200点) 标普500 7569.30(+0.37%) 纳指25372.01(+0.83%) | NVDA $208.62 (+2.26%) | MSFT $520.83 (+2.70%) | QQQ $692.47 (约+0.70%估算) | 选举日标普纳指结束三连跌，费半+2.64%芯片股大反弹(AMD+3.65%/博通+3%)，七姐妹多数上涨；苹果-1.97%因利润率指引失望；油价续跌(布油103.60)；高盛上调全球数据中心预测至273GW/5年8.5万亿美元capex；中期选举投票日，押注市场显示民主党众议院94%/参议院约73%"
-      },
-      {
-        "date": "2026-11-04",
-        "total_value": 115472.56,
-        "cash": 50000.03,
-        "market_value": 65472.53,
-        "invested": 65472.53,
-        "daily_pnl": 1393.07,
-        "total_pnl": 15472.56,
-        "total_pnl_pct": 15.47,
-        "return_pct": 15.47,
-        "note": "收盘复盘：道指53356.12(+3.03% 涨1569点 2025年4月以来最佳单日 重返53000上方) 标普500 7688.62(+1.58%) 纳指25736.51(+1.44%) | NVDA $202.36 (-3.00%) | MSFT $552.25 (+6.03%) | QQQ $701.47 (约+1.30%估算) | 中期选举民主党横扫参众两院、特朗普接受结果，不确定性消除引发纾解性大涨；但盘面极端撕裂：软件/终端巨头暴涨(亚马逊+6.6%/苹果+6.3%/微软+6%)，AI硬件被抛售(费半-3.8%、SOXL-11%、Lumentum-11%、美光-6%)；油价崩盘：WTI -8.29%报88.12、布油-8.67%报94.62(中东停战希望升温)；10月ADP就业+8.6万超预期；马斯克因押注共和党落败，特斯拉/SpaceX大跌"
-      },
-      {
-        "date": "2026-11-05",
-        "total_value": 111636.55,
-        "cash": 50000.03,
-        "market_value": 61636.52,
-        "invested": 61636.52,
-        "daily_pnl": -3836.01,
-        "total_pnl": 11636.55,
-        "total_pnl_pct": 11.64,
-        "return_pct": 11.64,
-        "note": "收盘复盘：标普500 7354.10(-4.35% 2025年4月以来最大单日跌幅) 纳指24315.50(-5.52%) 道指51521.50(-3.44% 暴跌约1800点) | NVDA $181.60 (-9.26% 市值蒸发4470亿美元) | MSFT $535.93 (-3.58%) | QQQ $656.50 (约-6.4%估算) | 纳指100 -6.4%市值蒸发2.3万亿美元，费半-12%创2020年以来最大跌幅，VIX飙升47%至24.44；中期选举民主党横扫后市场重定价AI监管与数据中心建设前景，AI产业链集中抛售：闪迪-22%/美光-17%/AMD-17%/特斯拉-10.9%/甲骨文-7%；金龙指数逆势+0.42%"
-      },
-      {
-        "date": "2026-11-06",
-        "total_value": 111782.53,
-        "cash": 50000.03,
-        "market_value": 61782.5,
-        "invested": 61782.5,
-        "daily_pnl": 145.98,
-        "total_pnl": 11782.53,
-        "total_pnl_pct": 11.78,
-        "return_pct": 11.78,
-        "note": "收盘复盘：标普500 7376.86(+0.31%) 纳指24579.42(+1.09%) 道指51285.73(-0.46% 跌237点) | NVDA $186.76 (+2.84%) | MSFT $530.61 (-0.99%) | QQQ $656.10 (-0.06%) | 暴跌后首日企稳：逢低买盘涌入芯片股，费半+4.21%(AMD+11%/英特尔+7%/台积电+6.3%)，但经济数据强化12月加息预期，道指续跌；民主党呼吁管控数据中心建设，AI监管担忧未消"
-      }
-    ],
-    "market_value": 61782.5,
-    "total_pnl": 11782.53,
-    "total_pnl_pct": 11.78,
-    "return_pct": 11.78,
-    "market_context": {
-      "sp500": 7376.86,
-      "sp500_change_pct": 0.31,
-      "nasdaq": 24579.42,
-      "nasdaq_change_pct": 1.09,
-      "dow": 51285.73,
-      "dow_change_pct": -0.46
-    },
-    "refreshed_at": "2026-11-07 06:10 (北京时间) · 数据截至2026-11-06收盘"
-  },
-  "positions": {
-    "QQQ": {
-      "shares": 25.9884,
-      "cost_price": 577.18,
-      "cost_basis": 14999.98,
-      "cur_price": 656.1,
-      "market_value": 17050.99,
-      "pnl": 2051.01,
-      "pnl_pct": 13.67,
-      "today_chg_pct": -0.06,
-      "unrealized_pnl": 2051.01,
-      "unrealized_pnl_pct": 13.67,
-      "prev_price": 656.5
-    },
-    "NVDA": {
-      "shares": 86.0092,
-      "cost_price": 174.4,
-      "cost_basis": 15000.0,
-      "cur_price": 186.76,
-      "market_value": 16063.08,
-      "pnl": 1063.08,
-      "pnl_pct": 7.09,
-      "today_chg_pct": 2.84,
-      "unrealized_pnl": 1063.08,
-      "unrealized_pnl_pct": 7.09,
-      "prev_price": 181.6
-    },
-    "MSFT": {
-      "shares": 54.0292,
-      "cost_price": 370.17,
-      "cost_basis": 19999.99,
-      "cur_price": 530.61,
-      "market_value": 28668.43,
-      "pnl": 8668.44,
-      "pnl_pct": 43.34,
-      "today_chg_pct": -0.99,
-      "unrealized_pnl": 8668.44,
-      "unrealized_pnl_pct": 43.34,
-      "prev_price": 535.93
-    }
-  },
-  "market_context": {
-    "sp500": 7541.4,
-    "sp500_change_pct": -0.51,
-    "nasdaq": 25164.32,
-    "nasdaq_change_pct": -1.07,
-    "dow": 51983.98,
-    "dow_change_pct": 0.41
-  },
-  "trades": [
-    {
-      "id": 4,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "MSFT",
-      "shares": 54.0292,
-      "price": 370.17,
-      "amount": 19999.99,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 3,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "NVDA",
-      "shares": 86.0092,
-      "price": 174.4,
-      "amount": 15000.0,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 2,
-      "date": "2026-04-01",
-      "type": "buy",
-      "ticker": "QQQ",
-      "shares": 25.9884,
-      "price": 577.18,
-      "amount": 14999.98,
-      "note": "首批建仓 @ 3月31日收盘价"
-    },
-    {
-      "id": 1,
-      "date": "2026-04-01",
-      "type": "init",
-      "ticker": null,
-      "shares": null,
-      "price": null,
-      "amount": 100000,
-      "note": "账户初始化"
-    }
-  ],
-  "pending_plan": []
-};
-// ── 数据层 ──────────────────────────────────────
-const API = window.location.origin + '/api/portfolio';
-let equityChart = null, allocChart = null;
-let _snapshots = [];  // 供日历使用
-
-const TSTYLES = {
-  QQQ:  {cls:'t-qqq', color:'#58a6ff'},
-  NVDA: {cls:'t-nvda', color:'#3fb950'},
-  MSFT: {cls:'t-msft', color:'#bc8cff'},
-};
-function ts(t){ return TSTYLES[t]||{cls:'t-def',color:'#8b949e'}; }
-function fmtUSD(n,d=2){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
-function fmtPct(n){ return (n>=0?'+':'')+n.toFixed(2)+'%'; }
-function pnlCls(n){ return n>0?'pos':n<0?'neg':'neu'; }
-function pnlColor(n){ return n>0?'#3fb950':n<0?'#f85149':'#8b949e'; }
-
-// ── 数据加载 ─────────────────────────────────────
-async function load() {
-  try {
-    const res = await fetch(API, {signal: AbortSignal.timeout(3000)});
-    return await res.json();
-  } catch(e) {
-    return window.__PORTFOLIO_DATA__;
-  }
-}
-
-async function refresh() {
-  const d = await load();
-  if (!d) { document.getElementById('update-txt').textContent = '⚠ 数据加载失败'; return; }
-  render(d);
-  document.getElementById('update-txt').textContent = '更新：' + (d.refreshed_at||'—');
-  document.getElementById('loading').style.display = 'none';
-}
-
-// ── 主渲染 ───────────────────────────────────────
-function render(d) {
-  const acc = d.account;
-  const initial = d.meta.initial_capital;
-  const pnl = acc.total_value - initial;
-  const pnlPct = acc.return_pct || 0;
-  const cashPct = (acc.cash / acc.total_value * 100).toFixed(1);
-  const posCnt = Object.keys(d.positions||{}).length;
-  _snapshots = d.snapshots || [];
-
-  // KPI
-  setText('k-total', fmtUSD(acc.total_value, 0));
-  setText('k-total-s', '初始 $100,000 · '+(posCnt>0?posCnt+' 只持仓':'尚未建仓'));
-
-  const pnlEl = document.getElementById('k-pnl');
-  pnlEl.textContent = (pnl>=0?'+':'')+fmtUSD(pnl);
-  pnlEl.className = 'kv '+(pnl>0?'green':pnl<0?'red':'dim');
-  setText('k-pnl-s', fmtPct(pnlPct)+(acc.max_drawdown>0?' · 最大回撤 -'+acc.max_drawdown+'%':' · 持续更新中'));
-  document.getElementById('k-pnl-s').style.color = pnlColor(pnl);
-
-  setText('k-cash', fmtUSD(acc.cash, 0));
-  setText('k-cash-s', cashPct+'% · '+(acc.cash<20000?'⚠ 现金偏低':'充裕'));
-
-  setText('k-mkt', fmtUSD(acc.invested||0, 0));
-  setText('k-mkt-s', posCnt+' 只 · '+d.trades.length+' 笔交易');
-
-  // 图表
-  renderEquity(_snapshots, initial);
-  renderAlloc(d.positions||{}, acc.cash, acc.total_value);
-
-  // 持仓
-  renderHoldings(d.positions||{});
-
-  // 交易
-  renderTrades(d.trades||[]);
-
-  // 日历
-  renderCal();
-
-  // 市场
-  const mc = d.market_context||{};
-  if (mc.sp500) {
-    setText('m-sp', mc.sp500.toLocaleString());
-    setText('m-spc', (mc.sp500_change_pct>=0?'↑ +':'↓ ')+mc.sp500_change_pct+'% 今日');
-    document.getElementById('m-spc').style.color = mc.sp500_change_pct>=0?'#3fb950':'#f85149';
-  }
-}
-
-function setText(id, val){ const el=document.getElementById(id); if(el) el.textContent=val; }
-
-// ── 净值曲线 ─────────────────────────────────────
-function renderEquity(snaps, initial) {
-  const labels = snaps.map(s=>s.date.slice(5));
-  const values = snaps.map(s=>s.total_value);
-  setText('chart-badge', snaps.length+' 天');
-  const last = values[values.length-1]||initial;
-  const lc = last>=initial?'#3fb950':'#f85149';
-  const ctx = document.getElementById('equityChart').getContext('2d');
-  const g = ctx.createLinearGradient(0,0,0,200);
-  g.addColorStop(0, lc+'30'); g.addColorStop(1, lc+'02');
-  const baseline = labels.map(()=>initial);
-  if (equityChart) {
-    equityChart.data.labels = labels;
-    equityChart.data.datasets[0].data = values;
-    equityChart.data.datasets[0].borderColor = lc;
-    equityChart.data.datasets[0].backgroundColor = g;
-    equityChart.data.datasets[1].data = baseline;
-    equityChart.update(); return;
-  }
-  equityChart = new Chart(ctx, {
-    type:'line',
-    data:{labels, datasets:[
-      {label:'净值',data:values,borderColor:lc,backgroundColor:g,borderWidth:2.5,pointRadius:labels.length<8?4:2,pointBackgroundColor:lc,pointBorderColor:'#0d1117',pointBorderWidth:2,tension:.35,fill:true},
-      {label:'基准',data:baseline,borderColor:'#30363d',borderWidth:1,borderDash:[4,4],pointRadius:0,fill:false}
-    ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1f2e',borderColor:'#21262d',borderWidth:1,callbacks:{label:c=>' $'+c.parsed.y.toLocaleString()}}},
-      scales:{
-        x:{grid:{color:'#1c2128'},ticks:{color:'#8b949e',font:{size:10}}},
-        y:{grid:{color:'#1c2128'},ticks:{color:'#8b949e',font:{size:10},callback:v=>'$'+(v/1000).toFixed(0)+'k'}}
-      }
-    }
-  });
-}
-
-// ── 仓位饼图 ─────────────────────────────────────
-function renderAlloc(positions, cash, total) {
-  const entries = Object.entries(positions);
-  const labels = ['现金', ...entries.map(([t])=>t)];
-  const vals   = [cash, ...entries.map(([,p])=>p.market_value||0)];
-  const colors = ['#e3b341', ...entries.map(([t])=>ts(t).color)];
-  const pcts   = vals.map(v=>((v/total)*100).toFixed(1));
-  setText('alloc-badge', entries.length>0?entries.length+' 只+现金':'全现金');
-
-  // 进度条
-  const barDefs = [
-    {label:'💵 现金', pct:pcts[0], cls:'fy'},
-    ...entries.map(([t,p],i)=>({
-      label:(t==='QQQ'?'📦 ':t==='NVDA'?'🟢 ':'🟣 ')+t,
-      pct:pcts[i+1], cls:t==='QQQ'?'fb':t==='NVDA'?'fg':'fp'
-    }))
-  ];
-  document.getElementById('alloc-bars').innerHTML = barDefs.map((b,i)=>`
-    <div class="brow">
-      <div class="blabel"><span>${b.label}</span><span>$${Math.round(vals[i]).toLocaleString()} · ${b.pct}%</span></div>
-      <div class="btrack"><div class="bfill ${b.cls}" style="width:${b.pct}%"></div></div>
-    </div>`).join('');
-
-  if (allocChart) {
-    allocChart.data.labels = labels;
-    allocChart.data.datasets[0].data = vals;
-    allocChart.data.datasets[0].backgroundColor = colors.map(c=>c+'bb');
-    allocChart.data.datasets[0].borderColor = colors;
-    allocChart.update(); return;
-  }
-  const ctx2 = document.getElementById('allocChart').getContext('2d');
-  allocChart = new Chart(ctx2,{
-    type:'doughnut',
-    data:{labels,datasets:[{data:vals,backgroundColor:colors.map(c=>c+'bb'),borderColor:colors,borderWidth:1.5,hoverOffset:5}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',
-      plugins:{legend:{position:'bottom',labels:{color:'#8b949e',font:{size:10},padding:7,boxWidth:9}},
-        tooltip:{backgroundColor:'#1a1f2e',borderColor:'#21262d',borderWidth:1,callbacks:{label:c=>` ${c.label}：${pcts[c.dataIndex]}%`}}}
-    }
-  });
-}
-
-// ── 持仓表格 ─────────────────────────────────────
-function renderHoldings(positions) {
-  const entries = Object.entries(positions);
-  setText('pos-badge', entries.length+' 只');
-  const tbody = document.getElementById('holdings-body');
-  if (!entries.length) {
-    tbody.innerHTML='<tr><td colspan="6" style="text-align:center;color:#8b949e;padding:20px 0">📭 暂无持仓</td></tr>'; return;
-  }
-  tbody.innerHTML = entries.map(([t,p])=>{
-    const s=ts(t);
-    return `<tr>
-      <td><span class="tk ${s.cls}">${t}</span></td>
-      <td style="color:#8b949e">$${p.cost_price}</td>
-      <td style="color:#c9d1d9">$${p.cur_price}</td>
-      <td>${p.shares}</td>
-      <td>$${Math.round(p.market_value||0).toLocaleString()}</td>
-      <td class="${pnlCls(p.pnl_pct)}">${fmtPct(p.pnl_pct||0)}</td>
-    </tr>`;
-  }).join('');
-}
-
-// ── 交易记录 ─────────────────────────────────────
-function renderTrades(trades) {
-  setText('trade-badge', trades.length+' 条');
-  const ICONS = {buy:'🟢',sell:'🔴',init:'🚀'};
-  const LABELS = {buy:'买入',sell:'卖出',init:'初始化'};
-  document.getElementById('trade-list').innerHTML = trades.map(t=>{
-    const isBuy=t.type==='buy', isSell=t.type==='sell';
-    const color = isBuy?'#3fb950':isSell?'#f85149':'#58a6ff';
-    const cls   = isBuy?'tc-buy':isSell?'tc-sell':'tc-init';
-    const label = t.ticker?`${LABELS[t.type]} ${t.ticker}`:(t.note||LABELS[t.type]);
-    const meta  = t.shares?`${t.shares} 股 @ $${t.price}`:(t.note||'');
-    return `<div class="ti">
-      <div class="tic ${cls}">${ICONS[t.type]||'•'}</div>
-      <div class="tinfo"><div class="ttitle">${label}</div><div class="tmeta">${meta}</div></div>
-      <div class="tamt">
-        <div class="tprice" style="color:${color}">${isSell?'-':''}$${Math.round(t.amount||0).toLocaleString()}</div>
-        <div class="tdate">${t.date}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-// ── 日历 ─────────────────────────────────────────
-let calYear, calMonth;
-function initCal() {
-  const now = new Date();
-  calYear = now.getFullYear();
-  calMonth = now.getMonth();
-  renderCal();
-}
-function calMove(dir) { calMonth += dir; if(calMonth>11){calMonth=0;calYear++;}else if(calMonth<0){calMonth=11;calYear--;} renderCal(); }
-
-function renderCal() {
-  const MONTHS = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
-  const DOWS = ['日','一','二','三','四','五','六'];
-  setText('cal-title', `${calYear} 年 ${MONTHS[calMonth]}`);
-
-  // 快照 map
-  const snapMap = {};
-  _snapshots.forEach((s,i) => {
-    if (i===0) return; // 跳过初始
-    const prev = _snapshots[i-1];
-    const pnl = s.total_value - prev.total_value;
-    snapMap[s.date] = {total:s.total_value, pnl, pnlPct: (pnl/prev.total_value*100), ...s};
-  });
-
-  const today = new Date();
-  const todayStr = today.toISOString().slice(0,10);
-  const firstDay = new Date(calYear, calMonth, 1).getDay();
-  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-  const daysInPrev  = new Date(calYear, calMonth, 0).getDate();
-
-  let html = DOWS.map(d=>`<div class="cal-dow">${d}</div>`).join('');
-
-  // 上月补位
-  for (let i=firstDay-1; i>=0; i--) {
-    html += `<div class="cal-day other-month">${daysInPrev-i}</div>`;
-  }
-  // 本月
-  for (let d=1; d<=daysInMonth; d++) {
-    const dateStr = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const snap = snapMap[dateStr];
-    const isToday = dateStr===todayStr;
-    let cls = 'cal-day';
-    if (snap) { cls += ' has-data '+(snap.pnl>=0?'pos-day':'neg-day'); }
-    if (isToday) cls += ' today';
-    html += `<div class="${cls}" onclick="showDay('${dateStr}')" title="${dateStr}">${d}</div>`;
-  }
-  // 下月补位
-  const remaining = 7 - ((firstDay + daysInMonth) % 7||7);
-  if (remaining < 7) for (let d=1; d<=remaining; d++) html += `<div class="cal-day other-month">${d}</div>`;
-
-  document.getElementById('cal-grid').innerHTML = html;
-}
-
-function showDay(dateStr) {
-  // 高亮
-  document.querySelectorAll('.cal-day').forEach(el=>el.classList.remove('active'));
-  const allDays = document.querySelectorAll('.cal-day:not(.other-month)');
-  const day = parseInt(dateStr.slice(8));
-  if (allDays[day-1]) allDays[day-1].classList.add('active');
-
-  // 找快照
-  const idx = _snapshots.findIndex(s=>s.date===dateStr);
-  const detail = document.getElementById('cal-detail');
-  if (idx < 0) {
-    detail.innerHTML = `<div class="cd-empty">📭 ${dateStr}<br>暂无数据</div>`; return;
-  }
-  const snap = _snapshots[idx];
-  const prev = idx>0?_snapshots[idx-1]:null;
-  const pnl = prev ? snap.total_value - prev.total_value : 0;
-  const pnlPct = prev ? (pnl/prev.total_value*100) : 0;
-  const totalPnl = snap.total_value - 100000;
-  const totalPct = (totalPnl/100000*100);
-
-  detail.innerHTML = `
-    <div class="cd-date">${dateStr}</div>
-    <div class="cd-val" style="color:${pnlColor(pnl)}">${pnl>=0?'+':''}${fmtUSD(pnl)}</div>
-    <div class="cd-pct" style="color:${pnlColor(pnl)}">${fmtPct(pnlPct)} 当日涨跌</div>
-    <div class="cd-rows">
-      <div class="cd-row"><span>账户总值</span><span>${fmtUSD(snap.total_value,0)}</span></div>
-      <div class="cd-row"><span>可用现金</span><span>${fmtUSD(snap.cash,0)}</span></div>
-      <div class="cd-row"><span>持仓市值</span><span>${fmtUSD(snap.invested||0,0)}</span></div>
-      <div class="cd-row"><span>累计收益</span><span style="color:${pnlColor(totalPnl)}">${totalPnl>=0?'+':''}${fmtUSD(totalPnl)} (${fmtPct(totalPct)})</span></div>
-      ${snap.note?`<div class="cd-row"><span>备注</span><span>${snap.note}</span></div>`:''}
-    </div>`;
-}
-
-// ── 启动 ─────────────────────────────────────────
-initCal();
-refresh();
-setInterval(refresh, 5*60*1000);
-</script>
+    <script>
+        const ctx = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["2026-10-06", "2026-04-01", "2026-04-01", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-13", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-15", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-06", "2026-07-07", "2026-07-09", "2026-07-13", "2026-07-14", "2026-07-02", "2026-07-14", "2026-07-15", "2026-07-17", "2026-07-20", "2026-07-02", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-07", "2026-08-10", "2026-08-11", "2026-08-14", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-27", "2026-08-28", "2026-09-01", "2026-09-02", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-11", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-18", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-29", "2026-09-30", "2026-10-02", "2026-10-05", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-26", "2026-10-27", "2026-10-28"],
+                datasets: [{
+                    label: '总资产',
+                    data: [118949.88, 100000, 100000.0, 100258.2, 100453.59, 100639.8, 100546.99, 100729.31, 101327.78, 101602.89, 102142.49, 102142.49, 103040.21, 104056.47, 106404.03, 106864.8, 106767.76, 107765.68, 106562.91, 108055.21, 108845.44, 108550.6, 108062.01, 106550.41, 107217.71, 107296.7, 106772.28, 108323.2, 108674.96, 108641.57, 108966.57, 107921.06, 110019.35, 110276.71, 109759.03, 110565.11, 111019.62, 111703.21, 112352.96, 112238.44, 111504.96, 111595.87, 112095.76, 113515.18, 114175.04, 112560.18, 113059.7, 110422.06, 111621.0, 110988.05, 106734.92, 107346.29, 107506.1, 109005.95, 108060.92, 106927.81, 106927.81, 106410.04, 105944.97, 104663.83, 104795.02, 105522.06, 105500.46, 106407.2, 106287.21, 106471.0, 105679.02, 107616.14, 107082.54, 108049.8, 106287.21, 108049.8, 108559.32, 107574.8, 107672.79, 106287.21, 108254.72, 108166.52, 107592.28, 106195.16, 105776.17, 105933.5, 104874.89, 109137.91, 109048.64, 111859.73, 113187.16, 113760.18, 115060.08, 114911.31, 114996.3, 115131.27, 113575.2, 113501.16, 112826.23, 113052.93, 113245.66, 114008.4, 115549.29, 115076.9, 114165.13, 114569.66, 115497.94, 115497.94, 114771.64, 114132.06, 113881.88, 113881.88, 113331.06, 114642.7, 115925.85, 116014.39, 115684.23, 115462.67, 116186.15, 116497.72, 117479.11, 118615.1, 118735.89, 117489.86, 118185.07, 118191.71, 118405.41, 116884.29, 116748.88, 115654.7, 116335.32, 116005.01, 116732.62, 115862.91, 116029.77, 115839.41],
+                    borderColor: '#FACC15',
+                    backgroundColor: 'rgba(250, 204, 21, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 2,
+                    pointHoverRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { labels: { color: '#9CA3AF' } },
+                    tooltip: {
+                        callbacks: {
+                            label: (ctx) => '$' + ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits:2})
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { color: '#6B7280', maxTicksLimit: 10 }, grid: { color: '#374151' } },
+                    y: { ticks: { color: '#6B7280', callback: v => '$'+v.toLocaleString() }, grid: { color: '#374151' } }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
