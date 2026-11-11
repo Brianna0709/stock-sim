@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 112245.6,
-    "invested": 62245.57,
-    "total_unrealized_pnl": 12245.6,
-    "daily_pnl": 463.07,
-    "last_update": "2026-11-09",
+    "total_value": 110651.42,
+    "invested": 60651.39,
+    "total_unrealized_pnl": 10651.42,
+    "daily_pnl": 17.32,
+    "last_update": "2026-11-11",
     "snapshots": [
       {
         "date": "2026-08-13",
@@ -691,19 +691,43 @@
         "total_pnl_pct": 12.25,
         "return_pct": 12.25,
         "note": "收盘复盘：标普500 7549.94(+2.35%) 纳指25253.14(+2.74%) 道指52389.75(+2.15% 涨超1100点) | NVDA $173.85 (-4.27%) | MSFT $550.67 (+2.75%) | QQQ $674.94 (约+2.87%估算) | 三大指数全线大涨逾2%：超跌反弹+费半暴涨近7%(AMD+8.9%/美光+4.2%/博通+6.5%)，特斯拉+5.5%、Meta+5.1%；但英伟达逆势大跌4.27%成七姐妹中唯一收跌，资金在AI内部大轮动；十一大板块全线上涨，工业+3.78%领涨"
+      },
+      {
+        "date": "2026-11-10",
+        "total_value": 110634.1,
+        "cash": 50000.03,
+        "market_value": 60634.07,
+        "invested": 60634.07,
+        "daily_pnl": -1611.5,
+        "total_pnl": 10634.1,
+        "total_pnl_pct": 10.63,
+        "return_pct": 10.63,
+        "note": "收盘复盘：标普500 7520.93(-0.38%) 纳指25065.87(-0.74%) 道指52231.89(-0.30%) | NVDA $164.25 (-5.53% 两日累跌超9% 创7个月新低) | MSFT $538.55 (-2.20% Anthropic上线办公软件冲击) | QQQ $669.90 (约-0.75%估算) | 10月CPI超预期(环比+0.4%/核心+0.3%)，沃勒放话12月或加息50bp，美债收益率跳升；芯片分化：博通+4%/台积电+2% vs 存储疲软；亚马逊+1.48%逆势领涨七姐妹"
+      },
+      {
+        "date": "2026-11-11",
+        "total_value": 110651.42,
+        "cash": 50000.03,
+        "market_value": 60651.39,
+        "invested": 60651.39,
+        "daily_pnl": 17.32,
+        "total_pnl": 10651.42,
+        "total_pnl_pct": 10.65,
+        "return_pct": 10.65,
+        "note": "收盘复盘：标普500 7619.38(+1.31%) 纳指25466.19(+1.60%) 道指52486.49(+0.49%) | NVDA $168.96 (+2.87% 两日暴跌后反弹) | MSFT $526.38 (-2.26%) | QQQ $680.28 (约+1.55%估算) | CoreWeave财报超预期暴涨24.71%重振AI交易，Anthropic IPO获数倍超额认购(估值最高1.4万亿美元)，存储股大涨(美光+11.89%/闪迪+13.69%/AMD+7.32%)，甲骨文+8.82%；周二CPI超预期后12月加息25bp预期升至90%，10Y美债收益率约5.00%；大摩将NVDA移出首选股(维持增持/目标价300美元)"
       }
     ],
-    "market_value": 62245.57,
-    "total_pnl": 12245.6,
-    "total_pnl_pct": 12.25,
-    "return_pct": 12.25,
+    "market_value": 60651.39,
+    "total_pnl": 10651.42,
+    "total_pnl_pct": 10.65,
+    "return_pct": 10.65,
     "market_context": {
-      "sp500": 7549.94,
-      "sp500_change_pct": 2.35,
-      "nasdaq": 25253.14,
-      "nasdaq_change_pct": 2.74,
-      "dow": 52389.75,
-      "dow_change_pct": 2.15
+      "sp500": 7619.38,
+      "sp500_change_pct": 1.31,
+      "nasdaq": 25466.19,
+      "nasdaq_change_pct": 1.6,
+      "dow": 52486.49,
+      "dow_change_pct": 0.49
     }
   },
   "positions": {
@@ -711,40 +735,40 @@
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 674.94,
-      "market_value": 17540.61,
-      "pnl": 2540.63,
-      "pnl_pct": 16.94,
-      "today_chg_pct": 2.87,
-      "unrealized_pnl": 2540.63,
-      "unrealized_pnl_pct": 16.94,
-      "prev_price": 656.1
+      "cur_price": 680.28,
+      "market_value": 17679.39,
+      "pnl": 2679.41,
+      "pnl_pct": 17.86,
+      "today_chg_pct": 1.55,
+      "unrealized_pnl": 2679.41,
+      "unrealized_pnl_pct": 17.86,
+      "prev_price": 669.9
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 173.85,
-      "market_value": 14952.7,
-      "pnl": -47.3,
-      "pnl_pct": -0.32,
-      "today_chg_pct": -4.27,
-      "unrealized_pnl": -47.3,
-      "unrealized_pnl_pct": -0.32,
-      "prev_price": 186.76
+      "cur_price": 168.96,
+      "market_value": 14532.11,
+      "pnl": -467.89,
+      "pnl_pct": -3.12,
+      "today_chg_pct": 2.87,
+      "unrealized_pnl": -467.89,
+      "unrealized_pnl_pct": -3.12,
+      "prev_price": 164.25
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 550.67,
-      "market_value": 29752.26,
-      "pnl": 9752.27,
-      "pnl_pct": 48.76,
-      "today_chg_pct": 2.75,
-      "unrealized_pnl": 9752.27,
-      "unrealized_pnl_pct": 48.76,
-      "prev_price": 530.61
+      "cur_price": 526.38,
+      "market_value": 28439.89,
+      "pnl": 8439.9,
+      "pnl_pct": 42.2,
+      "today_chg_pct": -2.26,
+      "unrealized_pnl": 8439.9,
+      "unrealized_pnl_pct": 42.2,
+      "prev_price": 538.55
     }
   },
   "trades": [
@@ -2036,6 +2060,30 @@
       "total_pnl_pct": 12.25,
       "return_pct": 12.25,
       "note": "收盘复盘：标普500 7549.94(+2.35%) 纳指25253.14(+2.74%) 道指52389.75(+2.15% 涨超1100点) | NVDA $173.85 (-4.27%) | MSFT $550.67 (+2.75%) | QQQ $674.94 (约+2.87%估算) | 三大指数全线大涨逾2%：超跌反弹+费半暴涨近7%(AMD+8.9%/美光+4.2%/博通+6.5%)，特斯拉+5.5%、Meta+5.1%；但英伟达逆势大跌4.27%成七姐妹中唯一收跌，资金在AI内部大轮动；十一大板块全线上涨，工业+3.78%领涨"
+    },
+    {
+      "date": "2026-11-10",
+      "total_value": 110634.1,
+      "cash": 50000.03,
+      "market_value": 60634.07,
+      "invested": 60634.07,
+      "daily_pnl": -1611.5,
+      "total_pnl": 10634.1,
+      "total_pnl_pct": 10.63,
+      "return_pct": 10.63,
+      "note": "收盘复盘：标普500 7520.93(-0.38%) 纳指25065.87(-0.74%) 道指52231.89(-0.30%) | NVDA $164.25 (-5.53% 两日累跌超9% 创7个月新低) | MSFT $538.55 (-2.20% Anthropic上线办公软件冲击) | QQQ $669.90 (约-0.75%估算) | 10月CPI超预期(环比+0.4%/核心+0.3%)，沃勒放话12月或加息50bp，美债收益率跳升；芯片分化：博通+4%/台积电+2% vs 存储疲软；亚马逊+1.48%逆势领涨七姐妹"
+    },
+    {
+      "date": "2026-11-11",
+      "total_value": 110651.42,
+      "cash": 50000.03,
+      "market_value": 60651.39,
+      "invested": 60651.39,
+      "daily_pnl": 17.32,
+      "total_pnl": 10651.42,
+      "total_pnl_pct": 10.65,
+      "return_pct": 10.65,
+      "note": "收盘复盘：标普500 7619.38(+1.31%) 纳指25466.19(+1.60%) 道指52486.49(+0.49%) | NVDA $168.96 (+2.87% 两日暴跌后反弹) | MSFT $526.38 (-2.26%) | QQQ $680.28 (约+1.55%估算) | CoreWeave财报超预期暴涨24.71%重振AI交易，Anthropic IPO获数倍超额认购(估值最高1.4万亿美元)，存储股大涨(美光+11.89%/闪迪+13.69%/AMD+7.32%)，甲骨文+8.82%；周二CPI超预期后12月加息25bp预期升至90%，10Y美债收益率约5.00%；大摩将NVDA移出首选股(维持增持/目标价300美元)"
     }
   ],
   "pending_plan": [],
