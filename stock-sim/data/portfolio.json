@@ -7,11 +7,11 @@
   },
   "account": {
     "cash": 50000.03,
-    "total_value": 107986.49,
-    "invested": 57986.46,
-    "total_unrealized_pnl": 7986.49,
-    "daily_pnl": 5161.69,
-    "last_update": "2026-11-23",
+    "total_value": 106890.33,
+    "invested": 56890.3,
+    "total_unrealized_pnl": 6890.33,
+    "daily_pnl": -1096.16,
+    "last_update": "2026-11-24",
     "snapshots": [
       {
         "date": "2026-04-01",
@@ -1354,19 +1354,31 @@
         "total_pnl_pct": 7.99,
         "return_pct": 7.99,
         "note": "收盘复盘(2026-11-23周一)：道指49595.79(+3.01% 涨1448点) 标普500 7237.39(+4.73%) 纳指24089.56(+6.51% 标普纳指创2025年4月以来最大单日涨幅) | NVDA $165.73(+32.02% 黄仁勋复职任董事长兼CEO 单日市值+9520亿美元创纪录 2003年以来最大单日涨幅) | MSFT $496.58(+2.49%) | QQQ $650.38(+6.89%) | 费半+14.03%创2025年来最大单日涨幅 SK海力士+20% 美光+19% 英特尔+16.3% 台积电+14.1% 阿斯麦+9.3% CoreWeave+22% 特斯拉+11.5% Meta+6.5% 谷歌+6.3%；Anthropic逆势-1.4%；油价大跌WTI -3.88%报80.17(三个月低点) 黄金+3.41%报3635 美元指数104.3；联储威廉姆斯称通胀仍过高、风险偏上行"
+      },
+      {
+        "date": "2026-11-24",
+        "total_value": 106890.33,
+        "cash": 50000.03,
+        "market_value": 56890.3,
+        "invested": 56890.3,
+        "daily_pnl": -1096.16,
+        "total_pnl": 6890.33,
+        "total_pnl_pct": 6.89,
+        "return_pct": 6.89,
+        "note": "收盘复盘(2026-11-24周二)：道指50018.69(+0.85% 涨423点) 标普500 7201.09(-0.50%) 纳指23733.53(-1.48%) | NVDA $155.38(-5.86% 周一+32%后回吐 市值回落至3.74万亿) | MSFT $496.13(+0.74% 逆势抗跌) | QQQ $643.39(约-1.17%估算 纳指100) | 费半-7.88%报8832.5 存储芯片重挫(美光-11.01%/闪迪-11.13%/西数-7.84%/希捷-7.23%) AMD-8.86% 台积电-3.96% Lumentum-10%；Anthropic(ANT)跌6.54%报81.91 上市第四日跌破83美元发行价；苹果+1.43%逆势；市场重估AI资本开支回报+美国可能上调对欧关税，资金转向道指价值股；明日(周三)核心PCE通胀数据+初请失业金人数"
       }
     ],
-    "market_value": 57986.46,
-    "total_pnl": 7986.49,
-    "total_pnl_pct": 7.99,
-    "return_pct": 7.99,
+    "market_value": 56890.3,
+    "total_pnl": 6890.33,
+    "total_pnl_pct": 6.89,
+    "return_pct": 6.89,
     "market_context": {
-      "sp500": 7237.39,
-      "sp500_change_pct": 4.73,
-      "nasdaq": 24089.56,
-      "nasdaq_change_pct": 6.51,
-      "dow": 49595.79,
-      "dow_change_pct": 3.01
+      "sp500": 7201.09,
+      "sp500_change_pct": -0.5,
+      "nasdaq": 23733.53,
+      "nasdaq_change_pct": -1.48,
+      "dow": 50018.69,
+      "dow_change_pct": 0.85
     }
   },
   "positions": {
@@ -1374,40 +1386,40 @@
       "shares": 25.9884,
       "cost_price": 577.18,
       "cost_basis": 14999.98,
-      "cur_price": 650.38,
-      "market_value": 16902.34,
-      "pnl": 1902.36,
-      "pnl_pct": 12.68,
-      "today_chg_pct": 6.89,
-      "unrealized_pnl": 1902.36,
-      "unrealized_pnl_pct": 12.68,
-      "prev_price": 609.88
+      "cur_price": 643.39,
+      "market_value": 16720.68,
+      "pnl": 1720.7,
+      "pnl_pct": 11.47,
+      "today_chg_pct": -1.07,
+      "unrealized_pnl": 1720.7,
+      "unrealized_pnl_pct": 11.47,
+      "prev_price": 650.38
     },
     "NVDA": {
       "shares": 86.0092,
       "cost_price": 174.4,
       "cost_basis": 15000.0,
-      "cur_price": 165.73,
-      "market_value": 14254.3,
-      "pnl": -745.7,
-      "pnl_pct": -4.97,
-      "today_chg_pct": 32.02,
-      "unrealized_pnl": -745.7,
-      "unrealized_pnl_pct": -4.97,
-      "prev_price": 125.53
+      "cur_price": 155.38,
+      "market_value": 13364.11,
+      "pnl": -1635.89,
+      "pnl_pct": -10.91,
+      "today_chg_pct": -6.25,
+      "unrealized_pnl": -1635.89,
+      "unrealized_pnl_pct": -10.91,
+      "prev_price": 165.73
     },
     "MSFT": {
       "shares": 54.0292,
       "cost_price": 370.17,
       "cost_basis": 19999.99,
-      "cur_price": 496.58,
-      "market_value": 26829.82,
-      "pnl": 6829.83,
-      "pnl_pct": 34.15,
-      "today_chg_pct": 2.49,
-      "unrealized_pnl": 6829.83,
-      "unrealized_pnl_pct": 34.15,
-      "prev_price": 484.52
+      "cur_price": 496.13,
+      "market_value": 26805.51,
+      "pnl": 6805.52,
+      "pnl_pct": 34.03,
+      "today_chg_pct": 0.74,
+      "unrealized_pnl": 6805.52,
+      "unrealized_pnl_pct": 34.03,
+      "prev_price": 496.58
     }
   },
   "trades": [
@@ -2794,6 +2806,18 @@
       "total_pnl_pct": 7.99,
       "return_pct": 7.99,
       "note": "收盘复盘(2026-11-23周一)：道指49595.79(+3.01% 涨1448点) 标普500 7237.39(+4.73%) 纳指24089.56(+6.51% 标普纳指创2025年4月以来最大单日涨幅) | NVDA $165.73(+32.02% 黄仁勋复职任董事长兼CEO 单日市值+9520亿美元创纪录 2003年以来最大单日涨幅) | MSFT $496.58(+2.49%) | QQQ $650.38(+6.89%) | 费半+14.03%创2025年来最大单日涨幅 SK海力士+20% 美光+19% 英特尔+16.3% 台积电+14.1% 阿斯麦+9.3% CoreWeave+22% 特斯拉+11.5% Meta+6.5% 谷歌+6.3%；Anthropic逆势-1.4%；油价大跌WTI -3.88%报80.17(三个月低点) 黄金+3.41%报3635 美元指数104.3；联储威廉姆斯称通胀仍过高、风险偏上行"
+    },
+    {
+      "date": "2026-11-24",
+      "total_value": 106890.33,
+      "cash": 50000.03,
+      "market_value": 56890.3,
+      "invested": 56890.3,
+      "daily_pnl": -1096.16,
+      "total_pnl": 6890.33,
+      "total_pnl_pct": 6.89,
+      "return_pct": 6.89,
+      "note": "收盘复盘(2026-11-24周二)：道指50018.69(+0.85% 涨423点) 标普500 7201.09(-0.50%) 纳指23733.53(-1.48%) | NVDA $155.38(-5.86% 周一+32%后回吐 市值回落至3.74万亿) | MSFT $496.13(+0.74% 逆势抗跌) | QQQ $643.39(约-1.17%估算 纳指100) | 费半-7.88%报8832.5 存储芯片重挫(美光-11.01%/闪迪-11.13%/西数-7.84%/希捷-7.23%) AMD-8.86% 台积电-3.96% Lumentum-10%；Anthropic(ANT)跌6.54%报81.91 上市第四日跌破83美元发行价；苹果+1.43%逆势；市场重估AI资本开支回报+美国可能上调对欧关税，资金转向道指价值股；明日(周三)核心PCE通胀数据+初请失业金人数"
     }
   ],
   "pending_plan": []
